@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generator Kisi-kisi</title>
+<meta name="description" content="Penyusun kisi-kisi asesmen PAI dan Budi Pekerti SD: impor dari bank soal, bantuan AI, rekap level kognitif, cetak dan Word.">
+<meta name="theme-color" content="#0f6b4f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--hijau:#0f6b4f;--hijau-tua:#0a4d39;--hijau-muda:#e5f2ec;--teks:#1c2925;--abu:#5d6c67;--garis:#d8e2de;--bg:#f5f7f6;--kuning:#fff5d6}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--teks);font-size:15px;line-height:1.5}
+button,select,input,textarea{font:inherit;color:inherit}
+header.top{background:var(--hijau);color:#fff;padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header.top .logo{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.15);display:grid;place-items:center;font-weight:800}
+header.top h1{font-size:18px;margin:0;line-height:1.2}
+header.top small{opacity:.8;font-size:12.5px}
+header.top .sp{flex:1}
+header.top a{color:#fff;opacity:.85;text-decoration:none;font-size:14px}
+main{max-width:1320px;margin:0 auto;padding:20px}
+.card{background:#fff;border:1px solid var(--garis);border-radius:14px;padding:18px;margin-bottom:16px}
+.card h2{font-size:16px;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.idgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px 14px}
+@media(max-width:1000px){.idgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.idgrid{grid-template-columns:1fr}}
+label.f{display:block;font-size:12.5px;font-weight:600;color:var(--abu);margin-bottom:3px}
+input[type=text],input[type=number],input[type=password],select,textarea{width:100%;border:1px solid var(--garis);border-radius:9px;padding:7px 10px;background:#fff;font-size:14px}
+textarea{resize:vertical}
+input:focus,select:focus,textarea:focus,[contenteditable]:focus{outline:2px solid rgba(15,107,79,.35);border-color:var(--hijau)}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--garis);background:#fff;padding:8px 13px;border-radius:9px;cursor:pointer;font-weight:600;font-size:14px;text-decoration:none;color:var(--teks)}
+.btn:hover{border-color:var(--hijau)}
+.btn.pri{background:var(--hijau);color:#fff;border-color:var(--hijau)}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+.btn:disabled{opacity:.5}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.toolbar .sp{flex:1}
+.tblwrap{overflow:auto;border:1px solid var(--garis);border-radius:12px}
+table.kk{border-collapse:collapse;width:100%;min-width:1050px;font-size:14px}
+table.kk th{background:var(--hijau);color:#fff;font-weight:700;padding:9px 8px;text-align:left;font-size:13px;position:sticky;top:0}
+table.kk td{border-top:1px solid var(--garis);padding:4px;vertical-align:top}
+table.kk td.no{text-align:center;color:var(--abu);font-weight:700;padding-top:9px;width:40px}
+table.kk [contenteditable]{min-height:34px;padding:6px 7px;border-radius:7px;border:1px dashed transparent;white-space:pre-wrap;word-break:break-word}
+table.kk [contenteditable]:hover{border-color:var(--garis)}
+table.kk select{padding:5px 6px;font-size:13.5px}
+table.kk tr:hover td{background:#fafcfb}
+.x{border:0;background:none;color:var(--abu);cursor:pointer;font-size:17px;padding:6px}
+.x:hover{color:#b83a2e}
+.empty{text-align:center;color:var(--abu);padding:36px}
+.rekap{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}
+.rk{background:var(--bg);border-radius:12px;padding:10px 14px}
+.rk b{font-size:22px;display:block}
+.rk span{font-size:13px;color:var(--abu)}
+.bar{height:8px;background:#dfe8e4;border-radius:8px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--hijau)}
+.hint{font-size:12.5px;color:var(--abu)}
+.modal{position:fixed;inset:0;background:rgba(10,30,24,.5);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.modal.on{display:flex}
+.modal .box{background:#fff;border-radius:16px;max-width:720px;width:100%;max-height:92vh;overflow:auto;padding:22px}
+.modal h3{margin:0 0 8px}
+.modal .foot{display:flex;justify-content:flex-end;gap:8px;margin-top:14px;flex-wrap:wrap}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mt{margin-top:10px}
+.plist{display:flex;flex-direction:column;gap:6px;max-height:50vh;overflow:auto}
+.plist button{text-align:left;border:1px solid var(--garis);background:#fff;border-radius:10px;padding:10px 12px;cursor:pointer}
+.plist button:hover{border-color:var(--hijau);background:var(--hijau-muda)}
+.plist small{color:var(--abu)}
+.busy{position:fixed;inset:0;background:rgba(255,255,255,.85);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;z-index:60}
+.busy.on{display:flex}
+.spin{width:44px;height:44px;border:5px solid var(--hijau-muda);border-top-color:var(--hijau);border-radius:50%;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--teks);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;z-index:70;opacity:0;transition:.25s;pointer-events:none}
+.toast.on{opacity:1}
+#printArea{display:none}
+@media print{
+  body{background:#fff}
+  body>*:not(#printArea){display:none!important}
+  #printArea{display:block}
+  @page{size:A4 landscape;margin:12mm}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="logo">▦</div>
+  <div><h1>Generator Kisi-kisi</h1><small>Asesmen PAI dan Budi Pekerti SD</small></div>
+  <span class="sp"></span>
+  <a href="../">← Beranda</a>
+  <button class="btn ghost" id="btnSetelan">⚙ API key</button>
+</header>
+<main>
+  <section class="card">
+    <h2>Identitas</h2>
+    <div class="idgrid" id="ident">
+      <div><label class="f">Satuan pendidikan</label><input type="text" data-k="sekolah" placeholder="SD Negeri ..."></div>
+      <div><label class="f">Mata pelajaran</label><input type="text" data-k="mapel"></div>
+      <div><label class="f">Kelas / Fase</label><select data-k="kelas"><option value="1">1 / Fase A</option><option value="2">2 / Fase A</option><option value="3">3 / Fase B</option><option value="4">4 / Fase B</option><option value="5">5 / Fase C</option><option value="6">6 / Fase C</option></select></div>
+      <div><label class="f">Semester</label><select data-k="semester"><option>1 (Ganjil)</option><option>2 (Genap)</option></select></div>
+      <div><label class="f">Tahun pelajaran</label><input type="text" data-k="tahun" placeholder="2026/2027"></div>
+      <div><label class="f">Jenis asesmen</label><select data-k="jenis"><option>Sumatif Lingkup Materi</option><option>Sumatif Tengah Semester</option><option>Sumatif Akhir Semester</option><option>Sumatif Akhir Tahun</option><option>Asesmen Formatif</option></select></div>
+      <div><label class="f">Alokasi waktu</label><input type="text" data-k="waktu" placeholder="60 menit"></div>
+      <div><label class="f">Tempat, tanggal</label><input type="text" data-k="tanggal" placeholder="Jakarta, ... 2026"></div>
+      <div><label class="f">Nama kepala sekolah</label><input type="text" data-k="kepsek"></div>
+      <div><label class="f">NIP kepala sekolah</label><input type="text" data-k="nipKepsek"></div>
+      <div><label class="f">Nama guru</label><input type="text" data-k="guru"></div>
+      <div><label class="f">NIP guru</label><input type="text" data-k="nipGuru"></div>
+    </div>
+    <p class="hint" style="margin:10px 0 0">Identitas tersimpan otomatis di peramban ini, jadi cukup diisi sekali.</p>
+  </section>
+
+  <section class="card">
+    <div class="toolbar" style="margin-bottom:12px">
+      <h2 style="margin:0">Tabel kisi-kisi</h2><span class="sp"></span>
+      <button class="btn" id="btnImpor">📥 Ambil dari Bank Soal</button>
+      <button class="btn pri" id="btnAI">✨ Susun dengan AI</button>
+      <button class="btn" id="btnTambah">＋ Baris</button>
+      <button class="btn" id="btnKosong">Kosongkan</button>
+    </div>
+    <div class="tblwrap"><table class="kk">
+      <thead><tr><th>No</th><th style="width:13%">Elemen</th><th style="width:22%">Tujuan Pembelajaran</th><th style="width:12%">Materi</th><th style="width:26%">Indikator Soal</th><th style="width:8%">Level</th><th style="width:12%">Bentuk Soal</th><th style="width:7%">No. Soal</th><th></th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table></div>
+    <div class="rekap" id="rekap"></div>
+  </section>
+
+  <section class="card">
+    <div class="toolbar">
+      <h2 style="margin:0">Ekspor</h2><span class="sp"></span>
+      <button class="btn" id="btnCetak">🖨 Cetak / Simpan PDF</button>
+      <button class="btn pri" id="btnWord">📄 Unduh Word</button>
+    </div>
+    <p class="hint" style="margin:8px 0 0">Cetak memakai kertas A4 mendatar (landscape). Untuk PDF, pilih "Simpan sebagai PDF" di jendela cetak.</p>
+  </section>
+</main>
+
+<!-- modal impor -->
+<div class="modal" id="mImpor"><div class="box">
+  <h3>Ambil dari Bank Soal</h3>
+  <p class="hint">Setiap soal menjadi satu baris. Soal dengan TP, indikator, level, dan bentuk yang sama digabung otomatis.</p>
+  <div class="plist" id="plist"></div>
+  <div class="foot"><label class="btn">⬆ Dari file JSON<input type="file" id="fileJSON" accept=".json" hidden></label><button class="btn" data-close>Tutup</button></div>
+</div></div>
+
+<!-- modal AI -->
+<div class="modal" id="mAI"><div class="box">
+  <h3>Susun kisi-kisi dengan AI</h3>
+  <p class="hint">Cocok untuk merencanakan asesmen sebelum menulis soal. Hasilnya menggantikan isi tabel.</p>
+  <label class="f mt">Elemen</label>
+  <input type="text" id="aElemen" placeholder="contoh: Akidah; Fikih">
+  <label class="f mt">Materi / bab yang diujikan</label>
+  <input type="text" id="aMateri" placeholder="contoh: Rukun Islam; Bersuci">
+  <label class="f mt">Tujuan pembelajaran (satu per baris)</label>
+  <textarea id="aTP" rows="4" placeholder="Tempel TP dari ATP Anda"></textarea>
+  <div class="row2 mt">
+    <div><label class="f">Komposisi bentuk soal</label><input type="text" id="aBentuk" value="15 pilihan ganda, 5 isian, 5 uraian"></div>
+    <div><label class="f">Proporsi level</label><select id="aLevel"><option>LOTS 40%, MOTS 40%, HOTS 20%</option><option>LOTS 50%, MOTS 30%, HOTS 20%</option><option>LOTS 30%, MOTS 40%, HOTS 30%</option></select></div>
+  </div>
+  <div class="foot">
+    <button class="btn" id="btnSalinPrompt">📋 Salin prompt (tanpa API key)</button>
+    <button class="btn" data-close>Batal</button>
+    <button class="btn pri" id="btnJalankanAI">✨ Buat</button>
+  </div>
+  <div id="manualBox" hidden>
+    <label class="f mt">Tempel jawaban AI (JSON) di sini</label>
+    <textarea id="aHasil" rows="6"></textarea>
+    <div class="foot"><button class="btn pri" id="btnProses">Proses hasil</button></div>
+  </div>
+</div></div>
+
+<!-- modal setelan -->
+<div class="modal" id="mSetelan"><div class="box">
+  <h3>API key Claude</h3>
+  <p class="hint">Dipakai bersama dengan Generator Soal. Disimpan hanya di peramban ini.</p>
+  <label class="f mt">API key</label><input type="password" id="sKey" placeholder="sk-ant-..." autocomplete="off">
+  <label class="f mt">Model</label>
+  <select id="sModel"><option value="claude-sonnet-5-5">Claude Sonnet 5.5 (disarankan)</option><option value="claude-haiku-5-5">Claude Haiku 5.5 (hemat)</option><option value="claude-opus-5-5">Claude Opus 5.5 (paling teliti)</option></select>
+  <div class="foot"><button class="btn" data-close>Batal</button><button class="btn pri" id="btnSimpanSet">Simpan</button></div>
+</div></div>
+
+<div class="busy" id="busy"><div class="spin"></div><b>Menyusun kisi-kisi…</b></div>
+<div class="toast" id="toast"></div>
+<div id="printArea"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const br=t=>esc(t).replace(/\n/g,'<br>');
+let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),3000)}
+function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+const BENTUK={pg:'Pilihan Ganda',pgk:'Pilihan Ganda Kompleks',bs:'Benar–Salah',jodoh:'Menjodohkan',isian:'Isian Singkat',uraian:'Uraian'};
+const BLIST=Object.values(BENTUK);
+const LEVELS=['C1','C2','C3','C4','C5','C6'];
+function normBentuk(b){b=String(b||'').toLowerCase();if(b==='pgk'||b.includes('komp'))return BENTUK.pgk;if(b==='bs'||b.includes('benar'))return BENTUK.bs;if(b.includes('jodoh'))return BENTUK.jodoh;if(b.includes('isian'))return BENTUK.isian;if(b.includes('urai')||b.includes('esai'))return BENTUK.uraian;return BENTUK.pg}
+const fase=k=>k<=2?'A':k<=4?'B':'C';
+
+/* ===== identitas ===== */
+const st=LS.get('paiSettings',{});
+let ID=Object.assign({mapel:'Pendidikan Agama Islam dan Budi Pekerti',kelas:'1',semester:'1 (Ganjil)',jenis:'Sumatif Lingkup Materi',sekolah:st.sekolah||'',guru:st.guru||''},LS.get('kisiIdent',{}));
+$$('#ident [data-k]').forEach(el=>{if(ID[el.dataset.k]!=null)el.value=ID[el.dataset.k];el.addEventListener('input',()=>{ID[el.dataset.k]=el.value;LS.set('kisiIdent',ID)})});
+
+/* ===== baris ===== */
+let rows=LS.get('kisiRows',[]);
+const save=()=>LS.set('kisiRows',rows);
+const blank=()=>({elemen:'',tp:'',materi:'',indikator:'',level:'C2',bentuk:BENTUK.pg,nomor:''});
+function render(){
+  const tb=$('#tbody');
+  if(!rows.length){tb.innerHTML='<tr><td colspan="9" class="empty">Belum ada baris. Ambil dari Bank Soal, susun dengan AI, atau tambah baris manual.</td></tr>';rekap();return}
+  tb.innerHTML=rows.map((r,i)=>`<tr>
+   <td class="no">${i+1}</td>
+   ${['elemen','tp','materi','indikator'].map(k=>`<td><div contenteditable="true" data-i="${i}" data-k="${k}">${br(r[k])}</div></td>`).join('')}
+   <td><select data-i="${i}" data-k="level">${LEVELS.map(l=>`<option ${l===r.level?'selected':''}>${l}</option>`).join('')}</select></td>
+   <td><select data-i="${i}" data-k="bentuk">${BLIST.map(b=>`<option ${b===r.bentuk?'selected':''}>${b}</option>`).join('')}</select></td>
+   <td><div contenteditable="true" data-i="${i}" data-k="nomor">${esc(r.nomor)}</div></td>
+   <td style="white-space:nowrap"><button class="x" data-a="up" data-i="${i}" title="Naikkan">↑</button><button class="x" data-a="del" data-i="${i}" title="Hapus">×</button></td></tr>`).join('');
+  rekap();
+}
+$('#tbody').addEventListener('input',e=>{const el=e.target.closest('[data-k]');if(!el||el.tagName==='SELECT')return;rows[+el.dataset.i][el.dataset.k]=el.innerText.replace(/\n$/,'');save();if(el.dataset.k==='nomor')rekap()});
+$('#tbody').addEventListener('change',e=>{const el=e.target;if(el.tagName!=='SELECT')return;rows[+el.dataset.i][el.dataset.k]=el.value;save();rekap()});
+$('#tbody').addEventListener('click',e=>{const b=e.target.closest('button[data-a]');if(!b)return;const i=+b.dataset.i;
+  if(b.dataset.a==='del')rows.splice(i,1);if(b.dataset.a==='up'&&i>0)[rows[i-1],rows[i]]=[rows[i],rows[i-1]];save();render()});
+$('#btnTambah').onclick=()=>{const last=rows[rows.length-1];const r=blank();if(last){r.elemen=last.elemen;r.tp=last.tp;r.materi=last.materi}rows.push(r);save();render()};
+$('#btnKosong').onclick=()=>{if(rows.length&&confirm('Kosongkan seluruh tabel?')){rows=[];save();render()}};
+
+/* ===== rekap ===== */
+function hitungNo(s){let n=0;String(s||'').split(/[,;]+/).forEach(p=>{p=p.trim();const m=p.match(/^(\d+)\s*[-–]\s*(\d+)$/);if(m)n+=Math.max(0,+m[2]-+m[1]+1);else if(/^\d+$/.test(p))n++});return n}
+function hitungRekap(){
+  const lv={LOTS:0,MOTS:0,HOTS:0},bt={};let tot=0;
+  rows.forEach(r=>{const n=hitungNo(r.nomor);tot+=n;const c=+String(r.level)[1]||2;lv[c<=2?'LOTS':c===3?'MOTS':'HOTS']+=n;bt[r.bentuk]=(bt[r.bentuk]||0)+n});
+  return{lv,bt,tot};
+}
+function rekap(){
+  const{lv,bt,tot}=hitungRekap();const pct=v=>tot?Math.round(v/tot*100):0;
+  $('#rekap').innerHTML=`<div class="rk"><b>${tot}</b><span>Total soal</span></div>`+
+   [['LOTS','C1–C2'],['MOTS','C3'],['HOTS','C4–C6']].map(([k,d])=>`<div class="rk"><b>${lv[k]} <small style="font-size:14px;color:var(--abu)">(${pct(lv[k])}%)</small></b><span>${k} · ${d}</span><div class="bar"><i style="width:${pct(lv[k])}%"></i></div></div>`).join('')+
+   Object.entries(bt).filter(([,v])=>v).map(([k,v])=>`<div class="rk"><b>${v}</b><span>${esc(k)}</span></div>`).join('');
+}
+
+/* ===== impor dari bank ===== */
+function dariPaket(p){
+  const soal=p.soal||[];const out=[];const map={};
+  soal.forEach((s,i)=>{
+    const r={elemen:p.elemen||'',tp:p.tp||'',materi:p.materi||'',indikator:s.indikator||'',level:(String(s.level||'C2').toUpperCase().match(/C[1-6]/)||['C2'])[0],bentuk:normBentuk(s.bentuk),no:i+1};
+    const key=[r.tp,r.indikator,r.level,r.bentuk].join('|');
+    if(map[key]&&r.indikator)map[key].nos.push(r.no);else{const x={...r,nos:[r.no]};out.push(x);if(r.indikator)map[key]=x}
+  });
+  // urutkan nomor mengikuti urutan bentuk seperti lembar soal cetak
+  return out.map(r=>({elemen:r.elemen,tp:r.tp,materi:r.materi,indikator:r.indikator,level:r.level,bentuk:r.bentuk,nomor:ringkasNo(r.nos)}));
+}
+function ringkasNo(a){a=[...a].sort((x,y)=>x-y);const o=[];for(let i=0;i<a.length;i++){let j=i;while(j+1<a.length&&a[j+1]===a[j]+1)j++;o.push(j-i>=2?a[i]+'–'+a[j]:a.slice(i,j+1).join(', '));i=j}return o.join(', ')}
+function urutCetak(p){
+  // nomor soal di kisi-kisi = nomor di lembar cetak (dikelompokkan per bentuk)
+  const U=['pg','pgk','bs','jodoh','isian','uraian'];const nb=b=>{b=String(b).toLowerCase();return b==='pgk'||b.includes('komp')?'pgk':b==='bs'||b.includes('benar')?'bs':b.includes('jodoh')?'jodoh':b.includes('isian')?'isian':b.includes('urai')?'uraian':'pg'};
+  return {...p,soal:U.flatMap(b=>(p.soal||[]).filter(s=>nb(s.bentuk)===b))};
+}
+function pakaiPaket(p){
+  if(rows.length&&!confirm('Ganti isi tabel dengan kisi-kisi dari "'+(p.judul||'paket')+'"?'))return;
+  rows=dariPaket(urutCetak(p));save();render();
+  if(p.kelas){ID.kelas=String(p.kelas);const el=$('#ident [data-k="kelas"]');el.value=ID.kelas;LS.set('kisiIdent',ID)}
+  $('#mImpor').classList.remove('on');toast('Kisi-kisi diambil dari '+(p.soal||[]).length+' soal. Lengkapi kolom yang masih kosong.');
+}
+$('#btnImpor').onclick=()=>{
+  const bank=LS.get('paiBank',[]);
+  $('#plist').innerHTML=bank.length?bank.map(p=>`<button data-id="${esc(p.id)}"><b>${esc(p.judul)}</b><br><small>Kelas ${esc(p.kelas)} · ${(p.soal||[]).length} soal</small></button>`).join(''):'<p class="hint">Bank soal di perangkat ini masih kosong. Simpan paket dari Generator Soal, atau buka file JSON.</p>';
+  $('#mImpor').classList.add('on');
+};
+$('#plist').onclick=e=>{const b=e.target.closest('button[data-id]');if(!b)return;const p=LS.get('paiBank',[]).find(x=>x.id===b.dataset.id);if(p)pakaiPaket(p)};
+$('#fileJSON').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{let d=JSON.parse(await f.text());if(Array.isArray(d)&&d[0]&&d[0].soal)d=d[0];if(Array.isArray(d))d={soal:d};pakaiPaket(d)}catch(err){alert('File tidak bisa dibaca: '+err.message)}e.target.value=''};
+
+/* ===== AI ===== */
+async function callClaude(prompt){
+  const s=LS.get('paiSettings',{});if(!s.apiKey)throw new Error('API key belum diisi.');
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':s.apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:s.model||'claude-sonnet-5-5',max_tokens:8000,messages:[{role:'user',content:prompt}]})});
+  let j={};try{j=await r.json()}catch(e){}if(!r.ok)throw new Error((j.error&&j.error.message)||'HTTP '+r.status);
+  return(j.content||[]).filter(c=>c.type==='text').map(c=>c.text).join('');
+}
+function parseJSON(t){t=String(t||'').replace(/```(?:json)?/gi,'');const a=t.indexOf('{'),b=t.lastIndexOf('}');if(a<0||b<a)throw new Error('JSON tidak ditemukan pada jawaban AI.');return JSON.parse(t.slice(a,b+1).replace(/,\s*([}\]])/g,'$1'))}
+function buildPrompt(){
+  const k=+ID.kelas||1;
+  return `Anda adalah ahli asesmen Pendidikan Agama Islam dan Budi Pekerti (PAI-BP) SD pada Kurikulum Merdeka.
+
+Susun kisi-kisi ${ID.jenis||'asesmen sumatif'} dengan ketentuan:
+- Kelas ${k} SD (Fase ${fase(k)}), semester ${ID.semester||'-'}
+- Elemen: ${$('#aElemen').value||'(sesuaikan dengan materi)'}
+- Materi: ${$('#aMateri').value||'(sesuaikan dengan TP)'}
+- Tujuan pembelajaran:
+${$('#aTP').value||'(rumuskan TP yang sesuai materi)'}
+- Komposisi bentuk soal: ${$('#aBentuk').value}
+- Proporsi level kognitif: ${$('#aLevel').value} (LOTS = C1–C2, MOTS = C3, HOTS = C4–C6)
+
+Aturan:
+1. Satu baris = satu indikator soal. Indikator operasional dan terukur, memakai kata kerja sesuai level, misalnya "Disajikan ..., peserta didik dapat ..." atau "Peserta didik dapat ...".
+2. Setiap TP terwakili minimal satu indikator.
+3. Nomor soal berurutan mulai 1, dikelompokkan per bentuk soal (pilihan ganda dulu, lalu pilihan ganda kompleks, benar-salah, menjodohkan, isian singkat, uraian). Satu indikator boleh mencakup beberapa nomor, tulis seperti "1, 2" atau "3–5".
+4. Total nomor sama dengan jumlah soal pada komposisi.
+5. Nilai "bentuk" memakai salah satu: pg, pgk, bs, jodoh, isian, uraian.
+
+Jawab HANYA dengan JSON valid:
+{"baris":[{"elemen":"...","tp":"...","materi":"...","indikator":"...","level":"C2","bentuk":"pg","nomor":"1, 2"}]}`;
+}
+function terapkan(txt){
+  const d=parseJSON(txt);const b=d.baris||d.rows||[];if(!b.length)throw new Error('Tidak ada baris kisi-kisi pada jawaban.');
+  rows=b.map(r=>({elemen:String(r.elemen||''),tp:String(r.tp||''),materi:String(r.materi||''),indikator:String(r.indikator||''),level:(String(r.level||'C2').toUpperCase().match(/C[1-6]/)||['C2'])[0],bentuk:normBentuk(r.bentuk),nomor:String(r.nomor||'')}));
+  save();render();$('#mAI').classList.remove('on');toast(rows.length+' baris kisi-kisi dibuat. Periksa dan sesuaikan.');
+}
+$('#btnAI').onclick=()=>{const a=LS.get('kisiAI',{});['aElemen','aMateri','aTP','aBentuk','aLevel'].forEach(k=>{if(a[k])$('#'+k).value=a[k]});$('#manualBox').hidden=true;$('#mAI').classList.add('on')};
+function simpanAIForm(){const a={};['aElemen','aMateri','aTP','aBentuk','aLevel'].forEach(k=>a[k]=$('#'+k).value);LS.set('kisiAI',a)}
+$('#btnJalankanAI').onclick=async()=>{
+  simpanAIForm();
+  if(rows.length&&!confirm('Hasil AI akan menggantikan isi tabel. Lanjutkan?'))return;
+  if(!LS.get('paiSettings',{}).apiKey){toast('API key belum diisi. Gunakan "Salin prompt".');return}
+  $('#busy').classList.add('on');try{terapkan(await callClaude(buildPrompt()))}catch(e){alert('Gagal: '+e.message)}finally{$('#busy').classList.remove('on')}
+};
+$('#btnSalinPrompt').onclick=async()=>{simpanAIForm();const p=buildPrompt();try{await navigator.clipboard.writeText(p)}catch(e){}$('#manualBox').hidden=false;$('#aHasil').value='';toast('Prompt tersalin. Tempel di claude.ai, Gemini, atau ChatGPT, lalu tempel jawabannya di bawah.')};
+$('#btnProses').onclick=()=>{try{terapkan($('#aHasil').value)}catch(e){alert(e.message)}};
+
+/* ===== setelan ===== */
+$('#btnSetelan').onclick=()=>{const s=LS.get('paiSettings',{});$('#sKey').value=s.apiKey||'';$('#sModel').value=s.model||'claude-sonnet-5-5';$('#mSetelan').classList.add('on')};
+$('#btnSimpanSet').onclick=()=>{const s=LS.get('paiSettings',{});s.apiKey=$('#sKey').value.trim();s.model=$('#sModel').value;LS.set('paiSettings',s);$('#mSetelan').classList.remove('on');toast('Tersimpan.')};
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m||e.target.hasAttribute('data-close'))m.classList.remove('on')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.modal.on').forEach(m=>m.classList.remove('on'))});
+
+/* ===== dokumen ===== */
+const DOCCSS=`.kdoc{font-family:'Times New Roman',serif;font-size:11pt;color:#000}
+.kdoc h2{text-align:center;font-size:13pt;margin:0}
+.kdoc .sub{text-align:center;font-size:12pt;margin:2pt 0 10pt;font-weight:bold}
+.kdoc table.id{border-collapse:collapse;margin-bottom:8pt}
+.kdoc table.id td{padding:1pt 6pt 1pt 0;font-size:11pt}
+.kdoc table.t{border-collapse:collapse;width:100%}
+.kdoc table.t th,.kdoc table.t td{border:1px solid #000;padding:3pt 4pt;vertical-align:top;font-size:10.5pt}
+.kdoc table.t th{background:#d9e8e1;text-align:center}
+.kdoc .c{text-align:center}
+.kdoc table.rk{border-collapse:collapse;margin-top:8pt}
+.kdoc table.rk td,.kdoc table.rk th{border:1px solid #000;padding:2pt 8pt;font-size:10.5pt}
+.kdoc table.ttd{width:100%;margin-top:16pt}
+.kdoc table.ttd td{width:50%;text-align:center;vertical-align:top;font-size:11pt}`;
+document.head.insertAdjacentHTML('beforeend','<style>'+DOCCSS+'</style>');
+function buildDoc(){
+  const k=+ID.kelas||1,{lv,bt,tot}=hitungRekap(),pct=v=>tot?Math.round(v/tot*100)+'%':'0%';
+  const idr=(a,b)=>`<td>${a}</td><td>: ${esc(b||'-')}</td>`;
+  return `<div class="kdoc"><h2>KISI-KISI ${esc((ID.jenis||'Asesmen').toUpperCase())}</h2><div class="sub">TAHUN PELAJARAN ${esc(ID.tahun||'....../......')}</div>
+<table class="id"><tr>${idr('Satuan Pendidikan',ID.sekolah)}<td style="width:40pt"></td>${idr('Kelas / Fase',k+' / '+fase(k))}</tr>
+<tr>${idr('Mata Pelajaran',ID.mapel)}<td></td>${idr('Semester',ID.semester)}</tr>
+<tr>${idr('Alokasi Waktu',ID.waktu)}<td></td>${idr('Jumlah Soal',tot+' soal')}</tr></table>
+<table class="t"><tr><th style="width:4%">No</th><th style="width:12%">Elemen</th><th style="width:22%">Tujuan Pembelajaran</th><th style="width:12%">Materi</th><th style="width:26%">Indikator Soal</th><th style="width:7%">Level Kognitif</th><th style="width:10%">Bentuk Soal</th><th style="width:7%">Nomor Soal</th></tr>
+${rows.map((r,i)=>`<tr><td class="c">${i+1}</td><td>${br(r.elemen)}</td><td>${br(r.tp)}</td><td>${br(r.materi)}</td><td>${br(r.indikator)}</td><td class="c">${esc(r.level)}</td><td>${esc(r.bentuk)}</td><td class="c">${esc(r.nomor)}</td></tr>`).join('')}</table>
+<table class="rk"><tr><th>Level</th><th>Jumlah</th><th>Persentase</th></tr>
+<tr><td>LOTS (C1–C2)</td><td class="c">${lv.LOTS}</td><td class="c">${pct(lv.LOTS)}</td></tr>
+<tr><td>MOTS (C3)</td><td class="c">${lv.MOTS}</td><td class="c">${pct(lv.MOTS)}</td></tr>
+<tr><td>HOTS (C4–C6)</td><td class="c">${lv.HOTS}</td><td class="c">${pct(lv.HOTS)}</td></tr>
+${Object.entries(bt).filter(([,v])=>v).map(([b,v])=>`<tr><td>${esc(b)}</td><td class="c">${v}</td><td class="c">${pct(v)}</td></tr>`).join('')}</table>
+<table class="ttd"><tr><td>Mengetahui,<br>Kepala Sekolah<br><br><br><br><b><u>${esc(ID.kepsek||'..................................')}</u></b><br>NIP. ${esc(ID.nipKepsek||'..................................')}</td>
+<td>${esc(ID.tanggal||'..................., ....................')}<br>Guru Pendidikan Agama Islam dan Budi Pekerti<br><br><br><br><b><u>${esc(ID.guru||'..................................')}</u></b><br>NIP. ${esc(ID.nipGuru||'..................................')}</td></tr></table></div>`;
+}
+$('#btnCetak').onclick=()=>{if(!rows.length)return toast('Tabel masih kosong.');$('#printArea').innerHTML=buildDoc();setTimeout(()=>window.print(),100)};
+$('#btnWord').onclick=()=>{
+  if(!rows.length)return toast('Tabel masih kosong.');
+  const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Kisi-kisi</title><style>@page WordSection1{size:841.9pt 595.3pt;mso-page-orientation:landscape;margin:42pt 42pt 42pt 42pt}div.WordSection1{page:WordSection1}${DOCCSS}</style></head><body><div class="WordSection1">${buildDoc()}</div></body></html>`;
+  download(new Blob(['﻿',html],{type:'application/msword'}),'kisi-kisi-pai-kelas-'+(ID.kelas||'')+'.doc');
+};
+
+/* ===== mulai ===== */
+render();
+const q=new URLSearchParams(location.search).get('paket');
+if(q){const p=LS.get('paiBank',[]).find(x=>x.id===q);if(p){if(!rows.length)pakaiPaket(p);else if(confirm('Buat kisi-kisi dari paket "'+p.judul+'"? Isi tabel saat ini akan diganti.')){rows=[];pakaiPaket(p)}}history.replaceState(null,'',location.pathname)}
+</script>
+</body>
+</html>
