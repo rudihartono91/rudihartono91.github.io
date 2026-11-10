@@ -208,6 +208,7 @@ table.kk tr:hover td{background:#fafcfb}
 <div class="toast" id="toast"></div>
 <div id="printArea"></div>
 
+<script src="../assets/docx-ku.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -408,9 +409,8 @@ ${Object.entries(bt).filter(([,v])=>v).map(([b,v])=>`<tr><td>${esc(b)}</td><td c
 }
 $('#btnCetak').onclick=()=>{if(!rows.length)return toast('Tabel masih kosong.');$('#printArea').innerHTML=buildDoc();setTimeout(()=>window.print(),100)};
 $('#btnWord').onclick=()=>{
-  if(!rows.length)return toast('Tabel masih kosong.');
-  const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Kisi-kisi</title><style>@page WordSection1{size:841.9pt 595.3pt;mso-page-orientation:landscape;margin:42pt 42pt 42pt 42pt}div.WordSection1{page:WordSection1}${DOCCSS}</style></head><body><div class="WordSection1">${buildDoc()}</div></body></html>`;
-  download(new Blob(['﻿',html],{type:'application/msword'}),'kisi-kisi-pai-kelas-'+(ID.kelas||'')+'.doc');
+  if(!rows.length)return toast('Tabel masih kosong.');toast('Menyiapkan file Word…');
+  DocxKu.unduh('kisi-kisi-pai-kelas-'+(ID.kelas||''),[{html:buildDoc(),landscape:true}]).then(()=>toast('File Word (.docx) diunduh.')).catch(e=>toast('Gagal membuat Word: '+e.message));
 };
 
 /* ===== mulai ===== */

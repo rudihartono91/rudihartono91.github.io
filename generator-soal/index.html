@@ -294,6 +294,7 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600;font-size:13.5px}
 <div class="toast" id="toast"></div>
 <div id="printArea"></div>
 
+<script src="../assets/docx-ku.js"></script>
 <script>
 /* ===== Utilitas umum ===== */
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -648,7 +649,7 @@ $$('[data-out]').forEach(b=>b.onclick=()=>{
   if(!cur||!cur.soal.length)return toast('Belum ada soal.');
   cur.judul=$('#judul').value.trim()||cur.judul;
   if(o==='print0'||o==='print1'){$('#printArea').innerHTML=buildDoc(cur,o==='print1');setTimeout(()=>window.print(),100)}
-  if(o==='word1'){const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(cur.judul)}</title><style>${DOCCSS}</style></head><body>${buildDoc(cur,true)}</body></html>`;download(new Blob(['\ufeff',html],{type:'application/msword'}),slug(cur.judul)+'.doc')}
+  if(o==='word1'){toast('Menyiapkan file Word…');DocxKu.unduh(slug(cur.judul),[{html:buildDoc(cur,true)}]).then(()=>toast('File Word (.docx) diunduh.')).catch(e=>toast('Gagal membuat Word: '+e.message))}
   if(o==='json')download(new Blob([JSON.stringify(cur,null,2)],{type:'application/json'}),slug(cur.judul)+'.json');
 });
 

@@ -168,6 +168,7 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600}
 <div class="toast" id="toast"></div>
 <div id="printArea"></div>
 
+<script src="../assets/docx-ku.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){toast('Penyimpanan peramban penuh atau diblokir.');return false}}};
@@ -502,9 +503,8 @@ function simpanBank(){
 $$('[data-out]').forEach(btn=>btn.onclick=()=>{
   if(!paket)return;const o=btn.dataset.out;paket.judul=$('#judul').value.trim()||paket.judul;const p=paketUrutCetak(paket);
   if(o==='print0'||o==='print1'){$('#printArea').innerHTML=buildDoc(p,o==='print1');setTimeout(()=>window.print(),100)}
-  if(o==='word'){const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(p.judul)}</title><style>${DOCCSS}</style></head><body>${buildDoc(p,true)}</body></html>`;download(new Blob(['﻿',html],{type:'application/msword'}),slug(p.judul)+'.doc')}
-  if(o==='lengkap'){const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(p.judul)}</title><style>@page K{size:841.9pt 595.3pt;mso-page-orientation:landscape;margin:36pt}div.K{page:K}@page S{size:595.3pt 841.9pt;margin:50pt 45pt}div.S{page:S}${DOCCSS}</style></head><body><div class="K wdoc">${buildKisi(p)}</div><br clear="all" style="page-break-before:always;mso-break-type:section-break"><div class="S">${buildDoc(p,true)}</div></body></html>`;
-    download(new Blob(['﻿',html],{type:'application/msword'}),'kisi-kisi-dan-soal-'+slug(p.judul)+'.doc');simpanBank();toast('Kisi-kisi, soal, dan kunci diunduh dalam satu file.')}
+  if(o==='word'){toast('Menyiapkan file Word…');DocxKu.unduh(slug(p.judul),[{html:buildDoc(p,true)}]).then(()=>toast('File Word (.docx) diunduh.')).catch(e=>toast('Gagal membuat Word: '+e.message))}
+  if(o==='lengkap'){toast('Menyiapkan file Word…');simpanBank();DocxKu.unduh('kisi-kisi-dan-soal-'+slug(p.judul),[{html:'<div class="wdoc">'+buildKisi(p)+'</div>',landscape:true},{html:buildDoc(p,true)}]).then(()=>toast('Kisi-kisi, soal, dan kunci diunduh dalam satu file Word (.docx).')).catch(e=>toast('Gagal membuat Word: '+e.message))}
   if(o==='kuis'){const s=simpanBank();if(s)location.href='../kuis-pid/?paket='+encodeURIComponent(s.id)}
   if(o==='kisi'){const s=simpanBank();if(s)location.href='../kisi-kisi/?paket='+encodeURIComponent(s.id)}
   if(o==='edit'){const s=simpanBank();if(s){LS.set('paiDraft',s);location.href='../generator-soal/'}}
