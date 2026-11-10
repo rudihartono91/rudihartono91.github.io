@@ -280,11 +280,39 @@ $('#preset').onclick=e=>{const b=e.target.closest('button[data-p]');if(!b)return
 
 /* ===== paket SAS sekolah (soal asli) ===== */
 let sekolahData=null;
-function muatSekolah(){return new Promise(res=>{if(window.SAS_SEKOLAH)return res(window.SAS_SEKOLAH);
-  const sc=document.createElement('script');sc.src='data/sas-sekolah.js?v='+Date.now();sc.onload=()=>res(window.SAS_SEKOLAH||[]);sc.onerror=()=>res([]);document.head.appendChild(sc)})}
+/* data paket sekolah terenkripsi (AES-GCM, kunci dari kata sandi via PBKDF2) */
+function muatEnc(){return new Promise(res=>{if(window.SAS_SEKOLAH_ENC)return res(window.SAS_SEKOLAH_ENC);
+  const sc=document.createElement('script');sc.src='data/sas-sekolah.enc.js?v='+Date.now();sc.onload=()=>res(window.SAS_SEKOLAH_ENC||null);sc.onerror=()=>res(null);document.head.appendChild(sc)})}
+const b64=t=>Uint8Array.from(atob(t),c=>c.charCodeAt(0));
+async function bukaSekolah(pw){
+  const e=await muatEnc();if(!e)throw new Error('data');
+  const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(e.salt),iterations:e.iter,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+  const buf=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(e.iv)},key,b64(e.data));
+  return JSON.parse(new TextDecoder().decode(buf));
+}
+async function muatSekolah(){
+  if(sekolahData)return sekolahData;
+  let pw=null;try{pw=sessionStorage.getItem('sasPw')}catch(_){}
+  if(pw){try{return await bukaSekolah(pw)}catch(_){try{sessionStorage.removeItem('sasPw')}catch(_){}}}
+  return null;
+}
+function formSandi(pesan){
+  $('#sekolahBox').innerHTML=`<form id="fSandi" style="display:flex;flex-direction:column;gap:8px;border:1px solid #efd99a;background:#fff9ea;border-radius:10px;padding:12px">
+    <b>🔒 Paket SAS Sekolah dikunci</b><small style="color:var(--abu)">Masukkan kata sandi guru untuk membuka soal dan kunci jawaban SAS.</small>
+    <input type="password" id="iSandi" placeholder="Kata sandi" autocomplete="current-password" style="border:1px solid var(--garis);border-radius:8px;padding:8px 10px">
+    ${pesan?`<small style="color:#b3261e">${pesan}</small>`:''}
+    <button class="btn pri" type="submit">Buka</button></form>`;
+  $('#btnBuat').disabled=true;setTimeout(()=>{const i=$('#iSandi');if(i)i.focus()},50);
+  $('#fSandi').onsubmit=async ev=>{ev.preventDefault();const pw=$('#iSandi').value;if(!pw)return;
+    const btn=$('#fSandi button');btn.disabled=true;btn.textContent='Membuka…';
+    try{sekolahData=await bukaSekolah(pw);try{sessionStorage.setItem('sasPw',pw)}catch(_){}toast('Paket SAS Sekolah terbuka.');renderSekolah()}
+    catch(err){formSandi(err.message==='data'?'Data paket tidak dapat dimuat. Periksa koneksi internet.':'Kata sandi salah.')}};
+}
 async function renderSekolah(){
   const box=$('#sekolahBox');if(!K){box.innerHTML='<p class="hint">Pilih kelas terlebih dahulu.</p>';$('#btnBuat').disabled=true;return}
   sekolahData=sekolahData||await muatSekolah();if(MODE!=='sekolah')return;
+  if(!sekolahData){formSandi();return}
   const list=sekolahData.filter(p=>p.kelas===K);const pil=LS.get('bankSekolah_'+K,list[0]&&list[0].id);
   if(!list.length){box.innerHTML=`<p class="hint">Belum ada paket SAS sekolah untuk Kelas ${K}.</p>`;$('#btnBuat').disabled=true;return}
   box.innerHTML=list.map(p=>{const c={};p.soal.forEach(x=>c[x.bentuk]=(c[x.bentuk]||0)+1);
