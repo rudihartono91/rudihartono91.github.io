@@ -1,6 +1,6 @@
 /* Bank Soal PAI dan Budi Pekerti — Kelas 3 (Fase B)
    Disusun sesuai ATP Fase B Revisi (CP BKPDM No. 020 Tahun 2026).
-   Setiap TP: 10 PG (A–C), 10 isian, 5 uraian. */
+   Setiap TP: PG (A–D), 10 isian, 5 uraian. */
 window.BANK_SOAL = window.BANK_SOAL || {};
 window.BANK_SOAL["3"] = {
  "kelas": 3,
@@ -21,7 +21,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "panjang",
       "dengung",
-      "pendek"
+      "pendek",
+      "memantul"
      ],
      "kunci": "A",
      "level": "C1",
@@ -35,7 +36,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "satu",
       "dua",
-      "enam"
+      "enam",
+      "empat"
      ],
      "kunci": "B",
      "level": "C1",
@@ -49,7 +51,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "ba, ta, tsa",
       "nun, mim, lam",
-      "alif, wau, ya"
+      "alif, wau, ya",
+      "ra, za, sin"
      ],
      "kunci": "C",
      "level": "C1",
@@ -61,11 +64,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Mad thabi'i terjadi jika fathah bertemu dengan ...",
      "opsi": [
-      "alif",
+      "nun sukun",
       "wau sukun",
-      "ya sukun"
+      "ya sukun",
+      "alif"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Fathah diikuti alif, misalnya قَالَ (qāla).",
      "indikator": "Peserta didik dapat menjelaskan syarat mad thabi'i karena alif.",
@@ -75,11 +79,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Kasrah yang bertemu ya sukun dibaca ...",
      "opsi": [
-      "pendek",
       "panjang",
-      "dengung"
+      "pendek",
+      "dengung",
+      "samar"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C2",
      "pembahasan": "Kasrah bertemu ya sukun adalah mad thabi'i, misalnya قِيْلَ (qīla).",
      "indikator": "Peserta didik dapat menjelaskan mad thabi'i karena ya sukun.",
@@ -90,10 +95,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Dammah yang bertemu wau sukun, contohnya ...",
      "opsi": [
       "قَالَ",
+      "يَقُوْلُ",
       "قِيْلَ",
-      "يَقُوْلُ"
+      "قُلْ"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C2",
      "pembahasan": "يَقُوْلُ (yaqūlu): dammah bertemu wau sukun.",
      "indikator": "Disajikan contoh bacaan, peserta didik dapat menentukan mad thabi'i karena wau sukun.",
@@ -103,11 +109,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Kata قَالَ dibaca ...",
      "opsi": [
-      "qāla",
+      "qula",
       "qila",
-      "qula"
+      "qāla",
+      "qalla"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C3",
      "pembahasan": "قَالَ dibaca qāla, huruf qaf dipanjangkan dua harakat.",
      "indikator": "Disajikan kata bermad, peserta didik dapat membacanya dengan benar.",
@@ -118,10 +125,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Pada kata نُوْحٌ, bacaan panjang terdapat pada huruf ...",
      "opsi": [
       "ح",
-      "ن",
-      "و"
+      "ا",
+      "و",
+      "ن"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C3",
      "pembahasan": "Nun berdammah bertemu wau sukun, sehingga nun dibaca panjang: nūḥun.",
      "indikator": "Disajikan kata, peserta didik dapat menunjukkan letak bacaan mad.",
@@ -131,11 +139,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Aldi membaca قِيْلَ dengan pendek menjadi \"qila\". Seharusnya dibaca ...",
      "opsi": [
-      "qilla",
+      "qīla (panjang)",
       "qala",
-      "qīla (panjang)"
+      "qilla",
+      "qulla"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C4",
      "pembahasan": "Kasrah bertemu ya sukun dibaca panjang dua harakat.",
      "indikator": "Disajikan kesalahan membaca, peserta didik dapat menentukan bacaan yang benar.",
@@ -145,11 +154,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Membaca mad thabi'i tidak boleh terlalu pendek atau terlalu panjang karena ...",
      "opsi": [
-      "dapat mengubah arti",
       "agar cepat selesai",
-      "supaya terdengar keras"
+      "dapat mengubah arti",
+      "supaya terdengar keras",
+      "supaya cepat hafal"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C4",
      "pembahasan": "Panjang-pendek bacaan Al-Qur'an dapat mengubah arti.",
      "indikator": "Peserta didik dapat menganalisis pentingnya membaca mad dengan tepat.",
@@ -160,10 +170,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nLafal pada gambar mengandung bacaan mad ṭabī'ī. Bacaan tersebut dibaca panjang ... harakat.",
      "opsi": [
       "satu",
+      "empat",
       "dua",
-      "empat"
+      "enam"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C2",
      "indikator": "Disajikan gambar lafal bermad, peserta didik dapat menentukan panjang bacaan mad ṭabī'ī.",
      "pembahasan": "Mad ṭabī'ī dibaca panjang dua harakat.",
@@ -326,11 +337,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Surah Al-Kausar terdiri atas ... ayat.",
      "opsi": [
-      "tiga",
+      "enam",
       "empat",
-      "lima"
+      "lima",
+      "tiga"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Surah Al-Kausar terdiri atas tiga ayat.",
      "indikator": "Peserta didik dapat menyebutkan jumlah ayat Surah Al-Kausar.",
@@ -340,11 +352,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Al-Kausar artinya ...",
      "opsi": [
-      "kemenangan",
       "nikmat yang banyak",
-      "pembukaan"
+      "kemenangan",
+      "pembukaan",
+      "pertolongan"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C1",
      "pembahasan": "Al-Kausar artinya nikmat yang banyak.",
      "indikator": "Peserta didik dapat menyebutkan arti Al-Kausar.",
@@ -354,11 +367,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Surah Al-Kausar adalah surah ke- ... dalam Al-Qur'an.",
      "opsi": [
-      "112",
+      "108",
+      "109",
       "110",
-      "108"
+      "112"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C1",
      "pembahasan": "Al-Kausar adalah surah ke-108.",
      "indikator": "Peserta didik dapat menyebutkan urutan Surah Al-Kausar.",
@@ -368,11 +382,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Surah Al-Kausar termasuk golongan surah ...",
      "opsi": [
-      "Makkiyah",
       "Madaniyah",
-      "panjang"
+      "Makkiyah",
+      "panjang",
+      "terakhir turun"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Al-Kausar turun di Makkah (Makkiyah).",
      "indikator": "Peserta didik dapat menggolongkan Surah Al-Kausar.",
@@ -383,10 +398,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Ayat kedua Surah Al-Kausar memerintahkan kita untuk ...",
      "opsi": [
       "berpuasa dan berzakat",
+      "berhaji dan bersedekah",
       "salat dan berkurban",
-      "berhaji dan bersedekah"
+      "membaca dan menulis"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C2",
      "pembahasan": "Fa ṣalli li rabbika wanḥar: salatlah dan berkurbanlah karena Tuhanmu.",
      "indikator": "Peserta didik dapat menjelaskan isi ayat kedua Surah Al-Kausar.",
@@ -398,9 +414,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Nabi Musa a.s.",
       "Nabi Isa a.s.",
+      "Nabi Ibrahim a.s.",
       "Nabi Muhammad saw."
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Ayat pertama ditujukan kepada Nabi Muhammad saw.",
      "indikator": "Peserta didik dapat menjelaskan penerima nikmat dalam Surah Al-Kausar.",
@@ -412,7 +429,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "terputus (dari rahmat Allah)",
       "menjadi kaya",
-      "mendapat pahala"
+      "mendapat pahala",
+      "dimuliakan manusia"
      ],
      "kunci": "A",
      "level": "C2",
@@ -426,7 +444,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "menyombongkan diri",
       "rajin salat dan berbagi",
-      "menyimpan sendiri"
+      "menyimpan sendiri",
+      "membuang-buang makanan"
      ],
      "kunci": "B",
      "level": "C3",
@@ -440,7 +459,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "membuang makanan",
       "meminta-minta",
-      "menyembelih hewan kurban saat Iduladha"
+      "menyembelih hewan kurban saat Iduladha",
+      "bermain sepanjang hari raya"
      ],
      "kunci": "C",
      "level": "C3",
@@ -452,11 +472,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Mengapa kita tidak boleh membenci Nabi Muhammad saw.?",
      "opsi": [
-      "Karena beliau utusan Allah yang membawa rahmat",
+      "Karena beliau tinggal jauh dari kita",
       "Karena beliau orang kaya",
-      "Karena disuruh teman"
+      "Karena disuruh teman",
+      "Karena beliau utusan Allah yang membawa rahmat"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C4",
      "pembahasan": "Nabi Muhammad saw. adalah rasul pembawa rahmat bagi semesta.",
      "indikator": "Peserta didik dapat menganalisis alasan mencintai Nabi Muhammad saw.",
@@ -466,11 +487,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHewan pada gambar biasa disembelih pada Hari Raya Iduladha. Perintah berkurban terdapat dalam Surah ...",
      "opsi": [
-      "Al-Falaq",
       "Al-Kauṡar",
-      "An-Nās"
+      "Al-Falaq",
+      "An-Nās",
+      "Al-Ikhlāṣ"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C2",
      "indikator": "Disajikan gambar hewan kurban, peserta didik dapat menentukan surah yang memuat perintah berkurban.",
      "pembahasan": "Surah Al-Kauṡar ayat 2: \"Maka laksanakanlah salat karena Tuhanmu dan berkurbanlah.\"",
@@ -633,11 +655,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Sifat wajib bagi Allah berjumlah ...",
      "opsi": [
-      "20",
       "13",
+      "20",
+      "25",
       "99"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Sifat wajib bagi Allah yang diajarkan berjumlah 20.",
      "indikator": "Peserta didik dapat menyebutkan jumlah sifat wajib Allah.",
@@ -649,7 +672,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "kekal",
       "ada",
-      "esa"
+      "esa",
+      "berkuasa"
      ],
      "kunci": "B",
      "level": "C1",
@@ -663,7 +687,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "baqa'",
       "wujud",
-      "qidam"
+      "qidam",
+      "wahdaniyah"
      ],
      "kunci": "C",
      "level": "C1",
@@ -675,11 +700,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Baqa' artinya Allah ...",
      "opsi": [
-      "kekal",
+      "mendengar",
       "berdiri sendiri",
-      "berkuasa"
+      "berkuasa",
+      "kekal"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Baqa' artinya kekal, tidak akan binasa.",
      "indikator": "Peserta didik dapat menyebutkan arti sifat baqa'.",
@@ -689,11 +715,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Allah berbeda dengan makhluk-Nya. Sifat ini disebut ...",
      "opsi": [
-      "wahdaniyah",
       "mukhālafatu lil-ḥawādiṡ",
-      "qudrat"
+      "wahdaniyah",
+      "qudrat",
+      "sama'"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C2",
      "pembahasan": "Mukhālafatu lil-ḥawādiṡ artinya berbeda dengan makhluk.",
      "indikator": "Peserta didik dapat menentukan sifat berbeda dengan makhluk.",
@@ -704,10 +731,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Wahdaniyah artinya Allah ...",
      "opsi": [
       "Maha Mendengar",
+      "Maha Esa",
       "Maha Melihat",
-      "Maha Esa"
+      "Maha Kekal"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Wahdaniyah artinya esa (satu).",
      "indikator": "Peserta didik dapat menyebutkan arti wahdaniyah.",
@@ -717,11 +745,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Lawan dari sifat wujud (ada) adalah ...",
      "opsi": [
-      "'adam (tidak ada)",
+      "'ajzun (lemah)",
       "fana' (rusak)",
-      "'ajzun (lemah)"
+      "'adam (tidak ada)",
+      "jahlun (bodoh)"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C2",
      "pembahasan": "Sifat mustahil lawan wujud adalah 'adam.",
      "indikator": "Peserta didik dapat menentukan sifat mustahil lawan wujud.",
@@ -732,10 +761,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Raka yakin Allah Maha Mendengar (sama'). Maka Raka ...",
      "opsi": [
       "berbicara kasar",
-      "selalu berkata baik dan berdoa",
-      "suka berbohong"
+      "mengejek teman",
+      "suka berbohong",
+      "selalu berkata baik dan berdoa"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C3",
      "pembahasan": "Iman kepada sifat sama' membuat kita menjaga ucapan.",
      "indikator": "Disajikan keyakinan, peserta didik dapat menentukan perilaku yang sesuai.",
@@ -745,11 +775,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Langit, bumi, dan manusia ada karena diciptakan Allah. Hal ini bukti sifat Allah ...",
      "opsi": [
-      "baqa'",
+      "wujud dan qudrat",
       "sama'",
-      "wujud dan qudrat"
+      "baqa'",
+      "baṣar"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C4",
      "pembahasan": "Adanya ciptaan membuktikan Allah ada dan Maha Kuasa.",
      "indikator": "Disajikan fenomena alam, peserta didik dapat menyimpulkan sifat Allah.",
@@ -759,11 +790,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Semua makhluk akan rusak dan mati, tetapi Allah tetap kekal. Pernyataan ini menunjukkan sifat ...",
      "opsi": [
-      "baqa'",
       "qidam",
-      "iradat"
+      "baqa'",
+      "iradat",
+      "kalam"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C4",
      "pembahasan": "Allah kekal (baqa'), makhluk fana.",
      "indikator": "Disajikan pernyataan, peserta didik dapat menganalisis sifat Allah.",
@@ -775,7 +807,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Melihat",
       "Mendengar",
-      "Kuasa"
+      "Kuasa",
+      "Berbicara"
      ],
      "kunci": "C",
      "level": "C3",
@@ -940,11 +973,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Berbaik sangka kepada Allah disebut ...",
      "opsi": [
-      "husnuzan",
+      "takabur",
       "su'uzan",
-      "tawadu"
+      "tawadu",
+      "husnuzan"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Husnuzan artinya berbaik sangka.",
      "indikator": "Peserta didik dapat menyebutkan istilah husnuzan.",
@@ -954,11 +988,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Lawan dari husnuzan adalah ...",
      "opsi": [
-      "ikhlas",
       "su'uzan",
-      "sabar"
+      "ikhlas",
+      "sabar",
+      "syukur"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C1",
      "pembahasan": "Su'uzan artinya berburuk sangka.",
      "indikator": "Peserta didik dapat menyebutkan lawan husnuzan.",
@@ -969,10 +1004,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Husnuzan kepada Allah artinya yakin bahwa semua ketentuan Allah ...",
      "opsi": [
       "merugikan kita",
+      "pasti ada hikmahnya",
       "tidak adil",
-      "pasti ada hikmahnya"
+      "tidak berguna"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C2",
      "pembahasan": "Semua takdir Allah pasti mengandung kebaikan dan hikmah.",
      "indikator": "Peserta didik dapat menjelaskan makna husnuzan kepada Allah.",
@@ -982,11 +1018,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Hujan turun saat Dito mau bermain bola. Sikap husnuzan Dito adalah ...",
      "opsi": [
-      "bersyukur karena hujan membawa manfaat",
+      "mengeluh sepanjang hari",
       "marah kepada hujan",
-      "mengeluh sepanjang hari"
+      "bersyukur karena hujan membawa manfaat",
+      "menyalahkan orang tua"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C3",
      "pembahasan": "Hujan adalah rahmat yang menyuburkan tanaman.",
      "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap husnuzan.",
@@ -997,10 +1034,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Sinta sakit sehingga tidak bisa ikut lomba. Sikap yang menunjukkan husnuzan adalah ...",
      "opsi": [
       "menyalahkan Allah",
-      "sabar dan yakin ada hikmahnya",
-      "marah kepada orang tua"
+      "tidak mau minum obat",
+      "marah kepada orang tua",
+      "sabar dan yakin ada hikmahnya"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C3",
      "pembahasan": "Sakit adalah ujian yang bisa menghapus dosa bila dihadapi dengan sabar.",
      "indikator": "Disajikan situasi sakit, peserta didik dapat menentukan sikap husnuzan.",
@@ -1010,11 +1048,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Contoh sikap su'uzan kepada Allah adalah ...",
      "opsi": [
-      "bersabar saat diuji",
+      "mengatakan Allah tidak sayang kepada kita",
       "bersyukur saat senang",
-      "mengatakan Allah tidak sayang kepada kita"
+      "bersabar saat diuji",
+      "berdoa ketika sedih"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C2",
      "pembahasan": "Berburuk sangka kepada Allah termasuk akhlak tercela.",
      "indikator": "Peserta didik dapat membedakan sikap husnuzan dan su'uzan.",
@@ -1024,11 +1063,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Orang yang berhusnuzan kepada Allah hatinya menjadi ...",
      "opsi": [
-      "tenang",
       "gelisah",
-      "sombong"
+      "tenang",
+      "sombong",
+      "marah"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C2",
      "pembahasan": "Husnuzan membuat hati tenang dan optimis.",
      "indikator": "Peserta didik dapat menjelaskan manfaat husnuzan.",
@@ -1039,10 +1079,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Andi belum juara meski sudah berlatih. Sikap terbaik Andi adalah ...",
      "opsi": [
       "berhenti berlatih",
+      "menyalahkan juri",
       "tetap berusaha dan berdoa",
-      "menyalahkan juri"
+      "pura-pura sakit saat lomba"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C4",
      "pembahasan": "Husnuzan disertai usaha dan doa.",
      "indikator": "Disajikan kegagalan, peserta didik dapat menentukan sikap terbaik.",
@@ -1054,9 +1095,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "husnuzan berarti tidak perlu berusaha",
       "husnuzan membuat malas berdoa",
+      "husnuzan sama dengan menyerah",
       "husnuzan disertai ikhtiar dan doa"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C4",
      "pembahasan": "Berbaik sangka bukan berarti diam tanpa usaha.",
      "indikator": "Peserta didik dapat menganalisis pernyataan tentang husnuzan.",
@@ -1068,7 +1110,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Innā lillāhi wa innā ilaihi rāji'ūn",
       "Subḥānallāh",
-      "Bismillāh"
+      "Bismillāh",
+      "Masyā Allāh"
      ],
      "kunci": "A",
      "level": "C2",
@@ -1080,11 +1123,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHujan turun ketika Rafi ingin bermain di luar seperti pada gambar. Sikap husnuzan yang tepat adalah ...",
      "opsi": [
-      "bersyukur karena hujan menyuburkan tanaman",
       "marah karena tidak bisa bermain",
-      "menyalahkan hujan"
+      "bersyukur karena hujan menyuburkan tanaman",
+      "menyalahkan hujan",
+      "mengurung diri di kamar"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C3",
      "indikator": "Disajikan gambar hujan, peserta didik dapat menentukan sikap berbaik sangka kepada Allah.",
      "pembahasan": "Husnuzan berarti berbaik sangka; hujan membawa manfaat.",
@@ -1247,11 +1291,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Azan adalah panggilan untuk ...",
      "opsi": [
-      "salat",
+      "belajar",
       "makan",
-      "belajar"
+      "salat",
+      "tidur"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Azan adalah seruan tanda masuk waktu salat.",
      "indikator": "Peserta didik dapat menyebutkan pengertian azan.",
@@ -1262,10 +1307,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Orang yang mengumandangkan azan disebut ...",
      "opsi": [
       "imam",
-      "muazin",
-      "khatib"
+      "makmum",
+      "khatib",
+      "muazin"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Muazin adalah orang yang azan.",
      "indikator": "Peserta didik dapat menyebutkan istilah muazin.",
@@ -1275,11 +1321,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Muazin pertama pada zaman Rasulullah saw. adalah ...",
      "opsi": [
-      "Abu Bakar",
+      "Bilal bin Rabah",
       "Umar bin Khattab",
-      "Bilal bin Rabah"
+      "Abu Bakar",
+      "Ali bin Abi Thalib"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C1",
      "pembahasan": "Bilal bin Rabah dikenal sebagai muazin Rasulullah.",
      "indikator": "Peserta didik dapat menyebutkan muazin pertama.",
@@ -1289,11 +1336,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Ikamah dikumandangkan ketika ...",
      "opsi": [
-      "salat akan segera dimulai",
       "salat selesai",
-      "waktu makan"
+      "salat akan segera dimulai",
+      "waktu makan",
+      "sebelum tidur"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Ikamah tanda salat akan dimulai.",
      "indikator": "Peserta didik dapat menjelaskan waktu ikamah.",
@@ -1304,10 +1352,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Kalimat \"aṣ-ṣalātu khairum minan-naum\" ditambahkan pada azan salat ...",
      "opsi": [
       "Zuhur",
+      "Magrib",
       "Subuh",
-      "Magrib"
+      "Isya"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C2",
      "pembahasan": "Kalimat itu artinya salat lebih baik daripada tidur, dibaca pada azan Subuh.",
      "indikator": "Peserta didik dapat menentukan azan yang memiliki tambahan kalimat.",
@@ -1319,9 +1368,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Allāhu akbar",
       "ḥayya 'alaṣ-ṣalāh",
+      "lā ilāha illallāh",
       "qad qāmatiṣ-ṣalāh"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Qad qāmatiṣ-ṣalāh artinya salat telah didirikan.",
      "indikator": "Peserta didik dapat membedakan lafal azan dan ikamah.",
@@ -1333,7 +1383,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Lā ḥaula wa lā quwwata illā billāh",
       "Allāhu akbar",
-      "Āmīn"
+      "Āmīn",
+      "Subḥānallāh"
      ],
      "kunci": "A",
      "level": "C2",
@@ -1347,7 +1398,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "menaikkan suara TV",
       "mengecilkan suara TV dan menjawab azan",
-      "tetap asyik menonton"
+      "tetap asyik menonton",
+      "pergi bermain"
      ],
      "kunci": "B",
      "level": "C3",
@@ -1361,7 +1413,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "bersuara keras tetapi tidak suci",
       "anak kecil yang suka bermain",
-      "muslim, suci, dan bersuara lantang"
+      "muslim, suci, dan bersuara lantang",
+      "siapa saja walaupun belum berwudu"
      ],
      "kunci": "C",
      "level": "C3",
@@ -1373,11 +1426,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Mengapa azan dikumandangkan dengan suara keras dan pengeras suara?",
      "opsi": [
-      "Agar terdengar luas dan orang segera salat",
+      "Agar mengganggu tetangga",
       "Agar orang terkejut",
-      "Agar terlihat hebat"
+      "Agar terlihat hebat",
+      "Agar terdengar luas dan orang segera salat"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C4",
      "pembahasan": "Azan memberi tahu masuknya waktu salat kepada banyak orang.",
      "indikator": "Peserta didik dapat menganalisis tujuan azan dikumandangkan dengan keras.",
@@ -1387,11 +1441,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nDari pengeras suara pada menara masjid seperti gambar terdengar seruan tanda masuk waktu salat. Seruan tersebut disebut ...",
      "opsi": [
-      "ikamah",
       "azan",
-      "khotbah"
+      "ikamah",
+      "khotbah",
+      "zikir"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C2",
      "indikator": "Disajikan gambar menara masjid, peserta didik dapat menentukan nama seruan tanda masuk waktu salat.",
      "pembahasan": "Azan adalah seruan tanda masuk waktu salat.",
@@ -1554,11 +1609,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Nabi Muhammad saw. lahir di kota ...",
      "opsi": [
-      "Makkah",
       "Madinah",
-      "Taif"
+      "Makkah",
+      "Taif",
+      "Yaman"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Nabi Muhammad saw. lahir di Makkah.",
      "indikator": "Peserta didik dapat menyebutkan tempat kelahiran Nabi Muhammad saw.",
@@ -1569,10 +1625,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Nabi Muhammad saw. lahir pada bulan ...",
      "opsi": [
       "Ramadan",
+      "Muharam",
       "Rabiulawal",
-      "Muharam"
+      "Syawal"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Nabi Muhammad saw. lahir pada bulan Rabiulawal.",
      "indikator": "Peserta didik dapat menyebutkan bulan kelahiran Nabi.",
@@ -1584,9 +1641,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Hijriah",
       "Kesedihan",
+      "Baru",
       "Gajah"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Disebut Tahun Gajah karena pasukan bergajah menyerang Ka'bah.",
      "indikator": "Peserta didik dapat menyebutkan nama tahun kelahiran Nabi.",
@@ -1598,7 +1656,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Abdullah",
       "Abu Thalib",
-      "Abdul Muthalib"
+      "Abdul Muthalib",
+      "Hamzah"
      ],
      "kunci": "A",
      "level": "C1",
@@ -1612,7 +1671,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Halimah",
       "Aminah",
-      "Khadijah"
+      "Khadijah",
+      "Fatimah"
      ],
      "kunci": "B",
      "level": "C1",
@@ -1626,7 +1686,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Fatimah",
       "Aisyah",
-      "Halimah as-Sa'diyah"
+      "Halimah as-Sa'diyah",
+      "Khadijah"
      ],
      "kunci": "C",
      "level": "C1",
@@ -1638,11 +1699,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Pasukan bergajah yang menyerang Ka'bah dipimpin oleh ...",
      "opsi": [
-      "Abrahah",
+      "Abu Sufyan",
       "Abu Jahal",
-      "Abu Lahab"
+      "Abu Lahab",
+      "Abrahah"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Abrahah memimpin pasukan bergajah dan dihancurkan Allah dengan burung Ababil.",
      "indikator": "Peserta didik dapat menyebutkan pemimpin pasukan bergajah.",
@@ -1652,11 +1714,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Setelah ibunya wafat, Nabi Muhammad saw. diasuh oleh ...",
      "opsi": [
-      "ayahnya",
       "kakeknya, Abdul Muthalib",
-      "Halimah"
+      "ayahnya",
+      "Halimah",
+      "Khadijah"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C2",
      "pembahasan": "Ibunda Aminah wafat ketika Nabi berusia 6 tahun, lalu beliau diasuh kakeknya.",
      "indikator": "Peserta didik dapat menjelaskan pengasuh Nabi setelah ibunya wafat.",
@@ -1667,10 +1730,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Saat kecil, Nabi Muhammad saw. membantu pamannya dengan menggembala kambing. Teladan yang dapat kita ambil adalah ...",
      "opsi": [
       "malas bekerja",
+      "rajin membantu keluarga",
       "suka bermain saja",
-      "rajin membantu keluarga"
+      "suka meminta-minta"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C3",
      "pembahasan": "Nabi sejak kecil rajin bekerja dan membantu keluarga.",
      "indikator": "Peserta didik dapat menentukan teladan masa kecil Nabi.",
@@ -1680,11 +1744,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Nabi Muhammad saw. sudah yatim piatu sejak kecil, tetapi tetap berakhlak mulia. Hal ini menunjukkan bahwa ...",
      "opsi": [
-      "keadaan sulit tidak menghalangi seseorang menjadi baik",
+      "akhlak tidak penting",
       "anak yatim pasti nakal",
-      "akhlak tidak penting"
+      "keadaan sulit tidak menghalangi seseorang menjadi baik",
+      "harta lebih penting daripada akhlak"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C4",
      "pembahasan": "Akhlak mulia tidak bergantung pada keadaan.",
      "indikator": "Peserta didik dapat menyimpulkan pelajaran dari masa kecil Nabi.",
@@ -1695,10 +1760,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nNabi Muhammad saw. lahir pada tahun terjadinya peristiwa pasukan bergajah seperti pada gambar, yaitu Tahun ...",
      "opsi": [
       "Kesedihan",
-      "Gajah",
-      "Hijriah"
+      "Perjanjian",
+      "Hijriah",
+      "Gajah"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C2",
      "indikator": "Disajikan gambar gajah dan burung, peserta didik dapat menentukan nama tahun kelahiran Nabi.",
      "pembahasan": "Nabi Muhammad saw. lahir pada Tahun Gajah.",
@@ -1863,7 +1929,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "jelas",
       "samar",
-      "dengung"
+      "dengung",
+      "memantul"
      ],
      "kunci": "A",
      "level": "C1",
@@ -1877,7 +1944,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "qalqalah",
       "halqi (tenggorokan)",
-      "syamsiah"
+      "syamsiah",
+      "syafawi (bibir)"
      ],
      "kunci": "B",
      "level": "C1",
@@ -1891,7 +1959,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "empat",
       "lima",
-      "enam"
+      "enam",
+      "tujuh"
      ],
      "kunci": "C",
      "level": "C1",
@@ -1903,11 +1972,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Yang termasuk huruf izhar halqi adalah ...",
      "opsi": [
-      "ع",
+      "ل",
       "ب",
-      "م"
+      "م",
+      "ع"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "ع ('ain) termasuk huruf halqi.",
      "indikator": "Peserta didik dapat menunjukkan huruf izhar.",
@@ -1917,11 +1987,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Cara membaca izhar halqi adalah ...",
      "opsi": [
-      "didengungkan",
       "dibaca jelas tanpa dengung",
-      "dibaca panjang"
+      "didengungkan",
+      "dibaca panjang",
+      "dibaca memantul"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C2",
      "pembahasan": "Nun sukun/tanwin dibaca jelas.",
      "indikator": "Peserta didik dapat menjelaskan cara membaca izhar.",
@@ -1932,10 +2003,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Contoh bacaan izhar halqi adalah ...",
      "opsi": [
       "مِنْ بَعْدِ",
+      "مِنْ خَوْفٍ",
       "مِنْ لَدُنْ",
-      "مِنْ خَوْفٍ"
+      "مَنْ يَقُوْلُ"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C3",
      "pembahasan": "Nun sukun bertemu خ (kha), termasuk huruf halqi.",
      "indikator": "Disajikan beberapa bacaan, peserta didik dapat menentukan contoh izhar.",
@@ -1945,11 +2017,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Pada lafal مَنْ عَمِلَ, nun sukun bertemu huruf ...",
      "opsi": [
-      "ع",
+      "ل",
       "م",
-      "ل"
+      "ع",
+      "ن"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C2",
      "pembahasan": "Nun sukun bertemu 'ain, bacaan izhar.",
      "indikator": "Disajikan lafal, peserta didik dapat menunjukkan huruf yang ditemui nun sukun.",
@@ -1960,10 +2033,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Pada lafal عَذَابٌ أَلِيْمٌ terdapat bacaan izhar karena ...",
      "opsi": [
       "nun sukun bertemu lam",
-      "tanwin bertemu hamzah",
-      "mim sukun bertemu ba"
+      "tanwin bertemu ba",
+      "mim sukun bertemu ba",
+      "tanwin bertemu hamzah"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C3",
      "pembahasan": "Tanwin pada عَذَابٌ bertemu hamzah (أ).",
      "indikator": "Disajikan lafal, peserta didik dapat menjelaskan sebab bacaan izhar.",
@@ -1973,11 +2047,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Fikri membaca مِنْ هَادٍ dengan dengung. Seharusnya dibaca ...",
      "opsi": [
-      "panjang enam harakat",
+      "jelas tanpa dengung",
       "dengan memantul",
-      "jelas tanpa dengung"
+      "panjang enam harakat",
+      "dengan samar"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C4",
      "pembahasan": "Nun sukun bertemu ha (ه) adalah izhar, dibaca jelas.",
      "indikator": "Disajikan kesalahan membaca, peserta didik dapat menentukan bacaan yang benar.",
@@ -1987,11 +2062,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Bacaan izhar disebut halqi karena hurufnya keluar dari ...",
      "opsi": [
-      "tenggorokan",
       "bibir",
-      "hidung"
+      "tenggorokan",
+      "hidung",
+      "lidah"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C2",
      "pembahasan": "Halq artinya tenggorokan.",
      "indikator": "Peserta didik dapat menjelaskan asal nama halqi.",
@@ -2003,7 +2079,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "ikhfa",
       "idgam",
-      "izhar halqi"
+      "izhar halqi",
+      "iqlab"
      ],
      "kunci": "C",
      "level": "C3",
@@ -2168,11 +2245,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Hadis adalah ...",
      "opsi": [
-      "ucapan, perbuatan, dan ketetapan Nabi Muhammad saw.",
+      "nama malaikat",
       "cerita rakyat",
-      "nama kitab suci"
+      "nama kitab suci",
+      "ucapan, perbuatan, dan ketetapan Nabi Muhammad saw."
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Hadis bersumber dari Nabi Muhammad saw.",
      "indikator": "Peserta didik dapat menyebutkan pengertian hadis.",
@@ -2182,11 +2260,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Menurut hadis, anak mulai diperintah salat ketika berusia ... tahun.",
      "opsi": [
-      "lima",
       "tujuh",
-      "dua belas"
+      "lima",
+      "dua belas",
+      "lima belas"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C1",
      "pembahasan": "Hadis: perintahkan anak-anakmu salat saat berumur tujuh tahun.",
      "indikator": "Peserta didik dapat menyebutkan usia anak diperintah salat.",
@@ -2197,10 +2276,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Salat fardu wajib dikerjakan sehari semalam sebanyak ... waktu.",
      "opsi": [
       "tiga",
+      "lima",
       "empat",
-      "lima"
+      "enam"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Salat fardu lima waktu.",
      "indikator": "Peserta didik dapat menyebutkan jumlah salat fardu.",
@@ -2210,11 +2290,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Yang diperintahkan mengajak anak salat menurut hadis adalah ...",
      "opsi": [
-      "orang tua",
+      "tetangga",
       "teman sebaya",
-      "tetangga"
+      "orang tua",
+      "guru les"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C2",
      "pembahasan": "Hadis ditujukan kepada orang tua.",
      "indikator": "Peserta didik dapat menjelaskan isi hadis kewajiban salat.",
@@ -2225,10 +2306,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Perintah salat fardu lima waktu diterima Nabi Muhammad saw. pada peristiwa ...",
      "opsi": [
       "hijrah",
-      "Isra Mikraj",
-      "Fathu Makkah"
+      "Perang Badar",
+      "Fathu Makkah",
+      "Isra Mikraj"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Salat lima waktu diwajibkan pada peristiwa Isra Mikraj.",
      "indikator": "Peserta didik dapat menyebutkan peristiwa diwajibkannya salat.",
@@ -2238,11 +2320,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Raka sudah berusia sembilan tahun tetapi sering malas salat. Sikap yang tepat adalah ...",
      "opsi": [
-      "dibiarkan saja",
+      "membiasakan diri salat tepat waktu",
       "salat jika ingat",
-      "membiasakan diri salat tepat waktu"
+      "dibiarkan saja",
+      "menunggu disuruh orang tua"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C3",
      "pembahasan": "Sejak usia tujuh tahun anak dibiasakan salat.",
      "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap yang tepat.",
@@ -2252,11 +2335,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Salat Subuh berjumlah ... rakaat.",
      "opsi": [
-      "dua",
       "tiga",
-      "empat"
+      "dua",
+      "empat",
+      "satu"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Subuh dua rakaat.",
      "indikator": "Peserta didik dapat menyebutkan jumlah rakaat salat Subuh.",
@@ -2267,10 +2351,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Salat Magrib berjumlah ... rakaat.",
      "opsi": [
       "dua",
+      "empat",
       "tiga",
-      "empat"
+      "lima"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Magrib tiga rakaat.",
      "indikator": "Peserta didik dapat menyebutkan jumlah rakaat salat Magrib.",
@@ -2282,9 +2367,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "ditunda sampai dewasa",
       "dikerjakan sesekali",
+      "dikerjakan saat libur saja",
       "dibiasakan sejak kecil"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C4",
      "pembahasan": "Pembiasaan sejak kecil membuat salat menjadi kebiasaan.",
      "indikator": "Peserta didik dapat menyimpulkan pesan hadis.",
@@ -2294,11 +2380,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Jumlah seluruh rakaat salat fardu dalam sehari semalam adalah ...",
      "opsi": [
-      "17",
+      "12",
       "15",
+      "17",
       "20"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C2",
      "pembahasan": "2 + 4 + 4 + 3 + 4 = 17 rakaat.",
      "indikator": "Peserta didik dapat menghitung jumlah rakaat salat fardu.",
@@ -2308,11 +2395,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar sedang salat. Menurut hadis, salat adalah tiang ...",
      "opsi": [
-      "rumah",
       "agama",
-      "masjid"
+      "rumah",
+      "masjid",
+      "negara"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C2",
      "indikator": "Disajikan gambar anak sujud, peserta didik dapat menyebutkan isi hadis tentang salat.",
      "pembahasan": "Salat adalah tiang agama.",
@@ -2475,11 +2563,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Iman kepada kitab Allah adalah rukun iman yang ke- ...",
      "opsi": [
-      "tiga",
       "dua",
-      "empat"
+      "tiga",
+      "empat",
+      "lima"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Urutan rukun iman: Allah, malaikat, kitab, ...",
      "indikator": "Peserta didik dapat menyebutkan urutan iman kepada kitab.",
@@ -2490,10 +2579,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Kitab Zabur diturunkan kepada Nabi ...",
      "opsi": [
       "Musa a.s.",
+      "Isa a.s.",
       "Daud a.s.",
-      "Isa a.s."
+      "Muhammad saw."
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Zabur diturunkan kepada Nabi Daud a.s.",
      "indikator": "Peserta didik dapat menyebutkan penerima kitab Zabur.",
@@ -2505,9 +2595,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Ibrani",
       "Suryani",
+      "Indonesia",
       "Arab"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Al-Qur'an berbahasa Arab.",
      "indikator": "Peserta didik dapat menyebutkan bahasa Al-Qur'an.",
@@ -2519,7 +2610,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Jibril",
       "Mikail",
-      "Israfil"
+      "Israfil",
+      "Izrail"
      ],
      "kunci": "A",
      "level": "C1",
@@ -2533,7 +2625,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Masjidil Haram",
       "Gua Hira",
-      "Madinah"
+      "Madinah",
+      "Gua Tsur"
      ],
      "kunci": "B",
      "level": "C1",
@@ -2547,7 +2640,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Al-Fatihah ayat 1–7",
       "Al-Ikhlas ayat 1–4",
-      "Al-'Alaq ayat 1–5"
+      "Al-'Alaq ayat 1–5",
+      "An-Nās ayat 1–6"
      ],
      "kunci": "C",
      "level": "C2",
@@ -2561,6 +2655,7 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "30",
       "40",
+      "60",
       "114"
      ],
      "kunci": "A",
@@ -2574,10 +2669,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Lembaran-lembaran wahyu yang diturunkan kepada Nabi Ibrahim a.s. disebut ...",
      "opsi": [
       "kitab",
-      "suhuf",
-      "zabur"
+      "injil",
+      "zabur",
+      "suhuf"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Suhuf adalah lembaran wahyu, antara lain kepada Nabi Ibrahim dan Musa.",
      "indikator": "Peserta didik dapat menjelaskan istilah suhuf.",
@@ -2587,11 +2683,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Salsa membaca Al-Qur'an dan berusaha mengamalkan isinya. Salsa menunjukkan ...",
      "opsi": [
-      "iman kepada malaikat",
+      "iman kepada kitab Allah",
       "iman kepada hari akhir",
-      "iman kepada kitab Allah"
+      "iman kepada malaikat",
+      "iman kepada rasul"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C3",
      "pembahasan": "Membaca dan mengamalkan Al-Qur'an adalah wujud iman kepada kitab.",
      "indikator": "Disajikan perilaku, peserta didik dapat menentukan rukun iman yang diamalkan.",
@@ -2601,11 +2698,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Al-Qur'an menjadi pedoman hidup umat Islam karena ...",
      "opsi": [
-      "berisi petunjuk dari Allah yang terjaga",
       "bukunya paling tebal",
-      "ditulis oleh banyak orang"
+      "berisi petunjuk dari Allah yang terjaga",
+      "ditulis oleh banyak orang",
+      "Karena dijual di mana-mana"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C4",
      "pembahasan": "Al-Qur'an firman Allah yang dijaga keasliannya.",
      "indikator": "Peserta didik dapat menganalisis alasan Al-Qur'an menjadi pedoman hidup.",
@@ -2615,11 +2713,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGambar menunjukkan empat kitab Allah. Kitab yang diturunkan kepada Nabi Musa a.s. adalah ...",
      "opsi": [
-      "Taurat",
+      "Injil",
       "Zabur",
-      "Injil"
+      "Taurat",
+      "Al-Qur'an"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C2",
      "indikator": "Disajikan gambar empat kitab Allah, peserta didik dapat menentukan kitab yang diturunkan kepada Nabi Musa a.s.",
      "pembahasan": "Taurat diturunkan kepada Nabi Musa a.s.",
@@ -2782,11 +2881,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Berbakti kepada orang tua disebut ...",
      "opsi": [
-      "birrul walidain",
+      "musyawarah",
       "ukhuwah",
-      "silaturahmi"
+      "silaturahmi",
+      "birrul walidain"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Birrul walidain artinya berbakti kepada orang tua.",
      "indikator": "Peserta didik dapat menyebutkan istilah birrul walidain.",
@@ -2796,11 +2896,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Durhaka kepada orang tua disebut ...",
      "opsi": [
-      "ikhlas",
       "'uququl walidain",
-      "tawadu"
+      "ikhlas",
+      "tawadu",
+      "tasamuh"
      ],
-     "kunci": "B",
+     "kunci": "A",
      "level": "C1",
      "pembahasan": "'Uququl walidain artinya durhaka kepada orang tua.",
      "indikator": "Peserta didik dapat menyebutkan istilah durhaka kepada orang tua.",
@@ -2811,10 +2912,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Kata yang dilarang diucapkan kepada orang tua menurut Al-Qur'an adalah kata ...",
      "opsi": [
       "terima kasih",
+      "ah",
       "maaf",
-      "ah"
+      "tolong"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C2",
      "pembahasan": "QS Al-Isrā' ayat 23 melarang berkata \"ah\" kepada orang tua.",
      "indikator": "Peserta didik dapat menyebutkan larangan dalam berbicara kepada orang tua.",
@@ -2824,11 +2926,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Berbicara kepada orang tua harus dengan ...",
      "opsi": [
-      "sopan dan lembut",
+      "sambil bermain HP",
       "keras dan kasar",
-      "sambil bermain HP"
+      "sopan dan lembut",
+      "sambil berteriak"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Kita bertutur kata sopan kepada orang tua.",
      "indikator": "Peserta didik dapat menyebutkan adab berbicara kepada orang tua.",
@@ -2839,10 +2942,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Ibu sedang sibuk memasak. Sikap Nisa yang menunjukkan bakti adalah ...",
      "opsi": [
       "bermain di luar",
-      "membantu menyiapkan piring",
-      "minta dibelikan mainan"
+      "menonton televisi",
+      "minta dibelikan mainan",
+      "membantu menyiapkan piring"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C3",
      "pembahasan": "Membantu pekerjaan rumah adalah bentuk bakti.",
      "indikator": "Disajikan situasi, peserta didik dapat menentukan perilaku berbakti.",
@@ -2852,11 +2956,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Ayah menyuruh Rizki salat, tetapi Rizki masih bermain. Sikap Rizki seharusnya ...",
      "opsi": [
-      "pura-pura tidak dengar",
+      "segera berhenti bermain lalu salat",
       "marah kepada ayah",
-      "segera berhenti bermain lalu salat"
+      "pura-pura tidak dengar",
+      "meminta upah dulu"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C3",
      "pembahasan": "Menaati perintah baik orang tua.",
      "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap taat.",
@@ -2866,11 +2971,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Doa untuk kedua orang tua dibaca setiap selesai ...",
      "opsi": [
-      "salat",
       "bermain",
-      "makan permen"
+      "salat",
+      "makan permen",
+      "menonton TV"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C2",
      "pembahasan": "Kita mendoakan orang tua setelah salat.",
      "indikator": "Peserta didik dapat menyebutkan waktu mendoakan orang tua.",
@@ -2881,10 +2987,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Contoh perilaku durhaka kepada orang tua adalah ...",
      "opsi": [
       "mencium tangan saat berangkat sekolah",
+      "membantu mencuci piring",
       "membentak ketika dinasihati",
-      "membantu mencuci piring"
+      "mendoakan orang tua"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C2",
      "pembahasan": "Membentak orang tua termasuk durhaka.",
      "indikator": "Peserta didik dapat membedakan perilaku berbakti dan durhaka.",
@@ -2896,9 +3003,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "menurut saja",
       "membentaknya",
+      "pergi dari rumah",
       "menolak dengan sopan dan tetap berbuat baik"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C4",
      "pembahasan": "Tidak boleh taat dalam maksiat, tetapi tetap berbuat baik kepada orang tua.",
      "indikator": "Disajikan situasi sulit, peserta didik dapat menganalisis sikap yang benar.",
@@ -2910,7 +3018,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Karena mereka merawat dan mendidik kita dengan kasih sayang",
       "Karena mereka memberi uang jajan saja",
-      "Karena takut dimarahi"
+      "Karena takut dimarahi",
+      "Karena badan mereka lebih tinggi"
      ],
      "kunci": "A",
      "level": "C4",
@@ -2923,10 +3032,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSebelum berangkat sekolah, Dani mencium tangan ibunya seperti pada gambar. Sikap Dani menunjukkan ...",
      "opsi": [
       "sikap sombong",
+      "hormat kepada orang tua",
       "sikap malas",
-      "hormat kepada orang tua"
+      "sikap boros"
      ],
-     "kunci": "C",
+     "kunci": "B",
      "level": "C3",
      "indikator": "Disajikan gambar anak mencium tangan ibu, peserta didik dapat menyimpulkan akhlak yang ditunjukkan.",
      "pembahasan": "Mencium tangan orang tua adalah bentuk hormat dan berbakti.",
@@ -3089,11 +3199,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Salat Jumat wajib bagi ...",
      "opsi": [
-      "laki-laki muslim yang balig",
+      "perempuan saja",
       "semua anak kecil",
-      "perempuan saja"
+      "laki-laki muslim yang balig",
+      "hanya imam masjid"
      ],
-     "kunci": "A",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Salat Jumat wajib bagi laki-laki muslim balig, berakal, dan mukim.",
      "indikator": "Peserta didik dapat menyebutkan orang yang wajib salat Jumat.",
@@ -3104,10 +3215,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Salat Jumat dikerjakan pada waktu salat ...",
      "opsi": [
       "Subuh",
-      "Zuhur",
-      "Asar"
+      "Magrib",
+      "Asar",
+      "Zuhur"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Salat Jumat dilaksanakan pada waktu Zuhur hari Jumat.",
      "indikator": "Peserta didik dapat menyebutkan waktu salat Jumat.",
@@ -3117,11 +3229,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Salat Jumat berjumlah ... rakaat.",
      "opsi": [
-      "empat",
+      "dua",
       "tiga",
-      "dua"
+      "empat",
+      "satu"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C1",
      "pembahasan": "Salat Jumat dua rakaat.",
      "indikator": "Peserta didik dapat menyebutkan jumlah rakaat salat Jumat.",
@@ -3131,11 +3244,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Sebelum salat Jumat didahului dengan ...",
      "opsi": [
-      "dua khutbah",
       "satu kali azan saja",
-      "salat Id"
+      "dua khutbah",
+      "salat Id",
+      "pembagian zakat"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C2",
      "pembahasan": "Salat Jumat didahului dua khutbah.",
      "indikator": "Peserta didik dapat menjelaskan rangkaian salat Jumat.",
@@ -3146,10 +3260,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Orang yang menyampaikan khutbah disebut ...",
      "opsi": [
       "muazin",
+      "makmum",
       "khatib",
-      "makmum"
+      "amil"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Khatib menyampaikan khutbah.",
      "indikator": "Peserta didik dapat menyebutkan istilah khatib.",
@@ -3161,9 +3276,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "mengobrol",
       "bermain HP",
+      "tidur",
       "diam dan mendengarkan"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Jemaah wajib mendengarkan khutbah dengan tenang.",
      "indikator": "Peserta didik dapat menjelaskan adab saat khutbah.",
@@ -3175,7 +3291,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "mandi dan memakai pakaian bersih",
       "makan sebanyak-banyaknya",
-      "tidur siang"
+      "tidur siang",
+      "bermain bola dahulu"
      ],
      "kunci": "A",
      "level": "C2",
@@ -3189,7 +3306,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "berlari di saf",
       "duduk tenang mendengarkan",
-      "berbisik dengan teman"
+      "berbisik dengan teman",
+      "keluar masjid"
      ],
      "kunci": "B",
      "level": "C3",
@@ -3203,7 +3321,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "wajib salat Zuhur lagi",
       "wajib salat Asar lebih awal",
-      "tidak perlu salat Zuhur lagi"
+      "tidak perlu salat Zuhur lagi",
+      "wajib salat Subuh lagi"
      ],
      "kunci": "C",
      "level": "C4",
@@ -3215,11 +3334,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Hari Jumat disebut sebagai ...",
      "opsi": [
-      "sayyidul ayyam (penghulu hari)",
+      "hari olahraga",
       "hari libur nasional",
-      "hari pasar"
+      "hari pasar",
+      "sayyidul ayyam (penghulu hari)"
      ],
-     "kunci": "A",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Hari Jumat adalah hari yang paling utama dalam sepekan.",
      "indikator": "Peserta didik dapat menjelaskan keutamaan hari Jumat.",
@@ -3229,11 +3349,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPada hari Jumat sebelum salat, seseorang berdiri di mimbar seperti pada gambar dan menyampaikan nasihat. Orang tersebut disebut ...",
      "opsi": [
-      "muazin",
+      "khatib",
       "makmum",
-      "khatib"
+      "muazin",
+      "amil"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C2",
      "indikator": "Disajikan gambar mimbar pada hari Jumat, peserta didik dapat menentukan sebutan bagi penyampai khotbah.",
      "pembahasan": "Khatib adalah orang yang menyampaikan khotbah Jumat dari atas mimbar.",
@@ -3396,11 +3517,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Saat remaja, Nabi Muhammad saw. mendapat gelar ...",
      "opsi": [
-      "Al-Amin",
       "As-Siddiq",
-      "Al-Faruq"
+      "Al-Amin",
+      "Al-Faruq",
+      "Żun-Nūrain"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C1",
      "pembahasan": "Al-Amin artinya orang yang dapat dipercaya.",
      "indikator": "Peserta didik dapat menyebutkan gelar Nabi saat remaja.",
@@ -3411,10 +3533,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Al-Amin artinya ...",
      "opsi": [
       "pemberani",
+      "dermawan",
       "dapat dipercaya",
-      "dermawan"
+      "pemaaf"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C1",
      "pembahasan": "Al-Amin artinya terpercaya.",
      "indikator": "Peserta didik dapat menyebutkan arti Al-Amin.",
@@ -3426,9 +3549,10 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Mesir",
       "Yaman",
+      "Persia",
       "Syam"
      ],
-     "kunci": "C",
+     "kunci": "D",
      "level": "C1",
      "pembahasan": "Nabi ikut Abu Thalib berdagang ke Syam.",
      "indikator": "Peserta didik dapat menyebutkan tujuan dagang pertama Nabi.",
@@ -3440,7 +3564,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Buhaira",
       "Waraqah",
-      "Maisarah"
+      "Maisarah",
+      "Abrahah"
      ],
      "kunci": "A",
      "level": "C2",
@@ -3454,7 +3579,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Aisyah",
       "Khadijah",
-      "Fatimah"
+      "Fatimah",
+      "Halimah"
      ],
      "kunci": "B",
      "level": "C1",
@@ -3468,7 +3594,8 @@ window.BANK_SOAL["3"] = {
      "opsi": [
       "Bilal",
       "Zaid",
-      "Maisarah"
+      "Maisarah",
+      "Buhaira"
      ],
      "kunci": "C",
      "level": "C2",
@@ -3481,6 +3608,7 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Nabi Muhammad saw. menikah dengan Khadijah ketika berusia ... tahun.",
      "opsi": [
       "25",
+      "30",
       "35",
       "40"
      ],
@@ -3495,10 +3623,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Saat terjadi perselisihan tentang siapa yang meletakkan Hajar Aswad, Nabi meletakkannya di atas sorban lalu ...",
      "opsi": [
       "mengangkatnya sendirian",
-      "mengajak para pemimpin kabilah mengangkat bersama",
-      "membuangnya"
+      "menyerahkannya kepada pendeta",
+      "membuangnya",
+      "mengajak para pemimpin kabilah mengangkat bersama"
      ],
-     "kunci": "B",
+     "kunci": "D",
      "level": "C2",
      "pembahasan": "Semua kabilah puas karena ikut mengangkat.",
      "indikator": "Peserta didik dapat menjelaskan peristiwa peletakan Hajar Aswad.",
@@ -3508,11 +3637,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Pedagang yang jujur seperti Nabi Muhammad saw. akan ...",
      "opsi": [
-      "ditinggalkan pembeli",
+      "dipercaya banyak orang",
       "selalu rugi",
-      "dipercaya banyak orang"
+      "ditinggalkan pembeli",
+      "dijauhi teman"
      ],
-     "kunci": "C",
+     "kunci": "A",
      "level": "C3",
      "pembahasan": "Kejujuran mendatangkan kepercayaan.",
      "indikator": "Peserta didik dapat menyimpulkan dampak kejujuran.",
@@ -3522,11 +3652,12 @@ window.BANK_SOAL["3"] = {
      "bentuk": "pg",
      "pertanyaan": "Dari peristiwa Hajar Aswad, kita belajar untuk ...",
      "opsi": [
-      "menyelesaikan masalah dengan adil dan damai",
       "bertengkar demi menang",
-      "mementingkan diri sendiri"
+      "menyelesaikan masalah dengan adil dan damai",
+      "mementingkan diri sendiri",
+      "menyerahkan masalah kepada orang lain"
      ],
-     "kunci": "A",
+     "kunci": "B",
      "level": "C4",
      "pembahasan": "Nabi menyelesaikan perselisihan secara adil.",
      "indikator": "Peserta didik dapat menganalisis teladan dari peristiwa Hajar Aswad.",
@@ -3537,10 +3668,11 @@ window.BANK_SOAL["3"] = {
      "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPada masa remaja, Nabi Muhammad saw. ikut berdagang bersama rombongan kafilah seperti pada gambar ke negeri ...",
      "opsi": [
       "Habasyah",
+      "Yaman",
       "Syam",
-      "Yaman"
+      "Mesir"
      ],
-     "kunci": "B",
+     "kunci": "C",
      "level": "C2",
      "indikator": "Disajikan gambar kafilah unta, peserta didik dapat menentukan tujuan perjalanan dagang Nabi.",
      "pembahasan": "Nabi ikut berdagang ke negeri Syam bersama pamannya, Abu Thalib.",
