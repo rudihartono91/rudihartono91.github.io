@@ -274,6 +274,7 @@ function renderJml(){
   const tampil=URUT.filter(b=>P[b].length||['pg','isian','uraian'].includes(b));
   const kurang=tampil.filter(b=>(saved[b]||0)>P[b].length);
   setTimeout(()=>{if(kurang.length&&MODE!=='bebas')$('#presetInfo').innerHTML='⚠ Soal tersedia belum cukup untuk '+kurang.map(b=>BENTUK[b]).join(', ')+'. Centang materi tambahan atau ubah jumlah.'},0);
+  setTimeout(()=>{const sm=new Set(terpilih().map(m=>m.semester));if(sm.size>1&&MODE!=='sekolah')$('#presetInfo').innerHTML+='<br><b style="color:#9a6b00">ⓘ Materi semester 1 dan 2 tercampur.</b> Untuk SAS, pilih tombol SAS Semester 1 atau 2.'},0);
   $('#jml').innerHTML='<small><b>Bentuk</b></small><small><b>Jumlah</b></small><small><b>Tersedia</b></small>'+tampil.map(b=>`<span>${BENTUK[b]}</span><input type="number" min="0" max="${P[b].length}" data-b="${b}" value="${Math.min(saved[b]||0,P[b].length)}" ${P[b].length?'':'disabled'}><small>${P[b].length}</small>`).join('');
 }
 $('#jml').addEventListener('input',e=>{const i=e.target;if(!i.dataset.b)return;if(MODE!=='bebas'){const cur={};$$('#jml input[data-b]').forEach(x=>cur[x.dataset.b]=+x.value||0);LS.set('bankJml2',cur);MODE='bebas';LS.set('bankMode',MODE);renderPreset()}const mx=+i.max;if(+i.value>mx)i.value=mx;const s=LS.get('bankJml2',{});s[i.dataset.b]=+i.value||0;LS.set('bankJml2',s)});
