@@ -1,380 +1,3611 @@
 /* Bank Soal PAI dan Budi Pekerti — Kelas 4 (Fase B)
    Disusun sesuai ATP Fase B Revisi (CP BKPDM No. 020 Tahun 2026).
-   Setiap TP: 10 PG (A–C), 10 isian, 5 uraian. */
+   Setiap TP: 10 PG (A–D), 10 isian, 5 uraian. */
 window.BANK_SOAL = window.BANK_SOAL || {};
-(function () {
-  const pg = (q, o, k, l, p, i, c) => ({ bentuk: "pg", pertanyaan: q, opsi: o, kunci: k, level: l, pembahasan: p, indikator: i, perlu_cek: !!c });
-  const is = (q, k, l, p, i, c) => ({ bentuk: "isian", pertanyaan: q, kunci: k, level: l, pembahasan: p, indikator: i, perlu_cek: !!c });
-  const ur = (q, k, r, l, p, i, c) => ({ bentuk: "uraian", pertanyaan: q, kunci: k, rubrik: r, level: l, pembahasan: p, indikator: i, perlu_cek: !!c });
-  const R3 = "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.";
-  const R2 = "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.";
-  const Rn = n => `Skor ${n}: ${n} jawaban benar. Skor ${n - 1} sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.`;
-
-  window.BANK_SOAL["4"] = {
-    kelas: 4, fase: "B",
-    catatan: "Disusun sesuai ATP Fase B Revisi (CP BKPDM No. 020 Tahun 2026).",
-    materi: [
-      /* ================= SEMESTER 1 ================= */
-      { id: "k4-idgam", kode: "2.1.5", judul: "Huruf Bersambung: Idgam Bigunah dan Bilagunah", semester: 1, elemen: "Al-Qur'an dan Hadis",
-        tp: "Membaca, menulis, dan membedakan huruf hijaiah bersambung (3 kata atau lebih) dengan praktik bacaan idgam bigunah dan bilagunah.",
-        soal: [
-          pg("Idgam artinya ...", ["memasukkan", "jelas", "memantul"], "A", "C1", "Idgam artinya memasukkan atau meleburkan.", "Peserta didik dapat menyebutkan arti idgam."),
-          pg("Idgam bigunah terjadi jika nun sukun atau tanwin bertemu huruf ...", ["ل ر", "ي ن م و", "ب"], "B", "C1", "Huruf idgam bigunah: ya, nun, mim, wau (yanmu).", "Peserta didik dapat menyebutkan huruf idgam bigunah."),
-          pg("Huruf idgam bilagunah adalah ...", ["ي dan و", "م dan ن", "ل dan ر"], "C", "C1", "Idgam bilagunah: lam dan ra.", "Peserta didik dapat menyebutkan huruf idgam bilagunah."),
-          pg("Gunah artinya ...", ["dengung", "panjang", "pendek"], "A", "C1", "Gunah artinya dengung.", "Peserta didik dapat menyebutkan arti gunah."),
-          pg("Idgam bilagunah dibaca ...", ["dengan dengung", "melebur tanpa dengung", "dipantulkan"], "B", "C2", "Bilagunah artinya tanpa dengung.", "Peserta didik dapat menjelaskan cara membaca idgam bilagunah."),
-          pg("Lafal مَنْ يَقُوْلُ termasuk bacaan ...", ["izhar", "idgam bilagunah", "idgam bigunah"], "C", "C3", "Nun sukun bertemu ya: idgam bigunah.", "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya."),
-          pg("Lafal مِنْ رَبِّهِمْ termasuk bacaan ...", ["idgam bilagunah", "idgam bigunah", "ikhfa"], "A", "C3", "Nun sukun bertemu ra: idgam bilagunah.", "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya.", true),
-          pg("Lafal هُدًى لِّلْمُتَّقِيْنَ termasuk bacaan ...", ["idgam bigunah", "idgam bilagunah", "izhar halqi"], "B", "C3", "Tanwin bertemu lam: idgam bilagunah.", "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya.", true),
-          pg("Lafal خَيْرًا وَّ termasuk bacaan idgam bigunah karena tanwin bertemu huruf ...", ["ي", "ر", "و"], "C", "C3", "Tanwin bertemu wau.", "Disajikan lafal, peserta didik dapat menunjukkan huruf idgam."),
-          pg("Perbedaan idgam bigunah dan bilagunah terletak pada ...", ["ada atau tidaknya dengung", "panjang bacaan", "jumlah huruf hijaiah"], "A", "C4", "Bigunah berdengung, bilagunah tidak.", "Peserta didik dapat membandingkan idgam bigunah dan bilagunah."),
-          is("Huruf idgam bigunah dapat dihafal dengan singkatan ____", "yanmu (ي ن م و)", "C1", "Yanmu.", "Peserta didik dapat menyebutkan singkatan huruf idgam bigunah."),
-          is("Idgam bigunah dibaca melebur dengan ____", "dengung", "C1", "Bigunah berdengung.", "Peserta didik dapat menjelaskan cara membaca idgam bigunah."),
-          is("Idgam bilagunah dibaca melebur ____ dengung.", "tanpa", "C1", "Bila artinya tanpa.", "Peserta didik dapat menjelaskan cara membaca idgam bilagunah."),
-          is("Huruf idgam bilagunah ada ____", "dua (lam dan ra)", "C1", "Lam dan ra.", "Peserta didik dapat menyebutkan jumlah huruf idgam bilagunah."),
-          is("Huruf idgam bigunah ada ____", "empat", "C1", "Ya, nun, mim, wau.", "Peserta didik dapat menyebutkan jumlah huruf idgam bigunah."),
-          is("Lafal مَنْ يَّعْمَلْ termasuk bacaan idgam ____", "bigunah", "C3", "Nun sukun bertemu ya.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          is("Lafal أَنْ لَّا termasuk bacaan idgam ____", "bilagunah", "C3", "Nun sukun bertemu lam.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          is("Lafal مِنْ نِعْمَةٍ termasuk bacaan idgam ____", "bigunah", "C3", "Nun sukun bertemu nun.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          is("Lafal غَفُوْرٌ رَّحِيْمٌ termasuk bacaan idgam ____", "bilagunah", "C3", "Tanwin bertemu ra.", "Disajikan lafal, peserta didik dapat menentukan hukumnya.", true),
-          is("Tanda syaddah pada huruf sesudah nun sukun menunjukkan bacaan ____", "idgam", "C2", "Huruf yang dimasuki diberi syaddah.", "Peserta didik dapat mengenali tanda bacaan idgam."),
-          ur("Jelaskan perbedaan idgam bigunah dan idgam bilagunah beserta hurufnya!", "Bigunah: nun sukun/tanwin bertemu ي ن م و, dibaca melebur dengan dengung. Bilagunah: bertemu ل ر, dibaca melebur tanpa dengung.", R3, "C2", "Dua jenis idgam.", "Peserta didik dapat membedakan dua jenis idgam."),
-          ur("Tuliskan dua contoh idgam bigunah!", "Contoh: مَنْ يَقُوْلُ, مِنْ نِعْمَةٍ, خَيْرًا وَّ, مِنْ مَّاءٍ.", R2, "C2", "Contoh idgam bigunah.", "Peserta didik dapat memberi contoh idgam bigunah."),
-          ur("Tuliskan dua contoh idgam bilagunah!", "Contoh: مِنْ رَبِّهِمْ, هُدًى لِّلْمُتَّقِيْنَ, أَنْ لَّا, غَفُوْرٌ رَّحِيْمٌ.", R2, "C2", "Contoh idgam bilagunah.", "Peserta didik dapat memberi contoh idgam bilagunah.", true),
-          ur("Tentukan hukum bacaan pada lafal: وَيْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةٍ", "وَيْلٌ لِّكُلِّ: tanwin bertemu lam, idgam bilagunah. هُمَزَةٍ لُّمَزَةٍ: tanwin bertemu lam, idgam bilagunah.", R3, "C3", "Menganalisis ayat.", "Disajikan ayat, peserta didik dapat menentukan hukum bacaannya.", true),
-          ur("Mengapa kita perlu membedakan bacaan idgam bigunah dan bilagunah?", "Agar bacaan Al-Qur'an sesuai tajwid, benar, dan indah, serta tidak keliru antara yang berdengung dan tidak.", R3, "C4", "Pentingnya tajwid.", "Peserta didik dapat menjelaskan pentingnya membedakan jenis idgam.")
-        ] },
-
-      { id: "k4-an-nasr", kode: "2.1.6", judul: "Surah An-Naṣr", semester: 1, elemen: "Al-Qur'an dan Hadis",
-        tp: "Menghafal dan menjelaskan Surah an-Naṣr.",
-        soal: [
-          pg("Surah An-Naṣr terdiri atas ... ayat.", ["tiga", "empat", "lima"], "A", "C1", "An-Naṣr tiga ayat.", "Peserta didik dapat menyebutkan jumlah ayat Surah An-Naṣr."),
-          pg("An-Naṣr artinya ...", ["kemenangan saja", "pertolongan", "pembukaan"], "B", "C1", "An-Naṣr artinya pertolongan.", "Peserta didik dapat menyebutkan arti An-Naṣr."),
-          pg("Surah An-Naṣr adalah surah ke- ...", ["108", "112", "110"], "C", "C1", "Surah ke-110.", "Peserta didik dapat menyebutkan nomor surah."),
-          pg("Surah An-Naṣr termasuk surah ...", ["Madaniyah", "Makkiyah", "terpanjang"], "A", "C1", "Turun sesudah hijrah, termasuk Madaniyah.", "Peserta didik dapat menggolongkan Surah An-Naṣr.", true),
-          pg("Menurut ayat kedua, manusia masuk agama Allah secara ...", ["sendiri-sendiri", "berbondong-bondong", "sembunyi-sembunyi"], "B", "C2", "Yadkhulūna fī dīnillāhi afwājā.", "Peserta didik dapat menjelaskan isi ayat kedua.", true),
-          pg("Ayat ketiga memerintahkan bertasbih, memuji Allah, dan ...", ["berperang", "berdagang", "memohon ampun"], "C", "C2", "Wastagfirh: mohonlah ampun kepada-Nya.", "Peserta didik dapat menjelaskan isi ayat ketiga.", true),
-          pg("Surah An-Naṣr berkaitan dengan peristiwa ...", ["Fathu Makkah", "Tahun Gajah", "Perang Badar"], "A", "C2", "Kemenangan besar umat Islam saat pembebasan Makkah.", "Peserta didik dapat menghubungkan surah dengan peristiwa sejarah.", true),
-          pg("Allah disebut \"tawwābā\" dalam ayat ketiga, artinya Maha ...", ["Kuasa", "Penerima tobat", "Pengasih"], "B", "C2", "Innahū kāna tawwābā: Dia Maha Penerima tobat.", "Peserta didik dapat menjelaskan arti tawwābā.", true),
-          pg("Tim kelas Rudi memenangi lomba. Sesuai Surah An-Naṣr, sikap terbaik adalah ...", ["mengejek tim yang kalah", "sombong", "bersyukur dan memuji Allah"], "C", "C3", "Kemenangan adalah pertolongan Allah, harus disyukuri.", "Disajikan situasi, peserta didik dapat menerapkan pesan Surah An-Naṣr."),
-          pg("Pesan utama Surah An-Naṣr adalah ...", ["kemenangan datang dari Allah, maka kita harus bersyukur dan rendah hati", "kemenangan karena kehebatan kita sendiri", "kita boleh sombong saat menang"], "A", "C4", "Inti Surah An-Naṣr.", "Peserta didik dapat menyimpulkan pesan Surah An-Naṣr."),
-          is("Surah An-Naṣr berjumlah ____ ayat.", "tiga", "C1", "Tiga ayat.", "Peserta didik dapat menyebutkan jumlah ayat."),
-          is("An-Naṣr artinya ____", "pertolongan", "C1", "Pertolongan.", "Peserta didik dapat menyebutkan arti An-Naṣr."),
-          is("Surah An-Naṣr adalah surah ke-____", "110", "C1", "Surah ke-110.", "Peserta didik dapat menyebutkan nomor surah."),
-          is("Surah sebelum An-Naṣr adalah Surah Al-____", "Kāfirūn", "C2", "Surah ke-109.", "Peserta didik dapat menyebutkan surah sebelumnya."),
-          is("Surah sesudah An-Naṣr adalah Surah Al-____ (Al-Masad).", "Lahab", "C2", "Surah ke-111.", "Peserta didik dapat menyebutkan surah sesudahnya."),
-          is("\"Al-fatḥ\" dalam ayat pertama artinya ____", "kemenangan", "C2", "Al-fatḥ artinya kemenangan.", "Peserta didik dapat menyebutkan arti kata dalam ayat pertama.", true),
-          is("\"Afwājā\" artinya ____", "berbondong-bondong", "C2", "Afwājā.", "Peserta didik dapat menyebutkan arti kata dalam ayat kedua.", true),
-          is("\"Wastagfirh\" artinya dan mohonlah ____ kepada-Nya.", "ampun", "C2", "Istigfar.", "Peserta didik dapat menyebutkan arti kata dalam ayat ketiga.", true),
-          is("Bertasbih artinya mengucapkan ____", "Subḥānallāh", "C2", "Tasbih.", "Peserta didik dapat menjelaskan arti bertasbih."),
-          is("Setelah berhasil, kita tidak boleh ____", "sombong", "C3", "Rendah hati saat berhasil.", "Peserta didik dapat menerapkan pesan Surah An-Naṣr."),
-          ur("Tuliskan arti Surah An-Naṣr ayat 1–3!", "1) Apabila telah datang pertolongan Allah dan kemenangan. 2) Dan engkau melihat manusia berbondong-bondong masuk agama Allah. 3) Maka bertasbihlah dengan memuji Tuhanmu dan mohonlah ampun kepada-Nya. Sungguh, Dia Maha Penerima tobat.", Rn(3), "C1", "Arti Surah An-Naṣr.", "Peserta didik dapat menuliskan arti Surah An-Naṣr.", true),
-          ur("Sebutkan tiga perintah Allah dalam ayat ketiga Surah An-Naṣr!", "Bertasbih, memuji Allah (bertahmid), dan memohon ampun (beristigfar).", Rn(3), "C2", "Isi ayat ketiga.", "Peserta didik dapat menyebutkan perintah dalam ayat ketiga."),
-          ur("Ceritakan hubungan Surah An-Naṣr dengan peristiwa Fathu Makkah!", "Surah ini menggambarkan kemenangan umat Islam saat pembebasan Makkah, setelah itu banyak orang masuk Islam berbondong-bondong.", R3, "C2", "Asbabun nuzul.", "Peserta didik dapat menjelaskan hubungan surah dengan peristiwa sejarah.", true),
-          ur("Bagaimana sikapmu ketika mendapat nilai terbaik di kelas sesuai pesan Surah An-Naṣr?", "Bersyukur kepada Allah, mengucapkan alhamdulillah, tidak sombong, membantu teman yang kesulitan.", R3, "C3", "Penerapan pesan surah.", "Peserta didik dapat menerapkan pesan Surah An-Naṣr."),
-          ur("Mengapa saat menang kita tetap diperintah memohon ampun?", "Karena manusia tidak luput dari salah dan agar tidak sombong; kemenangan berasal dari Allah.", R3, "C4", "Hikmah istigfar.", "Peserta didik dapat menganalisis hikmah perintah istigfar.")
-        ] },
-
-      { id: "k4-asmaul-husna", kode: "2.2.3", judul: "Asmaul Husna (Al-Gaffār, Al-Wahhāb, Al-Fattāḥ, Al-Laṭīf)", semester: 1, elemen: "Akidah",
-        tp: "Menjelaskan dan meyakini beberapa asmaulhusna (al-Gaffār, al-Wahhāb, al-Fattāḥ, al-Laṭīf).",
-        soal: [
-          pg("Al-Gaffār artinya Allah Maha ...", ["Pengampun", "Pemberi", "Lembut"], "A", "C1", "Al-Gaffār Maha Pengampun.", "Peserta didik dapat menyebutkan arti Al-Gaffār."),
-          pg("Al-Wahhāb artinya Allah Maha ...", ["Pembuka", "Pemberi Karunia", "Pengampun"], "B", "C1", "Al-Wahhāb Maha Pemberi Karunia.", "Peserta didik dapat menyebutkan arti Al-Wahhāb."),
-          pg("Al-Fattāḥ artinya Allah Maha ...", ["Lembut", "Pemberi", "Pembuka (rahmat)"], "C", "C1", "Al-Fattāḥ Maha Pembuka.", "Peserta didik dapat menyebutkan arti Al-Fattāḥ."),
-          pg("Al-Laṭīf artinya Allah Maha ...", ["Lembut", "Kuat", "Pengampun"], "A", "C1", "Al-Laṭīf Maha Lembut.", "Peserta didik dapat menyebutkan arti Al-Laṭīf."),
-          pg("Allah mengampuni dosa hamba yang bertobat. Ini bukti Allah ...", ["Al-Fattāḥ", "Al-Gaffār", "Al-Laṭīf"], "B", "C2", "Al-Gaffār.", "Disajikan contoh, peserta didik dapat menentukan Asmaul Husna."),
-          pg("Allah memberi kita kesehatan dan kecerdasan tanpa meminta balasan. Ini bukti Allah ...", ["Al-Gaffār", "Al-Laṭīf", "Al-Wahhāb"], "C", "C2", "Al-Wahhāb.", "Disajikan contoh, peserta didik dapat menentukan Asmaul Husna."),
-          pg("Siswa yang awalnya sulit memahami pelajaran, lalu dimudahkan Allah. Ini bukti Allah ...", ["Al-Fattāḥ", "Al-Gaffār", "Al-Wahhāb"], "A", "C3", "Allah membuka pintu kemudahan.", "Disajikan peristiwa, peserta didik dapat menentukan Asmaul Husna."),
-          pg("Meneladani Al-Gaffār, ketika teman meminta maaf kita ...", ["marah terus", "memaafkannya", "membalasnya"], "B", "C3", "Pemaaf.", "Peserta didik dapat menentukan sikap meneladani Al-Gaffār."),
-          pg("Meneladani Al-Laṭīf, kita berbicara kepada orang lain dengan ...", ["kasar", "berteriak", "lemah lembut"], "C", "C3", "Lembut.", "Peserta didik dapat menentukan sikap meneladani Al-Laṭīf."),
-          pg("Sinta suka membagikan makanannya kepada teman tanpa pamrih. Sinta meneladani ...", ["Al-Wahhāb", "Al-Fattāḥ", "Al-Gaffār"], "A", "C4", "Suka memberi.", "Disajikan perilaku, peserta didik dapat menganalisis Asmaul Husna yang diteladani."),
-          is("Al-Gaffār artinya Maha ____", "Pengampun", "C1", "Al-Gaffār.", "Peserta didik dapat menyebutkan arti Al-Gaffār."),
-          is("Al-Wahhāb artinya Maha Pemberi ____", "Karunia", "C1", "Al-Wahhāb.", "Peserta didik dapat menyebutkan arti Al-Wahhāb."),
-          is("Al-Fattāḥ artinya Maha ____", "Pembuka", "C1", "Al-Fattāḥ.", "Peserta didik dapat menyebutkan arti Al-Fattāḥ."),
-          is("Al-Laṭīf artinya Maha ____", "Lembut", "C1", "Al-Laṭīf.", "Peserta didik dapat menyebutkan arti Al-Laṭīf."),
-          is("Untuk memohon ampun kepada Allah, kita membaca ____", "istigfar (Astagfirullāh)", "C2", "Istigfar.", "Peserta didik dapat menghubungkan Al-Gaffār dengan istigfar."),
-          is("Orang yang suka memberi tanpa mengharap balasan disebut ____", "dermawan", "C2", "Teladan Al-Wahhāb.", "Peserta didik dapat menyebutkan sifat teladan Al-Wahhāb."),
-          is("Asmaul Husna yang kita teladani dengan memaafkan teman adalah ____", "Al-Gaffār", "C3", "Pemaaf.", "Disajikan perilaku, peserta didik dapat menentukan Asmaul Husna."),
-          is("Asmaul Husna yang kita teladani dengan bertutur kata halus adalah ____", "Al-Laṭīf", "C3", "Lembut.", "Disajikan perilaku, peserta didik dapat menentukan Asmaul Husna."),
-          is("Membantu teman yang kesulitan memahami pelajaran meneladani Asmaul Husna ____", "Al-Fattāḥ", "C3", "Membuka jalan kemudahan.", "Disajikan perilaku, peserta didik dapat menentukan Asmaul Husna."),
-          is("Asmaul Husna berjumlah ____", "99", "C1", "99 nama.", "Peserta didik dapat menyebutkan jumlah Asmaul Husna."),
-          ur("Tuliskan empat Asmaul Husna yang kamu pelajari beserta artinya!", "Al-Gaffār (Maha Pengampun), Al-Wahhāb (Maha Pemberi Karunia), Al-Fattāḥ (Maha Pembuka), Al-Laṭīf (Maha Lembut).", Rn(4), "C1", "Empat Asmaul Husna.", "Peserta didik dapat menuliskan Asmaul Husna beserta artinya."),
-          ur("Berikan satu bukti bahwa Allah Al-Wahhāb!", "Allah memberi kita kehidupan, keluarga, kesehatan, dan rezeki tanpa meminta balasan.", R2, "C2", "Bukti Al-Wahhāb.", "Peserta didik dapat memberi bukti Allah Al-Wahhāb."),
-          ur("Sebutkan dua contoh perilaku meneladani Al-Gaffār di sekolah!", "Memaafkan teman yang berbuat salah, tidak mendendam, mau berbaikan kembali.", R2, "C3", "Teladan Al-Gaffār.", "Peserta didik dapat memberi contoh perilaku meneladani Al-Gaffār."),
-          ur("Bagaimana cara meneladani Al-Laṭīf di rumah?", "Berbicara lembut kepada orang tua dan adik, tidak membentak, menyayangi anggota keluarga.", R3, "C3", "Teladan Al-Laṭīf.", "Peserta didik dapat menerapkan teladan Al-Laṭīf."),
-          ur("Mengapa kita tidak boleh putus asa dari ampunan Allah walau pernah berbuat salah?", "Karena Allah Al-Gaffār, Maha Pengampun bagi hamba yang menyesal dan bertobat.", R3, "C4", "Makna Al-Gaffār.", "Peserta didik dapat menjelaskan makna Al-Gaffār.")
-        ] },
-
-      { id: "k4-keluarga", kode: "2.3.3", judul: "Akhlak terhadap Keluarga", semester: 1, elemen: "Akhlak",
-        tp: "Menerapkan akhlak terhadap keluarga.",
-        soal: [
-          pg("Keluarga inti terdiri atas ...", ["ayah, ibu, dan anak", "guru dan murid", "tetangga"], "A", "C1", "Keluarga inti.", "Peserta didik dapat menyebutkan anggota keluarga inti."),
-          pg("Sikap kepada kakak yang benar adalah ...", ["melawan", "menghormati", "mengejek"], "B", "C1", "Menghormati yang lebih tua.", "Peserta didik dapat menyebutkan sikap kepada kakak."),
-          pg("Sikap kepada adik yang benar adalah ...", ["memukul", "membentak", "menyayangi"], "C", "C1", "Menyayangi yang lebih muda.", "Peserta didik dapat menyebutkan sikap kepada adik."),
-          pg("Mengunjungi kakek, nenek, dan saudara disebut ...", ["silaturahmi", "rekreasi", "hijrah"], "A", "C1", "Silaturahmi menyambung persaudaraan.", "Peserta didik dapat menyebutkan istilah silaturahmi."),
-          pg("Manfaat silaturahmi menurut hadis adalah ...", ["dijauhkan dari teman", "dilapangkan rezeki dan dipanjangkan umur", "menjadi sombong"], "B", "C2", "Hadis riwayat Bukhari dan Muslim.", "Peserta didik dapat menjelaskan manfaat silaturahmi.", true),
-          pg("Adik menangis karena mainannya rusak. Sikap yang tepat adalah ...", ["menertawakannya", "membiarkannya", "menghibur dan membantu memperbaiki"], "C", "C3", "Menyayangi adik.", "Disajikan situasi, peserta didik dapat menentukan sikap kepada adik."),
-          pg("Kakak meminta tolong mengambilkan buku. Sikap yang baik adalah ...", ["segera membantu", "pura-pura tidak dengar", "meminta bayaran"], "A", "C3", "Saling menolong.", "Disajikan situasi, peserta didik dapat menentukan sikap kepada kakak."),
-          pg("Nenek datang berkunjung. Yang sebaiknya kita lakukan adalah ...", ["tetap bermain HP", "menyambut, bersalaman, dan menemani", "masuk kamar"], "B", "C3", "Menghormati kakek dan nenek.", "Disajikan situasi, peserta didik dapat menentukan sikap kepada nenek."),
-          pg("Kakak beradik bertengkar karena berebut remot TV. Cara terbaik menyelesaikannya adalah ...", ["saling memukul", "mengadu dan menangis", "bermusyawarah dan bergantian"], "C", "C4", "Musyawarah dan saling mengalah.", "Disajikan konflik, peserta didik dapat menentukan penyelesaian terbaik."),
-          pg("Keluarga yang harmonis akan terwujud jika anggotanya ...", ["saling menyayangi dan menghormati", "saling iri", "mementingkan diri sendiri"], "A", "C4", "Kunci keluarga harmonis.", "Peserta didik dapat menganalisis ciri keluarga harmonis."),
-          is("Menyambung tali persaudaraan disebut ____", "silaturahmi", "C1", "Silaturahmi.", "Peserta didik dapat menyebutkan istilah silaturahmi."),
-          is("Kepada saudara yang lebih tua kita harus ____", "menghormati", "C1", "Hormat.", "Peserta didik dapat menyebutkan sikap kepada saudara tua."),
-          is("Kepada saudara yang lebih muda kita harus ____", "menyayangi", "C1", "Sayang.", "Peserta didik dapat menyebutkan sikap kepada saudara muda."),
-          is("Memutus tali persaudaraan hukumnya ____", "haram (dilarang)", "C2", "Memutus silaturahmi dilarang.", "Peserta didik dapat menyebutkan hukum memutus silaturahmi.", true),
-          is("Membantu pekerjaan rumah termasuk sikap ____ jawab kepada keluarga.", "tanggung", "C2", "Tanggung jawab.", "Peserta didik dapat menjelaskan tanggung jawab dalam keluarga."),
-          is("Bila berbuat salah kepada kakak, kita harus segera ____", "meminta maaf", "C3", "Meminta maaf.", "Peserta didik dapat menerapkan sikap meminta maaf."),
-          is("Saat Lebaran, kita bersilaturahmi ke rumah ____ dan saudara.", "kakek-nenek (kerabat)", "C3", "Silaturahmi saat Lebaran.", "Peserta didik dapat memberi contoh silaturahmi."),
-          is("Berbagi makanan dengan adik menunjukkan sikap ____", "kasih sayang (peduli)", "C3", "Kasih sayang.", "Peserta didik dapat menyebutkan nilai dari perilaku berbagi."),
-          is("Keluarga yang rukun dan bahagia disebut keluarga ____", "harmonis (sakinah)", "C2", "Keluarga sakinah.", "Peserta didik dapat menyebutkan istilah keluarga harmonis."),
-          is("Jika anggota keluarga sakit, kita sebaiknya ____ dan mendoakannya.", "merawat", "C3", "Kepedulian.", "Peserta didik dapat menerapkan sikap peduli dalam keluarga."),
-          ur("Sebutkan tiga contoh akhlak terpuji kepada saudara!", "Menghormati kakak, menyayangi adik, saling membantu, berbagi, tidak bertengkar, meminta maaf.", Rn(3), "C2", "Akhlak kepada saudara.", "Peserta didik dapat menyebutkan akhlak terpuji kepada saudara."),
-          ur("Apa manfaat bersilaturahmi?", "Mempererat persaudaraan, dilapangkan rezeki, dipanjangkan umur, saling tolong-menolong, hati bahagia.", R3, "C2", "Manfaat silaturahmi.", "Peserta didik dapat menjelaskan manfaat silaturahmi.", true),
-          ur("Apa yang kamu lakukan agar keluargamu tetap rukun?", "Menghormati orang tua, menyayangi saudara, membantu pekerjaan rumah, tidak bertengkar, saling memaafkan.", R3, "C3", "Menjaga kerukunan.", "Peserta didik dapat merancang cara menjaga kerukunan keluarga."),
-          ur("Bagaimana sikapmu jika adikmu merusak buku pelajaranmu tanpa sengaja?", "Tidak marah berlebihan, memaafkan, menjelaskan dengan lembut agar lebih hati-hati, merapikan bersama.", R3, "C4", "Menyikapi masalah dengan bijak.", "Disajikan situasi, peserta didik dapat menentukan sikap yang bijak."),
-          ur("Mengapa kita harus menghormati kakek dan nenek?", "Karena mereka orang tua dari orang tua kita, telah berjasa, berpengalaman, dan Islam memerintahkan menghormati orang yang lebih tua.", R3, "C4", "Alasan menghormati kakek-nenek.", "Peserta didik dapat menjelaskan alasan menghormati kakek dan nenek.")
-        ] },
-
-      { id: "k4-salat-sunah", kode: "2.4.3", judul: "Salat Sunah (Rawatib, Duha, dan Tahajud)", semester: 1, elemen: "Fikih",
-        tp: "Menerapkan salat sunah (rawatib, duha, dan tahajud).",
-        soal: [
-          pg("Salat sunah yang menyertai salat fardu disebut salat ...", ["rawatib", "duha", "tahajud"], "A", "C1", "Rawatib mengiringi salat fardu.", "Peserta didik dapat menyebutkan pengertian salat rawatib."),
-          pg("Salat rawatib yang dikerjakan sebelum salat fardu disebut ...", ["ba'diyah", "qabliyah", "witir"], "B", "C1", "Qabliyah = sebelum.", "Peserta didik dapat menyebutkan istilah qabliyah."),
-          pg("Salat rawatib yang dikerjakan sesudah salat fardu disebut ...", ["qabliyah", "tarawih", "ba'diyah"], "C", "C1", "Ba'diyah = sesudah.", "Peserta didik dapat menyebutkan istilah ba'diyah."),
-          pg("Salat Duha dikerjakan pada waktu ...", ["pagi setelah matahari naik hingga sebelum Zuhur", "tengah malam", "setelah Asar"], "A", "C1", "Waktu duha.", "Peserta didik dapat menyebutkan waktu salat Duha."),
-          pg("Salat Tahajud dikerjakan pada ...", ["siang hari", "malam hari setelah bangun tidur", "sore hari"], "B", "C1", "Tahajud di malam hari setelah tidur.", "Peserta didik dapat menyebutkan waktu salat Tahajud."),
-          pg("Jumlah rakaat salat Duha paling sedikit adalah ...", ["empat", "satu", "dua"], "C", "C1", "Minimal dua rakaat.", "Peserta didik dapat menyebutkan rakaat minimal salat Duha.", true),
-          pg("Salat sunah sebelum Subuh berjumlah ... rakaat.", ["dua", "empat", "tiga"], "A", "C2", "Qabliyah Subuh dua rakaat, sangat dianjurkan.", "Peserta didik dapat menyebutkan rakaat qabliyah Subuh."),
-          pg("Setelah salat Subuh dan Asar ... salat sunah rawatib ba'diyah.", ["ada", "tidak ada", "wajib ada"], "B", "C2", "Tidak ada ba'diyah setelah Subuh dan Asar.", "Peserta didik dapat menjelaskan ketentuan salat rawatib.", true),
-          pg("Rina punya waktu luang saat istirahat pukul 09.00 di sekolah. Salat sunah yang bisa ia kerjakan adalah ...", ["Tahajud", "Tarawih", "Duha"], "C", "C3", "Pukul 09.00 termasuk waktu duha.", "Disajikan situasi, peserta didik dapat menentukan salat sunah yang tepat."),
-          pg("Salat sunah bila ditinggalkan ...", ["tidak berdosa, tetapi rugi tidak mendapat pahala", "berdosa besar", "harus diganti dua kali"], "A", "C4", "Hukum sunah.", "Peserta didik dapat menganalisis hukum salat sunah."),
-          is("Salat rawatib sebelum salat fardu disebut salat ____", "qabliyah", "C1", "Qabliyah.", "Peserta didik dapat menyebutkan istilah qabliyah."),
-          is("Salat rawatib sesudah salat fardu disebut salat ____", "ba'diyah", "C1", "Ba'diyah.", "Peserta didik dapat menyebutkan istilah ba'diyah."),
-          is("Salat sunah di waktu pagi disebut salat ____", "Duha", "C1", "Duha.", "Peserta didik dapat menyebutkan salat sunah pagi."),
-          is("Salat sunah di malam hari setelah bangun tidur disebut salat ____", "Tahajud", "C1", "Tahajud.", "Peserta didik dapat menyebutkan salat sunah malam."),
-          is("Salat rawatib yang sangat dianjurkan disebut sunah ____", "muakkad", "C2", "Muakkad = sangat dianjurkan.", "Peserta didik dapat menyebutkan istilah sunah muakkad."),
-          is("Salat Duha paling banyak dikerjakan ____ rakaat menurut pendapat yang umum.", "delapan (atau dua belas)", "C2", "Ada yang menyebut 8, ada 12.", "Peserta didik dapat menyebutkan rakaat maksimal salat Duha.", true),
-          is("Waktu terbaik salat Tahajud adalah sepertiga malam ____", "terakhir", "C2", "Sepertiga malam terakhir.", "Peserta didik dapat menyebutkan waktu utama Tahajud.", true),
-          is("Salat sunah dua rakaat sebelum salat Zuhur disebut qabliyah ____", "Zuhur", "C2", "Qabliyah Zuhur.", "Peserta didik dapat menyebutkan nama salat rawatib."),
-          is("Salat sunah rawatib dikerjakan secara ____ (sendiri).", "munfarid", "C2", "Rawatib dikerjakan sendiri.", "Peserta didik dapat menjelaskan cara pelaksanaan salat rawatib.", true),
-          is("Salat Duha dapat dikerjakan di sekolah saat waktu ____", "istirahat", "C3", "Penerapan.", "Peserta didik dapat menerapkan salat Duha di sekolah."),
-          ur("Sebutkan salat rawatib muakkad yang kamu ketahui!", "Dua rakaat sebelum Subuh, dua rakaat sebelum Zuhur, dua rakaat sesudah Zuhur, dua rakaat sesudah Magrib, dua rakaat sesudah Isya.", R3, "C1", "Rawatib muakkad.", "Peserta didik dapat menyebutkan salat rawatib muakkad.", true),
-          ur("Jelaskan perbedaan salat Duha dan salat Tahajud!", "Duha dikerjakan pagi hari setelah matahari naik hingga sebelum Zuhur. Tahajud dikerjakan malam hari setelah bangun tidur. Keduanya minimal dua rakaat.", R3, "C2", "Perbedaan Duha dan Tahajud.", "Peserta didik dapat membedakan salat Duha dan Tahajud."),
-          ur("Sebutkan tiga manfaat mengerjakan salat sunah!", "Menambah pahala, menyempurnakan salat fardu, mendekatkan diri kepada Allah, melapangkan rezeki, menenangkan hati.", Rn(3), "C2", "Manfaat salat sunah.", "Peserta didik dapat menyebutkan manfaat salat sunah."),
-          ur("Susunlah rencana kapan kamu bisa mengerjakan salat Duha dan rawatib dalam sehari!", "Contoh: Duha saat istirahat sekolah; qabliyah Subuh di rumah; qabliyah dan ba'diyah Zuhur di sekolah atau rumah; ba'diyah Magrib dan Isya di rumah.", R3, "C3", "Merencanakan ibadah.", "Peserta didik dapat merencanakan pelaksanaan salat sunah."),
-          ur("Temanmu berkata, \"Salat sunah tidak usah dikerjakan karena tidak wajib.\" Bagaimana pendapatmu?", "Kurang tepat. Walaupun tidak wajib, salat sunah berpahala besar, menyempurnakan salat fardu, dan dicontohkan Rasulullah.", R3, "C5", "Menilai pendapat.", "Disajikan pendapat, peserta didik dapat menilai dan memberi alasan.")
-        ] },
-
-      { id: "k4-periode-makkah", kode: "2.5.3", judul: "Dakwah Nabi Muhammad saw. Periode Makkah", semester: 1, elemen: "Sejarah Peradaban Islam",
-        tp: "Menceritakan dan menjelaskan kisah Nabi Muhammad saw. sesudah menjadi rasul periode Makkah.",
-        soal: [
-          pg("Nabi Muhammad saw. diangkat menjadi rasul pada usia ... tahun.", ["40", "25", "53"], "A", "C1", "Usia 40 tahun.", "Peserta didik dapat menyebutkan usia Nabi diangkat menjadi rasul."),
-          pg("Wahyu pertama turun di ...", ["Gua Tsur", "Gua Hira", "Masjidil Haram"], "B", "C1", "Gua Hira di Jabal Nur.", "Peserta didik dapat menyebutkan tempat turunnya wahyu pertama."),
-          pg("Pada awalnya Nabi berdakwah secara ...", ["terang-terangan", "melalui surat", "sembunyi-sembunyi"], "C", "C1", "Dakwah sembunyi-sembunyi sekitar tiga tahun.", "Peserta didik dapat menyebutkan cara dakwah awal."),
-          pg("Orang-orang yang pertama masuk Islam disebut ...", ["as-sābiqūnal awwalūn", "kaum Ansar", "kaum Quraisy"], "A", "C1", "As-sābiqūnal awwalūn.", "Peserta didik dapat menyebutkan istilah orang pertama masuk Islam."),
-          pg("Perempuan pertama yang masuk Islam adalah ...", ["Aisyah", "Khadijah", "Fatimah"], "B", "C1", "Khadijah istri Nabi.", "Peserta didik dapat menyebutkan perempuan pertama masuk Islam."),
-          pg("Anak-anak pertama yang masuk Islam adalah ...", ["Abu Bakar", "Umar bin Khattab", "Ali bin Abi Thalib"], "C", "C1", "Ali bin Abi Thalib.", "Peserta didik dapat menyebutkan anak pertama masuk Islam."),
-          pg("Tahun wafatnya Khadijah dan Abu Thalib disebut ...", ["Tahun Kesedihan ('Āmul Ḥuzni)", "Tahun Gajah", "Tahun Hijriah"], "A", "C2", "'Āmul Ḥuzni.", "Peserta didik dapat menyebutkan istilah Tahun Kesedihan."),
-          pg("Sahabat yang disiksa dengan ditindih batu panas tetapi tetap berkata \"Aḥad, Aḥad\" adalah ...", ["Abu Bakar", "Bilal bin Rabah", "Zaid bin Haritsah"], "B", "C2", "Bilal tetap teguh imannya.", "Peserta didik dapat menyebutkan tokoh teladan keteguhan iman."),
-          pg("Saat berdakwah ke Thaif, Nabi dilempari batu. Sikap Nabi adalah ...", ["membalas dendam", "meminta malaikat menghancurkan mereka", "mendoakan agar mereka mendapat petunjuk"], "C", "C3", "Nabi tetap sabar dan pemaaf.", "Disajikan peristiwa, peserta didik dapat menyimpulkan sikap Nabi."),
-          pg("Dari kisah dakwah periode Makkah kita belajar untuk ...", ["sabar dan teguh dalam kebaikan", "mudah menyerah", "membalas kejahatan"], "A", "C4", "Keteladanan Nabi.", "Peserta didik dapat menyimpulkan pelajaran dakwah periode Makkah."),
-          is("Wahyu pertama adalah Surah Al-'Alaq ayat 1–____", "5", "C1", "Al-'Alaq 1–5.", "Peserta didik dapat menyebutkan wahyu pertama."),
-          is("Malaikat yang menyampaikan wahyu pertama adalah ____", "Jibril", "C1", "Jibril.", "Peserta didik dapat menyebutkan malaikat penyampai wahyu."),
-          is("Laki-laki dewasa pertama yang masuk Islam adalah ____", "Abu Bakar as-Siddiq", "C1", "Abu Bakar.", "Peserta didik dapat menyebutkan laki-laki dewasa pertama masuk Islam."),
-          is("Rumah yang dijadikan tempat dakwah secara sembunyi-sembunyi adalah rumah Al-____", "Arqam", "C2", "Darul Arqam.", "Peserta didik dapat menyebutkan tempat dakwah awal.", true),
-          is("Dakwah sembunyi-sembunyi berlangsung sekitar ____ tahun.", "tiga", "C2", "Sekitar tiga tahun.", "Peserta didik dapat menyebutkan lama dakwah sembunyi-sembunyi."),
-          is("Paman Nabi yang sangat memusuhi dakwah Islam adalah Abu ____", "Lahab", "C2", "Abu Lahab.", "Peserta didik dapat menyebutkan penentang dakwah."),
-          is("Sebagian sahabat hijrah ke negeri Habasyah yang dipimpin Raja ____", "Najasyi", "C2", "Najasyi.", "Peserta didik dapat menyebutkan raja Habasyah.", true),
-          is("Perjalanan Nabi dari Masjidil Haram ke Masjidil Aqsa lalu ke Sidratul Muntaha disebut ____", "Isra Mikraj", "C1", "Isra Mikraj.", "Peserta didik dapat menyebutkan peristiwa Isra Mikraj."),
-          is("Perintah salat lima waktu diterima Nabi pada peristiwa ____", "Isra Mikraj", "C2", "Isra Mikraj.", "Peserta didik dapat menghubungkan Isra Mikraj dengan perintah salat."),
-          is("Meneladani dakwah Nabi, saat diejek karena berbuat baik kita tetap ____", "sabar", "C3", "Sabar.", "Peserta didik dapat menerapkan teladan Nabi."),
-          ur("Ceritakan secara singkat turunnya wahyu pertama!", "Nabi menyendiri di Gua Hira. Malaikat Jibril datang dan memerintahkan iqra' (bacalah), lalu menyampaikan Surah Al-'Alaq ayat 1–5.", R3, "C2", "Wahyu pertama.", "Peserta didik dapat menceritakan turunnya wahyu pertama."),
-          ur("Sebutkan tiga orang yang pertama masuk Islam!", "Khadijah, Abu Bakar as-Siddiq, Ali bin Abi Thalib, Zaid bin Haritsah.", Rn(3), "C1", "As-sābiqūnal awwalūn.", "Peserta didik dapat menyebutkan orang yang pertama masuk Islam."),
-          ur("Jelaskan perbedaan dakwah sembunyi-sembunyi dan terang-terangan!", "Sembunyi-sembunyi: dakwah kepada keluarga dan sahabat dekat secara rahasia. Terang-terangan: dakwah kepada seluruh penduduk Makkah secara terbuka setelah ada perintah Allah.", R3, "C2", "Tahapan dakwah.", "Peserta didik dapat membedakan tahapan dakwah."),
-          ur("Bagaimana cara meneladani kesabaran Nabi saat berdakwah?", "Tidak membalas ejekan, tetap berbuat baik, memaafkan, dan mendoakan kebaikan bagi orang yang menyakiti.", R3, "C3", "Teladan sabar.", "Peserta didik dapat menerapkan teladan kesabaran Nabi."),
-          ur("Mengapa kaum Quraisy menentang dakwah Nabi Muhammad saw.?", "Karena takut kehilangan kekuasaan dan kedudukan, tidak mau meninggalkan berhala warisan nenek moyang, dan takut usaha berhala mereka rugi.", R3, "C4", "Sebab penolakan dakwah.", "Peserta didik dapat menganalisis sebab penolakan dakwah.")
-        ] },
-
-      /* ================= SEMESTER 2 ================= */
-      { id: "k4-iqlab-ikhfa", kode: "2.1.7", judul: "Huruf Bersambung: Iqlab dan Ikhfa", semester: 2, elemen: "Al-Qur'an dan Hadis",
-        tp: "Membaca, menulis, dan membedakan huruf hijaiah bersambung (3 kata atau lebih) dengan praktik bacaan iqlab dan ikhfa.",
-        soal: [
-          pg("Iqlab artinya ...", ["mengganti (menukar)", "jelas", "samar"], "A", "C1", "Iqlab artinya mengganti.", "Peserta didik dapat menyebutkan arti iqlab."),
-          pg("Iqlab terjadi jika nun sukun atau tanwin bertemu huruf ...", ["ر", "ب", "ق"], "B", "C1", "Huruf iqlab hanya ba.", "Peserta didik dapat menyebutkan huruf iqlab."),
-          pg("Pada bacaan iqlab, bunyi nun sukun atau tanwin diganti menjadi ...", ["lam", "nun", "mim"], "C", "C2", "Diganti mim dengan dengung.", "Peserta didik dapat menjelaskan cara membaca iqlab."),
-          pg("Ikhfa artinya ...", ["samar", "memantul", "tebal"], "A", "C1", "Ikhfa artinya samar.", "Peserta didik dapat menyebutkan arti ikhfa."),
-          pg("Huruf ikhfa haqiqi berjumlah ...", ["enam", "lima belas", "empat"], "B", "C1", "Lima belas huruf.", "Peserta didik dapat menyebutkan jumlah huruf ikhfa."),
-          pg("Tanda bacaan iqlab dalam mushaf adalah ...", ["titik tiga", "garis panjang", "huruf mim kecil"], "C", "C2", "Ditandai mim kecil.", "Peserta didik dapat mengenali tanda iqlab."),
-          pg("Lafal مِنْ بَعْدِ termasuk bacaan ...", ["iqlab", "ikhfa", "izhar"], "A", "C3", "Nun sukun bertemu ba.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          pg("Lafal مِنْ قَبْلِ termasuk bacaan ...", ["iqlab", "ikhfa", "idgam"], "B", "C3", "Nun sukun bertemu qaf, huruf ikhfa.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          pg("Lafal سَمِيْعٌ بَصِيْرٌ termasuk bacaan ...", ["izhar", "ikhfa", "iqlab"], "C", "C3", "Tanwin bertemu ba.", "Disajikan lafal, peserta didik dapat menentukan hukumnya.", true),
-          pg("Persamaan iqlab dan ikhfa adalah ...", ["sama-sama dibaca dengan dengung", "sama-sama dibaca jelas", "hurufnya sama"], "A", "C4", "Keduanya berdengung.", "Peserta didik dapat membandingkan iqlab dan ikhfa."),
-          is("Huruf iqlab adalah ____", "ب (ba)", "C1", "Ba.", "Peserta didik dapat menyebutkan huruf iqlab."),
-          is("Ikhfa dibaca samar disertai ____", "dengung", "C1", "Dengung.", "Peserta didik dapat menjelaskan cara membaca ikhfa."),
-          is("Huruf ikhfa haqiqi berjumlah ____", "15", "C1", "Lima belas.", "Peserta didik dapat menyebutkan jumlah huruf ikhfa."),
-          is("Tuliskan tiga huruf ikhfa: ____", "contoh: ت ث ج (atau د ذ ز س ش ص ض ط ظ ف ق ك)", "C1", "Huruf ikhfa: ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك.", "Peserta didik dapat menuliskan huruf ikhfa."),
-          is("Lafal اَنْتُمْ termasuk bacaan ____", "ikhfa", "C3", "Nun sukun bertemu ta.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          is("Lafal مَنْ ذَا termasuk bacaan ____", "ikhfa", "C3", "Nun sukun bertemu żal.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          is("Lafal أَنْبِئْهُمْ termasuk bacaan ____", "iqlab", "C3", "Nun sukun bertemu ba.", "Disajikan lafal, peserta didik dapat menentukan hukumnya."),
-          is("Lafal عَلِيْمٌ بِذَاتِ termasuk bacaan ____", "iqlab", "C3", "Tanwin bertemu ba.", "Disajikan lafal, peserta didik dapat menentukan hukumnya.", true),
-          is("Lafal رِيْحًا صَرْصَرًا termasuk bacaan ____", "ikhfa", "C3", "Tanwin bertemu shad.", "Disajikan lafal, peserta didik dapat menentukan hukumnya.", true),
-          is("Bacaan nun sukun bertemu huruf ك dibaca ____", "ikhfa (samar berdengung)", "C2", "Kaf termasuk huruf ikhfa.", "Peserta didik dapat menentukan hukum bacaan."),
-          ur("Jelaskan pengertian iqlab dan ikhfa!", "Iqlab: nun sukun/tanwin bertemu ba, dibaca dengan mengganti bunyi nun menjadi mim berdengung. Ikhfa: nun sukun/tanwin bertemu salah satu dari 15 huruf ikhfa, dibaca samar dengan dengung.", R3, "C2", "Pengertian iqlab dan ikhfa.", "Peserta didik dapat menjelaskan iqlab dan ikhfa."),
-          ur("Tuliskan dua contoh bacaan iqlab!", "Contoh: مِنْ بَعْدِ, أَنْبِئْهُمْ, سَمِيْعٌ بَصِيْرٌ.", R2, "C2", "Contoh iqlab.", "Peserta didik dapat memberi contoh iqlab.", true),
-          ur("Tuliskan dua contoh bacaan ikhfa!", "Contoh: مِنْ قَبْلِ, اَنْتُمْ, مَنْ ذَا, يُنْفِقُوْنَ.", R2, "C2", "Contoh ikhfa.", "Peserta didik dapat memberi contoh ikhfa."),
-          ur("Tentukan hukum bacaan pada lafal: مِنْ شَرِّ dan لَيُنْبَذَنَّ", "مِنْ شَرِّ: ikhfa (nun sukun bertemu syin). لَيُنْبَذَنَّ: iqlab (nun sukun bertemu ba).", R2, "C3", "Menganalisis lafal.", "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya.", true),
-          ur("Apa perbedaan cara membaca iqlab dan ikhfa?", "Iqlab: bunyi nun diganti mim lalu didengungkan. Ikhfa: bunyi nun disamarkan antara jelas dan melebur, dengan dengung.", R3, "C4", "Membandingkan bacaan.", "Peserta didik dapat membandingkan cara membaca iqlab dan ikhfa.")
-        ] },
-
-      { id: "k4-hadis-sesama", kode: "2.1.8", judul: "Hadis tentang Menjaga Hubungan Baik terhadap Sesama", semester: 2, elemen: "Al-Qur'an dan Hadis",
-        tp: "Menghafal dan menjelaskan hadis tentang menjaga hubungan baik terhadap sesama.",
-        soal: [
-          pg("Hadis \"lā yu'minu aḥadukum ḥattā yuḥibba li-akhīhi mā yuḥibbu li-nafsih\" berisi perintah untuk ...", ["mencintai saudara seperti mencintai diri sendiri", "mencintai harta", "menjauhi teman"], "A", "C2", "Isi hadis tentang persaudaraan.", "Peserta didik dapat menjelaskan isi hadis.", true),
-          pg("Hadis tersebut diriwayatkan oleh ...", ["Abu Dawud dan Tirmizi", "Bukhari dan Muslim", "Ahmad saja"], "B", "C1", "Muttafaq 'alaih.", "Peserta didik dapat menyebutkan perawi hadis.", true),
-          pg("\"Lā yu'minu\" artinya ...", ["beriman sempurna", "selalu beriman", "tidak sempurna iman"], "C", "C2", "Tidak sempurna iman seseorang.", "Peserta didik dapat menyebutkan arti kata dalam hadis.", true),
-          pg("\"Akhīhi\" dalam hadis artinya ...", ["saudaranya", "ayahnya", "gurunya"], "A", "C2", "Akh artinya saudara.", "Peserta didik dapat menyebutkan arti kata dalam hadis.", true),
-          pg("Contoh mengamalkan hadis tersebut adalah ...", ["mengambil semua kue untuk diri sendiri", "berbagi kue yang kita suka kepada teman", "menyembunyikan kue"], "B", "C3", "Berbagi hal yang kita sukai.", "Disajikan perilaku, peserta didik dapat menentukan pengamalan hadis."),
-          pg("Senyum kepada saudara menurut hadis bernilai ...", ["dosa", "sia-sia", "sedekah"], "C", "C2", "Tabassumuka fī wajhi akhīka ṣadaqah (HR Tirmizi).", "Peserta didik dapat menjelaskan hadis tentang senyum.", true),
-          pg("Teman kesulitan membawa barang. Sesuai hadis tentang persaudaraan, kita ...", ["membantunya", "menertawakannya", "pergi saja"], "A", "C3", "Tolong-menolong.", "Disajikan situasi, peserta didik dapat menerapkan isi hadis."),
-          pg("Hal yang merusak hubungan baik dengan sesama adalah ...", ["saling menyapa", "saling membenci dan iri", "saling menolong"], "B", "C2", "Iri dan benci merusak persaudaraan.", "Peserta didik dapat menyebutkan perilaku yang merusak hubungan."),
-          pg("Dua teman tidak saling bertegur sapa lebih dari tiga hari. Menurut ajaran Islam hal ini ...", ["dianjurkan", "boleh saja", "dilarang"], "C", "C4", "Larangan mendiamkan saudara lebih dari tiga hari (HR Bukhari-Muslim).", "Disajikan kasus, peserta didik dapat menganalisis hukumnya.", true),
-          pg("Orang yang mencintai saudaranya seperti dirinya sendiri akan ...", ["tidak tega menyakiti saudaranya", "senang melihat saudaranya susah", "suka mengejek"], "A", "C4", "Dampak mengamalkan hadis.", "Peserta didik dapat menyimpulkan dampak mengamalkan hadis."),
-          is("Hadis tentang mencintai saudara diriwayatkan oleh Bukhari dan ____", "Muslim", "C1", "Muttafaq 'alaih.", "Peserta didik dapat menyebutkan perawi hadis.", true),
-          is("Seseorang belum sempurna imannya sebelum mencintai saudaranya seperti mencintai ____ sendiri.", "dirinya", "C1", "Isi hadis.", "Peserta didik dapat melengkapi isi hadis.", true),
-          is("Senyum kepada saudara bernilai ____", "sedekah", "C1", "Hadis tentang senyum.", "Peserta didik dapat menyebutkan nilai senyum.", true),
-          is("Sesama muslim adalah ____", "saudara", "C1", "Ukhuwah islamiyah.", "Peserta didik dapat menyebutkan hubungan sesama muslim."),
-          is("Persaudaraan sesama manusia disebut ukhuwah ____", "basyariyah (insaniyah)", "C2", "Ukhuwah basyariyah.", "Peserta didik dapat menyebutkan istilah persaudaraan sesama manusia."),
-          is("Tidak suka melihat orang lain mendapat nikmat disebut ____", "iri (dengki/hasad)", "C2", "Iri.", "Peserta didik dapat menyebutkan sifat tercela."),
-          is("Saat bertemu teman, kita mengucapkan ____ dan tersenyum.", "salam", "C2", "Menjaga hubungan baik.", "Peserta didik dapat menerapkan adab bertemu."),
-          is("Jika berselisih dengan teman, kita harus segera ____", "berdamai (saling memaafkan)", "C3", "Islah.", "Peserta didik dapat menerapkan sikap berdamai."),
-          is("Meminjamkan pensil kepada teman yang lupa membawa adalah contoh sikap ____", "tolong-menolong", "C3", "Ta'āwun.", "Peserta didik dapat memberi contoh pengamalan hadis."),
-          is("Kita tidak boleh mendiamkan teman lebih dari ____ hari.", "tiga", "C2", "Hadis larangan mendiamkan.", "Peserta didik dapat menyebutkan batas waktu.", true),
-          ur("Tuliskan hadis tentang mencintai saudara (boleh huruf Latin) beserta artinya!", "Lā yu'minu aḥadukum ḥattā yuḥibba li-akhīhi mā yuḥibbu li-nafsih. Artinya: Tidak sempurna iman salah seorang di antara kalian sampai ia mencintai saudaranya sebagaimana ia mencintai dirinya sendiri. (HR Bukhari dan Muslim)", R3, "C1", "Lafal dan arti hadis.", "Peserta didik dapat menuliskan hadis beserta artinya.", true),
-          ur("Sebutkan tiga contoh perilaku menjaga hubungan baik dengan sesama!", "Mengucapkan salam, tersenyum, saling menolong, berbagi, memaafkan, tidak mengejek.", Rn(3), "C2", "Perilaku menjaga hubungan.", "Peserta didik dapat menyebutkan perilaku menjaga hubungan baik."),
-          ur("Apa yang kamu lakukan jika temanmu mendapat hadiah yang kamu inginkan?", "Ikut senang, memberi selamat, tidak iri, mendoakan kebaikan untuknya.", R3, "C3", "Penerapan hadis.", "Disajikan situasi, peserta didik dapat menerapkan isi hadis."),
-          ur("Bagaimana cara berdamai dengan teman setelah bertengkar?", "Menenangkan diri, meminta maaf lebih dulu, saling memaafkan, berjabat tangan, bermain bersama lagi.", R3, "C3", "Cara berdamai.", "Peserta didik dapat menjelaskan cara berdamai."),
-          ur("Mengapa iman seseorang belum sempurna jika belum mencintai saudaranya?", "Karena iman bukan hanya ibadah kepada Allah, tetapi juga akhlak kepada sesama. Orang beriman peduli dan tidak egois.", R3, "C4", "Makna hadis.", "Peserta didik dapat menganalisis makna hadis.", true)
-        ] },
-
-      { id: "k4-iman-rasul", kode: "2.2.4", judul: "Iman kepada Rasul-rasul Allah", semester: 2, elemen: "Akidah",
-        tp: "Menjelaskan dan meyakini iman kepada rasul-rasul Allah Swt.",
-        soal: [
-          pg("Iman kepada rasul adalah rukun iman yang ke- ...", ["empat", "tiga", "lima"], "A", "C1", "Rukun iman keempat.", "Peserta didik dapat menyebutkan urutan iman kepada rasul."),
-          pg("Jumlah nabi dan rasul yang wajib diketahui adalah ...", ["20", "25", "99"], "B", "C1", "25 nabi dan rasul.", "Peserta didik dapat menyebutkan jumlah nabi dan rasul yang wajib diketahui."),
-          pg("Rasul yang memiliki ketabahan luar biasa disebut ...", ["khulafaurasyidin", "as-sābiqūn", "ulul azmi"], "C", "C1", "Ulul azmi.", "Peserta didik dapat menyebutkan istilah ulul azmi."),
-          pg("Sifat wajib rasul \"ṣiddīq\" artinya ...", ["jujur", "cerdas", "dapat dipercaya"], "A", "C1", "Ṣiddīq = jujur.", "Peserta didik dapat menyebutkan arti ṣiddīq."),
-          pg("Sifat wajib rasul \"amānah\" artinya ...", ["menyampaikan", "dapat dipercaya", "pandai"], "B", "C1", "Amanah.", "Peserta didik dapat menyebutkan arti amanah."),
-          pg("Sifat wajib rasul \"tablīg\" artinya ...", ["jujur", "cerdas", "menyampaikan wahyu"], "C", "C1", "Tablig.", "Peserta didik dapat menyebutkan arti tablig."),
-          pg("Sifat wajib rasul \"faṭānah\" artinya ...", ["cerdas", "jujur", "pemaaf"], "A", "C1", "Faṭānah.", "Peserta didik dapat menyebutkan arti faṭānah."),
-          pg("Perbedaan nabi dan rasul adalah ...", ["nabi tidak menerima wahyu", "rasul wajib menyampaikan wahyu kepada umatnya", "rasul lebih kaya"], "B", "C2", "Rasul diperintah menyampaikan wahyu.", "Peserta didik dapat membedakan nabi dan rasul.", true),
-          pg("Nisa selalu mengembalikan barang pinjaman tepat waktu. Nisa meneladani sifat rasul ...", ["tablīg", "faṭānah", "amānah"], "C", "C3", "Amanah.", "Disajikan perilaku, peserta didik dapat menentukan sifat rasul yang diteladani."),
-          pg("Fajar berbohong kepada guru. Fajar tidak meneladani sifat rasul ...", ["ṣiddīq", "faṭānah", "tablīg"], "A", "C4", "Lawan ṣiddīq adalah kiżib (dusta).", "Disajikan perilaku, peserta didik dapat menganalisis sifat yang tidak diteladani."),
-          is("Rasul ulul azmi berjumlah ____", "lima", "C1", "Lima rasul.", "Peserta didik dapat menyebutkan jumlah ulul azmi."),
-          is("Rasul pertama adalah Nabi ____", "Adam a.s. (sebagian ulama: Nuh a.s.)", "C1", "Nabi Adam nabi pertama; sebagian ulama menyebut rasul pertama Nabi Nuh.", "Peserta didik dapat menyebutkan rasul pertama.", true),
-          is("Rasul terakhir adalah Nabi ____", "Muhammad saw.", "C1", "Khātamun nabiyyīn.", "Peserta didik dapat menyebutkan rasul terakhir."),
-          is("Lawan sifat ṣiddīq adalah ____ (dusta).", "kiżib", "C2", "Sifat mustahil.", "Peserta didik dapat menyebutkan sifat mustahil rasul."),
-          is("Lawan sifat amānah adalah ____ (khianat).", "khiyānah", "C2", "Sifat mustahil.", "Peserta didik dapat menyebutkan sifat mustahil rasul."),
-          is("Lawan sifat tablīg adalah ____ (menyembunyikan).", "kitmān", "C2", "Sifat mustahil.", "Peserta didik dapat menyebutkan sifat mustahil rasul."),
-          is("Lawan sifat faṭānah adalah ____ (bodoh).", "balādah", "C2", "Sifat mustahil.", "Peserta didik dapat menyebutkan sifat mustahil rasul."),
-          is("Kejadian luar biasa yang diberikan Allah kepada rasul disebut ____", "mukjizat", "C1", "Mukjizat.", "Peserta didik dapat menyebutkan istilah mukjizat."),
-          is("Mukjizat terbesar Nabi Muhammad saw. adalah ____", "Al-Qur'an", "C2", "Al-Qur'an.", "Peserta didik dapat menyebutkan mukjizat terbesar Nabi Muhammad."),
-          is("Menyampaikan ilmu yang bermanfaat kepada teman meneladani sifat rasul ____", "tablīg", "C3", "Tablig.", "Disajikan perilaku, peserta didik dapat menentukan sifat rasul yang diteladani."),
-          ur("Sebutkan lima rasul ulul azmi!", "Nabi Nuh a.s., Nabi Ibrahim a.s., Nabi Musa a.s., Nabi Isa a.s., Nabi Muhammad saw.", Rn(5), "C1", "Ulul azmi.", "Peserta didik dapat menyebutkan rasul ulul azmi."),
-          ur("Sebutkan empat sifat wajib rasul beserta artinya!", "Ṣiddīq (jujur), amānah (dapat dipercaya), tablīg (menyampaikan), faṭānah (cerdas).", Rn(4), "C1", "Sifat wajib rasul.", "Peserta didik dapat menuliskan sifat wajib rasul."),
-          ur("Jelaskan perbedaan nabi dan rasul!", "Nabi menerima wahyu untuk dirinya sendiri. Rasul menerima wahyu dan wajib menyampaikannya kepada umatnya. Setiap rasul pasti nabi, tetapi tidak setiap nabi adalah rasul.", R3, "C2", "Nabi dan rasul.", "Peserta didik dapat membedakan nabi dan rasul.", true),
-          ur("Berikan contoh perilaku meneladani sifat faṭānah!", "Rajin belajar, berpikir sebelum bertindak, menyelesaikan masalah dengan bijak.", R2, "C3", "Teladan faṭānah.", "Peserta didik dapat memberi contoh meneladani faṭānah."),
-          ur("Mengapa rasul pasti memiliki sifat ṣiddīq dan amānah?", "Karena rasul membawa wahyu dari Allah. Jika tidak jujur dan amanah, wahyu bisa diubah dan umat tidak akan percaya.", R3, "C4", "Alasan sifat wajib.", "Peserta didik dapat menganalisis alasan sifat wajib rasul.")
-        ] },
-
-      { id: "k4-guru", kode: "2.3.4", judul: "Akhlak terhadap Guru", semester: 2, elemen: "Akhlak",
-        tp: "Menerapkan akhlak terhadap guru.",
-        soal: [
-          pg("Guru adalah orang yang ...", ["mendidik dan mengajarkan ilmu", "menjual buku", "menjaga sekolah"], "A", "C1", "Peran guru.", "Peserta didik dapat menjelaskan peran guru."),
-          pg("Saat guru menjelaskan pelajaran, sikap kita adalah ...", ["mengobrol", "memperhatikan dengan sungguh-sungguh", "tidur"], "B", "C1", "Memperhatikan.", "Peserta didik dapat menyebutkan adab di kelas."),
-          pg("Bertemu guru di luar sekolah, kita sebaiknya ...", ["menghindar", "pura-pura tidak kenal", "memberi salam dan bersalaman"], "C", "C2", "Hormat kepada guru di mana saja.", "Peserta didik dapat menyebutkan adab bertemu guru."),
-          pg("Jika ingin bertanya kepada guru di kelas, kita sebaiknya ...", ["mengangkat tangan dan bertanya dengan sopan", "berteriak", "memotong pembicaraan guru"], "A", "C2", "Adab bertanya.", "Peserta didik dapat menyebutkan adab bertanya."),
-          pg("Guru memberi tugas rumah. Sikap murid yang baik adalah ...", ["menyalin pekerjaan teman", "mengerjakan dengan sungguh-sungguh dan tepat waktu", "tidak mengerjakan"], "B", "C3", "Tanggung jawab.", "Disajikan situasi, peserta didik dapat menentukan sikap terhadap tugas."),
-          pg("Guru sedang membawa banyak buku. Sikap Rafi yang tepat adalah ...", ["melihat saja", "menertawakan", "menawarkan bantuan"], "C", "C3", "Membantu guru.", "Disajikan situasi, peserta didik dapat menentukan sikap kepada guru."),
-          pg("Contoh perilaku tidak menghormati guru adalah ...", ["menggambar guru untuk diejek", "mendoakan guru", "menyapa guru"], "A", "C2", "Mengejek guru tercela.", "Peserta didik dapat membedakan perilaku hormat dan tidak hormat."),
-          pg("Ilmu yang diajarkan guru akan bermanfaat jika murid ...", ["meremehkan guru", "menghormati guru dan mengamalkan ilmunya", "lupa semua pelajaran"], "B", "C4", "Adab menuntut ilmu.", "Peserta didik dapat menganalisis hubungan adab dan ilmu."),
-          pg("Teman mengejek guru di belakangnya. Sikap terbaikmu adalah ...", ["ikut tertawa", "menyebarkannya", "menasihati teman dengan baik"], "C", "C4", "Menasihati.", "Disajikan situasi, peserta didik dapat menentukan sikap terbaik."),
-          pg("Mendoakan guru termasuk bentuk ...", ["terima kasih dan hormat kepada guru", "perbuatan sia-sia", "kewajiban guru"], "A", "C2", "Mendoakan guru.", "Peserta didik dapat menjelaskan makna mendoakan guru."),
-          is("Guru adalah orang tua kita di ____", "sekolah", "C1", "Guru di sekolah.", "Peserta didik dapat menyebutkan kedudukan guru."),
-          is("Saat masuk kelas dan bertemu guru, kita mengucapkan ____", "salam", "C1", "Salam.", "Peserta didik dapat menyebutkan adab bertemu guru."),
-          is("Berbicara kepada guru harus menggunakan bahasa yang ____", "sopan (santun)", "C1", "Sopan.", "Peserta didik dapat menyebutkan adab berbicara kepada guru."),
-          is("Mengerjakan tugas dari guru dengan jujur dan tepat waktu menunjukkan sikap ____", "tanggung jawab", "C2", "Tanggung jawab.", "Peserta didik dapat menyebutkan sikap terhadap tugas."),
-          is("Jika ingin keluar kelas, kita harus meminta ____ kepada guru.", "izin", "C2", "Izin.", "Peserta didik dapat menyebutkan adab di kelas."),
-          is("Jika berbuat salah kepada guru, kita segera ____", "meminta maaf", "C3", "Meminta maaf.", "Peserta didik dapat menerapkan sikap meminta maaf."),
-          is("Jika pendapat kita berbeda dengan guru, kita menyampaikannya dengan ____", "sopan", "C3", "Adab berbeda pendapat.", "Peserta didik dapat menerapkan adab menyampaikan pendapat."),
-          is("Tanggal 25 November diperingati sebagai Hari ____", "Guru Nasional", "C2", "Hari Guru Nasional.", "Peserta didik dapat menyebutkan Hari Guru."),
-          is("Menyimak penjelasan guru dengan tenang adalah adab dalam menuntut ____", "ilmu", "C2", "Adab menuntut ilmu.", "Peserta didik dapat menjelaskan adab menuntut ilmu."),
-          is("Murid yang menghormati guru akan mendapat ilmu yang ____", "bermanfaat (berkah)", "C3", "Keberkahan ilmu.", "Peserta didik dapat menyimpulkan manfaat menghormati guru."),
-          ur("Sebutkan empat cara menghormati guru!", "Memberi salam, memperhatikan pelajaran, berbicara sopan, mengerjakan tugas, membantu guru, mendoakan guru.", Rn(4), "C2", "Cara menghormati guru.", "Peserta didik dapat menyebutkan cara menghormati guru."),
-          ur("Mengapa kita harus menghormati guru?", "Karena guru mendidik dan mengajarkan ilmu yang bermanfaat untuk dunia dan akhirat, serta berjasa besar dalam hidup kita.", R3, "C2", "Alasan menghormati guru.", "Peserta didik dapat menjelaskan alasan menghormati guru."),
-          ur("Tuliskan pesan terima kasih singkat untuk gurumu!", "Jawaban bebas yang sopan, berisi ucapan terima kasih, permohonan maaf, dan doa untuk guru.", R3, "C3", "Ungkapan terima kasih.", "Peserta didik dapat menuliskan ungkapan terima kasih kepada guru."),
-          ur("Apa yang kamu lakukan jika gurumu sedang sakit?", "Mendoakan kesembuhan, menjenguk bersama teman atau orang tua, menjaga ketertiban kelas, mengirim pesan semangat.", R3, "C3", "Kepedulian kepada guru.", "Disajikan situasi, peserta didik dapat menerapkan sikap peduli kepada guru."),
-          ur("Temanmu sering tidak memperhatikan saat guru menjelaskan. Bagaimana kamu menasihatinya?", "Mengingatkan dengan sopan bahwa memperhatikan guru adalah adab dan agar ilmu mudah dipahami, lalu mengajaknya belajar bersama.", R3, "C4", "Menasihati teman.", "Disajikan situasi, peserta didik dapat memberi nasihat yang tepat.")
-        ] },
-
-      { id: "k4-balig", kode: "2.4.4", judul: "Balig dan Tanggung Jawab (Taklif)", semester: 2, elemen: "Fikih",
-        tp: "Menjelaskan balig dan tanggung jawab yang menyertainya (taklif).",
-        soal: [
-          pg("Balig artinya ...", ["sampai (dewasa menurut agama)", "masih kecil", "tua sekali"], "A", "C1", "Balig artinya telah sampai usia dewasa menurut agama.", "Peserta didik dapat menyebutkan arti balig."),
-          pg("Orang yang sudah balig dan berakal sehingga wajib menjalankan syariat disebut ...", ["muazin", "mukalaf", "imam"], "B", "C1", "Mukalaf.", "Peserta didik dapat menyebutkan istilah mukalaf."),
-          pg("Taklif artinya ...", ["hadiah", "hukuman", "pembebanan hukum (tanggung jawab agama)"], "C", "C1", "Taklif.", "Peserta didik dapat menyebutkan arti taklif."),
-          pg("Tanda balig pada anak perempuan adalah ...", ["mengalami haid", "rambut panjang", "pandai memasak"], "A", "C1", "Haid.", "Peserta didik dapat menyebutkan tanda balig perempuan."),
-          pg("Tanda balig pada anak laki-laki adalah ...", ["suara keras", "mimpi basah (iḥtilām)", "badan tinggi"], "B", "C1", "Iḥtilām.", "Peserta didik dapat menyebutkan tanda balig laki-laki."),
-          pg("Jika belum ada tanda balig, seseorang dianggap balig ketika berusia sekitar ... tahun.", ["7", "10", "15"], "C", "C1", "Sekitar 15 tahun (hijriah).", "Peserta didik dapat menyebutkan batas usia balig.", true),
-          pg("Setelah balig, ibadah salat lima waktu hukumnya ...", ["wajib", "sunah", "boleh ditinggalkan"], "A", "C2", "Wajib bagi mukalaf.", "Peserta didik dapat menjelaskan kewajiban setelah balig."),
-          pg("Setelah haid atau mimpi basah, seseorang wajib ...", ["tayamum", "mandi wajib (mandi besar)", "berwudu saja"], "B", "C2", "Mandi wajib.", "Peserta didik dapat menjelaskan kewajiban bersuci setelah balig.", true),
-          pg("Andi berusia 10 tahun dan belum balig, tetapi rajin salat. Hal ini ...", ["tidak perlu", "salah", "baik sebagai latihan sebelum balig"], "C", "C3", "Pembiasaan sejak kecil.", "Disajikan kasus, peserta didik dapat menilai pembiasaan ibadah."),
-          pg("Orang yang sudah balig harus bertanggung jawab atas perbuatannya karena ...", ["sudah dapat membedakan baik dan buruk", "sudah boleh berbuat semaunya", "sudah tidak perlu belajar"], "A", "C4", "Mukalaf dimintai pertanggungjawaban.", "Peserta didik dapat menganalisis alasan tanggung jawab setelah balig."),
-          is("Orang yang sudah dibebani hukum syariat disebut ____", "mukalaf", "C1", "Mukalaf.", "Peserta didik dapat menyebutkan istilah mukalaf."),
-          is("Pembebanan hukum kepada orang yang sudah balig disebut ____", "taklif", "C1", "Taklif.", "Peserta didik dapat menyebutkan istilah taklif."),
-          is("Syarat mukalaf adalah balig dan ____", "berakal", "C2", "Balig dan berakal.", "Peserta didik dapat menyebutkan syarat mukalaf."),
-          is("Mandi untuk menghilangkan hadas besar disebut mandi ____", "wajib (junub/besar)", "C2", "Mandi wajib.", "Peserta didik dapat menyebutkan istilah mandi wajib."),
-          is("Setelah balig, puasa Ramadan hukumnya ____", "wajib", "C2", "Wajib.", "Peserta didik dapat menyebutkan hukum puasa bagi mukalaf."),
-          is("Setelah balig, kita wajib menutup ____", "aurat", "C2", "Menutup aurat.", "Peserta didik dapat menyebutkan kewajiban menutup aurat."),
-          is("Anak yang belum balig dan sudah bisa membedakan baik-buruk disebut ____", "mumayiz", "C2", "Mumayiz.", "Peserta didik dapat menyebutkan istilah mumayiz.", true),
-          is("Perbuatan baik orang mukalaf akan mendapat ____", "pahala", "C2", "Pahala.", "Peserta didik dapat menjelaskan balasan amal."),
-          is("Perbuatan buruk orang mukalaf akan dicatat sebagai ____", "dosa", "C2", "Dosa.", "Peserta didik dapat menjelaskan balasan amal buruk."),
-          is("Sebelum balig, kita sebaiknya membiasakan diri ____ lima waktu.", "salat", "C3", "Pembiasaan.", "Peserta didik dapat menerapkan pembiasaan ibadah."),
-          ur("Apa yang dimaksud balig dan mukalaf?", "Balig: sudah dewasa menurut agama, ditandai tanda-tanda tertentu atau usia sekitar 15 tahun. Mukalaf: orang balig dan berakal yang wajib menjalankan syariat.", R3, "C1", "Pengertian balig dan mukalaf.", "Peserta didik dapat menjelaskan balig dan mukalaf."),
-          ur("Sebutkan tanda-tanda balig!", "Laki-laki: mimpi basah. Perempuan: haid. Atau sudah berusia sekitar 15 tahun.", R3, "C1", "Tanda balig.", "Peserta didik dapat menyebutkan tanda-tanda balig.", true),
-          ur("Sebutkan tiga kewajiban orang yang sudah balig!", "Salat lima waktu, puasa Ramadan, menutup aurat, mandi wajib bila berhadas besar, menjaga diri dari perbuatan dosa.", Rn(3), "C2", "Kewajiban mukalaf.", "Peserta didik dapat menyebutkan kewajiban setelah balig."),
-          ur("Bagaimana caramu mempersiapkan diri sebelum balig?", "Belajar tata cara salat, wudu, dan mandi wajib; membiasakan salat dan puasa; menjaga sikap dan pergaulan; bertanya kepada orang tua atau guru.", R3, "C3", "Persiapan balig.", "Peserta didik dapat merancang persiapan sebelum balig."),
-          ur("Mengapa orang yang sudah balig harus bertanggung jawab atas perbuatannya?", "Karena ia sudah berakal dan dapat membedakan baik-buruk, sehingga setiap perbuatannya dicatat dan akan dimintai pertanggungjawaban oleh Allah.", R3, "C4", "Makna taklif.", "Peserta didik dapat menjelaskan makna tanggung jawab setelah balig.")
-        ] },
-
-      { id: "k4-hijrah", kode: "2.5.4", judul: "Hijrah Nabi Muhammad saw.", semester: 2, elemen: "Sejarah Peradaban Islam",
-        tp: "Menceritakan dan menjelaskan kisah Nabi Muhammad saw. sesudah menjadi rasul periode Makkah (hijrah Nabi Muhammad saw.).",
-        soal: [
-          pg("Hijrah artinya ...", ["pindah", "menang", "berperang"], "A", "C1", "Hijrah artinya pindah.", "Peserta didik dapat menyebutkan arti hijrah."),
-          pg("Nabi Muhammad saw. hijrah dari Makkah ke ...", ["Thaif", "Yatsrib (Madinah)", "Habasyah"], "B", "C1", "Yatsrib, kemudian bernama Madinah.", "Peserta didik dapat menyebutkan tujuan hijrah."),
-          pg("Sahabat yang menemani Nabi hijrah adalah ...", ["Umar bin Khattab", "Ali bin Abi Thalib", "Abu Bakar as-Siddiq"], "C", "C1", "Abu Bakar.", "Peserta didik dapat menyebutkan sahabat yang menemani hijrah."),
-          pg("Sahabat yang tidur di tempat tidur Nabi pada malam hijrah adalah ...", ["Ali bin Abi Thalib", "Abu Bakar", "Bilal bin Rabah"], "A", "C1", "Ali bin Abi Thalib.", "Peserta didik dapat menyebutkan sahabat pemberani saat hijrah."),
-          pg("Nabi dan Abu Bakar bersembunyi di Gua ...", ["Hira", "Tsur", "Uhud"], "B", "C1", "Gua Tsur.", "Peserta didik dapat menyebutkan tempat persembunyian."),
-          pg("Masjid pertama yang dibangun Nabi saat hijrah adalah Masjid ...", ["Nabawi", "Al-Aqsa", "Quba"], "C", "C1", "Masjid Quba.", "Peserta didik dapat menyebutkan masjid pertama."),
-          pg("Salah satu sebab Nabi hijrah adalah ...", ["tekanan dan ancaman kaum Quraisy semakin berat", "ingin berdagang", "ingin berlibur"], "A", "C2", "Kaum Quraisy berencana membunuh Nabi.", "Peserta didik dapat menjelaskan sebab hijrah."),
-          pg("Saat bersembunyi di gua, Nabi berkata kepada Abu Bakar agar tidak sedih karena ...", ["mereka membawa senjata", "Allah bersama mereka", "gua itu sangat dalam"], "B", "C2", "Lā taḥzan innallāha ma'anā (QS At-Taubah: 40).", "Peserta didik dapat menjelaskan ucapan Nabi di Gua Tsur.", true),
-          pg("Pindah dari kebiasaan buruk ke kebiasaan baik juga disebut hijrah. Contohnya ...", ["dari rajin menjadi malas", "dari jujur menjadi berbohong", "dari malas salat menjadi rajin salat"], "C", "C3", "Hijrah makna luas.", "Peserta didik dapat memberi contoh hijrah dalam kehidupan sehari-hari."),
-          pg("Pelajaran dari kisah hijrah adalah ...", ["berani berkorban, bertawakal, dan bersahabat setia", "takut menghadapi masalah", "mementingkan diri sendiri"], "A", "C4", "Keteladanan hijrah.", "Peserta didik dapat menyimpulkan pelajaran dari kisah hijrah."),
-          is("Hijrah artinya ____", "pindah", "C1", "Pindah.", "Peserta didik dapat menyebutkan arti hijrah."),
-          is("Kota Yatsrib kemudian disebut ____", "Madinah", "C1", "Madinah.", "Peserta didik dapat menyebutkan nama baru Yatsrib."),
-          is("Nabi dan Abu Bakar bersembunyi di Gua Tsur selama ____ hari.", "tiga", "C2", "Tiga hari.", "Peserta didik dapat menyebutkan lama persembunyian.", true),
-          is("Putri Abu Bakar yang mengantarkan makanan ke Gua Tsur adalah ____", "Asma binti Abu Bakar", "C2", "Asma.", "Peserta didik dapat menyebutkan tokoh dalam kisah hijrah.", true),
-          is("Penduduk Madinah yang menolong Nabi disebut kaum ____", "Ansar", "C1", "Ansar.", "Peserta didik dapat menyebutkan istilah Ansar."),
-          is("Orang Makkah yang ikut berhijrah ke Madinah disebut kaum ____", "Muhajirin", "C1", "Muhajirin.", "Peserta didik dapat menyebutkan istilah Muhajirin."),
-          is("Hijrah Nabi menjadi awal perhitungan kalender ____", "Hijriah", "C2", "Kalender Hijriah.", "Peserta didik dapat menghubungkan hijrah dengan kalender."),
-          is("Tahun baru Hijriah dimulai pada tanggal 1 bulan ____", "Muharam", "C2", "1 Muharam.", "Peserta didik dapat menyebutkan awal tahun Hijriah."),
-          is("Penunggang kuda yang mengejar Nabi saat hijrah lalu kudanya terperosok bernama Suraqah bin ____", "Malik", "C2", "Suraqah bin Malik.", "Peserta didik dapat menyebutkan tokoh dalam kisah hijrah.", true),
-          is("Berhenti dari kebiasaan bermain gim berlebihan lalu rajin belajar termasuk contoh ____", "hijrah", "C3", "Hijrah makna luas.", "Peserta didik dapat memberi contoh hijrah."),
-          ur("Ceritakan secara singkat perjalanan hijrah Nabi Muhammad saw.!", "Kaum Quraisy berencana membunuh Nabi. Ali tidur di tempat Nabi. Nabi dan Abu Bakar keluar diam-diam, bersembunyi tiga hari di Gua Tsur, lalu berangkat ke Yatsrib, singgah di Quba membangun masjid, dan disambut kaum Ansar.", R3, "C2", "Kisah hijrah.", "Peserta didik dapat menceritakan perjalanan hijrah."),
-          ur("Sebutkan tiga tokoh yang berjasa dalam peristiwa hijrah beserta perannya!", "Abu Bakar (menemani Nabi), Ali bin Abi Thalib (tidur di tempat tidur Nabi), Asma binti Abu Bakar (mengantar makanan), Abdullah bin Uraiqit (penunjuk jalan).", Rn(3), "C2", "Tokoh hijrah.", "Peserta didik dapat menyebutkan tokoh dan perannya dalam hijrah.", true),
-          ur("Apa yang dimaksud hijrah dalam kehidupan sehari-hari? Berikan contoh!", "Pindah dari perbuatan buruk ke perbuatan baik. Contoh: dari malas menjadi rajin, dari suka berbohong menjadi jujur.", R3, "C3", "Hijrah makna luas.", "Peserta didik dapat menjelaskan hijrah dalam kehidupan sehari-hari."),
-          ur("Sebutkan dua sikap teladan yang dapat diambil dari kisah hijrah!", "Berani, sabar, bertawakal kepada Allah, setia kawan, rela berkorban, tolong-menolong.", R2, "C3", "Teladan hijrah.", "Peserta didik dapat menyebutkan teladan dari kisah hijrah."),
-          ur("Mengapa peristiwa hijrah dijadikan awal tahun Hijriah?", "Karena hijrah menjadi titik balik perkembangan Islam: umat Islam bisa beribadah dengan bebas dan membangun masyarakat Madinah.", R3, "C4", "Makna hijrah.", "Peserta didik dapat menganalisis pentingnya peristiwa hijrah.")
-        ] }
-    ]
-  };
-})();
+window.BANK_SOAL["4"] = {
+ "kelas": 4,
+ "fase": "B",
+ "catatan": "Disusun sesuai ATP Fase B Revisi (CP BKPDM No. 020 Tahun 2026).",
+ "materi": [
+  {
+   "id": "k4-idgam",
+   "kode": "2.1.5",
+   "judul": "Huruf Bersambung: Idgam Bigunah dan Bilagunah",
+   "semester": 1,
+   "elemen": "Al-Qur'an dan Hadis",
+   "tp": "Membaca, menulis, dan membedakan huruf hijaiah bersambung (3 kata atau lebih) dengan praktik bacaan idgam bigunah dan bilagunah.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Idgam artinya ...",
+     "opsi": [
+      "memasukkan",
+      "jelas",
+      "memantul",
+      "memanjangkan"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Idgam artinya memasukkan atau meleburkan.",
+     "indikator": "Peserta didik dapat menyebutkan arti idgam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Idgam bigunah terjadi jika nun sukun atau tanwin bertemu huruf ...",
+     "opsi": [
+      "ل ر",
+      "ي ن م و",
+      "ب",
+      "ء ه ع ح غ خ"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Huruf idgam bigunah: ya, nun, mim, wau (yanmu).",
+     "indikator": "Peserta didik dapat menyebutkan huruf idgam bigunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Huruf idgam bilagunah adalah ...",
+     "opsi": [
+      "ي dan و",
+      "م dan ن",
+      "ل dan ر",
+      "ب dan ت"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Idgam bilagunah: lam dan ra.",
+     "indikator": "Peserta didik dapat menyebutkan huruf idgam bilagunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Gunah artinya ...",
+     "opsi": [
+      "pantulan",
+      "panjang",
+      "pendek",
+      "dengung"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Gunah artinya dengung.",
+     "indikator": "Peserta didik dapat menyebutkan arti gunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Idgam bilagunah dibaca ...",
+     "opsi": [
+      "melebur tanpa dengung",
+      "dengan dengung",
+      "dipantulkan",
+      "dibaca jelas"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Bilagunah artinya tanpa dengung.",
+     "indikator": "Peserta didik dapat menjelaskan cara membaca idgam bilagunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal مَنْ يَقُوْلُ termasuk bacaan ...",
+     "opsi": [
+      "izhar",
+      "idgam bigunah",
+      "idgam bilagunah",
+      "iqlab"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu ya: idgam bigunah.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal مِنْ رَبِّهِمْ termasuk bacaan ...",
+     "opsi": [
+      "ikhfa",
+      "idgam bigunah",
+      "idgam bilagunah",
+      "izhar"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu ra: idgam bilagunah.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal هُدًى لِّلْمُتَّقِيْنَ termasuk bacaan ...",
+     "opsi": [
+      "idgam bigunah",
+      "iqlab",
+      "izhar halqi",
+      "idgam bilagunah"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "pembahasan": "Tanwin bertemu lam: idgam bilagunah.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal خَيْرًا وَّ termasuk bacaan idgam bigunah karena tanwin bertemu huruf ...",
+     "opsi": [
+      "و",
+      "ر",
+      "ي",
+      "ل"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "pembahasan": "Tanwin bertemu wau.",
+     "indikator": "Disajikan lafal, peserta didik dapat menunjukkan huruf idgam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perbedaan idgam bigunah dan bilagunah terletak pada ...",
+     "opsi": [
+      "panjang bacaan",
+      "ada atau tidaknya dengung",
+      "jumlah huruf hijaiah",
+      "letak harakat fathah"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "pembahasan": "Bigunah berdengung, bilagunah tidak.",
+     "indikator": "Peserta didik dapat membandingkan idgam bigunah dan bilagunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Huruf idgam bigunah dapat dihafal dengan singkatan ____",
+     "kunci": "yanmu (ي ن م و)",
+     "level": "C1",
+     "pembahasan": "Yanmu.",
+     "indikator": "Peserta didik dapat menyebutkan singkatan huruf idgam bigunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Idgam bigunah dibaca melebur dengan ____",
+     "kunci": "dengung",
+     "level": "C1",
+     "pembahasan": "Bigunah berdengung.",
+     "indikator": "Peserta didik dapat menjelaskan cara membaca idgam bigunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Idgam bilagunah dibaca melebur ____ dengung.",
+     "kunci": "tanpa",
+     "level": "C1",
+     "pembahasan": "Bila artinya tanpa.",
+     "indikator": "Peserta didik dapat menjelaskan cara membaca idgam bilagunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Huruf idgam bilagunah ada ____",
+     "kunci": "dua (lam dan ra)",
+     "level": "C1",
+     "pembahasan": "Lam dan ra.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah huruf idgam bilagunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Huruf idgam bigunah ada ____",
+     "kunci": "empat",
+     "level": "C1",
+     "pembahasan": "Ya, nun, mim, wau.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah huruf idgam bigunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal مَنْ يَّعْمَلْ termasuk bacaan idgam ____",
+     "kunci": "bigunah",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu ya.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal أَنْ لَّا termasuk bacaan idgam ____",
+     "kunci": "bilagunah",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu lam.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal مِنْ نِعْمَةٍ termasuk bacaan idgam ____",
+     "kunci": "bigunah",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu nun.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal غَفُوْرٌ رَّحِيْمٌ termasuk bacaan idgam ____",
+     "kunci": "bilagunah",
+     "level": "C3",
+     "pembahasan": "Tanwin bertemu ra.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tanda syaddah pada huruf sesudah nun sukun menunjukkan bacaan ____",
+     "kunci": "idgam",
+     "level": "C2",
+     "pembahasan": "Huruf yang dimasuki diberi syaddah.",
+     "indikator": "Peserta didik dapat mengenali tanda bacaan idgam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Jelaskan perbedaan idgam bigunah dan idgam bilagunah beserta hurufnya!",
+     "kunci": "Bigunah: nun sukun/tanwin bertemu ي ن م و, dibaca melebur dengan dengung. Bilagunah: bertemu ل ر, dibaca melebur tanpa dengung.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Dua jenis idgam.",
+     "indikator": "Peserta didik dapat membedakan dua jenis idgam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan dua contoh idgam bigunah!",
+     "kunci": "Contoh: مَنْ يَقُوْلُ, مِنْ نِعْمَةٍ, خَيْرًا وَّ, مِنْ مَّاءٍ.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Contoh idgam bigunah.",
+     "indikator": "Peserta didik dapat memberi contoh idgam bigunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan dua contoh idgam bilagunah!",
+     "kunci": "Contoh: مِنْ رَبِّهِمْ, هُدًى لِّلْمُتَّقِيْنَ, أَنْ لَّا, غَفُوْرٌ رَّحِيْمٌ.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Contoh idgam bilagunah.",
+     "indikator": "Peserta didik dapat memberi contoh idgam bilagunah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tentukan hukum bacaan pada lafal: وَيْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةٍ",
+     "kunci": "وَيْلٌ لِّكُلِّ: tanwin bertemu lam, idgam bilagunah. هُمَزَةٍ لُّمَزَةٍ: tanwin bertemu lam, idgam bilagunah.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Menganalisis ayat.",
+     "indikator": "Disajikan ayat, peserta didik dapat menentukan hukum bacaannya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa kita perlu membedakan bacaan idgam bigunah dan bilagunah?",
+     "kunci": "Agar bacaan Al-Qur'an sesuai tajwid, benar, dan indah, serta tidak keliru antara yang berdengung dan tidak.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Pentingnya tajwid.",
+     "indikator": "Peserta didik dapat menjelaskan pentingnya membedakan jenis idgam.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-an-nasr",
+   "kode": "2.1.6",
+   "judul": "Surah An-Naṣr",
+   "semester": 1,
+   "elemen": "Al-Qur'an dan Hadis",
+   "tp": "Menghafal dan menjelaskan Surah an-Naṣr.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Surah An-Naṣr terdiri atas ... ayat.",
+     "opsi": [
+      "lima",
+      "empat",
+      "tiga",
+      "enam"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "An-Naṣr tiga ayat.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah ayat Surah An-Naṣr.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "An-Naṣr artinya ...",
+     "opsi": [
+      "kemenangan saja",
+      "manusia",
+      "pembukaan",
+      "pertolongan"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "An-Naṣr artinya pertolongan.",
+     "indikator": "Peserta didik dapat menyebutkan arti An-Naṣr.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Surah An-Naṣr adalah surah ke- ...",
+     "opsi": [
+      "108",
+      "110",
+      "111",
+      "112"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Surah ke-110.",
+     "indikator": "Peserta didik dapat menyebutkan nomor surah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Surah An-Naṣr termasuk surah ...",
+     "opsi": [
+      "Madaniyah",
+      "Makkiyah",
+      "terpanjang",
+      "terpendek"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Turun sesudah hijrah, termasuk Madaniyah.",
+     "indikator": "Peserta didik dapat menggolongkan Surah An-Naṣr.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Menurut ayat kedua, manusia masuk agama Allah secara ...",
+     "opsi": [
+      "sendiri-sendiri",
+      "berbondong-bondong",
+      "sembunyi-sembunyi",
+      "terpaksa"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "pembahasan": "Yadkhulūna fī dīnillāhi afwājā.",
+     "indikator": "Peserta didik dapat menjelaskan isi ayat kedua.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ayat ketiga memerintahkan bertasbih, memuji Allah, dan ...",
+     "opsi": [
+      "berperang",
+      "berdagang",
+      "memohon ampun",
+      "berpuasa"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "pembahasan": "Wastagfirh: mohonlah ampun kepada-Nya.",
+     "indikator": "Peserta didik dapat menjelaskan isi ayat ketiga.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Surah An-Naṣr berkaitan dengan peristiwa ...",
+     "opsi": [
+      "Isra Mikraj",
+      "Tahun Gajah",
+      "Perang Badar",
+      "Fathu Makkah"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "pembahasan": "Kemenangan besar umat Islam saat pembebasan Makkah.",
+     "indikator": "Peserta didik dapat menghubungkan surah dengan peristiwa sejarah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Allah disebut \"tawwābā\" dalam ayat ketiga, artinya Maha ...",
+     "opsi": [
+      "Penerima tobat",
+      "Kuasa",
+      "Pengasih",
+      "Mengetahui"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Innahū kāna tawwābā: Dia Maha Penerima tobat.",
+     "indikator": "Peserta didik dapat menjelaskan arti tawwābā.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Tim kelas Rudi memenangi lomba. Sesuai Surah An-Naṣr, sikap terbaik adalah ...",
+     "opsi": [
+      "mengejek tim yang kalah",
+      "bersyukur dan memuji Allah",
+      "sombong",
+      "berpesta semalaman"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "pembahasan": "Kemenangan adalah pertolongan Allah, harus disyukuri.",
+     "indikator": "Disajikan situasi, peserta didik dapat menerapkan pesan Surah An-Naṣr.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Pesan utama Surah An-Naṣr adalah ...",
+     "opsi": [
+      "kita boleh sombong saat menang",
+      "kemenangan karena kehebatan kita sendiri",
+      "kemenangan datang dari Allah, maka kita harus bersyukur dan rendah hati",
+      "kemenangan tidak perlu disyukuri"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "pembahasan": "Inti Surah An-Naṣr.",
+     "indikator": "Peserta didik dapat menyimpulkan pesan Surah An-Naṣr.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Surah An-Naṣr berjumlah ____ ayat.",
+     "kunci": "tiga",
+     "level": "C1",
+     "pembahasan": "Tiga ayat.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah ayat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "An-Naṣr artinya ____",
+     "kunci": "pertolongan",
+     "level": "C1",
+     "pembahasan": "Pertolongan.",
+     "indikator": "Peserta didik dapat menyebutkan arti An-Naṣr.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Surah An-Naṣr adalah surah ke-____",
+     "kunci": "110",
+     "level": "C1",
+     "pembahasan": "Surah ke-110.",
+     "indikator": "Peserta didik dapat menyebutkan nomor surah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Surah sebelum An-Naṣr adalah Surah Al-____",
+     "kunci": "Kāfirūn",
+     "level": "C2",
+     "pembahasan": "Surah ke-109.",
+     "indikator": "Peserta didik dapat menyebutkan surah sebelumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Surah sesudah An-Naṣr adalah Surah Al-____ (Al-Masad).",
+     "kunci": "Lahab",
+     "level": "C2",
+     "pembahasan": "Surah ke-111.",
+     "indikator": "Peserta didik dapat menyebutkan surah sesudahnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "\"Al-fatḥ\" dalam ayat pertama artinya ____",
+     "kunci": "kemenangan",
+     "level": "C2",
+     "pembahasan": "Al-fatḥ artinya kemenangan.",
+     "indikator": "Peserta didik dapat menyebutkan arti kata dalam ayat pertama.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "\"Afwājā\" artinya ____",
+     "kunci": "berbondong-bondong",
+     "level": "C2",
+     "pembahasan": "Afwājā.",
+     "indikator": "Peserta didik dapat menyebutkan arti kata dalam ayat kedua.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "\"Wastagfirh\" artinya dan mohonlah ____ kepada-Nya.",
+     "kunci": "ampun",
+     "level": "C2",
+     "pembahasan": "Istigfar.",
+     "indikator": "Peserta didik dapat menyebutkan arti kata dalam ayat ketiga.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Bertasbih artinya mengucapkan ____",
+     "kunci": "Subḥānallāh",
+     "level": "C2",
+     "pembahasan": "Tasbih.",
+     "indikator": "Peserta didik dapat menjelaskan arti bertasbih.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Setelah berhasil, kita tidak boleh ____",
+     "kunci": "sombong",
+     "level": "C3",
+     "pembahasan": "Rendah hati saat berhasil.",
+     "indikator": "Peserta didik dapat menerapkan pesan Surah An-Naṣr.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan arti Surah An-Naṣr ayat 1–3!",
+     "kunci": "1) Apabila telah datang pertolongan Allah dan kemenangan. 2) Dan engkau melihat manusia berbondong-bondong masuk agama Allah. 3) Maka bertasbihlah dengan memuji Tuhanmu dan mohonlah ampun kepada-Nya. Sungguh, Dia Maha Penerima tobat.",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C1",
+     "pembahasan": "Arti Surah An-Naṣr.",
+     "indikator": "Peserta didik dapat menuliskan arti Surah An-Naṣr.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tiga perintah Allah dalam ayat ketiga Surah An-Naṣr!",
+     "kunci": "Bertasbih, memuji Allah (bertahmid), dan memohon ampun (beristigfar).",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Isi ayat ketiga.",
+     "indikator": "Peserta didik dapat menyebutkan perintah dalam ayat ketiga.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Ceritakan hubungan Surah An-Naṣr dengan peristiwa Fathu Makkah!",
+     "kunci": "Surah ini menggambarkan kemenangan umat Islam saat pembebasan Makkah, setelah itu banyak orang masuk Islam berbondong-bondong.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Asbabun nuzul.",
+     "indikator": "Peserta didik dapat menjelaskan hubungan surah dengan peristiwa sejarah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Bagaimana sikapmu ketika mendapat nilai terbaik di kelas sesuai pesan Surah An-Naṣr?",
+     "kunci": "Bersyukur kepada Allah, mengucapkan alhamdulillah, tidak sombong, membantu teman yang kesulitan.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Penerapan pesan surah.",
+     "indikator": "Peserta didik dapat menerapkan pesan Surah An-Naṣr.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa saat menang kita tetap diperintah memohon ampun?",
+     "kunci": "Karena manusia tidak luput dari salah dan agar tidak sombong; kemenangan berasal dari Allah.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Hikmah istigfar.",
+     "indikator": "Peserta didik dapat menganalisis hikmah perintah istigfar.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-asmaul-husna",
+   "kode": "2.2.3",
+   "judul": "Asmaul Husna (Al-Gaffār, Al-Wahhāb, Al-Fattāḥ, Al-Laṭīf)",
+   "semester": 1,
+   "elemen": "Akidah",
+   "tp": "Menjelaskan dan meyakini beberapa asmaulhusna (al-Gaffār, al-Wahhāb, al-Fattāḥ, al-Laṭīf).",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Al-Gaffār artinya Allah Maha ...",
+     "opsi": [
+      "Pembuka",
+      "Pemberi",
+      "Lembut",
+      "Pengampun"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Al-Gaffār Maha Pengampun.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Gaffār.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Al-Wahhāb artinya Allah Maha ...",
+     "opsi": [
+      "Pemberi Karunia",
+      "Pembuka",
+      "Pengampun",
+      "Lembut"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Al-Wahhāb Maha Pemberi Karunia.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Wahhāb.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Al-Fattāḥ artinya Allah Maha ...",
+     "opsi": [
+      "Lembut",
+      "Pembuka (rahmat)",
+      "Pemberi",
+      "Pengampun"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Al-Fattāḥ Maha Pembuka.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Fattāḥ.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Al-Laṭīf artinya Allah Maha ...",
+     "opsi": [
+      "Pengampun",
+      "Kuat",
+      "Lembut",
+      "Pemberi"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Al-Laṭīf Maha Lembut.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Laṭīf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Allah mengampuni dosa hamba yang bertobat. Ini bukti Allah ...",
+     "opsi": [
+      "Al-Fattāḥ",
+      "Al-Wahhāb",
+      "Al-Laṭīf",
+      "Al-Gaffār"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "pembahasan": "Al-Gaffār.",
+     "indikator": "Disajikan contoh, peserta didik dapat menentukan Asmaul Husna.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Allah memberi kita kesehatan dan kecerdasan tanpa meminta balasan. Ini bukti Allah ...",
+     "opsi": [
+      "Al-Wahhāb",
+      "Al-Laṭīf",
+      "Al-Gaffār",
+      "Al-'Adl"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Al-Wahhāb.",
+     "indikator": "Disajikan contoh, peserta didik dapat menentukan Asmaul Husna.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Siswa yang awalnya sulit memahami pelajaran, lalu dimudahkan Allah. Ini bukti Allah ...",
+     "opsi": [
+      "Al-Gaffār",
+      "Al-Fattāḥ",
+      "Al-Wahhāb",
+      "Al-Laṭīf"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "pembahasan": "Allah membuka pintu kemudahan.",
+     "indikator": "Disajikan peristiwa, peserta didik dapat menentukan Asmaul Husna.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Meneladani Al-Gaffār, ketika teman meminta maaf kita ...",
+     "opsi": [
+      "marah terus",
+      "membalasnya",
+      "memaafkannya",
+      "menceritakannya kepada teman lain"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "pembahasan": "Pemaaf.",
+     "indikator": "Peserta didik dapat menentukan sikap meneladani Al-Gaffār.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Meneladani Al-Laṭīf, kita berbicara kepada orang lain dengan ...",
+     "opsi": [
+      "kasar",
+      "berteriak",
+      "membentak",
+      "lemah lembut"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "pembahasan": "Lembut.",
+     "indikator": "Peserta didik dapat menentukan sikap meneladani Al-Laṭīf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sinta suka membagikan makanannya kepada teman tanpa pamrih. Sinta meneladani ...",
+     "opsi": [
+      "Al-Wahhāb",
+      "Al-Fattāḥ",
+      "Al-Gaffār",
+      "Al-Laṭīf"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "pembahasan": "Suka memberi.",
+     "indikator": "Disajikan perilaku, peserta didik dapat menganalisis Asmaul Husna yang diteladani.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Al-Gaffār artinya Maha ____",
+     "kunci": "Pengampun",
+     "level": "C1",
+     "pembahasan": "Al-Gaffār.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Gaffār.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Al-Wahhāb artinya Maha Pemberi ____",
+     "kunci": "Karunia",
+     "level": "C1",
+     "pembahasan": "Al-Wahhāb.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Wahhāb.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Al-Fattāḥ artinya Maha ____",
+     "kunci": "Pembuka",
+     "level": "C1",
+     "pembahasan": "Al-Fattāḥ.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Fattāḥ.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Al-Laṭīf artinya Maha ____",
+     "kunci": "Lembut",
+     "level": "C1",
+     "pembahasan": "Al-Laṭīf.",
+     "indikator": "Peserta didik dapat menyebutkan arti Al-Laṭīf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Untuk memohon ampun kepada Allah, kita membaca ____",
+     "kunci": "istigfar (Astagfirullāh)",
+     "level": "C2",
+     "pembahasan": "Istigfar.",
+     "indikator": "Peserta didik dapat menghubungkan Al-Gaffār dengan istigfar.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Orang yang suka memberi tanpa mengharap balasan disebut ____",
+     "kunci": "dermawan",
+     "level": "C2",
+     "pembahasan": "Teladan Al-Wahhāb.",
+     "indikator": "Peserta didik dapat menyebutkan sifat teladan Al-Wahhāb.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Asmaul Husna yang kita teladani dengan memaafkan teman adalah ____",
+     "kunci": "Al-Gaffār",
+     "level": "C3",
+     "pembahasan": "Pemaaf.",
+     "indikator": "Disajikan perilaku, peserta didik dapat menentukan Asmaul Husna.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Asmaul Husna yang kita teladani dengan bertutur kata halus adalah ____",
+     "kunci": "Al-Laṭīf",
+     "level": "C3",
+     "pembahasan": "Lembut.",
+     "indikator": "Disajikan perilaku, peserta didik dapat menentukan Asmaul Husna.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Membantu teman yang kesulitan memahami pelajaran meneladani Asmaul Husna ____",
+     "kunci": "Al-Fattāḥ",
+     "level": "C3",
+     "pembahasan": "Membuka jalan kemudahan.",
+     "indikator": "Disajikan perilaku, peserta didik dapat menentukan Asmaul Husna.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Asmaul Husna berjumlah ____",
+     "kunci": "99",
+     "level": "C1",
+     "pembahasan": "99 nama.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah Asmaul Husna.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan empat Asmaul Husna yang kamu pelajari beserta artinya!",
+     "kunci": "Al-Gaffār (Maha Pengampun), Al-Wahhāb (Maha Pemberi Karunia), Al-Fattāḥ (Maha Pembuka), Al-Laṭīf (Maha Lembut).",
+     "rubrik": "Skor 4: 4 jawaban benar. Skor 3 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C1",
+     "pembahasan": "Empat Asmaul Husna.",
+     "indikator": "Peserta didik dapat menuliskan Asmaul Husna beserta artinya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Berikan satu bukti bahwa Allah Al-Wahhāb!",
+     "kunci": "Allah memberi kita kehidupan, keluarga, kesehatan, dan rezeki tanpa meminta balasan.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Bukti Al-Wahhāb.",
+     "indikator": "Peserta didik dapat memberi bukti Allah Al-Wahhāb.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan dua contoh perilaku meneladani Al-Gaffār di sekolah!",
+     "kunci": "Memaafkan teman yang berbuat salah, tidak mendendam, mau berbaikan kembali.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Teladan Al-Gaffār.",
+     "indikator": "Peserta didik dapat memberi contoh perilaku meneladani Al-Gaffār.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Bagaimana cara meneladani Al-Laṭīf di rumah?",
+     "kunci": "Berbicara lembut kepada orang tua dan adik, tidak membentak, menyayangi anggota keluarga.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Teladan Al-Laṭīf.",
+     "indikator": "Peserta didik dapat menerapkan teladan Al-Laṭīf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa kita tidak boleh putus asa dari ampunan Allah walau pernah berbuat salah?",
+     "kunci": "Karena Allah Al-Gaffār, Maha Pengampun bagi hamba yang menyesal dan bertobat.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Makna Al-Gaffār.",
+     "indikator": "Peserta didik dapat menjelaskan makna Al-Gaffār.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-keluarga",
+   "kode": "2.3.3",
+   "judul": "Akhlak terhadap Keluarga",
+   "semester": 1,
+   "elemen": "Akhlak",
+   "tp": "Menerapkan akhlak terhadap keluarga.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Keluarga inti terdiri atas ...",
+     "opsi": [
+      "guru dan murid",
+      "ayah, ibu, dan anak",
+      "tetangga",
+      "teman sekelas"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Keluarga inti.",
+     "indikator": "Peserta didik dapat menyebutkan anggota keluarga inti.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sikap kepada kakak yang benar adalah ...",
+     "opsi": [
+      "melawan",
+      "mengejek",
+      "menghormati",
+      "membentak"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Menghormati yang lebih tua.",
+     "indikator": "Peserta didik dapat menyebutkan sikap kepada kakak.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sikap kepada adik yang benar adalah ...",
+     "opsi": [
+      "memukul",
+      "membentak",
+      "menakut-nakuti",
+      "menyayangi"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Menyayangi yang lebih muda.",
+     "indikator": "Peserta didik dapat menyebutkan sikap kepada adik.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Mengunjungi kakek, nenek, dan saudara disebut ...",
+     "opsi": [
+      "silaturahmi",
+      "rekreasi",
+      "hijrah",
+      "musyawarah"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Silaturahmi menyambung persaudaraan.",
+     "indikator": "Peserta didik dapat menyebutkan istilah silaturahmi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Manfaat silaturahmi menurut hadis adalah ...",
+     "opsi": [
+      "dijauhkan dari teman",
+      "dilapangkan rezeki dan dipanjangkan umur",
+      "menjadi sombong",
+      "dijauhkan dari keluarga"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "pembahasan": "Hadis riwayat Bukhari dan Muslim.",
+     "indikator": "Peserta didik dapat menjelaskan manfaat silaturahmi.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Adik menangis karena mainannya rusak. Sikap yang tepat adalah ...",
+     "opsi": [
+      "menertawakannya",
+      "membiarkannya",
+      "menghibur dan membantu memperbaiki",
+      "memarahinya"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "pembahasan": "Menyayangi adik.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap kepada adik.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Kakak meminta tolong mengambilkan buku. Sikap yang baik adalah ...",
+     "opsi": [
+      "menyuruh adik saja",
+      "pura-pura tidak dengar",
+      "meminta bayaran",
+      "segera membantu"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "pembahasan": "Saling menolong.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap kepada kakak.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Nenek datang berkunjung. Yang sebaiknya kita lakukan adalah ...",
+     "opsi": [
+      "menyambut, bersalaman, dan menemani",
+      "tetap bermain HP",
+      "masuk kamar",
+      "menonton televisi dengan suara keras"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "pembahasan": "Menghormati kakek dan nenek.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap kepada nenek.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Kakak beradik bertengkar karena berebut remot TV. Cara terbaik menyelesaikannya adalah ...",
+     "opsi": [
+      "saling memukul",
+      "bermusyawarah dan bergantian",
+      "mengadu dan menangis",
+      "merusak remot"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "pembahasan": "Musyawarah dan saling mengalah.",
+     "indikator": "Disajikan konflik, peserta didik dapat menentukan penyelesaian terbaik.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Keluarga yang harmonis akan terwujud jika anggotanya ...",
+     "opsi": [
+      "mementingkan diri sendiri",
+      "saling iri",
+      "saling menyayangi dan menghormati",
+      "saling mendiamkan"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "pembahasan": "Kunci keluarga harmonis.",
+     "indikator": "Peserta didik dapat menganalisis ciri keluarga harmonis.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Menyambung tali persaudaraan disebut ____",
+     "kunci": "silaturahmi",
+     "level": "C1",
+     "pembahasan": "Silaturahmi.",
+     "indikator": "Peserta didik dapat menyebutkan istilah silaturahmi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Kepada saudara yang lebih tua kita harus ____",
+     "kunci": "menghormati",
+     "level": "C1",
+     "pembahasan": "Hormat.",
+     "indikator": "Peserta didik dapat menyebutkan sikap kepada saudara tua.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Kepada saudara yang lebih muda kita harus ____",
+     "kunci": "menyayangi",
+     "level": "C1",
+     "pembahasan": "Sayang.",
+     "indikator": "Peserta didik dapat menyebutkan sikap kepada saudara muda.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Memutus tali persaudaraan hukumnya ____",
+     "kunci": "haram (dilarang)",
+     "level": "C2",
+     "pembahasan": "Memutus silaturahmi dilarang.",
+     "indikator": "Peserta didik dapat menyebutkan hukum memutus silaturahmi.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Membantu pekerjaan rumah termasuk sikap ____ jawab kepada keluarga.",
+     "kunci": "tanggung",
+     "level": "C2",
+     "pembahasan": "Tanggung jawab.",
+     "indikator": "Peserta didik dapat menjelaskan tanggung jawab dalam keluarga.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Bila berbuat salah kepada kakak, kita harus segera ____",
+     "kunci": "meminta maaf",
+     "level": "C3",
+     "pembahasan": "Meminta maaf.",
+     "indikator": "Peserta didik dapat menerapkan sikap meminta maaf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Saat Lebaran, kita bersilaturahmi ke rumah ____ dan saudara.",
+     "kunci": "kakek-nenek (kerabat)",
+     "level": "C3",
+     "pembahasan": "Silaturahmi saat Lebaran.",
+     "indikator": "Peserta didik dapat memberi contoh silaturahmi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Berbagi makanan dengan adik menunjukkan sikap ____",
+     "kunci": "kasih sayang (peduli)",
+     "level": "C3",
+     "pembahasan": "Kasih sayang.",
+     "indikator": "Peserta didik dapat menyebutkan nilai dari perilaku berbagi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Keluarga yang rukun dan bahagia disebut keluarga ____",
+     "kunci": "harmonis (sakinah)",
+     "level": "C2",
+     "pembahasan": "Keluarga sakinah.",
+     "indikator": "Peserta didik dapat menyebutkan istilah keluarga harmonis.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Jika anggota keluarga sakit, kita sebaiknya ____ dan mendoakannya.",
+     "kunci": "merawat",
+     "level": "C3",
+     "pembahasan": "Kepedulian.",
+     "indikator": "Peserta didik dapat menerapkan sikap peduli dalam keluarga.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tiga contoh akhlak terpuji kepada saudara!",
+     "kunci": "Menghormati kakak, menyayangi adik, saling membantu, berbagi, tidak bertengkar, meminta maaf.",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Akhlak kepada saudara.",
+     "indikator": "Peserta didik dapat menyebutkan akhlak terpuji kepada saudara.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa manfaat bersilaturahmi?",
+     "kunci": "Mempererat persaudaraan, dilapangkan rezeki, dipanjangkan umur, saling tolong-menolong, hati bahagia.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Manfaat silaturahmi.",
+     "indikator": "Peserta didik dapat menjelaskan manfaat silaturahmi.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa yang kamu lakukan agar keluargamu tetap rukun?",
+     "kunci": "Menghormati orang tua, menyayangi saudara, membantu pekerjaan rumah, tidak bertengkar, saling memaafkan.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Menjaga kerukunan.",
+     "indikator": "Peserta didik dapat merancang cara menjaga kerukunan keluarga.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Bagaimana sikapmu jika adikmu merusak buku pelajaranmu tanpa sengaja?",
+     "kunci": "Tidak marah berlebihan, memaafkan, menjelaskan dengan lembut agar lebih hati-hati, merapikan bersama.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Menyikapi masalah dengan bijak.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap yang bijak.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa kita harus menghormati kakek dan nenek?",
+     "kunci": "Karena mereka orang tua dari orang tua kita, telah berjasa, berpengalaman, dan Islam memerintahkan menghormati orang yang lebih tua.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Alasan menghormati kakek-nenek.",
+     "indikator": "Peserta didik dapat menjelaskan alasan menghormati kakek dan nenek.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-salat-sunah",
+   "kode": "2.4.3",
+   "judul": "Salat Sunah (Rawatib, Duha, dan Tahajud)",
+   "semester": 1,
+   "elemen": "Fikih",
+   "tp": "Menerapkan salat sunah (rawatib, duha, dan tahajud).",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salat sunah yang menyertai salat fardu disebut salat ...",
+     "opsi": [
+      "tarawih",
+      "duha",
+      "tahajud",
+      "rawatib"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Rawatib mengiringi salat fardu.",
+     "indikator": "Peserta didik dapat menyebutkan pengertian salat rawatib.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salat rawatib yang dikerjakan sebelum salat fardu disebut ...",
+     "opsi": [
+      "qabliyah",
+      "ba'diyah",
+      "witir",
+      "tahiyatul masjid"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Qabliyah = sebelum.",
+     "indikator": "Peserta didik dapat menyebutkan istilah qabliyah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salat rawatib yang dikerjakan sesudah salat fardu disebut ...",
+     "opsi": [
+      "qabliyah",
+      "ba'diyah",
+      "tarawih",
+      "duha"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Ba'diyah = sesudah.",
+     "indikator": "Peserta didik dapat menyebutkan istilah ba'diyah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salat Duha dikerjakan pada waktu ...",
+     "opsi": [
+      "setelah Asar",
+      "tengah malam",
+      "pagi setelah matahari naik hingga sebelum Zuhur",
+      "setelah Isya"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Waktu duha.",
+     "indikator": "Peserta didik dapat menyebutkan waktu salat Duha.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salat Tahajud dikerjakan pada ...",
+     "opsi": [
+      "siang hari",
+      "setelah Subuh",
+      "sore hari",
+      "malam hari setelah bangun tidur"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Tahajud di malam hari setelah tidur.",
+     "indikator": "Peserta didik dapat menyebutkan waktu salat Tahajud.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Jumlah rakaat salat Duha paling sedikit adalah ...",
+     "opsi": [
+      "dua",
+      "satu",
+      "empat",
+      "tiga"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Minimal dua rakaat.",
+     "indikator": "Peserta didik dapat menyebutkan rakaat minimal salat Duha.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salat sunah sebelum Subuh berjumlah ... rakaat.",
+     "opsi": [
+      "empat",
+      "dua",
+      "tiga",
+      "enam"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "pembahasan": "Qabliyah Subuh dua rakaat, sangat dianjurkan.",
+     "indikator": "Peserta didik dapat menyebutkan rakaat qabliyah Subuh.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Setelah salat Subuh dan Asar ... salat sunah rawatib ba'diyah.",
+     "opsi": [
+      "ada",
+      "wajib ada",
+      "tidak ada",
+      "ada, empat rakaat"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "pembahasan": "Tidak ada ba'diyah setelah Subuh dan Asar.",
+     "indikator": "Peserta didik dapat menjelaskan ketentuan salat rawatib.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Rina punya waktu luang saat istirahat pukul 09.00 di sekolah. Salat sunah yang bisa ia kerjakan adalah ...",
+     "opsi": [
+      "Tahajud",
+      "Tarawih",
+      "Witir",
+      "Duha"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "pembahasan": "Pukul 09.00 termasuk waktu duha.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan salat sunah yang tepat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salat sunah bila ditinggalkan ...",
+     "opsi": [
+      "tidak berdosa, tetapi rugi tidak mendapat pahala",
+      "berdosa besar",
+      "harus diganti dua kali",
+      "harus diganti esok hari"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "pembahasan": "Hukum sunah.",
+     "indikator": "Peserta didik dapat menganalisis hukum salat sunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat rawatib sebelum salat fardu disebut salat ____",
+     "kunci": "qabliyah",
+     "level": "C1",
+     "pembahasan": "Qabliyah.",
+     "indikator": "Peserta didik dapat menyebutkan istilah qabliyah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat rawatib sesudah salat fardu disebut salat ____",
+     "kunci": "ba'diyah",
+     "level": "C1",
+     "pembahasan": "Ba'diyah.",
+     "indikator": "Peserta didik dapat menyebutkan istilah ba'diyah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat sunah di waktu pagi disebut salat ____",
+     "kunci": "Duha",
+     "level": "C1",
+     "pembahasan": "Duha.",
+     "indikator": "Peserta didik dapat menyebutkan salat sunah pagi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat sunah di malam hari setelah bangun tidur disebut salat ____",
+     "kunci": "Tahajud",
+     "level": "C1",
+     "pembahasan": "Tahajud.",
+     "indikator": "Peserta didik dapat menyebutkan salat sunah malam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat rawatib yang sangat dianjurkan disebut sunah ____",
+     "kunci": "muakkad",
+     "level": "C2",
+     "pembahasan": "Muakkad = sangat dianjurkan.",
+     "indikator": "Peserta didik dapat menyebutkan istilah sunah muakkad.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat Duha paling banyak dikerjakan ____ rakaat menurut pendapat yang umum.",
+     "kunci": "delapan (atau dua belas)",
+     "level": "C2",
+     "pembahasan": "Ada yang menyebut 8, ada 12.",
+     "indikator": "Peserta didik dapat menyebutkan rakaat maksimal salat Duha.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Waktu terbaik salat Tahajud adalah sepertiga malam ____",
+     "kunci": "terakhir",
+     "level": "C2",
+     "pembahasan": "Sepertiga malam terakhir.",
+     "indikator": "Peserta didik dapat menyebutkan waktu utama Tahajud.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat sunah dua rakaat sebelum salat Zuhur disebut qabliyah ____",
+     "kunci": "Zuhur",
+     "level": "C2",
+     "pembahasan": "Qabliyah Zuhur.",
+     "indikator": "Peserta didik dapat menyebutkan nama salat rawatib.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat sunah rawatib dikerjakan secara ____ (sendiri).",
+     "kunci": "munfarid",
+     "level": "C2",
+     "pembahasan": "Rawatib dikerjakan sendiri.",
+     "indikator": "Peserta didik dapat menjelaskan cara pelaksanaan salat rawatib.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Salat Duha dapat dikerjakan di sekolah saat waktu ____",
+     "kunci": "istirahat",
+     "level": "C3",
+     "pembahasan": "Penerapan.",
+     "indikator": "Peserta didik dapat menerapkan salat Duha di sekolah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan salat rawatib muakkad yang kamu ketahui!",
+     "kunci": "Dua rakaat sebelum Subuh, dua rakaat sebelum Zuhur, dua rakaat sesudah Zuhur, dua rakaat sesudah Magrib, dua rakaat sesudah Isya.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C1",
+     "pembahasan": "Rawatib muakkad.",
+     "indikator": "Peserta didik dapat menyebutkan salat rawatib muakkad.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Jelaskan perbedaan salat Duha dan salat Tahajud!",
+     "kunci": "Duha dikerjakan pagi hari setelah matahari naik hingga sebelum Zuhur. Tahajud dikerjakan malam hari setelah bangun tidur. Keduanya minimal dua rakaat.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Perbedaan Duha dan Tahajud.",
+     "indikator": "Peserta didik dapat membedakan salat Duha dan Tahajud.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tiga manfaat mengerjakan salat sunah!",
+     "kunci": "Menambah pahala, menyempurnakan salat fardu, mendekatkan diri kepada Allah, melapangkan rezeki, menenangkan hati.",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Manfaat salat sunah.",
+     "indikator": "Peserta didik dapat menyebutkan manfaat salat sunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Susunlah rencana kapan kamu bisa mengerjakan salat Duha dan rawatib dalam sehari!",
+     "kunci": "Contoh: Duha saat istirahat sekolah; qabliyah Subuh di rumah; qabliyah dan ba'diyah Zuhur di sekolah atau rumah; ba'diyah Magrib dan Isya di rumah.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Merencanakan ibadah.",
+     "indikator": "Peserta didik dapat merencanakan pelaksanaan salat sunah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Temanmu berkata, \"Salat sunah tidak usah dikerjakan karena tidak wajib.\" Bagaimana pendapatmu?",
+     "kunci": "Kurang tepat. Walaupun tidak wajib, salat sunah berpahala besar, menyempurnakan salat fardu, dan dicontohkan Rasulullah.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C5",
+     "pembahasan": "Menilai pendapat.",
+     "indikator": "Disajikan pendapat, peserta didik dapat menilai dan memberi alasan.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-periode-makkah",
+   "kode": "2.5.3",
+   "judul": "Dakwah Nabi Muhammad saw. Periode Makkah",
+   "semester": 1,
+   "elemen": "Sejarah Peradaban Islam",
+   "tp": "Menceritakan dan menjelaskan kisah Nabi Muhammad saw. sesudah menjadi rasul periode Makkah.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Nabi Muhammad saw. diangkat menjadi rasul pada usia ... tahun.",
+     "opsi": [
+      "25",
+      "40",
+      "53",
+      "63"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Usia 40 tahun.",
+     "indikator": "Peserta didik dapat menyebutkan usia Nabi diangkat menjadi rasul.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Wahyu pertama turun di ...",
+     "opsi": [
+      "Gua Tsur",
+      "Gua Hira",
+      "Masjidil Haram",
+      "Bukit Uhud"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Gua Hira di Jabal Nur.",
+     "indikator": "Peserta didik dapat menyebutkan tempat turunnya wahyu pertama.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Pada awalnya Nabi berdakwah secara ...",
+     "opsi": [
+      "terang-terangan",
+      "melalui surat",
+      "sembunyi-sembunyi",
+      "melalui peperangan"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Dakwah sembunyi-sembunyi sekitar tiga tahun.",
+     "indikator": "Peserta didik dapat menyebutkan cara dakwah awal.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Orang-orang yang pertama masuk Islam disebut ...",
+     "opsi": [
+      "kaum Badui",
+      "kaum Ansar",
+      "kaum Quraisy",
+      "as-sābiqūnal awwalūn"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "As-sābiqūnal awwalūn.",
+     "indikator": "Peserta didik dapat menyebutkan istilah orang pertama masuk Islam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perempuan pertama yang masuk Islam adalah ...",
+     "opsi": [
+      "Khadijah",
+      "Aisyah",
+      "Fatimah",
+      "Hafsah"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Khadijah istri Nabi.",
+     "indikator": "Peserta didik dapat menyebutkan perempuan pertama masuk Islam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Anak-anak pertama yang masuk Islam adalah ...",
+     "opsi": [
+      "Abu Bakar",
+      "Ali bin Abi Thalib",
+      "Umar bin Khattab",
+      "Usman bin Affan"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Ali bin Abi Thalib.",
+     "indikator": "Peserta didik dapat menyebutkan anak pertama masuk Islam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Tahun wafatnya Khadijah dan Abu Thalib disebut ...",
+     "opsi": [
+      "Tahun Hijriah",
+      "Tahun Gajah",
+      "Tahun Kesedihan ('Āmul Ḥuzni)",
+      "Tahun Perjanjian"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "pembahasan": "'Āmul Ḥuzni.",
+     "indikator": "Peserta didik dapat menyebutkan istilah Tahun Kesedihan.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sahabat yang disiksa dengan ditindih batu panas tetapi tetap berkata \"Aḥad, Aḥad\" adalah ...",
+     "opsi": [
+      "Abu Bakar",
+      "Hamzah",
+      "Zaid bin Haritsah",
+      "Bilal bin Rabah"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "pembahasan": "Bilal tetap teguh imannya.",
+     "indikator": "Peserta didik dapat menyebutkan tokoh teladan keteguhan iman.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Saat berdakwah ke Thaif, Nabi dilempari batu. Sikap Nabi adalah ...",
+     "opsi": [
+      "mendoakan agar mereka mendapat petunjuk",
+      "meminta malaikat menghancurkan mereka",
+      "membalas dendam",
+      "pindah ke negeri lain"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "pembahasan": "Nabi tetap sabar dan pemaaf.",
+     "indikator": "Disajikan peristiwa, peserta didik dapat menyimpulkan sikap Nabi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Dari kisah dakwah periode Makkah kita belajar untuk ...",
+     "opsi": [
+      "mudah menyerah",
+      "sabar dan teguh dalam kebaikan",
+      "membalas kejahatan",
+      "menjauhi orang lain"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "pembahasan": "Keteladanan Nabi.",
+     "indikator": "Peserta didik dapat menyimpulkan pelajaran dakwah periode Makkah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Wahyu pertama adalah Surah Al-'Alaq ayat 1–____",
+     "kunci": "5",
+     "level": "C1",
+     "pembahasan": "Al-'Alaq 1–5.",
+     "indikator": "Peserta didik dapat menyebutkan wahyu pertama.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Malaikat yang menyampaikan wahyu pertama adalah ____",
+     "kunci": "Jibril",
+     "level": "C1",
+     "pembahasan": "Jibril.",
+     "indikator": "Peserta didik dapat menyebutkan malaikat penyampai wahyu.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Laki-laki dewasa pertama yang masuk Islam adalah ____",
+     "kunci": "Abu Bakar as-Siddiq",
+     "level": "C1",
+     "pembahasan": "Abu Bakar.",
+     "indikator": "Peserta didik dapat menyebutkan laki-laki dewasa pertama masuk Islam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Rumah yang dijadikan tempat dakwah secara sembunyi-sembunyi adalah rumah Al-____",
+     "kunci": "Arqam",
+     "level": "C2",
+     "pembahasan": "Darul Arqam.",
+     "indikator": "Peserta didik dapat menyebutkan tempat dakwah awal.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Dakwah sembunyi-sembunyi berlangsung sekitar ____ tahun.",
+     "kunci": "tiga",
+     "level": "C2",
+     "pembahasan": "Sekitar tiga tahun.",
+     "indikator": "Peserta didik dapat menyebutkan lama dakwah sembunyi-sembunyi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Paman Nabi yang sangat memusuhi dakwah Islam adalah Abu ____",
+     "kunci": "Lahab",
+     "level": "C2",
+     "pembahasan": "Abu Lahab.",
+     "indikator": "Peserta didik dapat menyebutkan penentang dakwah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Sebagian sahabat hijrah ke negeri Habasyah yang dipimpin Raja ____",
+     "kunci": "Najasyi",
+     "level": "C2",
+     "pembahasan": "Najasyi.",
+     "indikator": "Peserta didik dapat menyebutkan raja Habasyah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Perjalanan Nabi dari Masjidil Haram ke Masjidil Aqsa lalu ke Sidratul Muntaha disebut ____",
+     "kunci": "Isra Mikraj",
+     "level": "C1",
+     "pembahasan": "Isra Mikraj.",
+     "indikator": "Peserta didik dapat menyebutkan peristiwa Isra Mikraj.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Perintah salat lima waktu diterima Nabi pada peristiwa ____",
+     "kunci": "Isra Mikraj",
+     "level": "C2",
+     "pembahasan": "Isra Mikraj.",
+     "indikator": "Peserta didik dapat menghubungkan Isra Mikraj dengan perintah salat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Meneladani dakwah Nabi, saat diejek karena berbuat baik kita tetap ____",
+     "kunci": "sabar",
+     "level": "C3",
+     "pembahasan": "Sabar.",
+     "indikator": "Peserta didik dapat menerapkan teladan Nabi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Ceritakan secara singkat turunnya wahyu pertama!",
+     "kunci": "Nabi menyendiri di Gua Hira. Malaikat Jibril datang dan memerintahkan iqra' (bacalah), lalu menyampaikan Surah Al-'Alaq ayat 1–5.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Wahyu pertama.",
+     "indikator": "Peserta didik dapat menceritakan turunnya wahyu pertama.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tiga orang yang pertama masuk Islam!",
+     "kunci": "Khadijah, Abu Bakar as-Siddiq, Ali bin Abi Thalib, Zaid bin Haritsah.",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C1",
+     "pembahasan": "As-sābiqūnal awwalūn.",
+     "indikator": "Peserta didik dapat menyebutkan orang yang pertama masuk Islam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Jelaskan perbedaan dakwah sembunyi-sembunyi dan terang-terangan!",
+     "kunci": "Sembunyi-sembunyi: dakwah kepada keluarga dan sahabat dekat secara rahasia. Terang-terangan: dakwah kepada seluruh penduduk Makkah secara terbuka setelah ada perintah Allah.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Tahapan dakwah.",
+     "indikator": "Peserta didik dapat membedakan tahapan dakwah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Bagaimana cara meneladani kesabaran Nabi saat berdakwah?",
+     "kunci": "Tidak membalas ejekan, tetap berbuat baik, memaafkan, dan mendoakan kebaikan bagi orang yang menyakiti.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Teladan sabar.",
+     "indikator": "Peserta didik dapat menerapkan teladan kesabaran Nabi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa kaum Quraisy menentang dakwah Nabi Muhammad saw.?",
+     "kunci": "Karena takut kehilangan kekuasaan dan kedudukan, tidak mau meninggalkan berhala warisan nenek moyang, dan takut usaha berhala mereka rugi.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Sebab penolakan dakwah.",
+     "indikator": "Peserta didik dapat menganalisis sebab penolakan dakwah.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-iqlab-ikhfa",
+   "kode": "2.1.7",
+   "judul": "Huruf Bersambung: Iqlab dan Ikhfa",
+   "semester": 2,
+   "elemen": "Al-Qur'an dan Hadis",
+   "tp": "Membaca, menulis, dan membedakan huruf hijaiah bersambung (3 kata atau lebih) dengan praktik bacaan iqlab dan ikhfa.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Iqlab artinya ...",
+     "opsi": [
+      "samar",
+      "jelas",
+      "mengganti (menukar)",
+      "memasukkan"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Iqlab artinya mengganti.",
+     "indikator": "Peserta didik dapat menyebutkan arti iqlab.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Iqlab terjadi jika nun sukun atau tanwin bertemu huruf ...",
+     "opsi": [
+      "ر",
+      "م",
+      "ق",
+      "ب"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Huruf iqlab hanya ba.",
+     "indikator": "Peserta didik dapat menyebutkan huruf iqlab.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Pada bacaan iqlab, bunyi nun sukun atau tanwin diganti menjadi ...",
+     "opsi": [
+      "mim",
+      "nun",
+      "lam",
+      "ba"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Diganti mim dengan dengung.",
+     "indikator": "Peserta didik dapat menjelaskan cara membaca iqlab.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ikhfa artinya ...",
+     "opsi": [
+      "memantul",
+      "samar",
+      "tebal",
+      "jelas"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Ikhfa artinya samar.",
+     "indikator": "Peserta didik dapat menyebutkan arti ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Huruf ikhfa haqiqi berjumlah ...",
+     "opsi": [
+      "enam",
+      "empat",
+      "lima belas",
+      "dua"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Lima belas huruf.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah huruf ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Tanda bacaan iqlab dalam mushaf adalah ...",
+     "opsi": [
+      "titik tiga",
+      "garis panjang",
+      "tanda sukun",
+      "huruf mim kecil"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "pembahasan": "Ditandai mim kecil.",
+     "indikator": "Peserta didik dapat mengenali tanda iqlab.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal مِنْ بَعْدِ termasuk bacaan ...",
+     "opsi": [
+      "iqlab",
+      "ikhfa",
+      "izhar",
+      "idgam"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu ba.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal مِنْ قَبْلِ termasuk bacaan ...",
+     "opsi": [
+      "iqlab",
+      "ikhfa",
+      "idgam",
+      "izhar"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu qaf, huruf ikhfa.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal سَمِيْعٌ بَصِيْرٌ termasuk bacaan ...",
+     "opsi": [
+      "izhar",
+      "ikhfa",
+      "iqlab",
+      "idgam"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "pembahasan": "Tanwin bertemu ba.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Persamaan iqlab dan ikhfa adalah ...",
+     "opsi": [
+      "sama-sama dipantulkan",
+      "sama-sama dibaca jelas",
+      "hurufnya sama",
+      "sama-sama dibaca dengan dengung"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "pembahasan": "Keduanya berdengung.",
+     "indikator": "Peserta didik dapat membandingkan iqlab dan ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Huruf iqlab adalah ____",
+     "kunci": "ب (ba)",
+     "level": "C1",
+     "pembahasan": "Ba.",
+     "indikator": "Peserta didik dapat menyebutkan huruf iqlab.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Ikhfa dibaca samar disertai ____",
+     "kunci": "dengung",
+     "level": "C1",
+     "pembahasan": "Dengung.",
+     "indikator": "Peserta didik dapat menjelaskan cara membaca ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Huruf ikhfa haqiqi berjumlah ____",
+     "kunci": "15",
+     "level": "C1",
+     "pembahasan": "Lima belas.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah huruf ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tuliskan tiga huruf ikhfa: ____",
+     "kunci": "contoh: ت ث ج (atau د ذ ز س ش ص ض ط ظ ف ق ك)",
+     "level": "C1",
+     "pembahasan": "Huruf ikhfa: ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك.",
+     "indikator": "Peserta didik dapat menuliskan huruf ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal اَنْتُمْ termasuk bacaan ____",
+     "kunci": "ikhfa",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu ta.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal مَنْ ذَا termasuk bacaan ____",
+     "kunci": "ikhfa",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu żal.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal أَنْبِئْهُمْ termasuk bacaan ____",
+     "kunci": "iqlab",
+     "level": "C3",
+     "pembahasan": "Nun sukun bertemu ba.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal عَلِيْمٌ بِذَاتِ termasuk bacaan ____",
+     "kunci": "iqlab",
+     "level": "C3",
+     "pembahasan": "Tanwin bertemu ba.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lafal رِيْحًا صَرْصَرًا termasuk bacaan ____",
+     "kunci": "ikhfa",
+     "level": "C3",
+     "pembahasan": "Tanwin bertemu shad.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukumnya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Bacaan nun sukun bertemu huruf ك dibaca ____",
+     "kunci": "ikhfa (samar berdengung)",
+     "level": "C2",
+     "pembahasan": "Kaf termasuk huruf ikhfa.",
+     "indikator": "Peserta didik dapat menentukan hukum bacaan.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Jelaskan pengertian iqlab dan ikhfa!",
+     "kunci": "Iqlab: nun sukun/tanwin bertemu ba, dibaca dengan mengganti bunyi nun menjadi mim berdengung. Ikhfa: nun sukun/tanwin bertemu salah satu dari 15 huruf ikhfa, dibaca samar dengan dengung.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Pengertian iqlab dan ikhfa.",
+     "indikator": "Peserta didik dapat menjelaskan iqlab dan ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan dua contoh bacaan iqlab!",
+     "kunci": "Contoh: مِنْ بَعْدِ, أَنْبِئْهُمْ, سَمِيْعٌ بَصِيْرٌ.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Contoh iqlab.",
+     "indikator": "Peserta didik dapat memberi contoh iqlab.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan dua contoh bacaan ikhfa!",
+     "kunci": "Contoh: مِنْ قَبْلِ, اَنْتُمْ, مَنْ ذَا, يُنْفِقُوْنَ.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Contoh ikhfa.",
+     "indikator": "Peserta didik dapat memberi contoh ikhfa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tentukan hukum bacaan pada lafal: مِنْ شَرِّ dan لَيُنْبَذَنَّ",
+     "kunci": "مِنْ شَرِّ: ikhfa (nun sukun bertemu syin). لَيُنْبَذَنَّ: iqlab (nun sukun bertemu ba).",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Menganalisis lafal.",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan hukum bacaannya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa perbedaan cara membaca iqlab dan ikhfa?",
+     "kunci": "Iqlab: bunyi nun diganti mim lalu didengungkan. Ikhfa: bunyi nun disamarkan antara jelas dan melebur, dengan dengung.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Membandingkan bacaan.",
+     "indikator": "Peserta didik dapat membandingkan cara membaca iqlab dan ikhfa.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-hadis-sesama",
+   "kode": "2.1.8",
+   "judul": "Hadis tentang Menjaga Hubungan Baik terhadap Sesama",
+   "semester": 2,
+   "elemen": "Al-Qur'an dan Hadis",
+   "tp": "Menghafal dan menjelaskan hadis tentang menjaga hubungan baik terhadap sesama.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Hadis \"lā yu'minu aḥadukum ḥattā yuḥibba li-akhīhi mā yuḥibbu li-nafsih\" berisi perintah untuk ...",
+     "opsi": [
+      "mencintai saudara seperti mencintai diri sendiri",
+      "mencintai harta",
+      "menjauhi teman",
+      "mencintai diri sendiri saja"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Isi hadis tentang persaudaraan.",
+     "indikator": "Peserta didik dapat menjelaskan isi hadis.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Hadis tersebut diriwayatkan oleh ...",
+     "opsi": [
+      "Abu Dawud dan Tirmizi",
+      "Bukhari dan Muslim",
+      "Ahmad saja",
+      "Ibnu Majah saja"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Muttafaq 'alaih.",
+     "indikator": "Peserta didik dapat menyebutkan perawi hadis.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "\"Lā yu'minu\" artinya ...",
+     "opsi": [
+      "beriman sempurna",
+      "selalu beriman",
+      "tidak sempurna iman",
+      "pasti beriman"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "pembahasan": "Tidak sempurna iman seseorang.",
+     "indikator": "Peserta didik dapat menyebutkan arti kata dalam hadis.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "\"Akhīhi\" dalam hadis artinya ...",
+     "opsi": [
+      "tetangganya",
+      "ayahnya",
+      "gurunya",
+      "saudaranya"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "pembahasan": "Akh artinya saudara.",
+     "indikator": "Peserta didik dapat menyebutkan arti kata dalam hadis.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Contoh mengamalkan hadis tersebut adalah ...",
+     "opsi": [
+      "berbagi kue yang kita suka kepada teman",
+      "mengambil semua kue untuk diri sendiri",
+      "menyembunyikan kue",
+      "memakan kue di depan teman"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "pembahasan": "Berbagi hal yang kita sukai.",
+     "indikator": "Disajikan perilaku, peserta didik dapat menentukan pengamalan hadis.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Senyum kepada saudara menurut hadis bernilai ...",
+     "opsi": [
+      "dosa",
+      "sedekah",
+      "sia-sia",
+      "riya"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "pembahasan": "Tabassumuka fī wajhi akhīka ṣadaqah (HR Tirmizi).",
+     "indikator": "Peserta didik dapat menjelaskan hadis tentang senyum.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Teman kesulitan membawa barang. Sesuai hadis tentang persaudaraan, kita ...",
+     "opsi": [
+      "pergi saja",
+      "menertawakannya",
+      "membantunya",
+      "menyuruh orang lain saja"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "pembahasan": "Tolong-menolong.",
+     "indikator": "Disajikan situasi, peserta didik dapat menerapkan isi hadis.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Hal yang merusak hubungan baik dengan sesama adalah ...",
+     "opsi": [
+      "saling menyapa",
+      "saling memaafkan",
+      "saling menolong",
+      "saling membenci dan iri"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "pembahasan": "Iri dan benci merusak persaudaraan.",
+     "indikator": "Peserta didik dapat menyebutkan perilaku yang merusak hubungan.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Dua teman tidak saling bertegur sapa lebih dari tiga hari. Menurut ajaran Islam hal ini ...",
+     "opsi": [
+      "dilarang",
+      "boleh saja",
+      "dianjurkan",
+      "wajib"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "pembahasan": "Larangan mendiamkan saudara lebih dari tiga hari (HR Bukhari-Muslim).",
+     "indikator": "Disajikan kasus, peserta didik dapat menganalisis hukumnya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Orang yang mencintai saudaranya seperti dirinya sendiri akan ...",
+     "opsi": [
+      "senang melihat saudaranya susah",
+      "tidak tega menyakiti saudaranya",
+      "suka mengejek",
+      "tidak peduli kepada saudaranya"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "pembahasan": "Dampak mengamalkan hadis.",
+     "indikator": "Peserta didik dapat menyimpulkan dampak mengamalkan hadis.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Hadis tentang mencintai saudara diriwayatkan oleh Bukhari dan ____",
+     "kunci": "Muslim",
+     "level": "C1",
+     "pembahasan": "Muttafaq 'alaih.",
+     "indikator": "Peserta didik dapat menyebutkan perawi hadis.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Seseorang belum sempurna imannya sebelum mencintai saudaranya seperti mencintai ____ sendiri.",
+     "kunci": "dirinya",
+     "level": "C1",
+     "pembahasan": "Isi hadis.",
+     "indikator": "Peserta didik dapat melengkapi isi hadis.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Senyum kepada saudara bernilai ____",
+     "kunci": "sedekah",
+     "level": "C1",
+     "pembahasan": "Hadis tentang senyum.",
+     "indikator": "Peserta didik dapat menyebutkan nilai senyum.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Sesama muslim adalah ____",
+     "kunci": "saudara",
+     "level": "C1",
+     "pembahasan": "Ukhuwah islamiyah.",
+     "indikator": "Peserta didik dapat menyebutkan hubungan sesama muslim.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Persaudaraan sesama manusia disebut ukhuwah ____",
+     "kunci": "basyariyah (insaniyah)",
+     "level": "C2",
+     "pembahasan": "Ukhuwah basyariyah.",
+     "indikator": "Peserta didik dapat menyebutkan istilah persaudaraan sesama manusia.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tidak suka melihat orang lain mendapat nikmat disebut ____",
+     "kunci": "iri (dengki/hasad)",
+     "level": "C2",
+     "pembahasan": "Iri.",
+     "indikator": "Peserta didik dapat menyebutkan sifat tercela.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Saat bertemu teman, kita mengucapkan ____ dan tersenyum.",
+     "kunci": "salam",
+     "level": "C2",
+     "pembahasan": "Menjaga hubungan baik.",
+     "indikator": "Peserta didik dapat menerapkan adab bertemu.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Jika berselisih dengan teman, kita harus segera ____",
+     "kunci": "berdamai (saling memaafkan)",
+     "level": "C3",
+     "pembahasan": "Islah.",
+     "indikator": "Peserta didik dapat menerapkan sikap berdamai.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Meminjamkan pensil kepada teman yang lupa membawa adalah contoh sikap ____",
+     "kunci": "tolong-menolong",
+     "level": "C3",
+     "pembahasan": "Ta'āwun.",
+     "indikator": "Peserta didik dapat memberi contoh pengamalan hadis.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Kita tidak boleh mendiamkan teman lebih dari ____ hari.",
+     "kunci": "tiga",
+     "level": "C2",
+     "pembahasan": "Hadis larangan mendiamkan.",
+     "indikator": "Peserta didik dapat menyebutkan batas waktu.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan hadis tentang mencintai saudara (boleh huruf Latin) beserta artinya!",
+     "kunci": "Lā yu'minu aḥadukum ḥattā yuḥibba li-akhīhi mā yuḥibbu li-nafsih. Artinya: Tidak sempurna iman salah seorang di antara kalian sampai ia mencintai saudaranya sebagaimana ia mencintai dirinya sendiri. (HR Bukhari dan Muslim)",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C1",
+     "pembahasan": "Lafal dan arti hadis.",
+     "indikator": "Peserta didik dapat menuliskan hadis beserta artinya.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tiga contoh perilaku menjaga hubungan baik dengan sesama!",
+     "kunci": "Mengucapkan salam, tersenyum, saling menolong, berbagi, memaafkan, tidak mengejek.",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Perilaku menjaga hubungan.",
+     "indikator": "Peserta didik dapat menyebutkan perilaku menjaga hubungan baik.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa yang kamu lakukan jika temanmu mendapat hadiah yang kamu inginkan?",
+     "kunci": "Ikut senang, memberi selamat, tidak iri, mendoakan kebaikan untuknya.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Penerapan hadis.",
+     "indikator": "Disajikan situasi, peserta didik dapat menerapkan isi hadis.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Bagaimana cara berdamai dengan teman setelah bertengkar?",
+     "kunci": "Menenangkan diri, meminta maaf lebih dulu, saling memaafkan, berjabat tangan, bermain bersama lagi.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Cara berdamai.",
+     "indikator": "Peserta didik dapat menjelaskan cara berdamai.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa iman seseorang belum sempurna jika belum mencintai saudaranya?",
+     "kunci": "Karena iman bukan hanya ibadah kepada Allah, tetapi juga akhlak kepada sesama. Orang beriman peduli dan tidak egois.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Makna hadis.",
+     "indikator": "Peserta didik dapat menganalisis makna hadis.",
+     "perlu_cek": true
+    }
+   ]
+  },
+  {
+   "id": "k4-iman-rasul",
+   "kode": "2.2.4",
+   "judul": "Iman kepada Rasul-rasul Allah",
+   "semester": 2,
+   "elemen": "Akidah",
+   "tp": "Menjelaskan dan meyakini iman kepada rasul-rasul Allah Swt.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Iman kepada rasul adalah rukun iman yang ke- ...",
+     "opsi": [
+      "lima",
+      "tiga",
+      "empat",
+      "enam"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Rukun iman keempat.",
+     "indikator": "Peserta didik dapat menyebutkan urutan iman kepada rasul.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Jumlah nabi dan rasul yang wajib diketahui adalah ...",
+     "opsi": [
+      "20",
+      "25",
+      "30",
+      "99"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "25 nabi dan rasul.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah nabi dan rasul yang wajib diketahui.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Rasul yang memiliki ketabahan luar biasa disebut ...",
+     "opsi": [
+      "khulafaurasyidin",
+      "as-sābiqūn",
+      "Ansar",
+      "ulul azmi"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Ulul azmi.",
+     "indikator": "Peserta didik dapat menyebutkan istilah ulul azmi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sifat wajib rasul \"ṣiddīq\" artinya ...",
+     "opsi": [
+      "jujur",
+      "cerdas",
+      "dapat dipercaya",
+      "menyampaikan"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Ṣiddīq = jujur.",
+     "indikator": "Peserta didik dapat menyebutkan arti ṣiddīq.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sifat wajib rasul \"amānah\" artinya ...",
+     "opsi": [
+      "menyampaikan",
+      "dapat dipercaya",
+      "pandai",
+      "pemberani"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Amanah.",
+     "indikator": "Peserta didik dapat menyebutkan arti amanah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sifat wajib rasul \"tablīg\" artinya ...",
+     "opsi": [
+      "jujur",
+      "cerdas",
+      "menyampaikan wahyu",
+      "dapat dipercaya"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Tablig.",
+     "indikator": "Peserta didik dapat menyebutkan arti tablig.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sifat wajib rasul \"faṭānah\" artinya ...",
+     "opsi": [
+      "menyampaikan",
+      "jujur",
+      "pemaaf",
+      "cerdas"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Faṭānah.",
+     "indikator": "Peserta didik dapat menyebutkan arti faṭānah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perbedaan nabi dan rasul adalah ...",
+     "opsi": [
+      "rasul wajib menyampaikan wahyu kepada umatnya",
+      "nabi tidak menerima wahyu",
+      "rasul lebih kaya",
+      "rasul tidak menerima wahyu"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Rasul diperintah menyampaikan wahyu.",
+     "indikator": "Peserta didik dapat membedakan nabi dan rasul.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Nisa selalu mengembalikan barang pinjaman tepat waktu. Nisa meneladani sifat rasul ...",
+     "opsi": [
+      "tablīg",
+      "amānah",
+      "faṭānah",
+      "kitmān"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "pembahasan": "Amanah.",
+     "indikator": "Disajikan perilaku, peserta didik dapat menentukan sifat rasul yang diteladani.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Fajar berbohong kepada guru. Fajar tidak meneladani sifat rasul ...",
+     "opsi": [
+      "tablīg",
+      "faṭānah",
+      "ṣiddīq",
+      "sabar"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "pembahasan": "Lawan ṣiddīq adalah kiżib (dusta).",
+     "indikator": "Disajikan perilaku, peserta didik dapat menganalisis sifat yang tidak diteladani.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Rasul ulul azmi berjumlah ____",
+     "kunci": "lima",
+     "level": "C1",
+     "pembahasan": "Lima rasul.",
+     "indikator": "Peserta didik dapat menyebutkan jumlah ulul azmi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Rasul pertama adalah Nabi ____",
+     "kunci": "Adam a.s. (sebagian ulama: Nuh a.s.)",
+     "level": "C1",
+     "pembahasan": "Nabi Adam nabi pertama; sebagian ulama menyebut rasul pertama Nabi Nuh.",
+     "indikator": "Peserta didik dapat menyebutkan rasul pertama.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Rasul terakhir adalah Nabi ____",
+     "kunci": "Muhammad saw.",
+     "level": "C1",
+     "pembahasan": "Khātamun nabiyyīn.",
+     "indikator": "Peserta didik dapat menyebutkan rasul terakhir.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lawan sifat ṣiddīq adalah ____ (dusta).",
+     "kunci": "kiżib",
+     "level": "C2",
+     "pembahasan": "Sifat mustahil.",
+     "indikator": "Peserta didik dapat menyebutkan sifat mustahil rasul.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lawan sifat amānah adalah ____ (khianat).",
+     "kunci": "khiyānah",
+     "level": "C2",
+     "pembahasan": "Sifat mustahil.",
+     "indikator": "Peserta didik dapat menyebutkan sifat mustahil rasul.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lawan sifat tablīg adalah ____ (menyembunyikan).",
+     "kunci": "kitmān",
+     "level": "C2",
+     "pembahasan": "Sifat mustahil.",
+     "indikator": "Peserta didik dapat menyebutkan sifat mustahil rasul.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Lawan sifat faṭānah adalah ____ (bodoh).",
+     "kunci": "balādah",
+     "level": "C2",
+     "pembahasan": "Sifat mustahil.",
+     "indikator": "Peserta didik dapat menyebutkan sifat mustahil rasul.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Kejadian luar biasa yang diberikan Allah kepada rasul disebut ____",
+     "kunci": "mukjizat",
+     "level": "C1",
+     "pembahasan": "Mukjizat.",
+     "indikator": "Peserta didik dapat menyebutkan istilah mukjizat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Mukjizat terbesar Nabi Muhammad saw. adalah ____",
+     "kunci": "Al-Qur'an",
+     "level": "C2",
+     "pembahasan": "Al-Qur'an.",
+     "indikator": "Peserta didik dapat menyebutkan mukjizat terbesar Nabi Muhammad.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Menyampaikan ilmu yang bermanfaat kepada teman meneladani sifat rasul ____",
+     "kunci": "tablīg",
+     "level": "C3",
+     "pembahasan": "Tablig.",
+     "indikator": "Disajikan perilaku, peserta didik dapat menentukan sifat rasul yang diteladani.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan lima rasul ulul azmi!",
+     "kunci": "Nabi Nuh a.s., Nabi Ibrahim a.s., Nabi Musa a.s., Nabi Isa a.s., Nabi Muhammad saw.",
+     "rubrik": "Skor 5: 5 jawaban benar. Skor 4 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C1",
+     "pembahasan": "Ulul azmi.",
+     "indikator": "Peserta didik dapat menyebutkan rasul ulul azmi.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan empat sifat wajib rasul beserta artinya!",
+     "kunci": "Ṣiddīq (jujur), amānah (dapat dipercaya), tablīg (menyampaikan), faṭānah (cerdas).",
+     "rubrik": "Skor 4: 4 jawaban benar. Skor 3 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C1",
+     "pembahasan": "Sifat wajib rasul.",
+     "indikator": "Peserta didik dapat menuliskan sifat wajib rasul.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Jelaskan perbedaan nabi dan rasul!",
+     "kunci": "Nabi menerima wahyu untuk dirinya sendiri. Rasul menerima wahyu dan wajib menyampaikannya kepada umatnya. Setiap rasul pasti nabi, tetapi tidak setiap nabi adalah rasul.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Nabi dan rasul.",
+     "indikator": "Peserta didik dapat membedakan nabi dan rasul.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Berikan contoh perilaku meneladani sifat faṭānah!",
+     "kunci": "Rajin belajar, berpikir sebelum bertindak, menyelesaikan masalah dengan bijak.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Teladan faṭānah.",
+     "indikator": "Peserta didik dapat memberi contoh meneladani faṭānah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa rasul pasti memiliki sifat ṣiddīq dan amānah?",
+     "kunci": "Karena rasul membawa wahyu dari Allah. Jika tidak jujur dan amanah, wahyu bisa diubah dan umat tidak akan percaya.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Alasan sifat wajib.",
+     "indikator": "Peserta didik dapat menganalisis alasan sifat wajib rasul.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-guru",
+   "kode": "2.3.4",
+   "judul": "Akhlak terhadap Guru",
+   "semester": 2,
+   "elemen": "Akhlak",
+   "tp": "Menerapkan akhlak terhadap guru.",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Guru adalah orang yang ...",
+     "opsi": [
+      "membersihkan kelas",
+      "menjual buku",
+      "menjaga sekolah",
+      "mendidik dan mengajarkan ilmu"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Peran guru.",
+     "indikator": "Peserta didik dapat menjelaskan peran guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Saat guru menjelaskan pelajaran, sikap kita adalah ...",
+     "opsi": [
+      "memperhatikan dengan sungguh-sungguh",
+      "mengobrol",
+      "tidur",
+      "bermain HP"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Memperhatikan.",
+     "indikator": "Peserta didik dapat menyebutkan adab di kelas.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Bertemu guru di luar sekolah, kita sebaiknya ...",
+     "opsi": [
+      "menghindar",
+      "memberi salam dan bersalaman",
+      "pura-pura tidak kenal",
+      "memanggilnya dari jauh dengan berteriak"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "pembahasan": "Hormat kepada guru di mana saja.",
+     "indikator": "Peserta didik dapat menyebutkan adab bertemu guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Jika ingin bertanya kepada guru di kelas, kita sebaiknya ...",
+     "opsi": [
+      "memotong pembicaraan guru",
+      "berteriak",
+      "mengangkat tangan dan bertanya dengan sopan",
+      "bertanya sambil mengobrol dengan teman"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "pembahasan": "Adab bertanya.",
+     "indikator": "Peserta didik dapat menyebutkan adab bertanya.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Guru memberi tugas rumah. Sikap murid yang baik adalah ...",
+     "opsi": [
+      "menyalin pekerjaan teman",
+      "meminta orang tua mengerjakannya",
+      "tidak mengerjakan",
+      "mengerjakan dengan sungguh-sungguh dan tepat waktu"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "pembahasan": "Tanggung jawab.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap terhadap tugas.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Guru sedang membawa banyak buku. Sikap Rafi yang tepat adalah ...",
+     "opsi": [
+      "menawarkan bantuan",
+      "menertawakan",
+      "melihat saja",
+      "pergi ke kantin"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "pembahasan": "Membantu guru.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap kepada guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Contoh perilaku tidak menghormati guru adalah ...",
+     "opsi": [
+      "mendoakan guru",
+      "menggambar guru untuk diejek",
+      "menyapa guru",
+      "membantu guru"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "pembahasan": "Mengejek guru tercela.",
+     "indikator": "Peserta didik dapat membedakan perilaku hormat dan tidak hormat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ilmu yang diajarkan guru akan bermanfaat jika murid ...",
+     "opsi": [
+      "meremehkan guru",
+      "lupa semua pelajaran",
+      "menghormati guru dan mengamalkan ilmunya",
+      "hanya menghafal tanpa mengamalkan"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "pembahasan": "Adab menuntut ilmu.",
+     "indikator": "Peserta didik dapat menganalisis hubungan adab dan ilmu.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Teman mengejek guru di belakangnya. Sikap terbaikmu adalah ...",
+     "opsi": [
+      "ikut tertawa",
+      "menyebarkannya",
+      "merekam dan mengunggahnya ke media sosial",
+      "menasihati teman dengan baik"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "pembahasan": "Menasihati.",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap terbaik.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Mendoakan guru termasuk bentuk ...",
+     "opsi": [
+      "terima kasih dan hormat kepada guru",
+      "perbuatan sia-sia",
+      "kewajiban guru",
+      "tanda tidak suka kepada guru"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Mendoakan guru.",
+     "indikator": "Peserta didik dapat menjelaskan makna mendoakan guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Guru adalah orang tua kita di ____",
+     "kunci": "sekolah",
+     "level": "C1",
+     "pembahasan": "Guru di sekolah.",
+     "indikator": "Peserta didik dapat menyebutkan kedudukan guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Saat masuk kelas dan bertemu guru, kita mengucapkan ____",
+     "kunci": "salam",
+     "level": "C1",
+     "pembahasan": "Salam.",
+     "indikator": "Peserta didik dapat menyebutkan adab bertemu guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Berbicara kepada guru harus menggunakan bahasa yang ____",
+     "kunci": "sopan (santun)",
+     "level": "C1",
+     "pembahasan": "Sopan.",
+     "indikator": "Peserta didik dapat menyebutkan adab berbicara kepada guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Mengerjakan tugas dari guru dengan jujur dan tepat waktu menunjukkan sikap ____",
+     "kunci": "tanggung jawab",
+     "level": "C2",
+     "pembahasan": "Tanggung jawab.",
+     "indikator": "Peserta didik dapat menyebutkan sikap terhadap tugas.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Jika ingin keluar kelas, kita harus meminta ____ kepada guru.",
+     "kunci": "izin",
+     "level": "C2",
+     "pembahasan": "Izin.",
+     "indikator": "Peserta didik dapat menyebutkan adab di kelas.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Jika berbuat salah kepada guru, kita segera ____",
+     "kunci": "meminta maaf",
+     "level": "C3",
+     "pembahasan": "Meminta maaf.",
+     "indikator": "Peserta didik dapat menerapkan sikap meminta maaf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Jika pendapat kita berbeda dengan guru, kita menyampaikannya dengan ____",
+     "kunci": "sopan",
+     "level": "C3",
+     "pembahasan": "Adab berbeda pendapat.",
+     "indikator": "Peserta didik dapat menerapkan adab menyampaikan pendapat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tanggal 25 November diperingati sebagai Hari ____",
+     "kunci": "Guru Nasional",
+     "level": "C2",
+     "pembahasan": "Hari Guru Nasional.",
+     "indikator": "Peserta didik dapat menyebutkan Hari Guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Menyimak penjelasan guru dengan tenang adalah adab dalam menuntut ____",
+     "kunci": "ilmu",
+     "level": "C2",
+     "pembahasan": "Adab menuntut ilmu.",
+     "indikator": "Peserta didik dapat menjelaskan adab menuntut ilmu.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Murid yang menghormati guru akan mendapat ilmu yang ____",
+     "kunci": "bermanfaat (berkah)",
+     "level": "C3",
+     "pembahasan": "Keberkahan ilmu.",
+     "indikator": "Peserta didik dapat menyimpulkan manfaat menghormati guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan empat cara menghormati guru!",
+     "kunci": "Memberi salam, memperhatikan pelajaran, berbicara sopan, mengerjakan tugas, membantu guru, mendoakan guru.",
+     "rubrik": "Skor 4: 4 jawaban benar. Skor 3 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Cara menghormati guru.",
+     "indikator": "Peserta didik dapat menyebutkan cara menghormati guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa kita harus menghormati guru?",
+     "kunci": "Karena guru mendidik dan mengajarkan ilmu yang bermanfaat untuk dunia dan akhirat, serta berjasa besar dalam hidup kita.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Alasan menghormati guru.",
+     "indikator": "Peserta didik dapat menjelaskan alasan menghormati guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan pesan terima kasih singkat untuk gurumu!",
+     "kunci": "Jawaban bebas yang sopan, berisi ucapan terima kasih, permohonan maaf, dan doa untuk guru.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Ungkapan terima kasih.",
+     "indikator": "Peserta didik dapat menuliskan ungkapan terima kasih kepada guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa yang kamu lakukan jika gurumu sedang sakit?",
+     "kunci": "Mendoakan kesembuhan, menjenguk bersama teman atau orang tua, menjaga ketertiban kelas, mengirim pesan semangat.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Kepedulian kepada guru.",
+     "indikator": "Disajikan situasi, peserta didik dapat menerapkan sikap peduli kepada guru.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Temanmu sering tidak memperhatikan saat guru menjelaskan. Bagaimana kamu menasihatinya?",
+     "kunci": "Mengingatkan dengan sopan bahwa memperhatikan guru adalah adab dan agar ilmu mudah dipahami, lalu mengajaknya belajar bersama.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Menasihati teman.",
+     "indikator": "Disajikan situasi, peserta didik dapat memberi nasihat yang tepat.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-balig",
+   "kode": "2.4.4",
+   "judul": "Balig dan Tanggung Jawab (Taklif)",
+   "semester": 2,
+   "elemen": "Fikih",
+   "tp": "Menjelaskan balig dan tanggung jawab yang menyertainya (taklif).",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Balig artinya ...",
+     "opsi": [
+      "masih kecil",
+      "sampai (dewasa menurut agama)",
+      "tua sekali",
+      "pandai"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Balig artinya telah sampai usia dewasa menurut agama.",
+     "indikator": "Peserta didik dapat menyebutkan arti balig.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Orang yang sudah balig dan berakal sehingga wajib menjalankan syariat disebut ...",
+     "opsi": [
+      "muazin",
+      "imam",
+      "mukalaf",
+      "musafir"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Mukalaf.",
+     "indikator": "Peserta didik dapat menyebutkan istilah mukalaf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Taklif artinya ...",
+     "opsi": [
+      "hadiah",
+      "hukuman",
+      "pemberian nama",
+      "pembebanan hukum (tanggung jawab agama)"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Taklif.",
+     "indikator": "Peserta didik dapat menyebutkan arti taklif.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Tanda balig pada anak perempuan adalah ...",
+     "opsi": [
+      "mengalami haid",
+      "rambut panjang",
+      "pandai memasak",
+      "tinggi badan"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Haid.",
+     "indikator": "Peserta didik dapat menyebutkan tanda balig perempuan.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Tanda balig pada anak laki-laki adalah ...",
+     "opsi": [
+      "suara keras",
+      "mimpi basah (iḥtilām)",
+      "badan tinggi",
+      "pandai membaca"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Iḥtilām.",
+     "indikator": "Peserta didik dapat menyebutkan tanda balig laki-laki.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Jika belum ada tanda balig, seseorang dianggap balig ketika berusia sekitar ... tahun.",
+     "opsi": [
+      "7",
+      "10",
+      "12",
+      "15"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Sekitar 15 tahun (hijriah).",
+     "indikator": "Peserta didik dapat menyebutkan batas usia balig.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Setelah balig, ibadah salat lima waktu hukumnya ...",
+     "opsi": [
+      "boleh ditinggalkan",
+      "sunah",
+      "wajib",
+      "makruh"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "pembahasan": "Wajib bagi mukalaf.",
+     "indikator": "Peserta didik dapat menjelaskan kewajiban setelah balig.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Setelah haid atau mimpi basah, seseorang wajib ...",
+     "opsi": [
+      "tayamum",
+      "mencuci tangan saja",
+      "berwudu saja",
+      "mandi wajib (mandi besar)"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "pembahasan": "Mandi wajib.",
+     "indikator": "Peserta didik dapat menjelaskan kewajiban bersuci setelah balig.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Andi berusia 10 tahun dan belum balig, tetapi rajin salat. Hal ini ...",
+     "opsi": [
+      "baik sebagai latihan sebelum balig",
+      "salah",
+      "tidak perlu",
+      "berdosa"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "pembahasan": "Pembiasaan sejak kecil.",
+     "indikator": "Disajikan kasus, peserta didik dapat menilai pembiasaan ibadah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Orang yang sudah balig harus bertanggung jawab atas perbuatannya karena ...",
+     "opsi": [
+      "sudah boleh berbuat semaunya",
+      "sudah dapat membedakan baik dan buruk",
+      "sudah tidak perlu belajar",
+      "sudah boleh tidak sekolah"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "pembahasan": "Mukalaf dimintai pertanggungjawaban.",
+     "indikator": "Peserta didik dapat menganalisis alasan tanggung jawab setelah balig.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Orang yang sudah dibebani hukum syariat disebut ____",
+     "kunci": "mukalaf",
+     "level": "C1",
+     "pembahasan": "Mukalaf.",
+     "indikator": "Peserta didik dapat menyebutkan istilah mukalaf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Pembebanan hukum kepada orang yang sudah balig disebut ____",
+     "kunci": "taklif",
+     "level": "C1",
+     "pembahasan": "Taklif.",
+     "indikator": "Peserta didik dapat menyebutkan istilah taklif.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Syarat mukalaf adalah balig dan ____",
+     "kunci": "berakal",
+     "level": "C2",
+     "pembahasan": "Balig dan berakal.",
+     "indikator": "Peserta didik dapat menyebutkan syarat mukalaf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Mandi untuk menghilangkan hadas besar disebut mandi ____",
+     "kunci": "wajib (junub/besar)",
+     "level": "C2",
+     "pembahasan": "Mandi wajib.",
+     "indikator": "Peserta didik dapat menyebutkan istilah mandi wajib.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Setelah balig, puasa Ramadan hukumnya ____",
+     "kunci": "wajib",
+     "level": "C2",
+     "pembahasan": "Wajib.",
+     "indikator": "Peserta didik dapat menyebutkan hukum puasa bagi mukalaf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Setelah balig, kita wajib menutup ____",
+     "kunci": "aurat",
+     "level": "C2",
+     "pembahasan": "Menutup aurat.",
+     "indikator": "Peserta didik dapat menyebutkan kewajiban menutup aurat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Anak yang belum balig dan sudah bisa membedakan baik-buruk disebut ____",
+     "kunci": "mumayiz",
+     "level": "C2",
+     "pembahasan": "Mumayiz.",
+     "indikator": "Peserta didik dapat menyebutkan istilah mumayiz.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Perbuatan baik orang mukalaf akan mendapat ____",
+     "kunci": "pahala",
+     "level": "C2",
+     "pembahasan": "Pahala.",
+     "indikator": "Peserta didik dapat menjelaskan balasan amal.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Perbuatan buruk orang mukalaf akan dicatat sebagai ____",
+     "kunci": "dosa",
+     "level": "C2",
+     "pembahasan": "Dosa.",
+     "indikator": "Peserta didik dapat menjelaskan balasan amal buruk.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Sebelum balig, kita sebaiknya membiasakan diri ____ lima waktu.",
+     "kunci": "salat",
+     "level": "C3",
+     "pembahasan": "Pembiasaan.",
+     "indikator": "Peserta didik dapat menerapkan pembiasaan ibadah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa yang dimaksud balig dan mukalaf?",
+     "kunci": "Balig: sudah dewasa menurut agama, ditandai tanda-tanda tertentu atau usia sekitar 15 tahun. Mukalaf: orang balig dan berakal yang wajib menjalankan syariat.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C1",
+     "pembahasan": "Pengertian balig dan mukalaf.",
+     "indikator": "Peserta didik dapat menjelaskan balig dan mukalaf.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tanda-tanda balig!",
+     "kunci": "Laki-laki: mimpi basah. Perempuan: haid. Atau sudah berusia sekitar 15 tahun.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C1",
+     "pembahasan": "Tanda balig.",
+     "indikator": "Peserta didik dapat menyebutkan tanda-tanda balig.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tiga kewajiban orang yang sudah balig!",
+     "kunci": "Salat lima waktu, puasa Ramadan, menutup aurat, mandi wajib bila berhadas besar, menjaga diri dari perbuatan dosa.",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Kewajiban mukalaf.",
+     "indikator": "Peserta didik dapat menyebutkan kewajiban setelah balig.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Bagaimana caramu mempersiapkan diri sebelum balig?",
+     "kunci": "Belajar tata cara salat, wudu, dan mandi wajib; membiasakan salat dan puasa; menjaga sikap dan pergaulan; bertanya kepada orang tua atau guru.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Persiapan balig.",
+     "indikator": "Peserta didik dapat merancang persiapan sebelum balig.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa orang yang sudah balig harus bertanggung jawab atas perbuatannya?",
+     "kunci": "Karena ia sudah berakal dan dapat membedakan baik-buruk, sehingga setiap perbuatannya dicatat dan akan dimintai pertanggungjawaban oleh Allah.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Makna taklif.",
+     "indikator": "Peserta didik dapat menjelaskan makna tanggung jawab setelah balig.",
+     "perlu_cek": false
+    }
+   ]
+  },
+  {
+   "id": "k4-hijrah",
+   "kode": "2.5.4",
+   "judul": "Hijrah Nabi Muhammad saw.",
+   "semester": 2,
+   "elemen": "Sejarah Peradaban Islam",
+   "tp": "Menceritakan dan menjelaskan kisah Nabi Muhammad saw. sesudah menjadi rasul periode Makkah (hijrah Nabi Muhammad saw.).",
+   "soal": [
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Hijrah artinya ...",
+     "opsi": [
+      "berperang",
+      "menang",
+      "pindah",
+      "berdagang"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Hijrah artinya pindah.",
+     "indikator": "Peserta didik dapat menyebutkan arti hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Nabi Muhammad saw. hijrah dari Makkah ke ...",
+     "opsi": [
+      "Thaif",
+      "Syam",
+      "Habasyah",
+      "Yatsrib (Madinah)"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Yatsrib, kemudian bernama Madinah.",
+     "indikator": "Peserta didik dapat menyebutkan tujuan hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sahabat yang menemani Nabi hijrah adalah ...",
+     "opsi": [
+      "Abu Bakar as-Siddiq",
+      "Ali bin Abi Thalib",
+      "Umar bin Khattab",
+      "Usman bin Affan"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "pembahasan": "Abu Bakar.",
+     "indikator": "Peserta didik dapat menyebutkan sahabat yang menemani hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sahabat yang tidur di tempat tidur Nabi pada malam hijrah adalah ...",
+     "opsi": [
+      "Abu Bakar",
+      "Ali bin Abi Thalib",
+      "Bilal bin Rabah",
+      "Zaid bin Haritsah"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "pembahasan": "Ali bin Abi Thalib.",
+     "indikator": "Peserta didik dapat menyebutkan sahabat pemberani saat hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Nabi dan Abu Bakar bersembunyi di Gua ...",
+     "opsi": [
+      "Hira",
+      "Uhud",
+      "Tsur",
+      "Kahfi"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "pembahasan": "Gua Tsur.",
+     "indikator": "Peserta didik dapat menyebutkan tempat persembunyian.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Masjid pertama yang dibangun Nabi saat hijrah adalah Masjid ...",
+     "opsi": [
+      "Nabawi",
+      "Al-Aqsa",
+      "Al-Haram",
+      "Quba"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "pembahasan": "Masjid Quba.",
+     "indikator": "Peserta didik dapat menyebutkan masjid pertama.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Salah satu sebab Nabi hijrah adalah ...",
+     "opsi": [
+      "tekanan dan ancaman kaum Quraisy semakin berat",
+      "ingin berdagang",
+      "ingin berlibur",
+      "ingin membangun istana"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "pembahasan": "Kaum Quraisy berencana membunuh Nabi.",
+     "indikator": "Peserta didik dapat menjelaskan sebab hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Saat bersembunyi di gua, Nabi berkata kepada Abu Bakar agar tidak sedih karena ...",
+     "opsi": [
+      "mereka membawa senjata",
+      "Allah bersama mereka",
+      "gua itu sangat dalam",
+      "banyak sahabat berjaga di luar gua"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "pembahasan": "Lā taḥzan innallāha ma'anā (QS At-Taubah: 40).",
+     "indikator": "Peserta didik dapat menjelaskan ucapan Nabi di Gua Tsur.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Pindah dari kebiasaan buruk ke kebiasaan baik juga disebut hijrah. Contohnya ...",
+     "opsi": [
+      "dari rajin menjadi malas",
+      "dari jujur menjadi berbohong",
+      "dari malas salat menjadi rajin salat",
+      "dari hemat menjadi boros"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "pembahasan": "Hijrah makna luas.",
+     "indikator": "Peserta didik dapat memberi contoh hijrah dalam kehidupan sehari-hari.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Pelajaran dari kisah hijrah adalah ...",
+     "opsi": [
+      "mudah berputus asa",
+      "takut menghadapi masalah",
+      "mementingkan diri sendiri",
+      "berani berkorban, bertawakal, dan bersahabat setia"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "pembahasan": "Keteladanan hijrah.",
+     "indikator": "Peserta didik dapat menyimpulkan pelajaran dari kisah hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Hijrah artinya ____",
+     "kunci": "pindah",
+     "level": "C1",
+     "pembahasan": "Pindah.",
+     "indikator": "Peserta didik dapat menyebutkan arti hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Kota Yatsrib kemudian disebut ____",
+     "kunci": "Madinah",
+     "level": "C1",
+     "pembahasan": "Madinah.",
+     "indikator": "Peserta didik dapat menyebutkan nama baru Yatsrib.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Nabi dan Abu Bakar bersembunyi di Gua Tsur selama ____ hari.",
+     "kunci": "tiga",
+     "level": "C2",
+     "pembahasan": "Tiga hari.",
+     "indikator": "Peserta didik dapat menyebutkan lama persembunyian.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Putri Abu Bakar yang mengantarkan makanan ke Gua Tsur adalah ____",
+     "kunci": "Asma binti Abu Bakar",
+     "level": "C2",
+     "pembahasan": "Asma.",
+     "indikator": "Peserta didik dapat menyebutkan tokoh dalam kisah hijrah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Penduduk Madinah yang menolong Nabi disebut kaum ____",
+     "kunci": "Ansar",
+     "level": "C1",
+     "pembahasan": "Ansar.",
+     "indikator": "Peserta didik dapat menyebutkan istilah Ansar.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Orang Makkah yang ikut berhijrah ke Madinah disebut kaum ____",
+     "kunci": "Muhajirin",
+     "level": "C1",
+     "pembahasan": "Muhajirin.",
+     "indikator": "Peserta didik dapat menyebutkan istilah Muhajirin.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Hijrah Nabi menjadi awal perhitungan kalender ____",
+     "kunci": "Hijriah",
+     "level": "C2",
+     "pembahasan": "Kalender Hijriah.",
+     "indikator": "Peserta didik dapat menghubungkan hijrah dengan kalender.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tahun baru Hijriah dimulai pada tanggal 1 bulan ____",
+     "kunci": "Muharam",
+     "level": "C2",
+     "pembahasan": "1 Muharam.",
+     "indikator": "Peserta didik dapat menyebutkan awal tahun Hijriah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Penunggang kuda yang mengejar Nabi saat hijrah lalu kudanya terperosok bernama Suraqah bin ____",
+     "kunci": "Malik",
+     "level": "C2",
+     "pembahasan": "Suraqah bin Malik.",
+     "indikator": "Peserta didik dapat menyebutkan tokoh dalam kisah hijrah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Berhenti dari kebiasaan bermain gim berlebihan lalu rajin belajar termasuk contoh ____",
+     "kunci": "hijrah",
+     "level": "C3",
+     "pembahasan": "Hijrah makna luas.",
+     "indikator": "Peserta didik dapat memberi contoh hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Ceritakan secara singkat perjalanan hijrah Nabi Muhammad saw.!",
+     "kunci": "Kaum Quraisy berencana membunuh Nabi. Ali tidur di tempat Nabi. Nabi dan Abu Bakar keluar diam-diam, bersembunyi tiga hari di Gua Tsur, lalu berangkat ke Yatsrib, singgah di Quba membangun masjid, dan disambut kaum Ansar.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C2",
+     "pembahasan": "Kisah hijrah.",
+     "indikator": "Peserta didik dapat menceritakan perjalanan hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan tiga tokoh yang berjasa dalam peristiwa hijrah beserta perannya!",
+     "kunci": "Abu Bakar (menemani Nabi), Ali bin Abi Thalib (tidur di tempat tidur Nabi), Asma binti Abu Bakar (mengantar makanan), Abdullah bin Uraiqit (penunjuk jalan).",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Tokoh hijrah.",
+     "indikator": "Peserta didik dapat menyebutkan tokoh dan perannya dalam hijrah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa yang dimaksud hijrah dalam kehidupan sehari-hari? Berikan contoh!",
+     "kunci": "Pindah dari perbuatan buruk ke perbuatan baik. Contoh: dari malas menjadi rajin, dari suka berbohong menjadi jujur.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Hijrah makna luas.",
+     "indikator": "Peserta didik dapat menjelaskan hijrah dalam kehidupan sehari-hari.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sebutkan dua sikap teladan yang dapat diambil dari kisah hijrah!",
+     "kunci": "Berani, sabar, bertawakal kepada Allah, setia kawan, rela berkorban, tolong-menolong.",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Teladan hijrah.",
+     "indikator": "Peserta didik dapat menyebutkan teladan dari kisah hijrah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Mengapa peristiwa hijrah dijadikan awal tahun Hijriah?",
+     "kunci": "Karena hijrah menjadi titik balik perkembangan Islam: umat Islam bisa beribadah dengan bebas dan membangun masyarakat Madinah.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Makna hijrah.",
+     "indikator": "Peserta didik dapat menganalisis pentingnya peristiwa hijrah.",
+     "perlu_cek": false
+    }
+   ]
+  }
+ ]
+};
