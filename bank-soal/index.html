@@ -291,35 +291,39 @@ async function bukaSekolah(pw){
   const buf=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(e.iv)},key,b64(e.data));
   return JSON.parse(new TextDecoder().decode(buf));
 }
-async function muatSekolah(){
-  if(sekolahData)return sekolahData;
+let abkData=null,regData=null;
+function muatAbk(){return new Promise(res=>{if(window.SAS_SEKOLAH_ABK)return res(window.SAS_SEKOLAH_ABK);
+  const sc=document.createElement('script');sc.src='data/sas-sekolah-abk.js?v='+Date.now();sc.onload=()=>res(window.SAS_SEKOLAH_ABK||[]);sc.onerror=()=>res([]);document.head.appendChild(sc)})}
+async function muatReguler(){
+  if(regData)return regData;
   let pw=null;try{pw=sessionStorage.getItem('sasPw')}catch(_){}
-  if(pw){try{return await bukaSekolah(pw)}catch(_){try{sessionStorage.removeItem('sasPw')}catch(_){}}}
+  if(pw){try{return regData=await bukaSekolah(pw)}catch(_){try{sessionStorage.removeItem('sasPw')}catch(_){}}}
   return null;
 }
-function formSandi(pesan){
-  $('#sekolahBox').innerHTML=`<form id="fSandi" style="display:flex;flex-direction:column;gap:8px;border:1px solid #efd99a;background:#fff9ea;border-radius:10px;padding:12px">
-    <b>🔒 Paket SAS Sekolah dikunci</b><small style="color:var(--abu)">Masukkan kata sandi guru untuk membuka soal dan kunci jawaban SAS.</small>
+function htmlSandi(pesan){
+  return `<form id="fSandi" style="display:flex;flex-direction:column;gap:8px;border:1px solid #efd99a;background:#fff9ea;border-radius:10px;padding:12px">
+    <b>🔒 Soal Reguler dikunci</b><small style="color:var(--abu)">Masukkan kata sandi guru untuk membuka soal dan kunci jawaban SAS reguler.</small>
     <input type="password" id="iSandi" placeholder="Kata sandi" autocomplete="current-password" style="border:1px solid var(--garis);border-radius:8px;padding:8px 10px">
     ${pesan?`<small style="color:#b3261e">${pesan}</small>`:''}
     <button class="btn pri" type="submit">Buka</button></form>`;
-  $('#btnBuat').disabled=true;setTimeout(()=>{const i=$('#iSandi');if(i)i.focus()},50);
-  $('#fSandi').onsubmit=async ev=>{ev.preventDefault();const pw=$('#iSandi').value;if(!pw)return;
-    const btn=$('#fSandi button');btn.disabled=true;btn.textContent='Membuka…';
-    try{sekolahData=await bukaSekolah(pw);try{sessionStorage.setItem('sasPw',pw)}catch(_){}toast('Paket SAS Sekolah terbuka.');renderSekolah()}
-    catch(err){formSandi(err.message==='data'?'Data paket tidak dapat dimuat. Periksa koneksi internet.':'Kata sandi salah.')}};
 }
-async function renderSekolah(){
+async function renderSekolah(pesan){
   const box=$('#sekolahBox');if(!K){box.innerHTML='<p class="hint">Pilih kelas terlebih dahulu.</p>';$('#btnBuat').disabled=true;return}
-  sekolahData=sekolahData||await muatSekolah();if(MODE!=='sekolah')return;
-  if(!sekolahData){formSandi();return}
-  const list=sekolahData.filter(p=>p.kelas===K);const pil=LS.get('bankSekolah_'+K,list[0]&&list[0].id);
-  if(!list.length){box.innerHTML=`<p class="hint">Belum ada paket SAS sekolah untuk Kelas ${K}.</p>`;$('#btnBuat').disabled=true;return}
-  box.innerHTML=list.map(p=>{const c={};p.soal.forEach(x=>c[x.bentuk]=(c[x.bentuk]||0)+1);
-    return `<label><input type="radio" name="skl" value="${p.id}" ${p.id===pil||list.length===1?'checked':''}><span><b>SAS Semester ${p.semester} · ${p.varian==='ABK'?'Soal ABK':'Soal Reguler'}</b><small>TP ${esc(p.tahun)} · ${p.soal.length} soal (${c.pg||0} PG · ${c.isian||0} IS · ${c.uraian||0} UT)</small></span></label>`}).join('')
-    +(K===3&&!list.some(p=>p.varian==='Reguler')?'<p class="hint">ⓘ Soal reguler Kelas 3 belum ada di berkas yang diunggah.</p>':'');
-  if(!box.querySelector('input:checked'))box.querySelector('input').checked=true;
-  $('#btnBuat').disabled=false;
+  abkData=abkData||await muatAbk();regData=regData||await muatReguler();if(MODE!=='sekolah')return;
+  sekolahData=[...(regData||[]),...abkData];
+  const list=sekolahData.filter(p=>p.kelas===K);const pil=LS.get('bankSekolah_'+K,null);
+  let h=list.map(p=>{const c={};p.soal.forEach(x=>c[x.bentuk]=(c[x.bentuk]||0)+1);
+    return `<label><input type="radio" name="skl" value="${p.id}" ${p.id===pil?'checked':''}><span><b>SAS Semester ${p.semester} · ${p.varian==='ABK'?'Soal ABK':'Soal Reguler'}</b><small>TP ${esc(p.tahun)} · ${p.soal.length} soal (${c.pg||0} PG · ${c.isian||0} IS · ${c.uraian||0} UT)</small></span></label>`}).join('');
+  if(!regData)h+=htmlSandi(pesan);
+  else if(K===3&&!list.some(p=>p.varian==='Reguler'))h+='<p class="hint">ⓘ Soal reguler Kelas 3 belum ada di berkas yang diunggah.</p>';
+  if(!list.length&&regData)h='<p class="hint">Belum ada paket SAS sekolah untuk Kelas '+K+'.</p>';
+  box.innerHTML=h;
+  if(list.length&&!box.querySelector('input:checked'))box.querySelector('input').checked=true;
+  $('#btnBuat').disabled=!list.length;
+  const f=$('#fSandi');if(f)f.onsubmit=async ev=>{ev.preventDefault();const pw=$('#iSandi').value;if(!pw)return;
+    const btn=f.querySelector('button');btn.disabled=true;btn.textContent='Membuka…';
+    try{regData=await bukaSekolah(pw);try{sessionStorage.setItem('sasPw',pw)}catch(_){}toast('Soal reguler terbuka.');renderSekolah()}
+    catch(err){renderSekolah(err.message==='data'?'Data paket tidak dapat dimuat. Periksa koneksi internet.':'Kata sandi salah.')}};
 }
 $('#sekolahBox').addEventListener('change',e=>{if(e.target.name==='skl')LS.set('bankSekolah_'+K,e.target.value)});
 function tampilSekolah(){
