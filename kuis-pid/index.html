@@ -143,6 +143,9 @@ button,select,input,textarea{font:inherit;color:inherit}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--teks);color:#fff;padding:10px 18px;border-radius:12px;font-size:17px;z-index:70;opacity:0;transition:.25s;pointer-events:none}
 .toast.on{opacity:1}
 .kb{font-size:14px;color:var(--abu);text-align:center;margin-top:10px}
+.qimg{display:block;max-height:34vh;max-width:100%;margin:10px auto 0;border-radius:10px;background:#fff}
+table.qt{border-collapse:collapse;margin:8px 0;font-size:.8em;text-align:left}
+table.qt th,table.qt td{border:1px solid currentColor;padding:4px 10px}
 </style>
 </head>
 <body>
@@ -234,7 +237,11 @@ const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
 const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const AR='\\u0600-\\u06FF\\u0750-\\u077F\\u08A0-\\u08FF\\uFB50-\\uFDFF\\uFE70-\\uFEFF';
 const AR_RE=new RegExp('['+AR+']+(?:[\\s.,]+['+AR+']+)*','g');
-const fmt=t=>esc(t).replace(AR_RE,m=>'<span class="ar" dir="rtl">'+m+'</span>');
+const fmt1=t=>esc(t).replace(AR_RE,m=>'<span class="ar" dir="rtl">'+m+'</span>');
+const fmt=t=>{const L=String(t??'').split('\n'),o=[];let tb=null;
+  const tutup=()=>{if(tb){o.push('<table class="qt">'+tb.map((r,i)=>'<tr>'+r.map(c=>i?'<td>'+fmt1(c)+'</td>':'<th>'+fmt1(c)+'</th>').join('')+'</tr>').join('')+'</table>');tb=null}};
+  for(const l of L){if(/^\s*\|.*\|\s*$/.test(l)){(tb=tb||[]).push(l.trim().slice(1,-1).split('|').map(c=>c.trim()))}else{tutup();o.push(fmt1(l)+'<br>')}}
+  tutup();return o.join('').replace(/(<br>)+$/,'')};
 const HURUF='ABCDE',WARNA=['var(--c0)','var(--c1)','var(--c2)','var(--c3)','var(--c4)'];
 const TIMW=['#e2563f','#2f7de1','#f0a01d','#8a4fd8'];
 const BENTUK={pg:'Pilihan Ganda',pgk:'Pilih semua yang benar',bs:'Benar atau Salah?',jodoh:'Jodohkan',isian:'Isian',uraian:'Uraian'};
@@ -244,7 +251,7 @@ function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Ma
 /* --- normalisasi (sama dengan Generator Soal) --- */
 function toIdx(k){if(typeof k==='number')return k;if(k==null)return -1;const t=String(k).trim().toUpperCase();if(/^\d+$/.test(t))return +t;return HURUF.indexOf(t[0])}
 function normBentuk(b){b=String(b||'pg').toLowerCase();if(b==='pgk'||b.includes('komp'))return 'pgk';if(b==='bs'||b.includes('benar'))return 'bs';if(b.includes('jodoh'))return 'jodoh';if(b.includes('isian'))return 'isian';if(b.includes('urai')||b.includes('esai'))return 'uraian';return 'pg'}
-function normSoal(s){s=s||{};const o={id:s.id||uid(),bentuk:normBentuk(s.bentuk),pertanyaan:String(s.pertanyaan||''),opsi:Array.isArray(s.opsi)?s.opsi.map(x=>String(x).replace(/^[A-Ea-e][.)]\s+/,'')):[],kunci:s.kunci,pembahasan:String(s.pembahasan||''),pasangan:Array.isArray(s.pasangan)?s.pasangan.map(p=>({kiri:String(p.kiri||''),kanan:String(p.kanan||'')})):[]};
+function normSoal(s){s=s||{};const o={id:s.id||uid(),bentuk:normBentuk(s.bentuk),pertanyaan:String(s.pertanyaan||''),opsi:Array.isArray(s.opsi)?s.opsi.map(x=>String(x).replace(/^[A-Ea-e][.)]\s+/,'')):[],kunci:s.kunci,pembahasan:String(s.pembahasan||''),gambar:Array.isArray(s.gambar)?s.gambar.filter(g=>/^https?:\/\//.test(g)):[],pasangan:Array.isArray(s.pasangan)?s.pasangan.map(p=>({kiri:String(p.kiri||''),kanan:String(p.kanan||'')})):[]};
   if(o.bentuk==='bs'){o.opsi=['Benar','Salah'];const k=s.kunci;o.kunci=typeof k==='number'?k:(/^\s*(s|f)/i.test(String(k))?1:0)}
   else if(o.bentuk==='pg'){o.kunci=toIdx(Array.isArray(s.kunci)?s.kunci[0]:s.kunci);if(o.kunci<0||o.kunci>=o.opsi.length)o.kunci=0}
   else if(o.bentuk==='pgk'){const a=Array.isArray(s.kunci)?s.kunci:String(s.kunci||'').split(/[,\s]+/).filter(Boolean);o.kunci=a.map(toIdx).filter(x=>x>=0&&x<o.opsi.length)}
@@ -347,7 +354,7 @@ function tampil(){
   const q=game.list[game.i],n=game.list.length;
   $('#pProg').textContent='Soal '+(game.i+1)+' / '+n;$('#pLine').style.width=((game.i+1)/n*100)+'%';
   game.sel=[];game.jsel=null;game.jpair={};
-  let h=`<div class="qwrap"><div class="qno">${game.i+1}</div><div class="qtext"><span class="qtype">${BENTUK[q.bentuk]}</span><br>${fmt(q.pertanyaan)}</div>`;
+  let h=`<div class="qwrap"><div class="qno">${game.i+1}</div><div class="qtext"><span class="qtype">${BENTUK[q.bentuk]}</span><br>${(()=>{const g=(q.gambar||[]).slice(),im=x=>`<img class="qimg" src="${esc(x)}" alt="Gambar soal">`,pt=q.pertanyaan.split(/\n?\[\[gambar\]\]\n?/);return pt.map((t,i)=>(t?fmt(t):'')+(i<pt.length-1&&g.length?im(g.shift()):'')).join('')+g.map(im).join('')})()}</div>`;
   if(S.waktu)h+=`<div class="timer" id="tmr"><svg width="92" height="92"><circle cx="46" cy="46" r="40" fill="#fff" stroke="#e1ebe6" stroke-width="9"/><circle class="a" cx="46" cy="46" r="40" fill="none" stroke="var(--emas)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${2*Math.PI*40}" style="transition:stroke-dashoffset 1s linear"/></svg><div class="num"></div></div>`;
   h+='</div>';
   if(q.bentuk==='pg'||q.bentuk==='pgk'||q.bentuk==='bs'){

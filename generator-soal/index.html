@@ -358,7 +358,7 @@ function normSoal(s){
     kunci:s.kunci,pembahasan:String(s.pembahasan||''),level:(String(s.level||'C2').toUpperCase().match(/C[1-6]/)||['C2'])[0],
     indikator:String(s.indikator||''),perlu_cek:!!s.perlu_cek,rubrik:String(s.rubrik||''),
     pasangan:Array.isArray(s.pasangan)?s.pasangan.map(p=>({kiri:String(p.kiri||''),kanan:String(p.kanan||'')})):[]};
-  if(s.tp)o.tp=String(s.tp);if(s.elemen)o.elemen=String(s.elemen);if(s.materi)o.materi=String(s.materi);
+  if(s.tp)o.tp=String(s.tp);if(s.elemen)o.elemen=String(s.elemen);if(s.materi)o.materi=String(s.materi);if(Array.isArray(s.gambar)&&s.gambar.length)o.gambar=s.gambar.slice();if(s.tp_no!=null)o.tp_no=s.tp_no;if(s.lv)o.lv=s.lv;
   if(o.bentuk==='bs'){o.opsi=['Benar','Salah'];const k=s.kunci;o.kunci=typeof k==='number'?k:(/^\s*(s|f)/i.test(String(k))?1:0)}
   else if(o.bentuk==='pg'){o.kunci=toIdx(Array.isArray(s.kunci)?s.kunci[0]:s.kunci);if(o.kunci<0||o.kunci>=o.opsi.length)o.kunci=0}
   else if(o.bentuk==='pgk'){const a=Array.isArray(s.kunci)?s.kunci:String(s.kunci||'').split(/[,\s]+/).filter(Boolean);o.kunci=[...new Set(a.map(toIdx).filter(x=>x>=0&&x<o.opsi.length))]}
