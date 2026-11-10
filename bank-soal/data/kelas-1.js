@@ -184,6 +184,23 @@ window.BANK_SOAL["1"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHuruf nomor (2) pada gambar dibaca ...",
+     "opsi": [
+      "jim",
+      "ḥa",
+      "kha"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar tiga huruf hijaiah bernomor, peserta didik dapat menentukan nama salah satu huruf.",
+     "pembahasan": "Huruf nomor (2) adalah ح, dibaca ḥa.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-hijaiah.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Huruf hijaiah yang terakhir adalah ____",
      "kunci": "ي (ya)",
@@ -572,6 +589,23 @@ window.BANK_SOAL["1"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHuruf pada gambar dibaca ...",
+     "opsi": [
+      "ba",
+      "bu",
+      "bi"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar huruf berharakat kasrah, peserta didik dapat menentukan bunyi bacaannya.",
+     "pembahasan": "Huruf ba berharakat kasrah dibaca bi.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-berharakat.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Fathah berupa garis miring di ____ huruf.",
      "kunci": "atas",
@@ -890,6 +924,23 @@ window.BANK_SOAL["1"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nBenda pada gambar adalah kitab suci Al-Qur'an di atas rehal. Iman kepada kitab-kitab Allah adalah rukun iman yang ke- ...",
+     "opsi": [
+      "dua",
+      "tiga",
+      "empat"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar Al-Qur'an, peserta didik dapat menentukan urutan rukun iman kepada kitab.",
+     "pembahasan": "Iman kepada kitab-kitab Allah adalah rukun iman yang ketiga.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-rukun-iman.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Rukun iman berjumlah ____",
      "kunci": "enam",
@@ -1206,6 +1257,23 @@ window.BANK_SOAL["1"] = {
      "pembahasan": "Tasbih membuat kita selalu ingat kepada Allah.",
      "indikator": "Peserta didik dapat menganalisis manfaat bertasbih.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nRina melihat pelangi dan kupu-kupu yang indah seperti pada gambar. Kalimat yang tepat diucapkan Rina adalah ...",
+     "opsi": [
+      "subḥānallāh",
+      "astagfirullāh",
+      "innā lillāhi"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar keindahan alam, peserta didik dapat menentukan kalimat tasbih yang tepat diucapkan.",
+     "pembahasan": "Ketika kagum melihat ciptaan Allah, kita mengucapkan subḥānallāh.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-tasbih.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -1964,6 +2032,23 @@ window.BANK_SOAL["1"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nNabi Adam a.s. dan istrinya tinggal di surga. Allah melarang mereka mendekati ... seperti pada gambar.",
+     "opsi": [
+      "sebuah sungai",
+      "sebuah pohon",
+      "sebuah gunung"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar pohon berbuah, peserta didik dapat menentukan larangan Allah kepada Nabi Adam a.s.",
+     "pembahasan": "Allah melarang Nabi Adam a.s. dan Hawa mendekati sebuah pohon di surga.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-nabi-adam.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Nabi yang pertama adalah Nabi ____",
      "kunci": "Adam a.s.",
@@ -2394,6 +2479,23 @@ window.BANK_SOAL["1"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHuruf bersambung pada gambar dibaca ...",
+     "opsi": [
+      "kataba",
+      "kutiba",
+      "kutubu"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Disajikan gambar huruf bersambung berharakat fathah, peserta didik dapat membacanya dengan benar.",
+     "pembahasan": "كَتَبَ semua berharakat fathah, dibaca kataba.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-bersambung.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Tulisan بَبَ dibaca ____",
      "kunci": "baba",
@@ -2654,6 +2756,23 @@ window.BANK_SOAL["1"] = {
      "pembahasan": "Al-Qur'an harus dibaca dengan sopan dan sungguh-sungguh. Kita menasihati teman dengan baik.",
      "indikator": "Disajikan perilaku kurang tepat, peserta didik dapat menentukan sikap yang benar.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar sedang salat. Surah yang wajib dibaca pada setiap rakaat salat adalah Surah ...",
+     "opsi": [
+      "An-Nās",
+      "Al-Ikhlāṣ",
+      "Al-Fātiḥah"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar anak salat, peserta didik dapat menentukan surah yang wajib dibaca setiap rakaat.",
+     "pembahasan": "Surah Al-Fātiḥah wajib dibaca pada setiap rakaat salat.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-alfatihah.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -3028,6 +3147,23 @@ window.BANK_SOAL["1"] = {
      "pembahasan": "Pancaindra dan tubuh yang sehat adalah nikmat dari Allah.",
      "indikator": "Disajikan nikmat tubuh, peserta didik dapat menyimpulkan asalnya.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGunung, matahari, dan laut pada gambar tidak dibuat oleh manusia. Hal ini menunjukkan bahwa Allah Maha ...",
+     "opsi": [
+      "Pencipta",
+      "Pelupa",
+      "Lemah"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar alam, peserta didik dapat menyimpulkan sifat Allah sebagai pencipta.",
+     "pembahasan": "Alam semesta diciptakan oleh Allah Yang Maha Pencipta.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-iman-allah.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -3739,6 +3875,23 @@ window.BANK_SOAL["1"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar membasuh tangan dengan air yang mengalir sebelum salat. Kegiatan tersebut adalah bagian dari ...",
+     "opsi": [
+      "makan",
+      "bermain",
+      "berwudu"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar membasuh tangan sebelum salat, peserta didik dapat menentukan kegiatan bersuci yang dilakukan.",
+     "pembahasan": "Membasuh tangan adalah bagian dari wudu sebelum salat.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-bersuci.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Bersuci dalam bahasa Arab disebut ____",
      "kunci": "taharah",
@@ -4237,6 +4390,23 @@ window.BANK_SOAL["1"] = {
      "pembahasan": "Allah memuliakan hamba yang sabar dan taat.",
      "indikator": "Peserta didik dapat menganalisis sebab kemuliaan Nabi Idris a.s.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nBenda pada gambar mengingatkan kita pada Nabi Idris a.s. Beliau dikenal sebagai orang pertama yang pandai menjahit dan ...",
+     "opsi": [
+      "memasak",
+      "menulis dengan pena",
+      "berlayar"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar pena dan jarum, peserta didik dapat menyebutkan keistimewaan Nabi Idris a.s.",
+     "pembahasan": "Nabi Idris a.s. dikenal sebagai orang pertama yang pandai menulis dan menjahit.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k1-nabi-idris.png"
+     ]
     },
     {
      "bentuk": "isian",

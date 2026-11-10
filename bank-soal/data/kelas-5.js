@@ -166,6 +166,24 @@ window.BANK_SOAL["5"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHukum bacaan mim sukun pada lafal di gambar adalah ...",
+     "opsi": [
+      "ikhfa syafawi",
+      "izhar syafawi",
+      "idgam mimi",
+      "iqlab"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar lafal, peserta didik dapat menentukan hukum bacaan mim sukun bertemu mim.",
+     "pembahasan": "Mim sukun bertemu م dibaca idgam mimi.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-mim-sukun.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Huruf ikhfa syafawi hanya satu, yaitu ____",
      "kunci": "ب (ba)",
@@ -464,6 +482,24 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Sumpah menunjukkan pentingnya waktu.",
      "indikator": "Peserta didik dapat menganalisis makna sumpah dalam ayat pertama.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nJam pasir pada gambar mengingatkan bahwa waktu terus berjalan. Surah yang diawali sumpah Allah demi masa adalah Surah ...",
+     "opsi": [
+      "Al-Kauṡar",
+      "An-Naṣr",
+      "Al-'Aṣr",
+      "Al-Falaq"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar jam pasir, peserta didik dapat menentukan surah tentang waktu.",
+     "pembahasan": "Surah Al-'Aṣr diawali sumpah \"Demi masa\".",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-al-asr.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -766,6 +802,24 @@ window.BANK_SOAL["5"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nDoni memberi hadiah kepada teman yang pernah menolongnya seperti pada gambar. Doni meneladani asmaulhusna ...",
+     "opsi": [
+      "Al-Ḥalīm",
+      "Al-Ḥakīm",
+      "Al-Wadūd",
+      "Asy-Syakūr"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak memberi hadiah, peserta didik dapat menentukan asmaulhusna yang diteladani.",
+     "pembahasan": "Membalas kebaikan meneladani Asy-Syakūr, Allah Maha Mensyukuri.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-asmaul-husna.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Al-Ḥalīm artinya Maha ____",
      "kunci": "Penyantun",
@@ -1064,6 +1118,24 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Allah mengabulkan doa pada waktu yang terbaik atau mengganti dengan yang lebih baik.",
      "indikator": "Disajikan situasi, peserta didik dapat menganalisis sikap yang benar.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAdab berdoa yang ditunjukkan anak pada gambar adalah ...",
+     "opsi": [
+      "mengangkat kedua tangan dengan khusyuk",
+      "berdoa sambil bermain",
+      "berdoa sambil berteriak",
+      "berdoa sambil makan"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Disajikan gambar anak berdoa, peserta didik dapat menentukan adab berdoa.",
+     "pembahasan": "Berdoa dengan mengangkat kedua tangan dan khusyuk adalah adab berdoa.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-doa-tawakal.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -1684,6 +1756,24 @@ window.BANK_SOAL["5"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nMasjid pada gambar adalah Masjid Nabawi yang dibangun Nabi Muhammad saw. Masjid ini terletak di kota ...",
+     "opsi": [
+      "Makkah",
+      "Madinah",
+      "Thaif",
+      "Yerusalem"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar Masjid Nabawi, peserta didik dapat menentukan letak masjid tersebut.",
+     "pembahasan": "Masjid Nabawi berada di kota Madinah.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-nabi-madinah.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Kota Yatsrib kemudian diberi nama ____",
      "kunci": "Madinah (al-Munawwarah)",
@@ -1982,6 +2072,24 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Sugra pantulan ringan (tengah), kubra lebih kuat (akhir saat waqaf).",
      "indikator": "Peserta didik dapat membandingkan qalqalah sugra dan kubra.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nLafal pada gambar dibaca berhenti (waqaf). Hukum bacaannya adalah ...",
+     "opsi": [
+      "qalqalah sugra",
+      "qalqalah kubra",
+      "ikhfa",
+      "idgam"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar lafal yang dibaca waqaf, peserta didik dapat menentukan jenis qalqalah.",
+     "pembahasan": "Huruf qalqalah د di akhir kata yang dibaca waqaf termasuk qalqalah kubra.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-qalqalah.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -2284,6 +2392,24 @@ window.BANK_SOAL["5"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSiswa pada gambar mencium tangan gurunya. Perilaku tersebut menunjukkan sikap ...",
+     "opsi": [
+      "acuh",
+      "sombong",
+      "hormat",
+      "malas"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar siswa bersalaman dengan guru, peserta didik dapat menyimpulkan sikap yang ditunjukkan.",
+     "pembahasan": "Mencium tangan guru adalah bentuk hormat kepada guru.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-hadis-ortu-guru.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Rida Allah tergantung pada ____ orang tua.",
      "kunci": "rida",
@@ -2584,6 +2710,24 @@ window.BANK_SOAL["5"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPada hari akhir, amal manusia ditimbang seperti timbangan pada gambar. Timbangan amal tersebut disebut ...",
+     "opsi": [
+      "sirat",
+      "hisab",
+      "mizan",
+      "mahsyar"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar timbangan, peserta didik dapat menyebutkan nama timbangan amal.",
+     "pembahasan": "Timbangan amal pada hari akhir disebut mizan.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-hari-akhir.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Hari akhir disebut juga hari ____",
      "kunci": "kiamat",
@@ -2882,6 +3026,24 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Menjaga aib teman termasuk akhlak mulia.",
      "indikator": "Peserta didik dapat menganalisis alasan menjaga aib teman.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSikap anak yang menolong temannya yang jatuh pada gambar disebut ...",
+     "opsi": [
+      "takabur",
+      "ta'āwun (tolong-menolong)",
+      "hasad",
+      "riya"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar menolong teman, peserta didik dapat menyebutkan istilah akhlak yang ditunjukkan.",
+     "pembahasan": "Ta'āwun artinya tolong-menolong dalam kebaikan.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-akhlak-teman.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -3500,6 +3662,24 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Perdamaian membuka jalan dakwah yang lebih luas.",
      "indikator": "Peserta didik dapat menganalisis sikap Nabi dalam Perjanjian Hudaibiah.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGulungan naskah pada gambar mengingatkan perjanjian antara umat Islam dan kaum Quraisy pada tahun 6 Hijriah, yaitu ...",
+     "opsi": [
+      "Baiat Aqabah",
+      "Piagam Madinah",
+      "Haji Wada",
+      "Perjanjian Hudaibiah"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "indikator": "Disajikan gambar naskah perjanjian, peserta didik dapat menentukan nama perjanjian tahun 6 H.",
+     "pembahasan": "Perjanjian Hudaibiah terjadi pada tahun 6 Hijriah.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-hudaibiah.png"
+     ]
     },
     {
      "bentuk": "isian",

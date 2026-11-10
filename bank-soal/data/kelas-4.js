@@ -166,6 +166,24 @@ window.BANK_SOAL["4"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHukum bacaan pada lafal di gambar adalah ...",
+     "opsi": [
+      "izhar",
+      "idgam bigunah",
+      "idgam bilagunah",
+      "iqlab"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar lafal, peserta didik dapat menentukan hukum bacaan nun sukun bertemu ra.",
+     "pembahasan": "Nun sukun bertemu ر dibaca idgam bilagunah.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-idgam.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Huruf idgam bigunah dapat dihafal dengan singkatan ____",
      "kunci": "yanmu (ي ن م و)",
@@ -466,6 +484,24 @@ window.BANK_SOAL["4"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nTim kelas Ahmad menjadi juara dan mendapat piala seperti pada gambar. Sesuai Surah An-Naṣr, sikap yang tepat adalah ...",
+     "opsi": [
+      "menyombongkan diri",
+      "mengejek tim lawan",
+      "berpesta semalaman",
+      "bertasbih, memuji Allah, dan memohon ampun"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "indikator": "Disajikan gambar piala kemenangan, peserta didik dapat menentukan sikap sesuai Surah An-Naṣr.",
+     "pembahasan": "Ayat 3 Surah An-Naṣr memerintahkan bertasbih, memuji Allah, dan memohon ampun.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-an-nasr.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Surah An-Naṣr berjumlah ____ ayat.",
      "kunci": "tiga",
@@ -764,6 +800,24 @@ window.BANK_SOAL["4"] = {
      "pembahasan": "Suka memberi.",
      "indikator": "Disajikan perilaku, peserta didik dapat menganalisis Asmaul Husna yang diteladani.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nRiko memaafkan temannya yang meminta maaf dan mereka berjabat tangan seperti pada gambar. Riko meneladani asmaulhusna ...",
+     "opsi": [
+      "Al-Wahhāb",
+      "Al-Gaffār",
+      "Al-Fattāḥ",
+      "Al-Laṭīf"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar dua anak berjabat tangan, peserta didik dapat menentukan asmaulhusna yang diteladani.",
+     "pembahasan": "Memaafkan meneladani Al-Gaffār, Allah Maha Pengampun.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-asmaul-husna.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -1702,6 +1756,24 @@ window.BANK_SOAL["4"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGambar menunjukkan Jabal Nur. Di gua pada gunung ini Nabi Muhammad saw. menerima wahyu pertama, yaitu Gua ...",
+     "opsi": [
+      "Tsur",
+      "Kahfi",
+      "Hira",
+      "Uhud"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar Jabal Nur, peserta didik dapat menentukan gua tempat turunnya wahyu pertama.",
+     "pembahasan": "Wahyu pertama turun di Gua Hira, Jabal Nur.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-periode-makkah.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Wahyu pertama adalah Surah Al-'Alaq ayat 1–____",
      "kunci": "5",
@@ -2000,6 +2072,24 @@ window.BANK_SOAL["4"] = {
      "pembahasan": "Keduanya berdengung.",
      "indikator": "Peserta didik dapat membandingkan iqlab dan ikhfa.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPada lafal di gambar terdapat tanda mim kecil di atas nun sukun. Hukum bacaannya adalah ...",
+     "opsi": [
+      "iqlab",
+      "ikhfa",
+      "izhar",
+      "idgam"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar lafal bertanda mim kecil, peserta didik dapat menentukan hukum bacaan iqlab.",
+     "pembahasan": "Nun sukun bertemu ب dibaca iqlab, ditandai mim kecil.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-iqlab-ikhfa.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -2302,6 +2392,24 @@ window.BANK_SOAL["4"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nDua anak pada gambar saling berbagi makanan. Perilaku ini sesuai hadis: tidak sempurna iman seseorang sampai ia ... saudaranya seperti dirinya sendiri.",
+     "opsi": [
+      "membenci",
+      "mencintai",
+      "mengejek",
+      "menjauhi"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak berbagi, peserta didik dapat menghubungkannya dengan hadis tentang persaudaraan.",
+     "pembahasan": "Hadis: lā yu'minu aḥadukum ḥattā yuḥibba li-akhīhi mā yuḥibbu li-nafsih.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k4-hadis-sesama.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Hadis tentang mencintai saudara diriwayatkan oleh Bukhari dan ____",
      "kunci": "Muslim",
@@ -2600,6 +2708,24 @@ window.BANK_SOAL["4"] = {
      "pembahasan": "Lawan ṣiddīq adalah kiżib (dusta).",
      "indikator": "Disajikan perilaku, peserta didik dapat menganalisis sifat yang tidak diteladani.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nKetua kelas menyampaikan pengumuman dari guru kepada teman-temannya seperti pada gambar. Ia meneladani sifat rasul ...",
+     "opsi": [
+      "ṣiddīq",
+      "amānah",
+      "faṭānah",
+      "tablīg"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "indikator": "Disajikan gambar menyampaikan pengumuman, peserta didik dapat menentukan sifat rasul yang diteladani.",
+     "pembahasan": "Tablīg artinya menyampaikan.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-iman-rasul.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -2902,6 +3028,24 @@ window.BANK_SOAL["4"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nMurid pada gambar ingin bertanya kepada guru. Sikap yang benar adalah ...",
+     "opsi": [
+      "berteriak memanggil guru",
+      "mengangkat tangan dan bertanya dengan sopan",
+      "memotong penjelasan guru",
+      "bertanya sambil mengobrol"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar suasana kelas, peserta didik dapat menentukan adab bertanya kepada guru.",
+     "pembahasan": "Mengangkat tangan lalu bertanya dengan sopan adalah adab kepada guru.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-guru.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Guru adalah orang tua kita di ____",
      "kunci": "sekolah",
@@ -3202,6 +3346,24 @@ window.BANK_SOAL["4"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nRina sudah balig. Ia memakai pakaian seperti pada gambar ketika keluar rumah karena ...",
+     "opsi": [
+      "wajib menutup aurat",
+      "mengikuti teman",
+      "menghindari panas saja",
+      "disuruh penjual baju"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak perempuan berpakaian menutup aurat, peserta didik dapat menjelaskan kewajiban setelah balig.",
+     "pembahasan": "Setelah balig, menutup aurat hukumnya wajib.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-balig.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Orang yang sudah dibebani hukum syariat disebut ____",
      "kunci": "mukalaf",
@@ -3500,6 +3662,24 @@ window.BANK_SOAL["4"] = {
      "pembahasan": "Keteladanan hijrah.",
      "indikator": "Peserta didik dapat menyimpulkan pelajaran dari kisah hijrah.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGua dengan sarang laba-laba dan burung merpati pada gambar mengingatkan peristiwa hijrah. Nabi dan Abu Bakar bersembunyi di Gua ...",
+     "opsi": [
+      "Hira",
+      "Uhud",
+      "Kahfi",
+      "Tsur"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "indikator": "Disajikan gambar gua bersarang laba-laba, peserta didik dapat menentukan tempat persembunyian saat hijrah.",
+     "pembahasan": "Nabi dan Abu Bakar bersembunyi tiga hari di Gua Tsur.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-hijrah.png"
+     ]
     },
     {
      "bentuk": "isian",

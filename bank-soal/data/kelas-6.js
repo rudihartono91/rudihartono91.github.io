@@ -166,6 +166,24 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": true
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHukum bacaan pada lafal di gambar adalah ...",
+     "opsi": [
+      "gunnah",
+      "izhar",
+      "qalqalah",
+      "iqlab"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar lafal bertasydid, peserta didik dapat menentukan bacaan gunnah.",
+     "pembahasan": "Nun bertasydid dibaca gunnah (berdengung).",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-gunnah.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Gunnah artinya ____",
      "kunci": "dengung",
@@ -464,6 +482,24 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "Penegasan.",
      "indikator": "Peserta didik dapat menganalisis makna pengulangan ayat.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSetelah PR selesai, Doni langsung membaca buku untuk ulangan seperti pada gambar. Doni mengamalkan Surah Al-Insyirāḥ ayat ...",
+     "opsi": [
+      "1",
+      "5",
+      "7",
+      "8"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak menyelesaikan PR lalu belajar, peserta didik dapat menghubungkan perilaku dengan ayat.",
+     "pembahasan": "Ayat 7: apabila telah selesai suatu urusan, tetaplah bekerja keras untuk urusan lain.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k6-al-insyirah.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -766,6 +802,24 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nIbu membagi kue sama besar kepada semua anaknya seperti pada gambar. Sikap ibu meneladani asmaulhusna ...",
+     "opsi": [
+      "Al-'Adl",
+      "Al-Waliy",
+      "Al-Ḥamīd",
+      "Aṣ-Ṣabūr"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar membagi kue sama rata, peserta didik dapat menentukan asmaulhusna yang diteladani.",
+     "pembahasan": "Bersikap adil meneladani Al-'Adl, Allah Maha Adil.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-asmaul-husna.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Al-Waliy artinya Maha ____",
      "kunci": "Pelindung",
@@ -1064,6 +1118,24 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "Mengganggu tetangga.",
      "indikator": "Disajikan kasus, peserta didik dapat menganalisis perbuatan tercela.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar mengantarkan makanan ke rumah tetangga. Perilaku ini menunjukkan sikap ... tetangga.",
+     "opsi": [
+      "mengganggu",
+      "memuliakan",
+      "mengabaikan",
+      "menjauhi"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar mengantar makanan ke tetangga, peserta didik dapat menyimpulkan akhlak terhadap tetangga.",
+     "pembahasan": "Berbagi makanan adalah cara memuliakan tetangga.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-tetangga.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -1684,6 +1756,24 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPenanggalan Hijriah seperti pada gambar mulai ditetapkan pada masa khalifah ...",
+     "opsi": [
+      "Abu Bakar aṣ-Ṣiddīq",
+      "Umar bin Khattab",
+      "Usman bin Affan",
+      "Ali bin Abi Talib"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar kalender Hijriah, peserta didik dapat menentukan khalifah yang menetapkannya.",
+     "pembahasan": "Kalender Hijriah ditetapkan pada masa Umar bin Khattab.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-abubakar-umar.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Empat khalifah pengganti Nabi disebut ____",
      "kunci": "Khulafaurasyidin",
@@ -1982,6 +2072,24 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "Fathah → tebal; kasrah → tipis.",
      "indikator": "Disajikan dua lafal, peserta didik dapat membandingkan bacaannya.",
      "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nLam pada lafal Allah di gambar dibaca ...",
+     "opsi": [
+      "tebal (tafkhim)",
+      "tipis (tarqiq)",
+      "dengung",
+      "memantul"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar lafal basmalah, peserta didik dapat menentukan bacaan lam jalalah.",
+     "pembahasan": "Lam jalalah sesudah huruf berharakat kasrah dibaca tipis (tarqiq).",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-tafkhim-tarqiq.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -2284,6 +2392,24 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nDalam hadis, teman yang baik diumpamakan seperti penjual benda pada gambar nomor (1), yaitu ...",
+     "opsi": [
+      "minyak wangi",
+      "besi",
+      "kain",
+      "buah-buahan"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Disajikan gambar botol parfum dan alat pandai besi, peserta didik dapat menentukan perumpamaan teman yang baik.",
+     "pembahasan": "Teman yang baik seperti penjual minyak wangi.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k6-hadis-teman.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Teman yang baik diumpamakan seperti penjual ____",
      "kunci": "minyak wangi (parfum)",
@@ -2582,6 +2708,24 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "QS Ar-Ra'd: 11.",
      "indikator": "Disajikan pendapat, peserta didik dapat menilai kekeliruannya.",
      "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nFajar belajar dengan sungguh-sungguh seperti pada gambar agar nilainya baik. Usaha Fajar disebut ...",
+     "opsi": [
+      "tawakal",
+      "qanaah",
+      "ikhtiar",
+      "takdir"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar anak belajar, peserta didik dapat menyebutkan istilah ikhtiar.",
+     "pembahasan": "Ikhtiar adalah berusaha dengan sungguh-sungguh.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-qada-qadar.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -3202,6 +3346,24 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": true
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nTanah tempat masjid pada gambar diserahkan untuk kepentingan umum dan pahalanya terus mengalir. Ibadah ini disebut ...",
+     "opsi": [
+      "zakat",
+      "wakaf",
+      "infak",
+      "sedekah"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar papan tanah wakaf, peserta didik dapat menentukan jenis ibadah harta.",
+     "pembahasan": "Wakaf adalah menahan harta untuk kepentingan umum yang pahalanya terus mengalir.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-wakaf.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Orang yang berwakaf disebut ____",
      "kunci": "wakif",
@@ -3500,6 +3662,24 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "Teladan Usman.",
      "indikator": "Disajikan kisah, peserta didik dapat menyimpulkan teladan.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSumur pada gambar mengingatkan kisah khalifah yang membeli sumur Raumah lalu mewakafkannya untuk kaum muslimin, yaitu ...",
+     "opsi": [
+      "Abu Bakar aṣ-Ṣiddīq",
+      "Umar bin Khattab",
+      "Usman bin Affan",
+      "Ali bin Abi Talib"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar sumur, peserta didik dapat menentukan khalifah yang mewakafkan sumur Raumah.",
+     "pembahasan": "Usman bin Affan membeli sumur Raumah dan mewakafkannya.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k6-usman-ali.png"
+     ]
     },
     {
      "bentuk": "isian",

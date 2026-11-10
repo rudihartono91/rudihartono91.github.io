@@ -156,6 +156,23 @@ window.BANK_SOAL["3"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nLafal pada gambar mengandung bacaan mad ṭabī'ī. Bacaan tersebut dibaca panjang ... harakat.",
+     "opsi": [
+      "satu",
+      "dua",
+      "empat"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar lafal bermad, peserta didik dapat menentukan panjang bacaan mad ṭabī'ī.",
+     "pembahasan": "Mad ṭabī'ī dibaca panjang dua harakat.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k3-mad-tabii.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Mad artinya ____",
      "kunci": "panjang",
@@ -444,6 +461,23 @@ window.BANK_SOAL["3"] = {
      "pembahasan": "Nabi Muhammad saw. adalah rasul pembawa rahmat bagi semesta.",
      "indikator": "Peserta didik dapat menganalisis alasan mencintai Nabi Muhammad saw.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHewan pada gambar biasa disembelih pada Hari Raya Iduladha. Perintah berkurban terdapat dalam Surah ...",
+     "opsi": [
+      "Al-Falaq",
+      "Al-Kauṡar",
+      "An-Nās"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar hewan kurban, peserta didik dapat menentukan surah yang memuat perintah berkurban.",
+     "pembahasan": "Surah Al-Kauṡar ayat 2: \"Maka laksanakanlah salat karena Tuhanmu dan berkurbanlah.\"",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k3-alkausar.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -736,6 +770,23 @@ window.BANK_SOAL["3"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nBulan dan bintang pada gambar diciptakan dan diatur oleh Allah. Hal ini menunjukkan sifat Allah qudrah, artinya Allah Maha ...",
+     "opsi": [
+      "Melihat",
+      "Mendengar",
+      "Kuasa"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar langit malam, peserta didik dapat menghubungkannya dengan sifat qudrah.",
+     "pembahasan": "Qudrah artinya Allah Mahakuasa.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k3-sifat-allah.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Wujud artinya ____",
      "kunci": "ada",
@@ -1024,6 +1075,23 @@ window.BANK_SOAL["3"] = {
      "pembahasan": "Istirja' diucapkan saat mendapat musibah.",
      "indikator": "Peserta didik dapat menentukan ucapan saat musibah.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHujan turun ketika Rafi ingin bermain di luar seperti pada gambar. Sikap husnuzan yang tepat adalah ...",
+     "opsi": [
+      "bersyukur karena hujan menyuburkan tanaman",
+      "marah karena tidak bisa bermain",
+      "menyalahkan hujan"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar hujan, peserta didik dapat menentukan sikap berbaik sangka kepada Allah.",
+     "pembahasan": "Husnuzan berarti berbaik sangka; hujan membawa manfaat.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k3-husnuzan.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -1623,6 +1691,23 @@ window.BANK_SOAL["3"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nNabi Muhammad saw. lahir pada tahun terjadinya peristiwa pasukan bergajah seperti pada gambar, yaitu Tahun ...",
+     "opsi": [
+      "Kesedihan",
+      "Gajah",
+      "Hijriah"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar gajah dan burung, peserta didik dapat menentukan nama tahun kelahiran Nabi.",
+     "pembahasan": "Nabi Muhammad saw. lahir pada Tahun Gajah.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k3-kelahiran-nabi.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Nabi Muhammad saw. lahir di kota ____",
      "kunci": "Makkah",
@@ -1911,6 +1996,23 @@ window.BANK_SOAL["3"] = {
      "pembahasan": "Halq artinya tenggorokan.",
      "indikator": "Peserta didik dapat menjelaskan asal nama halqi.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nHukum bacaan nun sukun pada lafal di gambar adalah ...",
+     "opsi": [
+      "ikhfa",
+      "idgam",
+      "izhar halqi"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar lafal, peserta didik dapat menentukan hukum bacaan nun sukun bertemu huruf halqi.",
+     "pembahasan": "Nun sukun bertemu ع dibaca izhar halqi.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k3-izhar-halqi.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -2203,6 +2305,23 @@ window.BANK_SOAL["3"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar sedang salat. Menurut hadis, salat adalah tiang ...",
+     "opsi": [
+      "rumah",
+      "agama",
+      "masjid"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar anak sujud, peserta didik dapat menyebutkan isi hadis tentang salat.",
+     "pembahasan": "Salat adalah tiang agama.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k3-hadis-salat.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Hadis adalah segala ucapan, perbuatan, dan ketetapan Nabi ____",
      "kunci": "Muhammad saw.",
@@ -2493,6 +2612,23 @@ window.BANK_SOAL["3"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGambar menunjukkan empat kitab Allah. Kitab yang diturunkan kepada Nabi Musa a.s. adalah ...",
+     "opsi": [
+      "Taurat",
+      "Zabur",
+      "Injil"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Disajikan gambar empat kitab Allah, peserta didik dapat menentukan kitab yang diturunkan kepada Nabi Musa a.s.",
+     "pembahasan": "Taurat diturunkan kepada Nabi Musa a.s.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k3-iman-kitab.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Kitab Taurat diturunkan kepada Nabi ____",
      "kunci": "Musa a.s.",
@@ -2781,6 +2917,23 @@ window.BANK_SOAL["3"] = {
      "pembahasan": "Jasa orang tua sangat besar dan berbakti adalah perintah Allah.",
      "indikator": "Peserta didik dapat menganalisis alasan berbakti kepada orang tua.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSebelum berangkat sekolah, Dani mencium tangan ibunya seperti pada gambar. Sikap Dani menunjukkan ...",
+     "opsi": [
+      "sikap sombong",
+      "sikap malas",
+      "hormat kepada orang tua"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak mencium tangan ibu, peserta didik dapat menyimpulkan akhlak yang ditunjukkan.",
+     "pembahasan": "Mencium tangan orang tua adalah bentuk hormat dan berbakti.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k3-orang-tua.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -3378,6 +3531,23 @@ window.BANK_SOAL["3"] = {
      "pembahasan": "Nabi menyelesaikan perselisihan secara adil.",
      "indikator": "Peserta didik dapat menganalisis teladan dari peristiwa Hajar Aswad.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPada masa remaja, Nabi Muhammad saw. ikut berdagang bersama rombongan kafilah seperti pada gambar ke negeri ...",
+     "opsi": [
+      "Habasyah",
+      "Syam",
+      "Yaman"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar kafilah unta, peserta didik dapat menentukan tujuan perjalanan dagang Nabi.",
+     "pembahasan": "Nabi ikut berdagang ke negeri Syam bersama pamannya, Abu Thalib.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k3-remaja-nabi.png"
+     ]
     },
     {
      "bentuk": "isian",

@@ -156,6 +156,23 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nLafal pada gambar terdapat dalam Surah An-Nās ayat 2. Lafal tersebut dibaca ...",
+     "opsi": [
+      "mulku",
+      "maliki",
+      "malaka"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar huruf bersambung, peserta didik dapat membacanya dengan benar.",
+     "pembahasan": "مَلِكِ dibaca maliki.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k2-bersambung-3.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Tulisan عَلِمَ dibaca ____",
      "kunci": "'alima",
@@ -444,6 +461,23 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Hafalan dijaga dengan sering mengulang.",
      "indikator": "Peserta didik dapat menentukan cara menjaga hafalan.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGambar menunjukkan banyak manusia. Surah yang namanya berarti \"manusia\" adalah Surah ...",
+     "opsi": [
+      "Al-Falaq",
+      "Al-Ikhlāṣ",
+      "An-Nās"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar sekelompok orang, peserta didik dapat menentukan surah yang namanya berarti manusia.",
+     "pembahasan": "An-Nās artinya manusia.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-an-nas.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -736,6 +770,23 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGambar menunjukkan waktu matahari mulai terbit. Surah yang namanya berarti \"waktu subuh\" adalah Surah ...",
+     "opsi": [
+      "Al-Falaq",
+      "An-Nās",
+      "Al-Kauṡar"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Disajikan gambar waktu subuh, peserta didik dapat menentukan surah yang namanya berarti waktu subuh.",
+     "pembahasan": "Al-Falaq artinya waktu subuh.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-al-falaq.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Surah Al-Falaq berjumlah ____ ayat.",
      "kunci": "lima",
@@ -1024,6 +1075,23 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Menakut-nakuti bertentangan dengan memberi rasa aman.",
      "indikator": "Disajikan perilaku, peserta didik dapat menganalisis Asmaul Husna yang belum diteladani.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar memberi makan kucing yang kelaparan. Ia meneladani asmaulhusna ...",
+     "opsi": [
+      "As-Salām",
+      "Al-Mu'min",
+      "Ar-Raḥīm"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak memberi makan kucing, peserta didik dapat menentukan asmaulhusna yang diteladani.",
+     "pembahasan": "Menyayangi makhluk meneladani Ar-Raḥīm, Allah Maha Penyayang.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-asmaul-husna.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -1930,6 +1998,23 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nKapal besar seperti pada gambar dibuat atas perintah Allah oleh Nabi ...",
+     "opsi": [
+      "Nuh a.s.",
+      "Adam a.s.",
+      "Idris a.s."
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Disajikan gambar kapal dan banjir, peserta didik dapat menentukan nabi yang membuat kapal.",
+     "pembahasan": "Nabi Nuh a.s. diperintah Allah membuat kapal sebelum banjir besar.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-nabi-nuh.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Nabi sebelum Nabi Nuh a.s. adalah Nabi ____",
      "kunci": "Idris a.s.",
@@ -2218,6 +2303,23 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Huruf bersukun dibaca mati.",
      "indikator": "Disajikan lafal, peserta didik dapat menganalisis sebab huruf dibaca mati.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nLafal pada gambar dibaca ...",
+     "opsi": [
+      "alḥamdulillāh",
+      "bismillāh",
+      "subḥānallāh"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar lafal bersambung dua kata, peserta didik dapat membacanya dengan benar.",
+     "pembahasan": "بِسْمِ اللّٰهِ dibaca bismillāh.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-bersambung-kata.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -2510,6 +2612,23 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAyat pada gambar adalah ayat pertama Surah ...",
+     "opsi": [
+      "An-Nās",
+      "Al-Falaq",
+      "Al-Ikhlāṣ"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Disajikan gambar ayat, peserta didik dapat menentukan surah asal ayat tersebut.",
+     "pembahasan": "Qul huwallāhu aḥad adalah ayat pertama Surah Al-Ikhlāṣ.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k2-al-ikhlas.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Surah Al-Ikhlāṣ berjumlah ____ ayat.",
      "kunci": "empat",
@@ -2798,6 +2917,23 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Bersuci syarat ibadah dan cerminan iman.",
      "indikator": "Peserta didik dapat menganalisis makna hadis.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPerilaku anak pada gambar sesuai hadis bahwa kebersihan adalah sebagian dari ...",
+     "opsi": [
+      "iman",
+      "harta",
+      "permainan"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak membuang sampah, peserta didik dapat menghubungkan perilaku dengan hadis kebersihan.",
+     "pembahasan": "Kebersihan sebagian dari iman.",
+     "perlu_cek": true,
+     "gambar": [
+      "img/bank/k2-hadis-kebersihan.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -3090,6 +3226,23 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar menolong adiknya yang jatuh. Perbuatan baik tersebut dicatat oleh malaikat ...",
+     "opsi": [
+      "Atid",
+      "Raqib",
+      "Malik"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar perbuatan baik, peserta didik dapat menentukan malaikat pencatat amal baik.",
+     "pembahasan": "Malaikat Raqib mencatat amal baik manusia.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-iman-malaikat.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Malaikat diciptakan dari ____",
      "kunci": "cahaya (nur)",
@@ -3378,6 +3531,23 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Doa menenangkan hati.",
      "indikator": "Peserta didik dapat menganalisis manfaat berdoa.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nAnak pada gambar berdoa di dekat tempat tidur pada malam hari. Ia sedang membaca doa ...",
+     "opsi": [
+      "sebelum makan",
+      "masuk masjid",
+      "sebelum tidur"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak berdoa di dekat tempat tidur, peserta didik dapat menentukan doa yang dibaca.",
+     "pembahasan": "Sebelum tidur kita membaca doa sebelum tidur.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-berdoa.png"
+     ]
     },
     {
      "bentuk": "isian",
@@ -3670,6 +3840,23 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": true
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nBenda pada gambar biasa digunakan untuk membantu menghitung ... setelah salat.",
+     "opsi": [
+      "zikir",
+      "rakaat",
+      "uang"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Disajikan gambar tasbih di atas sajadah, peserta didik dapat menentukan kegunaannya setelah salat.",
+     "pembahasan": "Tasbih membantu menghitung bacaan zikir setelah salat.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-zikir-doa-salat.png"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Zikir artinya ____ Allah.",
      "kunci": "mengingat",
@@ -3958,6 +4145,23 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Berani membela kebenaran.",
      "indikator": "Disajikan situasi, peserta didik dapat menerapkan teladan Nabi Ibrahim.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nGambar berhala dan kapak mengingatkan kita pada kisah nabi yang menghancurkan berhala, yaitu Nabi ...",
+     "opsi": [
+      "Nuh a.s.",
+      "Ibrahim a.s.",
+      "Adam a.s."
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar berhala dan kapak, peserta didik dapat menentukan nabi dalam kisah tersebut.",
+     "pembahasan": "Nabi Ibrahim a.s. menghancurkan berhala dan menggantungkan kapak pada berhala terbesar.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k2-nabi-ibrahim.png"
+     ]
     },
     {
      "bentuk": "isian",
