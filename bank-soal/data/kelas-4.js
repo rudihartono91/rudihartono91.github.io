@@ -1080,7 +1080,7 @@ window.BANK_SOAL["4"] = {
      "pembahasan": "Membantu pekerjaan rumah adalah bentuk berbakti kepada orang tua.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k4-menyapu.svg"
+      "img/bank/k4-menyapu.png"
      ]
     },
     {
@@ -1398,7 +1398,7 @@ window.BANK_SOAL["4"] = {
      "pembahasan": "Salat Duha dikerjakan setelah matahari naik hingga sebelum waktu Zuhur.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k4-duha.svg"
+      "img/bank/k4-duha.png"
      ]
     },
     {

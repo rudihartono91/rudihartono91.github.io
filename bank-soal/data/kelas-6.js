@@ -1380,7 +1380,7 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "Zakat fitrah dibayar dengan makanan pokok sekitar 2,5 kg menjelang Idulfitri.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k6-beras.svg"
+      "img/bank/k6-beras.png"
      ]
     },
     {
@@ -2898,7 +2898,7 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "Menyiram tanaman adalah bentuk akhlak terpuji terhadap tumbuhan.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k6-siram.svg"
+      "img/bank/k6-siram.png"
      ]
     },
     {

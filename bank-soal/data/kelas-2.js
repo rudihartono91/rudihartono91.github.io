@@ -1329,7 +1329,7 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Menggosok gigi dianjurkan setelah bangun tidur dan sebelum tidur.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k2-gosok-gigi.svg"
+      "img/bank/k2-gosok-gigi.png"
      ]
     },
     {
@@ -1636,7 +1636,7 @@ window.BANK_SOAL["2"] = {
      "pembahasan": "Salat Magrib dikerjakan setelah matahari terbenam.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k2-magrib.svg"
+      "img/bank/k2-magrib.png"
      ]
     },
     {

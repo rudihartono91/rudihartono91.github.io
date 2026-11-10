@@ -1380,7 +1380,7 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Sahur adalah makan sebelum terbit fajar untuk persiapan berpuasa.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k5-sahur.svg"
+      "img/bank/k5-sahur.png"
      ]
     },
     {
@@ -3198,7 +3198,7 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Label halal menunjukkan produk aman dikonsumsi umat Islam sesuai syariat.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k5-label-halal.svg"
+      "img/bank/k5-label-halal.png"
      ]
     },
     {

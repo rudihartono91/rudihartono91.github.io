@@ -1329,7 +1329,7 @@ window.BANK_SOAL["3"] = {
      "pembahasan": "Azan adalah seruan tanda masuk waktu salat.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k3-menara.svg"
+      "img/bank/k3-menara.png"
      ]
     },
     {
@@ -3086,7 +3086,7 @@ window.BANK_SOAL["3"] = {
      "pembahasan": "Khatib adalah orang yang menyampaikan khotbah Jumat dari atas mimbar.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k3-mimbar.svg"
+      "img/bank/k3-mimbar.png"
      ]
     },
     {

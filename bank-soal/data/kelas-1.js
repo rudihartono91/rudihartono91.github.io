@@ -1483,7 +1483,7 @@ window.BANK_SOAL["1"] = {
      "pembahasan": "Haji adalah rukun Islam kelima, dilaksanakan di Makkah bagi yang mampu.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k1-kakbah.svg"
+      "img/bank/k1-kakbah.png"
      ]
     },
     {
@@ -3473,7 +3473,7 @@ window.BANK_SOAL["1"] = {
      "pembahasan": "Setelah makan kita bersyukur dengan mengucapkan alḥamdulillāh.",
      "perlu_cek": false,
      "gambar": [
-      "img/bank/k1-selesai-makan.svg"
+      "img/bank/k1-selesai-makan.png"
      ]
     },
     {
