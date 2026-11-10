@@ -154,6 +154,7 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600}
           <button class="btn" data-out="print0">🖨 Cetak Soal</button>
           <button class="btn" data-out="print1">🖨 Cetak + Kunci</button>
           <button class="btn" data-out="word">📄 Unduh Word</button>
+          <button class="btn pri" data-out="lengkap" title="Kisi-kisi, soal, dan kunci jawaban dalam satu file Word">📦 Unduh Kisi-kisi + Soal</button>
           <button class="btn pri" data-out="kuis">🎮 Main Kuis</button>
           <button class="btn" data-out="kisi">▦ Kisi-kisi</button>
           <button class="btn" data-out="edit">✎ Edit di Generator</button>
@@ -427,7 +428,14 @@ const DOCCSS=`.wdoc{font-family:'Times New Roman',serif;font-size:12pt;color:#00
 .wdoc table.qt{border-collapse:collapse;margin:3pt 0}
 .wdoc table.qt th,.wdoc table.qt td{border:1px solid #000;padding:1pt 5pt;text-align:left}
 .wdoc .tpb{border:1px solid #000;padding:3pt 6pt;margin:10pt 0 6pt;font-weight:bold;page-break-after:avoid}
-.wdoc ol.ds>li.nb{list-style:none}`;
+.wdoc ol.ds>li.nb{list-style:none}
+.wdoc h2.kh{text-align:center;font-size:13pt;margin:0}
+.wdoc .ksub{text-align:center;font-weight:bold;margin-bottom:8pt}
+.wdoc table.kid{border-collapse:collapse;margin-bottom:8pt}.wdoc table.kid td{padding:1pt 6pt 1pt 0}
+.wdoc table.ki{width:100%;border-collapse:collapse;font-size:10.5pt}
+.wdoc table.ki th,.wdoc table.ki td{border:1px solid #000;padding:3pt 4pt;vertical-align:top}
+.wdoc table.ki th{background:#e8e8e8;text-align:center}.wdoc td.c{text-align:center}
+.wdoc table.ttd{width:100%;margin-top:18pt}.wdoc table.ttd td{width:50%;vertical-align:top;text-align:center}`;
 document.head.insertAdjacentHTML('beforeend','<style>'+DOCCSS+'</style>');
 function petunjuk(b,p){const n=p.soal.find(s=>s.bentuk==='pg');const L=HURUF.slice(0,n?n.opsi.length:3).split('');
   return {pg:`Berilah tanda silang (X) pada huruf ${L.slice(0,-1).join(', ')}, atau ${L.slice(-1)} di depan jawaban yang paling tepat!`,pgk:'Berilah tanda centang (✓) pada semua jawaban yang benar!',bs:'Lingkarilah B jika pernyataan benar dan S jika salah!',jodoh:'Jodohkan lajur kiri dengan jawaban yang tepat di lajur kanan!',isian:'Isilah titik-titik di bawah ini dengan jawaban yang tepat!',uraian:'Jawablah pertanyaan-pertanyaan di bawah ini dengan benar!'}[b]}
@@ -463,6 +471,28 @@ function buildDoc(p,withKey){
   else if(withKey)h+=`<div class="pb"></div><h3>KUNCI JAWABAN DAN PEMBAHASAN</h3><table class="kt"><tr><th style="width:6%">No</th><th style="width:24%">Kunci</th><th>Pembahasan</th><th style="width:8%">Level</th></tr>${rows.map(([n,s])=>`<tr><td>${n}</td><td>${fmt(kunciText(s))}</td><td>${fmt(s.pembahasan)}</td><td>${s.level}</td></tr>`).join('')}</table>`;
   return '<div class="wdoc">'+h+'</div>';
 }
+/* ===== kisi-kisi untuk unduhan lengkap (logika sama dengan aplikasi Kisi-kisi) ===== */
+function ringkasNo(a){a=[...a].sort((x,y)=>x-y);const o=[];for(let i=0;i<a.length;i++){let j=i;while(j+1<a.length&&a[j+1]===a[j]+1)j++;o.push(j-i>=2?a[i]+'–'+a[j]:a.slice(i,j+1).join(', '));i=j}return o.join(', ')}
+function barisKisi(p){const out=[],map={};
+  p.soal.forEach((s,i)=>{const r={elemen:s.elemen||'',tp:s.tp||'',materi:s.materi||'',indikator:s.indikator||'',level:s.lv||s.level||'',bentuk:BENTUK[s.bentuk]||s.bentuk,no:i+1};
+    const key=[r.tp,r.indikator,r.level,r.bentuk].join('|');if(map[key]&&r.indikator)map[key].nos.push(r.no);else{const x={...r,nos:[r.no]};out.push(x);if(r.indikator)map[key]=x}});
+  return out.map(r=>({...r,nomor:ringkasNo(r.nos)}))}
+function buildKisi(p){
+  const st=LS.get('paiSettings',{}),ID=LS.get('kisiIdent',{});const br=t=>esc(t).replace(/\n/g,'<br>');
+  const rows=barisKisi(p);const lv={LOTS:0,MOTS:0,HOTS:0},bt={};
+  p.soal.forEach(s=>{const n=s.lv?{L1:1,L2:3,L3:4}[s.lv]||2:+String(s.level)[1]||2;lv[n<=2?'LOTS':n===3?'MOTS':'HOTS']++;bt[BENTUK[s.bentuk]]=(bt[BENTUK[s.bentuk]]||0)+1});
+  const tot=p.soal.length,pct=v=>Math.round(v/tot*100)+'%',idr=(a,b)=>`<td>${a}</td><td>: ${esc(b||'-')}</td>`;
+  return `<h2 class="kh">KISI-KISI ${esc((p.jenis||'Asesmen').toUpperCase())}</h2><div class="ksub">${esc(p.judul)}${ID.tahun?'<br>TAHUN PELAJARAN '+esc(ID.tahun):''}</div>
+<table class="kid"><tr>${idr('Satuan Pendidikan',ID.sekolah||st.sekolah)}<td style="width:40pt"></td>${idr('Kelas / Fase',p.kelas+' / '+p.fase)}</tr>
+<tr>${idr('Mata Pelajaran','Pendidikan Agama Islam dan Budi Pekerti')}<td></td>${idr('Semester',p.semester)}</tr>
+<tr>${idr('Alokasi Waktu',ID.waktu)}<td></td>${idr('Jumlah Soal',tot+' soal')}</tr></table>
+<table class="ki"><tr><th style="width:4%">No</th><th style="width:11%">Elemen</th><th style="width:23%">Tujuan Pembelajaran</th><th style="width:12%">Materi</th><th style="width:27%">Indikator Soal</th><th style="width:6%">Level</th><th style="width:9%">Bentuk Soal</th><th style="width:8%">Nomor Soal</th></tr>
+${rows.map((r,i)=>`<tr><td class="c">${i+1}</td><td>${br(r.elemen)}</td><td>${br(r.tp)}</td><td>${br(r.materi)}</td><td>${br(r.indikator)}</td><td class="c">${esc(r.level)}</td><td>${esc(r.bentuk)}</td><td class="c">${esc(r.nomor)}</td></tr>`).join('')}</table>
+<p style="margin-top:6pt">Rekap: LOTS ${lv.LOTS} (${pct(lv.LOTS)}) · MOTS ${lv.MOTS} (${pct(lv.MOTS)}) · HOTS ${lv.HOTS} (${pct(lv.HOTS)}) · ${Object.entries(bt).map(([b,v])=>b+' '+v).join(' · ')}</p>
+<table class="ttd"><tr><td>Mengetahui,<br>Kepala Sekolah<br><br><br><br><b><u>${esc(ID.kepsek||'..................................')}</u></b><br>NIP. ${esc(ID.nipKepsek||'..................................')}</td>
+<td>${esc(ID.tanggal||'..................., ....................')}<br>Penyusun<br><br><br><br><b><u>${esc(ID.guru||st.guru||'..................................')}</u></b><br>NIP. ${esc(ID.nipGuru||'..................................')}</td></tr></table>`;
+}
+
 /* urutkan sesuai lembar cetak (dikelompokkan per bentuk) agar nomor kuis & kisi-kisi sama */
 function paketUrutCetak(p){if(p.urutAsli)return p;return {...p,soal:URUT.flatMap(b=>p.soal.filter(s=>s.bentuk===b))}}
 function simpanBank(){
@@ -473,6 +503,8 @@ $$('[data-out]').forEach(btn=>btn.onclick=()=>{
   if(!paket)return;const o=btn.dataset.out;paket.judul=$('#judul').value.trim()||paket.judul;const p=paketUrutCetak(paket);
   if(o==='print0'||o==='print1'){$('#printArea').innerHTML=buildDoc(p,o==='print1');setTimeout(()=>window.print(),100)}
   if(o==='word'){const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(p.judul)}</title><style>${DOCCSS}</style></head><body>${buildDoc(p,true)}</body></html>`;download(new Blob(['﻿',html],{type:'application/msword'}),slug(p.judul)+'.doc')}
+  if(o==='lengkap'){const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(p.judul)}</title><style>@page K{size:841.9pt 595.3pt;mso-page-orientation:landscape;margin:36pt}div.K{page:K}@page S{size:595.3pt 841.9pt;margin:50pt 45pt}div.S{page:S}${DOCCSS}</style></head><body><div class="K wdoc">${buildKisi(p)}</div><br clear="all" style="page-break-before:always;mso-break-type:section-break"><div class="S">${buildDoc(p,true)}</div></body></html>`;
+    download(new Blob(['﻿',html],{type:'application/msword'}),'kisi-kisi-dan-soal-'+slug(p.judul)+'.doc');simpanBank();toast('Kisi-kisi, soal, dan kunci diunduh dalam satu file.')}
   if(o==='kuis'){const s=simpanBank();if(s)location.href='../kuis-pid/?paket='+encodeURIComponent(s.id)}
   if(o==='kisi'){const s=simpanBank();if(s)location.href='../kisi-kisi/?paket='+encodeURIComponent(s.id)}
   if(o==='edit'){const s=simpanBank();if(s){LS.set('paiDraft',s);location.href='../generator-soal/'}}
