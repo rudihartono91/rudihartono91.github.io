@@ -277,6 +277,7 @@ function dariPaket(p){
 function ringkasNo(a){a=[...a].sort((x,y)=>x-y);const o=[];for(let i=0;i<a.length;i++){let j=i;while(j+1<a.length&&a[j+1]===a[j]+1)j++;o.push(j-i>=2?a[i]+'–'+a[j]:a.slice(i,j+1).join(', '));i=j}return o.join(', ')}
 function urutCetak(p){
   // nomor soal di kisi-kisi = nomor di lembar cetak (dikelompokkan per bentuk)
+  if(p.urutAsli)return p; // paket SAS sekolah: urutan asli dokumen dipertahankan
   const U=['pg','pgk','bs','jodoh','isian','uraian'];const nb=b=>{b=String(b).toLowerCase();return b==='pgk'||b.includes('komp')?'pgk':b==='bs'||b.includes('benar')?'bs':b.includes('jodoh')?'jodoh':b.includes('isian')?'isian':b.includes('urai')?'uraian':'pg'};
   return {...p,soal:U.flatMap(b=>(p.soal||[]).filter(s=>nb(s.bentuk)===b))};
 }
