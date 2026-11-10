@@ -1366,6 +1366,24 @@ window.BANK_SOAL["5"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPada waktu seperti pada gambar, keluarga Rudi makan sebelum berpuasa. Kegiatan makan tersebut disebut ...",
+     "opsi": [
+      "berbuka",
+      "takjil",
+      "imsak",
+      "sahur"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "indikator": "Disajikan gambar jam dini hari, peserta didik dapat menentukan nama kegiatan makan sebelum berpuasa.",
+     "pembahasan": "Sahur adalah makan sebelum terbit fajar untuk persiapan berpuasa.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-sahur.svg"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Puasa dalam bahasa Arab disebut ____",
      "kunci": "ṣaum (ṣiyām)",
@@ -3164,6 +3182,24 @@ window.BANK_SOAL["5"] = {
      "pembahasan": "Khamar merusak akal, tubuh, dan menimbulkan kejahatan.",
      "indikator": "Peserta didik dapat menganalisis hikmah diharamkannya khamar.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSebelum membeli, Dina memeriksa tanda pada kemasan seperti pada gambar. Tanda tersebut menunjukkan bahwa makanan itu ...",
+     "opsi": [
+      "halal dikonsumsi umat Islam",
+      "sudah kedaluwarsa",
+      "harganya mahal",
+      "buatan luar negeri"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan gambar kemasan berlabel halal, peserta didik dapat menjelaskan makna label halal.",
+     "pembahasan": "Label halal menunjukkan produk aman dikonsumsi umat Islam sesuai syariat.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k5-label-halal.svg"
+     ]
     },
     {
      "bentuk": "isian",

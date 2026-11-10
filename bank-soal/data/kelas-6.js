@@ -1366,6 +1366,24 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nBeras pada gambar dikeluarkan setiap muslim menjelang Idulfitri sebanyak 2,5 kg per orang. Ibadah tersebut adalah ...",
+     "opsi": [
+      "zakat mal",
+      "infak",
+      "wakaf",
+      "zakat fitrah"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "indikator": "Disajikan gambar beras 2,5 kg, peserta didik dapat menentukan jenis zakat yang dikeluarkan.",
+     "pembahasan": "Zakat fitrah dibayar dengan makanan pokok sekitar 2,5 kg menjelang Idulfitri.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-beras.svg"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Orang yang bertugas mengumpulkan dan membagikan zakat disebut ____",
      "kunci": "amil",
@@ -2864,6 +2882,24 @@ window.BANK_SOAL["6"] = {
      "pembahasan": "QS Al-A'rāf: 56.",
      "indikator": "Peserta didik dapat menyebutkan dalil larangan merusak alam.",
      "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nPerilaku anak pada gambar termasuk akhlak terpuji terhadap ...",
+     "opsi": [
+      "hewan",
+      "tumbuhan",
+      "tetangga",
+      "guru"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Disajikan gambar anak menyiram tanaman, peserta didik dapat menentukan sasaran akhlak yang ditunjukkan.",
+     "pembahasan": "Menyiram tanaman adalah bentuk akhlak terpuji terhadap tumbuhan.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k6-siram.svg"
+     ]
     },
     {
      "bentuk": "isian",

@@ -1066,6 +1066,24 @@ window.BANK_SOAL["4"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nSinta membantu ibu menyapu lantai seperti pada gambar. Perilaku Sinta menunjukkan ...",
+     "opsi": [
+      "sikap malas",
+      "sikap boros",
+      "berbakti kepada orang tua",
+      "sikap sombong"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan gambar anak membantu pekerjaan rumah, peserta didik dapat menyimpulkan akhlak yang ditunjukkan.",
+     "pembahasan": "Membantu pekerjaan rumah adalah bentuk berbakti kepada orang tua.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-menyapu.svg"
+     ]
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Menyambung tali persaudaraan disebut ____",
      "kunci": "silaturahmi",
@@ -1364,6 +1382,24 @@ window.BANK_SOAL["4"] = {
      "pembahasan": "Hukum sunah.",
      "indikator": "Peserta didik dapat menganalisis hukum salat sunah.",
      "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan gambar berikut!\n[[gambar]]\nJam pada gambar menunjukkan pukul 08.00 pagi saat matahari sudah naik. Salat sunah yang dapat dikerjakan pada waktu tersebut adalah salat ...",
+     "opsi": [
+      "Tahajud",
+      "Duha",
+      "Witir",
+      "Tarawih"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan gambar jam dan matahari pagi, peserta didik dapat menentukan salat sunah yang sesuai waktunya.",
+     "pembahasan": "Salat Duha dikerjakan setelah matahari naik hingga sebelum waktu Zuhur.",
+     "perlu_cek": false,
+     "gambar": [
+      "img/bank/k4-duha.svg"
+     ]
     },
     {
      "bentuk": "isian",

@@ -217,7 +217,7 @@ function toIdx(k){if(typeof k==='number')return k;if(k==null)return -1;const t=S
 function normSoal(s,m){
   const o={id:uid(),bentuk:s.bentuk,pertanyaan:s.pertanyaan,opsi:(s.opsi||[]).slice(),kunci:s.kunci,pembahasan:s.pembahasan||'',level:s.level||'C2',indikator:s.indikator||'',perlu_cek:!!s.perlu_cek,rubrik:s.rubrik||'',pasangan:(s.pasangan||[]).map(p=>({...p})),
     tp:(m.kode?m.kode+' ':'')+m.tp,elemen:m.elemen,materi:m.judul};
-  if(s.gambar)o.gambar=s.gambar.slice();
+  if(s.gambar)o.gambar=s.gambar.map(imgUrl);
   if(o.bentuk==='bs'){o.opsi=['Benar','Salah'];o.kunci=/^\s*(s|f)/i.test(String(s.kunci))?1:0}
   else if(o.bentuk==='pg')o.kunci=Math.max(0,toIdx(s.kunci));
   else if(o.bentuk==='pgk')o.kunci=(Array.isArray(s.kunci)?s.kunci:[s.kunci]).map(toIdx);
