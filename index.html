@@ -173,7 +173,7 @@ footer{text-align:center;color:var(--abu);font-size:14px;padding:34px 20px 44px}
       <p><b>Dr. (Cand.) Rudi Hartono, M.Pd.</b> adalah praktisi pendidikan, peneliti, dan pengembang media pembelajaran Pendidikan Agama Islam dan Pendidikan Dasar, serta konsultan akademik untuk penulisan skripsi, tesis, dan disertasi. Ia meyakini bahwa pendidikan di sekolah dasar, khususnya pendidikan agama, perlu hadir secara menyenangkan, dekat dengan keseharian anak, dan menumbuhkan akhlak mulia sejak dini.</p>
       <p>Saat ini ia menyelesaikan studi doktoral pada Program Studi Pendidikan Dasar, Program Pascasarjana Universitas Pendidikan Ganesha. Disertasinya mengembangkan <b>E-Comic Nusakids Education</b>, komik elektronik berbasis Profil Pelajar Pancasila untuk meningkatkan minat baca dan kemampuan berpikir kreatif siswa sekolah dasar. Karya tersebut telah tercatat hak ciptanya di DJKI dan tersedia di Google Play Store.</p>
       <p>Selain itu, ia aktif menulis artikel ilmiah, menyusun buku Pendidikan Agama Islam dan buku-buku pendidikan lainnya, serta mengembangkan aplikasi web untuk guru: bank soal siap pakai, generator soal, kuis interaktif untuk papan interaktif digital, dan penyusun kisi-kisi asesmen. Semua aplikasi di situs ini dapat dibuka langsung di peramban dan digunakan secara gratis.</p>
-      <p>Sebagai konsultan akademik, ia mendampingi mahasiswa S1, S2, dan S3 dalam menyusun skripsi, tesis, dan disertasi, mulai dari perumusan judul dan proposal, metodologi penelitian, analisis data, hingga penulisan artikel ilmiah untuk publikasi jurnal.</p>
+      <p>Sebagai konsultan akademik, ia mendampingi mahasiswa S1, S2, dan S3 dalam menyusun skripsi, tesis, dan disertasi, mulai dari perumusan judul dan proposal, metodologi penelitian, analisis data, hingga penulisan artikel ilmiah untuk publikasi jurnal. <a data-wa-konsul href="#kontak" target="_blank" rel="noopener" style="font-weight:700;color:var(--hijau)">Konsultasi via WhatsApp →</a></p>
       <div class="facts">
         <div class="fact"><small>S1</small><span>STAI Shalahuddin Al-Ayyubi Jakarta</span></div>
         <div class="fact"><small>S2</small><span>Universitas Negeri Jakarta</span></div>
@@ -262,7 +262,7 @@ footer{text-align:center;color:var(--abu);font-size:14px;padding:34px 20px 44px}
       <div>
         <div class="eyebrow">Kontak</div>
         <h2>Mari terhubung.</h2>
-        <p>Untuk kolaborasi, pelatihan, atau pertanyaan mengenai aplikasi, silakan hubungi melalui tautan berikut.</p>
+        <p>Untuk kolaborasi, pelatihan, konsultasi akademik (skripsi, tesis, disertasi), atau pertanyaan mengenai aplikasi, silakan hubungi melalui tautan berikut.</p>
       </div>
       <div class="klinks" id="klinks"></div>
     </div>
@@ -288,6 +288,7 @@ const KONTAK = {
   github:    ""   // dikosongkan agar tidak tampil di Kontak
 };
 const PESAN_WA = "Assalamu'alaikum Pak Rudi, saya ingin bertanya tentang aplikasi pembelajaran.";
+const PESAN_WA_KONSUL = "Assalamu'alaikum Pak Rudi, saya ingin berkonsultasi akademik.\n\nNama: \nJenjang: (S1 Skripsi / S2 Tesis / S3 Disertasi)\nProgram studi & kampus: \nTopik/judul penelitian: \nKebutuhan: (judul, proposal, metodologi, analisis data, atau artikel jurnal)\n\nTerima kasih.";
 
 const IKON={
  email:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
@@ -301,6 +302,7 @@ const IKON={
  github:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>'
 };
 const LABEL={email:'Email',whatsapp:'WhatsApp',instagram:'Instagram',facebook:'Facebook',youtube:'YouTube',tiktok:'TikTok',linkedin:'LinkedIn',scholar:'Google Scholar',github:'GitHub'};
+const waKonsul=()=>'https://wa.me/'+String(KONTAK.whatsapp).replace(/\D/g,'').replace(/^0/,'62')+'?text='+encodeURIComponent(PESAN_WA_KONSUL);
 function urlOf(k,v){
   v=String(v).trim(); if(!v) return '';
   if(k==='email') return 'mailto:'+v;
@@ -322,7 +324,9 @@ function teksOf(k,v){
   return v.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,'');
 }
 const aktif=Object.keys(KONTAK).filter(k=>String(KONTAK[k]).trim());
-document.getElementById('klinks').innerHTML=aktif.map(k=>`<a href="${urlOf(k,KONTAK[k])}" ${k==='email'?'':'target="_blank" rel="noopener"'}><span class="ki">${IKON[k]}</span><span>${LABEL[k]}<small>${teksOf(k,KONTAK[k]).replace(/</g,'&lt;')}</small></span></a>`).join('');
+document.getElementById('klinks').innerHTML=aktif.map(k=>`<a href="${urlOf(k,KONTAK[k])}" ${k==='email'?'':'target="_blank" rel="noopener"'}><span class="ki">${IKON[k]}</span><span>${LABEL[k]}<small>${teksOf(k,KONTAK[k]).replace(/</g,'&lt;')}</small></span></a>`
+  +(k==='whatsapp'?`<a href="${waKonsul()}" target="_blank" rel="noopener"><span class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v15H6a2 2 0 0 0-2 2zm0 0A2 2 0 0 0 6 22h14v-4"/><path d="M9 8h7M9 12h5"/></svg></span><span>Konsultasi Akademik<small>Skripsi · Tesis · Disertasi</small></span></a>`:'')).join('');
+document.querySelectorAll('[data-wa-konsul]').forEach(a=>{if(KONTAK.whatsapp.trim())a.href=waKonsul();else a.remove()});
 document.getElementById('sosmed').innerHTML=aktif.map(k=>`<a href="${urlOf(k,KONTAK[k])}" ${k==='email'?'':'target="_blank" rel="noopener"'} title="${LABEL[k]}" aria-label="${LABEL[k]}">${IKON[k]}</a>`).join('');
 if(KONTAK.whatsapp.trim()) document.body.insertAdjacentHTML('beforeend',`<a class="wa-float" href="${urlOf('whatsapp',KONTAK.whatsapp)}" target="_blank" rel="noopener" aria-label="Chat WhatsApp">${IKON.whatsapp}<span>Chat WhatsApp</span></a>`);
 
