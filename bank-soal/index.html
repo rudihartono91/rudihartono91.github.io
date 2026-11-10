@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bank Soal PAI</title>
+<meta name="description" content="Bank soal PAI dan Budi Pekerti SD siap pakai. Pilih kelas, materi, dan jumlah soal; paket soal tersusun otomatis.">
+<meta name="theme-color" content="#0f6b4f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--hijau:#0f6b4f;--hijau-tua:#0a4d39;--hijau-muda:#e5f2ec;--emas:#c9962b;--teks:#1c2925;--abu:#5d6c67;--garis:#d8e2de;--bg:#f5f7f6;--kuning:#fff5d6}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{font-family:'Plus Jakarta Sans','Amiri',system-ui,sans-serif;background:var(--bg);color:var(--teks);line-height:1.55;font-size:15px}
+.ar{font-family:'Amiri',serif;font-size:1.4em;line-height:1.9}
+button,select,input{font:inherit;color:inherit}
+header.top{background:var(--hijau);color:#fff;padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header.top .logo{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.15);display:grid;place-items:center;font-weight:800}
+header.top h1{font-size:18px;margin:0;line-height:1.2}
+header.top small{opacity:.8;font-size:12.5px}
+header.top .sp{flex:1}
+header.top a{color:#fff;opacity:.85;text-decoration:none;font-size:14px}
+main{max-width:1280px;margin:0 auto;padding:20px}
+.grid{display:grid;grid-template-columns:400px 1fr;gap:20px;align-items:start}
+@media(max-width:920px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--garis);border-radius:14px;padding:18px}
+.panel{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+@media(max-width:920px){.panel{position:static;max-height:none}}
+.panel h2{font-size:16px;margin:0 0 4px}
+.step{font-size:12px;font-weight:800;color:var(--emas);letter-spacing:.08em;text-transform:uppercase;margin:16px 0 6px}
+.kelas{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.kelas button{border:1px solid var(--garis);background:#fff;border-radius:10px;padding:9px 0;font-weight:800;cursor:pointer;font-size:16px}
+.kelas button.on{background:var(--hijau);color:#fff;border-color:var(--hijau)}
+.kelas button.kosong{color:#a9b4b0}
+.mlist{display:flex;flex-direction:column;gap:4px}
+.mgrp{font-size:12.5px;font-weight:700;color:var(--abu);margin:8px 0 2px;display:flex;justify-content:space-between;align-items:center}
+.mgrp button{border:0;background:none;color:var(--hijau);font-weight:700;font-size:12.5px;cursor:pointer}
+.mitem{display:flex;align-items:center;gap:10px;border:1px solid var(--garis);border-radius:10px;padding:8px 10px;cursor:pointer}
+.mitem:hover{border-color:var(--hijau)}
+.mitem input{accent-color:var(--hijau);width:17px;height:17px}
+.mitem b{font-weight:600;flex:1}
+.mitem small{color:var(--abu);font-size:12px;white-space:nowrap}
+.mitem small.el{display:block;white-space:normal}
+.jml{display:grid;grid-template-columns:1fr 74px 70px;gap:6px 10px;align-items:center;background:var(--bg);padding:10px;border-radius:10px;font-size:14px}
+.jml input{width:100%;border:1px solid var(--garis);border-radius:8px;padding:5px 6px;text-align:center}
+.jml small{color:var(--abu);font-size:12px}
+.preset{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px}
+.preset button{border:1px solid var(--garis);background:#fff;border-radius:9px;padding:7px 6px;font-weight:700;font-size:13px;cursor:pointer;line-height:1.25}
+.preset button small{display:block;font-weight:500;color:var(--abu);font-size:11.5px}
+.preset button.on{background:var(--hijau);color:#fff;border-color:var(--hijau)}
+.preset button.on small{color:#d6eee4}
+.opt{display:flex;align-items:center;gap:8px;font-size:14px;margin-top:8px}
+.opt input{accent-color:var(--hijau)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--garis);background:#fff;padding:8px 13px;border-radius:9px;cursor:pointer;font-weight:600;font-size:14px;text-decoration:none;color:var(--teks)}
+.btn:hover{border-color:var(--hijau)}
+.btn.pri{background:var(--hijau);color:#fff;border-color:var(--hijau)}
+.btn.big{width:100%;padding:12px;font-size:15.5px;margin-top:14px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.hint{font-size:12.5px;color:var(--abu)}
+.notice{background:var(--kuning);border:1px solid #efd99a;border-radius:10px;padding:10px 12px;font-size:13.5px;margin-bottom:14px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.toolbar input{flex:1;min-width:240px;font-weight:700;font-size:16px;border:1px solid var(--garis);border-radius:9px;padding:8px 10px}
+.stat{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--abu);margin-bottom:12px}
+.stat span{background:#fff;border:1px solid var(--garis);padding:3px 9px;border-radius:20px}
+.empty{text-align:center;padding:60px 20px;color:var(--abu)}
+.empty .big{font-size:46px}
+.soal{padding:14px 16px;margin-bottom:10px}
+.soal.cek{border-color:#e7c25b;box-shadow:inset 4px 0 0 #e7c25b}
+.sh{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.no{width:28px;height:28px;border-radius:50%;background:var(--hijau);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.tag{background:var(--hijau-muda);color:var(--hijau);padding:2px 9px;border-radius:20px;font-size:12px;font-weight:700}
+.tag.m{background:#f1f3f2;color:var(--abu)}
+.tag.c{background:#fff1c7;color:#7a5a00}
+.sh .sp{flex:1}
+.ic{border:0;background:none;cursor:pointer;padding:4px 7px;border-radius:6px;font-size:14px;color:var(--abu)}
+.ic:hover{background:var(--bg)}
+.q{font-weight:600;font-size:15.5px;white-space:pre-wrap}
+.ops{margin:6px 0 0 6px;display:flex;flex-direction:column;gap:2px}
+.ops div{padding:2px 8px;border-radius:7px}
+.ops div.ok{background:var(--hijau-muda);font-weight:600}
+.kunci{background:var(--hijau-muda);border-radius:8px;padding:6px 10px;margin-top:6px;font-size:14px;white-space:pre-wrap}
+details{margin-top:6px;font-size:13.5px;color:var(--abu)}
+summary{cursor:pointer;color:var(--hijau);font-weight:600}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--teks);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;z-index:70;opacity:0;transition:.25s;pointer-events:none;max-width:90vw}
+.toast.on{opacity:1}
+#printArea{display:none}
+@media print{body{background:#fff}body>*:not(#printArea){display:none!important}#printArea{display:block}@page{size:A4;margin:18mm 16mm}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="logo">BS</div>
+  <div><h1>Bank Soal PAI Siap Pakai</h1><small>Pilih kelas dan materi, paket soal tersusun otomatis</small></div>
+  <span class="sp"></span>
+  <a href="../">← Beranda</a>
+</header>
+
+<main>
+  <div class="grid">
+    <aside class="card panel">
+      <h2>Susun paket soal</h2>
+      <p class="hint" style="margin:0">Tanpa mengetik, tanpa API key.</p>
+
+      <div class="step">1 · Kelas</div>
+      <div class="kelas" id="kelas"></div>
+
+      <div class="step">2 · Materi</div>
+      <div id="materiBox"><p class="hint">Pilih kelas terlebih dahulu.</p></div>
+
+      <div class="step">3 · Jenis asesmen & jumlah soal</div>
+      <div class="preset" id="preset">
+        <button data-p="sas1">SAS Semester 1<small id="ps1"></small></button>
+        <button data-p="sas2">SAS Semester 2<small id="ps2"></small></button>
+        <button data-p="bab">Sumatif per bab<small>10 PG · 10 IS · 5 UT</small></button>
+        <button data-p="bebas">Atur sendiri<small>isi jumlah bebas</small></button>
+      </div>
+      <div class="jml" id="jml"></div>
+      <p class="hint" id="presetInfo" style="margin:6px 0 0"></p>
+      <label class="opt"><input type="checkbox" id="acakSoal"> Acak urutan soal (dalam tiap bentuk)</label>
+      <label class="opt"><input type="checkbox" id="acakOpsi"> Acak urutan pilihan jawaban</label>
+
+      <button class="btn pri big" id="btnBuat" disabled>🎲 Susun Paket Soal</button>
+      <p class="hint" style="margin-top:8px">Klik lagi untuk mendapat paket berbeda, misalnya Paket A untuk 1.A dan Paket B untuk 1.B.</p>
+    </aside>
+
+    <section>
+      <div class="notice">Soal dalam bank ini sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>. Soal bertanda <b>⚠ cek</b> memuat lafal Arab atau bacaan yang perlu dicocokkan dengan buku pegangan.</div>
+      <div id="toolbar" hidden>
+        <div class="toolbar">
+          <input type="text" id="judul" aria-label="Judul paket">
+          <button class="btn" id="btnUlang">🎲 Acak ulang</button>
+        </div>
+        <div class="toolbar">
+          <button class="btn" data-out="print0">🖨 Cetak Soal</button>
+          <button class="btn" data-out="print1">🖨 Cetak + Kunci</button>
+          <button class="btn" data-out="word">📄 Unduh Word</button>
+          <button class="btn pri" data-out="kuis">🎮 Main Kuis</button>
+          <button class="btn" data-out="kisi">▦ Kisi-kisi</button>
+          <button class="btn" data-out="edit">✎ Edit di Generator</button>
+        </div>
+        <div class="stat" id="stat"></div>
+      </div>
+      <div id="hasil"><div class="card empty"><div class="big">📚</div><h3>Belum ada paket</h3><p>Pilih kelas, centang materi, atur jumlah soal,<br>lalu klik <b>Susun Paket Soal</b>.</p></div></div>
+    </section>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+<div id="printArea"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){toast('Penyimpanan peramban penuh atau diblokir.');return false}}};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const AR='\\u0600-\\u06FF\\u0750-\\u077F\\u08A0-\\u08FF\\uFB50-\\uFDFF\\uFE70-\\uFEFF';
+const AR_RE=new RegExp('['+AR+']+(?:[\\s.,]+['+AR+']+)*','g');
+const fmt=t=>esc(t).replace(AR_RE,m=>'<span class="ar" dir="rtl">'+m+'</span>').replace(/\n/g,'<br>');
+const fase=k=>k<=2?'A':k<=4?'B':'C';
+const BENTUK={pg:'Pilihan Ganda',pgk:'Pilihan Ganda Kompleks',bs:'Benar–Salah',jodoh:'Menjodohkan',isian:'Isian Singkat',uraian:'Uraian'};
+const URUT=['pg','pgk','bs','jodoh','isian','uraian'];
+const DEF={pg:10,pgk:0,bs:0,jodoh:0,isian:10,uraian:5};
+/* Ketentuan jumlah soal SAS sekolah (mapel selain Matematika) */
+const SAS=k=>k<=2?{pg:15,isian:10,uraian:5}:k===3?{pg:15,isian:15,uraian:5}:{pg:20,isian:15,uraian:5};
+const PRESET={sas1:k=>SAS(k),sas2:k=>SAS(k),bab:()=>({pg:10,isian:10,uraian:5})};
+let MODE=LS.get('bankMode','sas1');
+function renderPreset(){
+  $$('#preset button').forEach(b=>b.classList.toggle('on',b.dataset.p===MODE));
+  if(K){const t=SAS(K);const tx=`${t.pg} PG · ${t.isian} IS · ${t.uraian} UT`;$('#ps1').textContent=tx;$('#ps2').textContent=tx}
+  const info={sas1:'Materi semester 1 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',sas2:'Materi semester 2 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',bab:'Centang satu materi/bab yang diujikan.',bebas:'Isi jumlah soal sesuai kebutuhan.'}[MODE];
+  $('#presetInfo').textContent=info||'';
+}
+function terapkanPreset(centang){
+  if(!dataK){renderPreset();return}
+  if(centang&&(MODE==='sas1'||MODE==='sas2')){const sm=MODE==='sas1'?1:2;$$('#materiBox input').forEach(i=>{const m=dataK.materi.find(x=>x.id===i.value);i.checked=m&&m.semester===sm});simpanPilihan()}
+  renderJml();renderPreset();
+}
+const HURUF='ABCDE';
+let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),3000)}
+function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+const slug=t=>String(t||'soal').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)||'soal';
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function toIdx(k){if(typeof k==='number')return k;if(k==null)return -1;const t=String(k).trim().toUpperCase();if(/^\d+$/.test(t))return +t;return HURUF.indexOf(t[0])}
+function normSoal(s,m){
+  const o={id:uid(),bentuk:s.bentuk,pertanyaan:s.pertanyaan,opsi:(s.opsi||[]).slice(),kunci:s.kunci,pembahasan:s.pembahasan||'',level:s.level||'C2',indikator:s.indikator||'',perlu_cek:!!s.perlu_cek,rubrik:s.rubrik||'',pasangan:(s.pasangan||[]).map(p=>({...p})),
+    tp:(m.kode?m.kode+' ':'')+m.tp,elemen:m.elemen,materi:m.judul};
+  if(o.bentuk==='bs'){o.opsi=['Benar','Salah'];o.kunci=/^\s*(s|f)/i.test(String(s.kunci))?1:0}
+  else if(o.bentuk==='pg')o.kunci=Math.max(0,toIdx(s.kunci));
+  else if(o.bentuk==='pgk')o.kunci=(Array.isArray(s.kunci)?s.kunci:[s.kunci]).map(toIdx);
+  else if(o.bentuk!=='jodoh')o.kunci=String(s.kunci??'');
+  return o;
+}
+
+/* ===== data per kelas ===== */
+const kelasMuat={};
+function muatKelas(k){
+  return new Promise(res=>{
+    if(window.BANK_SOAL&&window.BANK_SOAL[k])return res(window.BANK_SOAL[k]);
+    if(kelasMuat[k]==='gagal')return res(null);
+    const sc=document.createElement('script');sc.src='data/kelas-'+k+'.js?v='+Date.now();
+    sc.onload=()=>res((window.BANK_SOAL||{})[k]||null);
+    sc.onerror=()=>{kelasMuat[k]='gagal';res(null)};
+    document.head.appendChild(sc);
+  });
+}
+let K=null,dataK=null,paket=null;
+function renderKelas(){
+  $('#kelas').innerHTML=[1,2,3,4,5,6].map(k=>`<button data-k="${k}" class="${K===k?'on':''} ${kelasMuat[k]==='gagal'?'kosong':''}">${k}</button>`).join('');
+}
+$('#kelas').onclick=async e=>{
+  const b=e.target.closest('button');if(!b)return;
+  K=+b.dataset.k;renderKelas();$('#materiBox').innerHTML='<p class="hint">Memuat…</p>';
+  dataK=await muatKelas(K);renderKelas();LS.set('bankKelas',K);
+  if(!dataK){$('#materiBox').innerHTML=`<p class="hint">Bank soal <b>Kelas ${K}</b> sedang disiapkan dan belum tersedia.</p>`;renderJml();$('#btnBuat').disabled=true;return}
+  renderMateri();terapkanPreset(MODE==='sas1'||MODE==='sas2');
+};
+function renderMateri(){
+  const pilihan=LS.get('bankMateri_'+K,null);
+  let h='';
+  for(const sm of [1,2]){
+    const ms=dataK.materi.filter(m=>m.semester===sm);if(!ms.length)continue;
+    h+=`<div class="mgrp"><span>Semester ${sm}</span><button data-sm="${sm}">pilih semua</button></div>`;
+    h+=ms.map(m=>`<label class="mitem"><input type="checkbox" value="${m.id}" ${(!pilihan||pilihan.includes(m.id))&&(pilihan||sm===1)?'checked':''}><span style="flex:1"><b>${esc(m.judul)}</b><small class="el">${m.kode?'TP '+esc(m.kode)+' · ':''}${esc(m.elemen)}</small></span><small>${m.soal.length} soal</small></label>`).join('');
+  }
+  if(dataK.catatan)h+=`<p class="hint" style="margin-top:8px">ⓘ ${esc(dataK.catatan)}</p>`;
+  $('#materiBox').innerHTML='<div class="mlist">'+h+'</div>';
+  $('#btnBuat').disabled=false;
+}
+$('#materiBox').addEventListener('click',e=>{const b=e.target.closest('button[data-sm]');if(!b)return;const sm=+b.dataset.sm;
+  const ids=dataK.materi.filter(m=>m.semester===sm).map(m=>m.id);const boxes=$$('#materiBox input').filter(i=>ids.includes(i.value));
+  const semua=boxes.every(i=>i.checked);boxes.forEach(i=>i.checked=!semua);simpanPilihan();renderJml()});
+$('#materiBox').addEventListener('change',()=>{simpanPilihan();renderJml();renderPreset()});
+function simpanPilihan(){if(K)LS.set('bankMateri_'+K,terpilih().map(m=>m.id))}
+function terpilih(){if(!dataK)return[];const ids=$$('#materiBox input:checked').map(i=>i.value);return dataK.materi.filter(m=>ids.includes(m.id))}
+function pool(){const p={};URUT.forEach(b=>p[b]=[]);terpilih().forEach(m=>m.soal.forEach(s=>p[s.bentuk]&&p[s.bentuk].push({s,m})));return p}
+function renderJml(){
+  const P=pool(),saved=MODE!=='bebas'&&PRESET[MODE]?Object.assign({pg:0,pgk:0,bs:0,jodoh:0,isian:0,uraian:0},PRESET[MODE](K)):Object.assign({},DEF,LS.get('bankJml2',{}));
+  const tampil=URUT.filter(b=>P[b].length||['pg','isian','uraian'].includes(b));
+  const kurang=tampil.filter(b=>(saved[b]||0)>P[b].length);
+  setTimeout(()=>{if(kurang.length&&MODE!=='bebas')$('#presetInfo').innerHTML='⚠ Soal tersedia belum cukup untuk '+kurang.map(b=>BENTUK[b]).join(', ')+'. Centang materi tambahan atau ubah jumlah.'},0);
+  $('#jml').innerHTML='<small><b>Bentuk</b></small><small><b>Jumlah</b></small><small><b>Tersedia</b></small>'+tampil.map(b=>`<span>${BENTUK[b]}</span><input type="number" min="0" max="${P[b].length}" data-b="${b}" value="${Math.min(saved[b]||0,P[b].length)}" ${P[b].length?'':'disabled'}><small>${P[b].length}</small>`).join('');
+}
+$('#jml').addEventListener('input',e=>{const i=e.target;if(!i.dataset.b)return;if(MODE!=='bebas'){const cur={};$$('#jml input[data-b]').forEach(x=>cur[x.dataset.b]=+x.value||0);LS.set('bankJml2',cur);MODE='bebas';LS.set('bankMode',MODE);renderPreset()}const mx=+i.max;if(+i.value>mx)i.value=mx;const s=LS.get('bankJml2',{});s[i.dataset.b]=+i.value||0;LS.set('bankJml2',s)});
+$('#preset').onclick=e=>{const b=e.target.closest('button[data-p]');if(!b)return;MODE=b.dataset.p;LS.set('bankMode',MODE);terapkanPreset(true)};
+['acakSoal','acakOpsi'].forEach(id=>{const v=LS.get('bank_'+id,id==='acakSoal');$('#'+id).checked=v;$('#'+id).onchange=()=>LS.set('bank_'+id,$('#'+id).checked)});
+
+/* ===== susun paket ===== */
+function ambilMerata(list,n){
+  // ambil n soal secara acak, merata antar materi
+  const byM={};list.forEach(x=>(byM[x.m.id]=byM[x.m.id]||[]).push(x));
+  const grup=Object.values(byM).map(g=>shuffle(g));const out=[];let i=0;
+  while(out.length<n&&grup.some(g=>g.length)){const g=grup[i%grup.length];if(g.length)out.push(g.shift());i++}
+  return out;
+}
+function urutLevel(a){return a.sort((x,y)=>x.s.level.localeCompare(y.s.level))}
+function susun(){
+  const ms=terpilih();if(!ms.length){toast('Centang minimal satu materi.');return}
+  const P=pool();let soal=[];
+  for(const b of URUT){
+    const inp=$(`#jml input[data-b="${b}"]`);const n=inp?+inp.value||0:0;if(!n)continue;
+    let pick=ambilMerata(P[b],n);
+    pick=$('#acakSoal').checked?shuffle(pick):urutLevel(pick);
+    soal=soal.concat(pick.map(x=>normSoal(x.s,x.m)));
+  }
+  if(!soal.length){toast('Isi jumlah soal minimal 1.');return}
+  if($('#acakOpsi').checked)soal.forEach(s=>{
+    if(s.bentuk==='pg'||s.bentuk==='pgk'){const ord=shuffle([...s.opsi.keys()]);const op=ord.map(i=>s.opsi[i]);
+      s.kunci=s.bentuk==='pg'?ord.indexOf(s.kunci):s.kunci.map(k=>ord.indexOf(k));s.opsi=op}});
+  const judulM=ms.length<=3?ms.map(m=>m.judul).join(', '):ms.length+' materi';
+  const n=(LS.get('bankHitung',0)%26);LS.set('bankHitung',n+1);
+  const kode=String.fromCharCode(65+n);const sas=MODE==='sas1'||MODE==='sas2';
+  const jenis=sas?'Sumatif Akhir Semester':(MODE==='bab'?'Sumatif Lingkup Materi':'');
+  const judul=sas?`Sumatif Akhir Semester ${MODE==='sas1'?1:2} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`:(MODE==='bab'?`Sumatif ${judulM} – PAI Kelas ${K} (Paket ${kode})`:`Asesmen PAI Kelas ${K} – ${judulM} (Paket ${kode})`);
+  paket={id:uid(),judul,jenis,kelas:K,fase:fase(K),
+    semester:[...new Set(ms.map(m=>m.semester))].join(' & '),elemen:[...new Set(ms.map(m=>m.elemen))].join('; '),
+    materi:ms.map(m=>m.judul).join('; '),tp:ms.map(m=>m.tp).join(' '),dibuat:new Date().toISOString(),soal};
+  render();window.scrollTo({top:0,behavior:'smooth'});
+}
+$('#btnBuat').onclick=susun;$('#btnUlang').onclick=susun;
+
+function kunciText(s){
+  if(s.bentuk==='pg')return HURUF[s.kunci]||'-';
+  if(s.bentuk==='pgk')return s.kunci.map(i=>HURUF[i]).join(', ');
+  if(s.bentuk==='bs')return s.kunci===1?'Salah':'Benar';
+  if(s.bentuk==='jodoh'){const ord=seededOrder(s.pasangan.length,s.id);return s.pasangan.map((_,i)=>(i+1)+'–'+'abcdefgh'[ord.indexOf(i)]).join(', ')}
+  return s.kunci+(s.rubrik?'\nRubrik: '+s.rubrik:'');
+}
+function seededOrder(n,seed){let h=7;for(const c of String(seed))h=(h*31+c.charCodeAt(0))|0;const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){h=(Math.imul(h,1103515245)+12345)|0;const j=Math.abs(h)%(i+1);[a[i],a[j]]=[a[j],a[i]]}if(n>2&&a.every((v,i)=>v===i))a.push(a.shift());return a}
+function render(){
+  if(!paket)return;$('#toolbar').hidden=false;$('#judul').value=paket.judul;
+  const cnt={},lv={LOTS:0,MOTS:0,HOTS:0};paket.soal.forEach(s=>{cnt[s.bentuk]=(cnt[s.bentuk]||0)+1;const n=+s.level[1];lv[n<=2?'LOTS':n===3?'MOTS':'HOTS']++});
+  const cek=paket.soal.filter(s=>s.perlu_cek).length;
+  $('#stat').innerHTML=`<span>Kelas ${paket.kelas} · Fase ${paket.fase}</span><span>${paket.soal.length} soal</span>`+URUT.filter(b=>cnt[b]).map(b=>`<span>${BENTUK[b]}: ${cnt[b]}</span>`).join('')+`<span>LOTS ${lv.LOTS} · MOTS ${lv.MOTS} · HOTS ${lv.HOTS}</span>`+(cek?`<span style="background:#fff1c7;border-color:#e7c25b">⚠ ${cek} perlu dicek</span>`:'');
+  $('#hasil').innerHTML=paket.soal.map((s,i)=>{
+    let b='';
+    if(s.opsi.length&&(s.bentuk==='pg'||s.bentuk==='pgk'||s.bentuk==='bs')){const k=s.bentuk==='pgk'?s.kunci:[s.kunci];b=`<div class="ops">${s.opsi.map((o,j)=>`<div class="${k.includes(j)?'ok':''}">${HURUF[j]}. ${fmt(o)}</div>`).join('')}</div>`}
+    else b=`<div class="kunci"><b>Kunci:</b> ${fmt(kunciText(s))}</div>`;
+    return `<article class="card soal ${s.perlu_cek?'cek':''}"><div class="sh"><span class="no">${i+1}</span><span class="tag">${BENTUK[s.bentuk]}</span><span class="tag m">${esc(s.materi)}</span><span class="tag m">${s.level}</span>${s.perlu_cek?'<span class="tag c">⚠ cek</span>':''}<span class="sp"></span><button class="ic" data-ganti="${i}" title="Ganti dengan soal lain">↻ ganti</button></div>
+    <div class="q">${fmt(s.pertanyaan)}</div>${b}<details><summary>Indikator & pembahasan</summary><p><b>Indikator:</b> ${fmt(s.indikator)}</p><p><b>Pembahasan:</b> ${fmt(s.pembahasan)}</p></details></article>`}).join('');
+}
+$('#judul').addEventListener('input',e=>{if(paket)paket.judul=e.target.value});
+$('#hasil').addEventListener('click',e=>{
+  const b=e.target.closest('[data-ganti]');if(!b||!paket)return;const i=+b.dataset.ganti,lama=paket.soal[i];
+  const dipakai=new Set(paket.soal.map(s=>s.pertanyaan));
+  const cand=pool()[lama.bentuk].filter(x=>!dipakai.has(x.s.pertanyaan));
+  if(!cand.length){toast('Tidak ada soal lain yang tersedia untuk bentuk ini.');return}
+  const x=cand[Math.floor(Math.random()*cand.length)];paket.soal[i]=normSoal(x.s,x.m);render();toast('Soal nomor '+(i+1)+' diganti.');
+});
+
+/* ===== dokumen ===== */
+const DOCCSS=`.wdoc{font-family:'Times New Roman',serif;font-size:12pt;color:#000;line-height:1.45}
+.wdoc .ar{font-family:'Amiri','Traditional Arabic',serif;font-size:16pt}
+.wdoc .dh{text-align:center;border-bottom:2px solid #000;padding-bottom:6pt;margin-bottom:8pt}
+.wdoc .dh1{font-weight:bold;font-size:13pt;text-transform:uppercase}
+.wdoc .dh2{font-weight:bold;font-size:14pt}
+.wdoc table.idt{width:100%;border-collapse:collapse;margin-bottom:8pt}
+.wdoc table.idt td{padding:2pt 4pt}
+.wdoc h3{font-size:12pt;margin:12pt 0 2pt}
+.wdoc .ptj{margin:0 0 6pt;font-style:italic}
+.wdoc ol.ds{margin:0;padding-left:22pt}
+.wdoc ol.ds>li{margin-bottom:7pt;page-break-inside:avoid}
+.wdoc ol.op{margin:3pt 0 0;padding-left:20pt}
+.wdoc table.jd{border-collapse:collapse;margin-top:4pt}
+.wdoc table.jd td{vertical-align:top;padding:0 10pt 0 0}
+.wdoc .line{margin-top:3pt}
+.wdoc table.kt{width:100%;border-collapse:collapse}
+.wdoc table.kt th,.wdoc table.kt td{border:1px solid #000;padding:3pt 5pt;vertical-align:top;text-align:left}
+.wdoc table.kt th{background:#e8e8e8}
+.wdoc .pb{page-break-before:always}`;
+document.head.insertAdjacentHTML('beforeend','<style>'+DOCCSS+'</style>');
+function petunjuk(b,p){const n=p.soal.find(s=>s.bentuk==='pg');const L=HURUF.slice(0,n?n.opsi.length:3).split('');
+  return {pg:`Berilah tanda silang (X) pada huruf ${L.slice(0,-1).join(', ')}, atau ${L.slice(-1)} di depan jawaban yang paling tepat!`,pgk:'Berilah tanda centang (✓) pada semua jawaban yang benar!',bs:'Lingkarilah B jika pernyataan benar dan S jika salah!',jodoh:'Jodohkan lajur kiri dengan jawaban yang tepat di lajur kanan!',isian:'Isilah titik-titik di bawah ini dengan jawaban yang tepat!',uraian:'Jawablah pertanyaan-pertanyaan di bawah ini dengan benar!'}[b]}
+function buildDoc(p,withKey){
+  const st=LS.get('paiSettings',{});const R=['I','II','III','IV','V','VI'];let no=0,sec=0,h='',rows=[];
+  h+=`<div class="dh">${st.sekolah?`<div class="dh1">${esc(st.sekolah)}</div>`:''}<div class="dh2">${esc(p.judul)}</div><div>Pendidikan Agama Islam dan Budi Pekerti · Kelas ${p.kelas} (Fase ${p.fase}) · Semester ${esc(p.semester)}</div></div>
+<table class="idt"><tr><td style="width:18%">Nama</td><td>: ...............................................</td><td style="width:12%">Kelas</td><td>: ...............</td></tr><tr><td>Hari/Tanggal</td><td>: ...............................................</td><td>Nilai</td><td>: ...............</td></tr></table>`;
+  for(const b of URUT){const list=p.soal.filter(s=>s.bentuk===b);if(!list.length)continue;
+    h+=`<h3>${R[sec++]}. ${BENTUK[b]}</h3><p class="ptj">${petunjuk(b,p)}</p><ol class="ds" start="${no+1}">`;
+    for(const s of list){no++;h+='<li>'+fmt(s.pertanyaan);
+      if(b==='pg'||b==='pgk')h+='<ol class="op" type="A">'+s.opsi.map(o=>'<li>'+fmt(o)+'</li>').join('')+'</ol>';
+      if(b==='bs')h+=' &nbsp;<b>( B / S )</b>';
+      if(b==='jodoh'){const ord=seededOrder(s.pasangan.length,s.id);h+=`<table class="jd"><tr><td>${s.pasangan.map((x,k)=>(k+1)+'. '+fmt(x.kiri)).join('<br>')}</td><td>${s.pasangan.map(()=>'• ……… •').join('<br>')}</td><td>${ord.map((k,pos)=>'abcdefgh'[pos]+'. '+fmt(s.pasangan[k].kanan)).join('<br>')}</td></tr></table>`}
+      if(b==='isian')h+='<div class="line">Jawab: ..................................................................</div>';
+      if(b==='uraian')h+='<div class="line">Jawab: ..........................................................................................<br>.......................................................................................................<br>.......................................................................................................</div>';
+      h+='</li>';rows.push([no,s])}
+    h+='</ol>'}
+  if(withKey)h+=`<div class="pb"></div><h3>KUNCI JAWABAN DAN PEMBAHASAN</h3><table class="kt"><tr><th style="width:6%">No</th><th style="width:24%">Kunci</th><th>Pembahasan</th><th style="width:8%">Level</th></tr>${rows.map(([n,s])=>`<tr><td>${n}</td><td>${fmt(kunciText(s))}</td><td>${fmt(s.pembahasan)}</td><td>${s.level}</td></tr>`).join('')}</table>`;
+  return '<div class="wdoc">'+h+'</div>';
+}
+/* urutkan sesuai lembar cetak (dikelompokkan per bentuk) agar nomor kuis & kisi-kisi sama */
+function paketUrutCetak(p){return {...p,soal:URUT.flatMap(b=>p.soal.filter(s=>s.bentuk===b))}}
+function simpanBank(){
+  const p=paketUrutCetak(paket);const b=LS.get('paiBank',[]);const i=b.findIndex(x=>x.id===p.id);
+  if(i>=0)b[i]=p;else b.unshift(p);return LS.set('paiBank',b)?p:null;
+}
+$$('[data-out]').forEach(btn=>btn.onclick=()=>{
+  if(!paket)return;const o=btn.dataset.out;paket.judul=$('#judul').value.trim()||paket.judul;const p=paketUrutCetak(paket);
+  if(o==='print0'||o==='print1'){$('#printArea').innerHTML=buildDoc(p,o==='print1');setTimeout(()=>window.print(),100)}
+  if(o==='word'){const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(p.judul)}</title><style>${DOCCSS}</style></head><body>${buildDoc(p,true)}</body></html>`;download(new Blob(['﻿',html],{type:'application/msword'}),slug(p.judul)+'.doc')}
+  if(o==='kuis'){const s=simpanBank();if(s)location.href='../kuis-pid/?paket='+encodeURIComponent(s.id)}
+  if(o==='kisi'){const s=simpanBank();if(s)location.href='../kisi-kisi/?paket='+encodeURIComponent(s.id)}
+  if(o==='edit'){const s=simpanBank();if(s){LS.set('paiDraft',s);location.href='../generator-soal/'}}
+});
+
+/* ===== mulai ===== */
+(async()=>{
+  const pre=+new URLSearchParams(location.search).get('kelas')||LS.get('bankKelas',1);
+  renderKelas();
+  for(const k of [1,2,3,4,5,6])if(!(window.BANK_SOAL&&window.BANK_SOAL[k])){/* cek ketersediaan tanpa menunggu */muatKelas(k).then(renderKelas)}
+  const b=$(`#kelas button[data-k="${pre}"]`);if(b)b.click();
+})();
+</script>
+</body>
+</html>

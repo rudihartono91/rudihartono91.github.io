@@ -90,7 +90,7 @@ table.kk tr:hover td{background:#fafcfb}
   <div><h1>Generator Kisi-kisi</h1><small>Asesmen PAI dan Budi Pekerti SD</small></div>
   <span class="sp"></span>
   <a href="../">← Beranda</a>
-  <button class="btn ghost" id="btnSetelan">⚙ API key</button>
+  <button class="btn ghost" id="btnSetelan">⚙ Pengaturan AI</button>
 </header>
 <main>
   <section class="card">
@@ -173,11 +173,32 @@ table.kk tr:hover td{background:#fafcfb}
 
 <!-- modal setelan -->
 <div class="modal" id="mSetelan"><div class="box">
-  <h3>API key Claude</h3>
-  <p class="hint">Dipakai bersama dengan Generator Soal. Disimpan hanya di peramban ini.</p>
-  <label class="f mt">API key</label><input type="password" id="sKey" placeholder="sk-ant-..." autocomplete="off">
-  <label class="f mt">Model</label>
-  <select id="sModel"><option value="claude-sonnet-5-5">Claude Sonnet 5.5 (disarankan)</option><option value="claude-haiku-5-5">Claude Haiku 5.5 (hemat)</option><option value="claude-opus-5-5">Claude Opus 5.5 (paling teliti)</option></select>
+  <h3>Pengaturan AI</h3>
+  <p class="hint">Dipakai bersama dengan Generator Soal.</p>
+    <label class="f mt" for="sProv">Layanan AI</label>
+    <select id="sProv">
+      <option value="gemini">Google Gemini — ada kuota gratis (disarankan untuk mulai)</option>
+      <option value="claude">Claude (Anthropic) — berbayar sesuai pemakaian</option>
+    </select>
+    <div id="boxGemini">
+      <label class="f mt" for="sGKey">API key Gemini</label>
+      <input type="password" id="sGKey" placeholder="AIza..." autocomplete="off">
+      <p class="hint">Gratis: buka <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>, masuk dengan akun Google, klik <b>Create API key</b>, lalu salin ke sini. Kuota gratis terbatas per menit dan per hari.</p>
+      <label class="f mt" for="sGModel">Model (opsional)</label>
+      <input type="text" id="sGModel" placeholder="gemini-flash-latest">
+    </div>
+    <div id="boxClaude">
+      <label class="f mt" for="sKey">API key Claude</label>
+      <input type="password" id="sKey" placeholder="sk-ant-..." autocomplete="off">
+      <p class="hint">Dapatkan di console.anthropic.com → API Keys (perlu isi saldo).</p>
+      <label class="f mt" for="sModel">Model</label>
+      <select id="sModel">
+        <option value="claude-sonnet-5-5">Claude Sonnet 5.5 (seimbang, disarankan)</option>
+        <option value="claude-haiku-5-5">Claude Haiku 5.5 (cepat & hemat)</option>
+        <option value="claude-opus-5-5">Claude Opus 5.5 (paling teliti)</option>
+      </select>
+    </div>
+    <p class="hint">API key disimpan hanya di peramban perangkat ini. Jangan isi di komputer umum atau milik bersama.</p>
   <div class="foot"><button class="btn" data-close>Batal</button><button class="btn pri" id="btnSimpanSet">Simpan</button></div>
 </div></div>
 
@@ -244,7 +265,7 @@ function rekap(){
 function dariPaket(p){
   const soal=p.soal||[];const out=[];const map={};
   soal.forEach((s,i)=>{
-    const r={elemen:p.elemen||'',tp:p.tp||'',materi:p.materi||'',indikator:s.indikator||'',level:(String(s.level||'C2').toUpperCase().match(/C[1-6]/)||['C2'])[0],bentuk:normBentuk(s.bentuk),no:i+1};
+    const r={elemen:s.elemen||p.elemen||'',tp:s.tp||p.tp||'',materi:s.materi||p.materi||'',indikator:s.indikator||'',level:(String(s.level||'C2').toUpperCase().match(/C[1-6]/)||['C2'])[0],bentuk:normBentuk(s.bentuk),no:i+1};
     const key=[r.tp,r.indikator,r.level,r.bentuk].join('|');
     if(map[key]&&r.indikator)map[key].nos.push(r.no);else{const x={...r,nos:[r.no]};out.push(x);if(r.indikator)map[key]=x}
   });
@@ -261,6 +282,8 @@ function pakaiPaket(p){
   if(rows.length&&!confirm('Ganti isi tabel dengan kisi-kisi dari "'+(p.judul||'paket')+'"?'))return;
   rows=dariPaket(urutCetak(p));save();render();
   if(p.kelas){ID.kelas=String(p.kelas);const el=$('#ident [data-k="kelas"]');el.value=ID.kelas;LS.set('kisiIdent',ID)}
+  if(p.jenis){ID.jenis=p.jenis;$('#ident [data-k="jenis"]').value=p.jenis;LS.set('kisiIdent',ID)}
+  if(p.semester==1||p.semester==2||p.semester==='1'||p.semester==='2'){ID.semester=p.semester==1?'1 (Ganjil)':'2 (Genap)';$('#ident [data-k="semester"]').value=ID.semester;LS.set('kisiIdent',ID)}
   $('#mImpor').classList.remove('on');toast('Kisi-kisi diambil dari '+(p.soal||[]).length+' soal. Lengkapi kolom yang masih kosong.');
 }
 $('#btnImpor').onclick=()=>{
@@ -272,11 +295,31 @@ $('#plist').onclick=e=>{const b=e.target.closest('button[data-id]');if(!b)return
 $('#fileJSON').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{let d=JSON.parse(await f.text());if(Array.isArray(d)&&d[0]&&d[0].soal)d=d[0];if(Array.isArray(d))d={soal:d};pakaiPaket(d)}catch(err){alert('File tidak bisa dibaca: '+err.message)}e.target.value=''};
 
 /* ===== AI ===== */
-async function callClaude(prompt){
-  const s=LS.get('paiSettings',{});if(!s.apiKey)throw new Error('API key belum diisi.');
-  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':s.apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:s.model||'claude-sonnet-5-5',max_tokens:8000,messages:[{role:'user',content:prompt}]})});
-  let j={};try{j=await r.json()}catch(e){}if(!r.ok)throw new Error((j.error&&j.error.message)||'HTTP '+r.status);
-  return(j.content||[]).filter(c=>c.type==='text').map(c=>c.text).join('');
+function aktifAI(){const s=LS.get('paiSettings',{});return s.provider||(s.apiKey&&!s.geminiKey?'claude':'gemini')}
+function punyaKey(){const s=LS.get('paiSettings',{});return aktifAI()==='gemini'?!!s.geminiKey:!!s.apiKey}
+async function callAI(prompt,maxTokens=16000,jsonMode=true){
+  const s=LS.get('paiSettings',{});
+  if(aktifAI()==='gemini'){
+    if(!s.geminiKey) throw new Error('API key Gemini belum diisi di Pengaturan.');
+    const model=(s.geminiModel||'gemini-flash-latest').trim();
+    const gc={maxOutputTokens:Math.max(maxTokens*2,1024)};if(jsonMode)gc.responseMimeType='application/json';
+    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent',{method:'POST',headers:{'content-type':'application/json','x-goog-api-key':s.geminiKey},body:JSON.stringify({contents:[{role:'user',parts:[{text:prompt}]}],generationConfig:gc})});
+    let j={};try{j=await r.json()}catch(e){}
+    if(!r.ok){const m=(j.error&&j.error.message)||('HTTP '+r.status);
+      if(r.status===429)throw new Error('Kuota gratis Gemini sedang penuh. Tunggu 1–2 menit lalu coba lagi, atau kurangi jumlah soal.\n\n('+m+')');
+      if(r.status===400&&/API key/i.test(m))throw new Error('API key Gemini tidak valid. Periksa kembali di Pengaturan.');
+      if(r.status===404)throw new Error('Model "'+model+'" tidak ditemukan. Kosongkan kolom Model di Pengaturan agar memakai bawaan.');
+      throw new Error(m)}
+    const c=(j.candidates||[])[0];const t=((c&&c.content&&c.content.parts)||[]).filter(p=>!p.thought).map(p=>p.text||'').join('');
+    if(!t)throw new Error('Gemini tidak mengirim jawaban'+(c&&c.finishReason?' ('+c.finishReason+')':'')+'. Coba lagi atau kurangi jumlah soal.');
+    if(c.finishReason==='MAX_TOKENS')console.warn('Jawaban terpotong');
+    return t;
+  }
+  if(!s.apiKey) throw new Error('API key Claude belum diisi di Pengaturan.');
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':s.apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:s.model||'claude-sonnet-5-5',max_tokens:maxTokens,messages:[{role:'user',content:prompt}]})});
+  let j={};try{j=await r.json()}catch(e){}
+  if(!r.ok) throw new Error((j.error&&j.error.message)||('HTTP '+r.status));
+  return (j.content||[]).filter(c=>c.type==='text').map(c=>c.text).join('');
 }
 function parseJSON(t){t=String(t||'').replace(/```(?:json)?/gi,'');const a=t.indexOf('{'),b=t.lastIndexOf('}');if(a<0||b<a)throw new Error('JSON tidak ditemukan pada jawaban AI.');return JSON.parse(t.slice(a,b+1).replace(/,\s*([}\]])/g,'$1'))}
 function buildPrompt(){
@@ -312,15 +355,19 @@ function simpanAIForm(){const a={};['aElemen','aMateri','aTP','aBentuk','aLevel'
 $('#btnJalankanAI').onclick=async()=>{
   simpanAIForm();
   if(rows.length&&!confirm('Hasil AI akan menggantikan isi tabel. Lanjutkan?'))return;
-  if(!LS.get('paiSettings',{}).apiKey){toast('API key belum diisi. Gunakan "Salin prompt".');return}
-  $('#busy').classList.add('on');try{terapkan(await callClaude(buildPrompt()))}catch(e){alert('Gagal: '+e.message)}finally{$('#busy').classList.remove('on')}
+  if(!punyaKey()){toast('API key belum diisi. Isi di ⚙ Pengaturan AI, atau gunakan "Salin prompt".');return}
+  $('#busy').classList.add('on');try{terapkan(await callAI(buildPrompt()))}catch(e){alert('Gagal: '+e.message)}finally{$('#busy').classList.remove('on')}
 };
 $('#btnSalinPrompt').onclick=async()=>{simpanAIForm();const p=buildPrompt();try{await navigator.clipboard.writeText(p)}catch(e){}$('#manualBox').hidden=false;$('#aHasil').value='';toast('Prompt tersalin. Tempel di claude.ai, Gemini, atau ChatGPT, lalu tempel jawabannya di bawah.')};
 $('#btnProses').onclick=()=>{try{terapkan($('#aHasil').value)}catch(e){alert(e.message)}};
 
 /* ===== setelan ===== */
-$('#btnSetelan').onclick=()=>{const s=LS.get('paiSettings',{});$('#sKey').value=s.apiKey||'';$('#sModel').value=s.model||'claude-sonnet-5-5';$('#mSetelan').classList.add('on')};
-$('#btnSimpanSet').onclick=()=>{const s=LS.get('paiSettings',{});s.apiKey=$('#sKey').value.trim();s.model=$('#sModel').value;LS.set('paiSettings',s);$('#mSetelan').classList.remove('on');toast('Tersimpan.')};
+function isiSetelanAI(){const s=LS.get('paiSettings',{});$('#sProv').value=aktifAI();$('#sGKey').value=s.geminiKey||'';$('#sGModel').value=s.geminiModel||'';$('#sKey').value=s.apiKey||'';$('#sModel').value=s.model||'claude-sonnet-5-5';tampilProv()}
+function tampilProv(){const g=$('#sProv').value==='gemini';$('#boxGemini').hidden=!g;$('#boxClaude').hidden=g}
+function simpanSetelanAI(){const s=LS.get('paiSettings',{});Object.assign(s,{provider:$('#sProv').value,geminiKey:$('#sGKey').value.trim(),geminiModel:$('#sGModel').value.trim(),apiKey:$('#sKey').value.trim(),model:$('#sModel').value});LS.set('paiSettings',s)}
+$('#sProv').addEventListener('change',tampilProv);
+$('#btnSetelan').onclick=()=>{isiSetelanAI();$('#mSetelan').classList.add('on')};
+$('#btnSimpanSet').onclick=()=>{simpanSetelanAI();$('#mSetelan').classList.remove('on');toast('Tersimpan.')};
 $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m||e.target.hasAttribute('data-close'))m.classList.remove('on')}));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.modal.on').forEach(m=>m.classList.remove('on'))});
 
