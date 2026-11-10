@@ -517,6 +517,21 @@ window.BANK_SOAL["4"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan sikap beberapa anak setelah timnya menjadi juara!\n| Nama | Sikap |\n| Raka | Sujud syukur dan mengucapkan alḥamdulillāh |\n| Sinta | Mengejek tim yang kalah |\n| Joko | Membanggakan diri di depan teman-teman |\n| Lala | Beristigfar dan memuji Allah |\nSikap yang sesuai pesan Surah an-Naṣr ditunjukkan oleh ...",
+     "opsi": [
+      "Raka dan Sinta",
+      "Raka dan Lala",
+      "Sinta dan Joko",
+      "Joko dan Lala"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel sikap setelah menang, peserta didik dapat menganalisis sikap yang sesuai Surah an-Naṣr.",
+     "pembahasan": "Surah an-Naṣr ayat 3 memerintahkan bertasbih, memuji Allah, dan memohon ampun, bukan sombong atau mengejek.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Surah An-Naṣr berjumlah ____ ayat.",
      "kunci": "tiga",
@@ -833,6 +848,21 @@ window.BANK_SOAL["4"] = {
      "gambar": [
       "img/bank/k4-asmaul-husna.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Asmaulhusna | Arti |\n| 1 | Al-Gaffār | Maha Pemberi |\n| 2 | Al-Wahhāb | Maha Pemberi Karunia |\n| 3 | Al-Fattāḥ | Maha Lembut |\n| 4 | Al-Laṭīf | Maha Lembut |\nPasangan asmaulhusna dan artinya yang benar ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan tabel asmaulhusna dan artinya, peserta didik dapat menganalisis pasangan yang benar.",
+     "pembahasan": "Al-Wahhāb = Maha Pemberi Karunia dan Al-Laṭīf = Maha Lembut. Al-Gaffār = Maha Pengampun, Al-Fattāḥ = Maha Pembuka.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -1819,6 +1849,21 @@ window.BANK_SOAL["4"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan peristiwa berikut!\n| No | Peristiwa |\n| 1 | Dakwah secara terang-terangan |\n| 2 | Turunnya wahyu pertama di Gua Hira |\n| 3 | Dakwah secara sembunyi-sembunyi |\n| 4 | Peristiwa Isra Mikraj |\nUrutan peristiwa periode Makkah yang benar adalah ...",
+     "opsi": [
+      "2 – 3 – 1 – 4",
+      "3 – 2 – 1 – 4",
+      "2 – 1 – 3 – 4",
+      "1 – 2 – 3 – 4"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "indikator": "Disajikan tabel peristiwa, peserta didik dapat mengurutkan peristiwa dakwah periode Makkah.",
+     "pembahasan": "Wahyu pertama turun, lalu dakwah sembunyi-sembunyi, kemudian terang-terangan, dan Isra Mikraj terjadi menjelang hijrah.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Wahyu pertama adalah Surah Al-'Alaq ayat 1–____",
      "kunci": "5",
@@ -2137,6 +2182,21 @@ window.BANK_SOAL["4"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Lafal | Hukum Bacaan |\n| 1 | مِنْ بَعْدِ | iqlab |\n| 2 | مِنْ قَبْلِ | iqlab |\n| 3 | أَنْتُمْ | ikhfa |\n| 4 | سَمِيْعٌ بَصِيْرٌ | ikhfa |\nPasangan lafal dan hukum bacaan yang benar ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel lafal dan hukum bacaan, peserta didik dapat menganalisis pasangan iqlab dan ikhfa yang benar.",
+     "pembahasan": "Nomor 1 iqlab dan nomor 3 ikhfa sudah benar. Nomor 2 seharusnya ikhfa, nomor 4 seharusnya iqlab.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Huruf iqlab adalah ____",
      "kunci": "ب (ba)",
@@ -2453,6 +2513,21 @@ window.BANK_SOAL["4"] = {
      "gambar": [
       "img/bank/k4-hadis-sesama.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nDina dan Rara bertengkar karena salah paham. Sudah empat hari mereka tidak saling menyapa walaupun duduk berdekatan di kelas.\nMenurut ajaran Islam, sikap Dina dan Rara ...",
+     "opsi": [
+      "dianjurkan agar tidak bertengkar lagi",
+      "dibolehkan karena sedang marah",
+      "dilarang karena tidak boleh mendiamkan saudara lebih dari tiga hari",
+      "wajib dilakukan sampai salah satu meminta maaf"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menilai sikap mendiamkan teman berdasarkan hadis.",
+     "pembahasan": "Rasulullah melarang seorang muslim mendiamkan saudaranya lebih dari tiga hari.",
+     "perlu_cek": true
     },
     {
      "bentuk": "isian",
@@ -3106,6 +3181,21 @@ window.BANK_SOAL["4"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan sikap beberapa siswa di kelas berikut!\n| Nama | Sikap |\n| Fikri | Mendengarkan dengan sungguh-sungguh saat guru menjelaskan |\n| Rudi | Mengobrol ketika guru sedang menjelaskan |\n| Nisa | Mengerjakan tugas dari guru tepat waktu |\n| Bayu | Mencontek pekerjaan teman |\nSiswa yang menunjukkan sikap hormat kepada guru adalah ...",
+     "opsi": [
+      "Fikri dan Rudi",
+      "Rudi dan Bayu",
+      "Nisa dan Bayu",
+      "Fikri dan Nisa"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "indikator": "Disajikan tabel sikap siswa, peserta didik dapat menganalisis sikap hormat kepada guru.",
+     "pembahasan": "Mendengarkan penjelasan dan mengerjakan tugas tepat waktu adalah bentuk hormat kepada guru.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Guru adalah orang tua kita di ____",
      "kunci": "sekolah",
@@ -3422,6 +3512,21 @@ window.BANK_SOAL["4"] = {
      "gambar": [
       "img/bank/k4-balig.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nDimas berusia 12 tahun dan sudah mengalami tanda balig. Ia berkata, \"Aku masih kecil, jadi belum wajib salat lima waktu dan puasa Ramadan.\"\nPendapat Dimas ...",
+     "opsi": [
+      "salah, karena ia sudah balig sehingga wajib salat dan puasa",
+      "benar, karena usianya belum 15 tahun",
+      "benar, karena anak kecil tidak perlu beribadah",
+      "salah, karena salat hanya wajib bagi orang dewasa"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menilai pendapat tentang kewajiban setelah balig.",
+     "pembahasan": "Seseorang yang sudah mengalami tanda balig menjadi mukalaf dan wajib menjalankan syariat, walaupun belum berusia 15 tahun.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",

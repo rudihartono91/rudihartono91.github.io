@@ -517,6 +517,21 @@ window.BANK_SOAL["5"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan kegiatan beberapa anak pada sore hari!\n| Nama | Kegiatan |\n| Rina | Mengaji lalu membantu ibu |\n| Tomi | Bermain gim sampai lupa salat Asar |\n| Sari | Belajar kelompok dan saling mengingatkan |\n| Dodo | Tidur sampai waktu Magrib |\nAnak yang memanfaatkan waktu sesuai pesan Surah al-'Aṣr adalah ...",
+     "opsi": [
+      "Rina dan Sari",
+      "Rina dan Tomi",
+      "Tomi dan Dodo",
+      "Sari dan Dodo"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "indikator": "Disajikan tabel kegiatan, peserta didik dapat menganalisis perilaku menghargai waktu sesuai Surah al-'Aṣr.",
+     "pembahasan": "Orang yang tidak merugi adalah yang beriman, beramal saleh, dan saling menasihati. Rina dan Sari memanfaatkan waktu dengan baik.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Surah Al-'Asr berjumlah ____ ayat.",
      "kunci": "tiga",
@@ -835,6 +850,21 @@ window.BANK_SOAL["5"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nKetika diejek temannya, Lina tidak membalas. Ia tetap berbicara dengan santun dan memaafkan temannya.\nSikap Lina meneladani asmaulhusna ...",
+     "opsi": [
+      "Al-Ḥakīm",
+      "Asy-Syakūr",
+      "Al-Ḥalīm",
+      "Al-Wadūd"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menentukan asmaulhusna yang diteladani.",
+     "pembahasan": "Al-Ḥalīm artinya Maha Penyantun: tidak tergesa-gesa membalas kesalahan.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Al-Ḥalīm artinya Maha ____",
      "kunci": "Penyantun",
@@ -1151,6 +1181,21 @@ window.BANK_SOAL["5"] = {
      "gambar": [
       "img/bank/k5-doa-tawakal.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan kegiatan berikut!\n| No | Kegiatan |\n| 1 | Berserah diri kepada Allah atas hasilnya |\n| 2 | Belajar dengan sungguh-sungguh |\n| 3 | Berdoa memohon kemudahan |\nUrutan ikhtiar, doa, dan tawakal yang benar adalah ...",
+     "opsi": [
+      "1 – 2 – 3",
+      "2 – 3 – 1",
+      "3 – 1 – 2",
+      "3 – 2 – 1"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel kegiatan, peserta didik dapat mengurutkan ikhtiar, doa, dan tawakal.",
+     "pembahasan": "Berusaha (ikhtiar), berdoa, lalu berserah diri (tawakal).",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -1804,6 +1849,21 @@ window.BANK_SOAL["5"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Peristiwa |\n| 1 | Membangun Masjid Nabawi |\n| 2 | Mempersaudarakan kaum Muhajirin dan Ansar |\n| 3 | Membuat Piagam Madinah |\n| 4 | Menerima wahyu pertama di Gua Hira |\nYang BUKAN langkah Nabi Muhammad saw. dalam membangun masyarakat Madinah ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "indikator": "Disajikan tabel peristiwa, peserta didik dapat menganalisis langkah Nabi di Madinah.",
+     "pembahasan": "Wahyu pertama turun di Gua Hira saat Nabi masih di Makkah, bukan langkah membangun masyarakat Madinah.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Kota Yatsrib kemudian diberi nama ____",
      "kunci": "Madinah (al-Munawwarah)",
@@ -2122,6 +2182,21 @@ window.BANK_SOAL["5"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Lafal |\n| 1 | يَدْخُلُوْنَ |\n| 2 | أَحَدْ (waqaf) |\n| 3 | خَلَقْ (waqaf) |\n| 4 | يَجْعَلُوْنَ |\nLafal yang mengandung qalqalah sugra ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 4",
+      "2 dan 3",
+      "3 dan 4"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel lafal, peserta didik dapat membedakan qalqalah sugra dan kubra.",
+     "pembahasan": "Nomor 1 (دْ) dan 4 (جْ) bersukun asli di tengah kata: qalqalah sugra. Nomor 2 dan 3 dibaca waqaf: qalqalah kubra.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Qalqalah artinya ____",
      "kunci": "memantul",
@@ -2438,6 +2513,21 @@ window.BANK_SOAL["5"] = {
      "gambar": [
       "img/bank/k5-hadis-ortu-guru.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nIbu meminta Bayu berhenti bermain dan segera mengerjakan PR. Bayu menjawab dengan suara keras dan tetap bermain.\nMenurut hadis, sikap seperti Bayu dapat menyebabkan ...",
+     "opsi": [
+      "rida Allah",
+      "pahala berlipat ganda",
+      "disayang teman-teman",
+      "murka Allah"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menghubungkan sikap kepada orang tua dengan hadis.",
+     "pembahasan": "Rida Allah tergantung pada rida orang tua, dan murka Allah tergantung pada murka orang tua.",
+     "perlu_cek": true
     },
     {
      "bentuk": "isian",
@@ -3422,6 +3512,21 @@ window.BANK_SOAL["5"] = {
      "gambar": [
       "img/bank/k5-label-halal.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Makanan/Minuman |\n| 1 | Ikan goreng |\n| 2 | Minuman keras (khamar) |\n| 3 | Sayur bayam |\n| 4 | Daging babi |\nMakanan dan minuman yang diharamkan ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan tabel makanan dan minuman, peserta didik dapat menentukan yang haram.",
+     "pembahasan": "Khamar dan daging babi diharamkan dalam Islam.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",

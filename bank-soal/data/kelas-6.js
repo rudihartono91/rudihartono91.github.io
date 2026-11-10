@@ -184,6 +184,21 @@ window.BANK_SOAL["6"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Lafal |\n| 1 | إِنَّ |\n| 2 | ثُمَّ |\n| 3 | قُلْ |\n| 4 | يَوْمِ الدِّيْنِ |\nLafal yang mengandung bacaan gunnah ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "indikator": "Disajikan tabel lafal, peserta didik dapat menganalisis lafal yang mengandung gunnah.",
+     "pembahasan": "Gunnah terdapat pada nun dan mim bertasydid: إِنَّ dan ثُمَّ.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Gunnah artinya ____",
      "kunci": "dengung",
@@ -502,6 +517,21 @@ window.BANK_SOAL["6"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan sikap beberapa anak berikut!\n| Nama | Sikap |\n| Ayra | Gagal dalam lomba, lalu berlatih lagi dan berdoa |\n| Bima | Gagal dalam lomba, lalu menyerah dan tidak mau ikut lagi |\n| Cici | Selesai mengerjakan PR, lalu bermain gim sampai larut malam |\n| Dika | Selesai mengerjakan PR, lalu membantu ibu |\nSikap yang sesuai pesan Surah al-Insyirāḥ ditunjukkan oleh ...",
+     "opsi": [
+      "Ayra dan Bima",
+      "Ayra dan Dika",
+      "Bima dan Cici",
+      "Cici dan Dika"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel sikap, peserta didik dapat menganalisis perilaku sesuai Surah al-Insyirāḥ.",
+     "pembahasan": "Ayra yakin bersama kesulitan ada kemudahan; Dika setelah selesai satu urusan beralih ke kebaikan lain (ayat 7).",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Surah Al-Insyirāḥ berjumlah ____ ayat.",
      "kunci": "delapan",
@@ -818,6 +848,21 @@ window.BANK_SOAL["6"] = {
      "gambar": [
       "img/bank/k6-asmaul-husna.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Perilaku | Asmaulhusna yang diteladani |\n| 1 | Melindungi adik dari gangguan | Al-Waliy |\n| 2 | Membagi tugas piket sama rata | Aṣ-Ṣabūr |\n| 3 | Tidak marah saat antre lama | Aṣ-Ṣabūr |\n| 4 | Memuji kebaikan orang lain dengan tulus | Al-'Adl |\nPasangan perilaku dan asmaulhusna yang benar ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel perilaku, peserta didik dapat menganalisis asmaulhusna yang diteladani.",
+     "pembahasan": "Melindungi meneladani Al-Waliy dan sabar meneladani Aṣ-Ṣabūr. Membagi sama rata meneladani Al-'Adl; memuji kebaikan meneladani Al-Ḥamīd.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -1804,6 +1849,21 @@ window.BANK_SOAL["6"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nSuatu malam seorang khalifah berkeliling kota dan mendengar anak-anak menangis kelaparan. Ia sendiri memanggul karung gandum dari Baitulmal untuk keluarga tersebut.\nKhalifah dalam cerita dan sifat yang dapat diteladani adalah ...",
+     "opsi": [
+      "Abu Bakar aṣ-Ṣiddīq – jujur",
+      "Umar bin Khattab – peduli kepada rakyat",
+      "Usman bin Affan – pemalu",
+      "Ali bin Abi Talib – cerdas"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menentukan tokoh dan keteladanannya.",
+     "pembahasan": "Kisah memanggul gandum untuk rakyat yang kelaparan adalah kisah Umar bin Khattab.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Empat khalifah pengganti Nabi disebut ____",
      "kunci": "Khulafaurasyidin",
@@ -2453,6 +2513,21 @@ window.BANK_SOAL["6"] = {
      "gambar": [
       "img/bank/k6-hadis-teman.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nRafi berteman akrab dengan Bobi yang sering mengajaknya membolos dan berkata kasar. Lama-kelamaan Rafi ikut malas belajar.\nPeristiwa ini sesuai hadis yang mengumpamakan teman yang buruk seperti ...",
+     "opsi": [
+      "penjual minyak wangi",
+      "petani",
+      "pandai besi",
+      "nelayan"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menghubungkan pengaruh teman dengan hadis.",
+     "pembahasan": "Teman yang buruk diumpamakan seperti pandai besi: kita bisa terkena percikan api atau bau tidak sedap.",
+     "perlu_cek": true
     },
     {
      "bentuk": "isian",
@@ -3106,6 +3181,21 @@ window.BANK_SOAL["6"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan perilaku beberapa anak berikut!\n| Nama | Perilaku |\n| Arif | Memberi minum kucing liar yang kehausan |\n| Beni | Memetik bunga di taman sekolah sembarangan |\n| Citra | Menanam pohon di halaman sekolah |\n| Doni | Melempari burung dengan batu |\nAnak yang menunjukkan akhlak terpuji terhadap hewan dan tumbuhan adalah ...",
+     "opsi": [
+      "Arif dan Beni",
+      "Beni dan Doni",
+      "Citra dan Doni",
+      "Arif dan Citra"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "indikator": "Disajikan tabel perilaku, peserta didik dapat menganalisis akhlak terhadap hewan dan tumbuhan.",
+     "pembahasan": "Memberi minum hewan dan menanam pohon adalah akhlak terpuji.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Tugas manusia sebagai pemelihara bumi disebut ____",
      "kunci": "khalifah",
@@ -3422,6 +3512,21 @@ window.BANK_SOAL["6"] = {
      "gambar": [
       "img/bank/k6-wakaf.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nPak Hasan menyerahkan sebidang tanahnya untuk dibangun madrasah dan berpesan agar tanah itu tidak dijual atau diwariskan. Tanah tersebut kemudian dikelola oleh Pak Umar.\nDalam peristiwa wakaf tersebut, Pak Hasan dan Pak Umar berturut-turut disebut ...",
+     "opsi": [
+      "wakif dan nazir",
+      "nazir dan wakif",
+      "muzaki dan amil",
+      "mustahik dan amil"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menentukan istilah pihak-pihak dalam wakaf.",
+     "pembahasan": "Wakif adalah orang yang berwakaf; nazir adalah pengelola harta wakaf.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
