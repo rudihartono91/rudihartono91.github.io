@@ -184,6 +184,21 @@ window.BANK_SOAL["5"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Lafal | Hukum Bacaan |\n| 1 | أَلَمْ تَرَ | izhar syafawi |\n| 2 | تَرْمِيْهِمْ بِحِجَارَةٍ | idgam mimi |\n| 3 | لَهُمْ مَّا | idgam mimi |\n| 4 | عَلَيْهِمْ مُؤْصَدَةٌ | ikhfa syafawi |\nPasangan lafal dan hukum bacaan yang benar ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel lafal dan hukum bacaan, peserta didik dapat menganalisis pasangan yang benar.",
+     "pembahasan": "Nomor 1 izhar syafawi (benar), nomor 3 idgam mimi (benar). Nomor 2 seharusnya ikhfa syafawi, nomor 4 seharusnya idgam mimi.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Huruf ikhfa syafawi hanya satu, yaitu ____",
      "kunci": "ب (ba)",
@@ -1454,6 +1469,21 @@ window.BANK_SOAL["5"] = {
      "gambar": [
       "img/bank/k5-sahur.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nPada siang hari bulan Ramadan, Ani lupa lalu minum segelas air. Setelah sadar, Ani langsung berhenti minum. Sore harinya, Budi yang sehat sengaja makan karena tidak kuat menahan lapar.\nHukum puasa Ani dan Budi berturut-turut adalah ...",
+     "opsi": [
+      "batal dan sah",
+      "sah dan batal",
+      "batal dan batal",
+      "sah dan sah"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menentukan hukum puasa orang yang lupa dan yang sengaja makan.",
+     "pembahasan": "Makan atau minum karena lupa tidak membatalkan puasa. Makan dengan sengaja tanpa uzur membatalkan puasa.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -2728,6 +2758,21 @@ window.BANK_SOAL["5"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan peristiwa berikut!\n| No | Peristiwa |\n| 1 | Yaumul mizan (penimbangan amal) |\n| 2 | Yaumul ba'aṡ (kebangkitan dari kubur) |\n| 3 | Yaumul mahsyar (berkumpul di Padang Mahsyar) |\n| 4 | Yaumul hisab (perhitungan amal) |\nUrutan peristiwa setelah kiamat yang benar adalah ...",
+     "opsi": [
+      "2 – 3 – 4 – 1",
+      "3 – 2 – 4 – 1",
+      "2 – 4 – 3 – 1",
+      "1 – 2 – 3 – 4"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "indikator": "Disajikan tabel peristiwa hari akhir, peserta didik dapat mengurutkannya dengan benar.",
+     "pembahasan": "Manusia dibangkitkan (ba'aṡ), dikumpulkan (mahsyar), dihitung amalnya (hisab), lalu ditimbang (mizan).",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Hari akhir disebut juga hari ____",
      "kunci": "kiamat",
@@ -3044,6 +3089,21 @@ window.BANK_SOAL["5"] = {
      "gambar": [
       "img/bank/k5-akhlak-teman.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan sikap beberapa anak berikut!\n| Nama | Sikap |\n| Andi | Meminjamkan pensil kepada teman yang lupa membawa |\n| Beni | Menyebarkan rahasia temannya |\n| Caca | Mengajak murid baru bermain bersama |\n| Dedi | Mengejek teman yang kalah lomba |\nAnak yang menunjukkan akhlak terpuji kepada teman adalah ...",
+     "opsi": [
+      "Andi dan Beni",
+      "Andi dan Caca",
+      "Beni dan Dedi",
+      "Caca dan Dedi"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel sikap, peserta didik dapat menganalisis akhlak terpuji kepada teman.",
+     "pembahasan": "Meminjamkan pensil dan mengajak murid baru bermain adalah akhlak terpuji. Menyebarkan rahasia dan mengejek adalah tercela.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -3680,6 +3740,21 @@ window.BANK_SOAL["5"] = {
      "gambar": [
       "img/bank/k5-hudaibiah.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nPada tahun 8 Hijriah, Nabi Muhammad saw. bersama ribuan pasukan memasuki kota Makkah hampir tanpa pertumpahan darah. Penduduk Makkah yang dahulu memusuhi Nabi justru dimaafkan.\nNama peristiwa dan keteladanan Nabi yang tepat adalah ...",
+     "opsi": [
+      "Haji Wada – sabar",
+      "Fathu Makkah – pemaaf",
+      "Perjanjian Hudaibiah – tegas",
+      "Hijrah – berani"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menentukan nama peristiwa dan keteladanan Nabi.",
+     "pembahasan": "Peristiwa itu adalah Fathu Makkah. Nabi memaafkan penduduk Makkah yang dulu memusuhinya.",
+     "perlu_cek": true
     },
     {
      "bentuk": "isian",

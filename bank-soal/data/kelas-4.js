@@ -184,6 +184,21 @@ window.BANK_SOAL["4"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Lafal |\n| 1 | مَنْ يَقُوْلُ |\n| 2 | مِنْ رَّبِّهِمْ |\n| 3 | هُدًى لِّلْمُتَّقِيْنَ |\n| 4 | مِنْ نِّعْمَةٍ |\nLafal yang dibaca idgam bilagunah ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "2 dan 3",
+      "3 dan 4",
+      "1 dan 4"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel lafal, peserta didik dapat menganalisis lafal yang mengandung idgam bilagunah.",
+     "pembahasan": "Nomor 2 (nun sukun bertemu ر) dan nomor 3 (tanwin bertemu ل) adalah idgam bilagunah. Nomor 1 dan 4 idgam bigunah.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Huruf idgam bigunah dapat dihafal dengan singkatan ____",
      "kunci": "yanmu (ي ن م و)",
@@ -1138,6 +1153,21 @@ window.BANK_SOAL["4"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nSetiap pagi Raka membantu ibu menyiapkan sarapan. Sepulang sekolah ia menjaga adiknya yang masih kecil. Suatu sore kakaknya meminta tolong membawakan buku dari kamar, tetapi Raka menjawab \"nanti saja\" sambil terus bermain gim.\nSikap Raka yang perlu diperbaiki adalah ...",
+     "opsi": [
+      "membantu ibu menyiapkan sarapan",
+      "menjaga adik sepulang sekolah",
+      "menunda membantu kakak karena bermain gim",
+      "berangkat ke sekolah setiap pagi"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menganalisis sikap yang kurang tepat terhadap anggota keluarga.",
+     "pembahasan": "Kepada kakak kita harus hormat dan segera menolong. Menunda karena bermain gim perlu diperbaiki.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Menyambung tali persaudaraan disebut ____",
      "kunci": "silaturahmi",
@@ -1454,6 +1484,21 @@ window.BANK_SOAL["4"] = {
      "gambar": [
       "img/bank/k4-duha.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan kegiatan beberapa anak berikut!\n| Nama | Kegiatan |\n| Bagas | Salat dua rakaat sebelum salat Subuh |\n| Salsa | Salat dua rakaat pada pukul 08.00 pagi |\n| Dimas | Salat dua rakaat setelah bangun tidur pukul 03.00 dini hari |\n| Nayla | Salat dua rakaat setelah salat Magrib |\nAnak yang mengerjakan salat Tahajud adalah ...",
+     "opsi": [
+      "Bagas",
+      "Salsa",
+      "Dimas",
+      "Nayla"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan tabel kegiatan salat beberapa anak, peserta didik dapat menentukan anak yang mengerjakan salat Tahajud.",
+     "pembahasan": "Salat Tahajud dikerjakan pada malam hari setelah bangun tidur. Bagas qabliyah Subuh, Salsa Duha, Nayla ba'diyah Magrib.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -2728,6 +2773,21 @@ window.BANK_SOAL["4"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Perilaku |\n| 1 | Dina mengembalikan buku pinjaman tepat waktu |\n| 2 | Arif menyampaikan pesan guru kepada teman-temannya |\n| 3 | Sari berbohong agar tidak dimarahi |\n| 4 | Bima menyelesaikan masalah dengan berpikir cerdas |\nPerilaku yang TIDAK meneladani sifat wajib rasul ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan tabel perilaku, peserta didik dapat menganalisis perilaku yang bertentangan dengan sifat wajib rasul.",
+     "pembahasan": "Berbohong bertentangan dengan sifat ṣiddīq (jujur). Nomor 1 amānah, 2 tablīg, 4 faṭānah.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Rasul ulul azmi berjumlah ____",
      "kunci": "lima",
@@ -3680,6 +3740,21 @@ window.BANK_SOAL["4"] = {
      "gambar": [
       "img/bank/k4-hijrah.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan peristiwa berikut!\n| No | Peristiwa |\n| 1 | Nabi dan Abu Bakar bersembunyi di Gua Tsur |\n| 2 | Kaum Quraisy berencana membunuh Nabi |\n| 3 | Nabi tiba di Quba dan membangun masjid |\n| 4 | Ali bin Abi Talib tidur di tempat tidur Nabi |\nUrutan peristiwa hijrah yang benar adalah ...",
+     "opsi": [
+      "2 – 4 – 1 – 3",
+      "4 – 2 – 1 – 3",
+      "2 – 1 – 4 – 3",
+      "1 – 2 – 4 – 3"
+     ],
+     "kunci": "A",
+     "level": "C4",
+     "indikator": "Disajikan tabel peristiwa, peserta didik dapat mengurutkan peristiwa hijrah Nabi.",
+     "pembahasan": "Quraisy berencana membunuh Nabi, Ali menggantikan di tempat tidur, Nabi bersembunyi di Gua Tsur, lalu tiba di Quba.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",

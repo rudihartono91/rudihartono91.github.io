@@ -356,8 +356,10 @@ function susun(){
     soal=soal.concat(pick.map(x=>normSoal(x.s,x.m)));
   }
   if(!soal.length){toast('Isi jumlah soal minimal 1.');return}
+  /* pilihan berupa nomor/urutan (mis. "1 dan 3", "2 – 4 – 1 – 3") tidak diacak agar tetap rapi */
+  const urutan=s=>s.opsi.every(o=>/^[\d\s,.–-]*(dan[\d\s,.–-]*)?(kg)?$/.test(o.trim()));
   if($('#acakOpsi').checked)soal.forEach(s=>{
-    if(s.bentuk==='pg'||s.bentuk==='pgk'){const ord=shuffle([...s.opsi.keys()]);const op=ord.map(i=>s.opsi[i]);
+    if((s.bentuk==='pg'||s.bentuk==='pgk')&&!urutan(s)){const ord=shuffle([...s.opsi.keys()]);const op=ord.map(i=>s.opsi[i]);
       s.kunci=s.bentuk==='pg'?ord.indexOf(s.kunci):s.kunci.map(k=>ord.indexOf(k));s.opsi=op}});
   const judulM=ms.length<=3?ms.map(m=>m.judul).join(', '):ms.length+' materi';
   const n=(LS.get('bankHitung',0)%26);LS.set('bankHitung',n+1);

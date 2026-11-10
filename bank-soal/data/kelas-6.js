@@ -1138,6 +1138,21 @@ window.BANK_SOAL["6"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nFajar bertetangga dengan Pak Yohanes yang beragama Kristen. Saat Natal, keluarga Pak Yohanes mengadakan acara di rumahnya. Teman Fajar mengajaknya membunyikan petasan di depan rumah Pak Yohanes agar acaranya terganggu.\nSikap toleransi Fajar yang tepat adalah ...",
+     "opsi": [
+      "ikut membunyikan petasan",
+      "ikut beribadah dalam perayaan tersebut",
+      "menolak ajakan teman dan tetap menjaga hubungan baik",
+      "tidak mau lagi menyapa Pak Yohanes"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan cerita, peserta didik dapat menentukan sikap toleransi terhadap tetangga nonmuslim.",
+     "pembahasan": "Toleransi berarti tidak mengganggu ibadah agama lain dan tetap berbuat baik, tanpa ikut beribadah bersama mereka.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Sikap menghargai perbedaan disebut ____",
      "kunci": "toleransi",
@@ -1454,6 +1469,21 @@ window.BANK_SOAL["6"] = {
      "gambar": [
       "img/bank/k6-beras.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan cerita berikut!\nKeluarga Pak Ahmad terdiri atas ayah, ibu, dan tiga orang anak. Menjelang Idulfitri, mereka membayar zakat fitrah berupa beras sebanyak 2,5 kg untuk setiap orang.\nJumlah beras yang harus dikeluarkan keluarga Pak Ahmad adalah ...",
+     "opsi": [
+      "7,5 kg",
+      "10 kg",
+      "12,5 kg",
+      "15 kg"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan cerita, peserta didik dapat menghitung zakat fitrah sebuah keluarga.",
+     "pembahasan": "Anggota keluarga 5 orang × 2,5 kg = 12,5 kg beras.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -2092,6 +2122,21 @@ window.BANK_SOAL["6"] = {
      ]
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Lafal |\n| 1 | قَالَ اللّٰهُ |\n| 2 | بِسْمِ اللّٰهِ |\n| 3 | نَصْرُ اللّٰهِ |\n| 4 | لِلّٰهِ |\nLam jalalah yang dibaca tipis (tarqiq) ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "C",
+     "level": "C4",
+     "indikator": "Disajikan tabel lafal, peserta didik dapat menganalisis bacaan lam jalalah yang tarqiq.",
+     "pembahasan": "Lam jalalah dibaca tipis jika didahului kasrah: nomor 2 (بِسْمِ) dan 4 (لِ). Nomor 1 dan 3 didahului fathah/dammah sehingga tebal.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Bacaan tebal disebut ____",
      "kunci": "tafkhim",
@@ -2726,6 +2771,21 @@ window.BANK_SOAL["6"] = {
      "gambar": [
       "img/bank/k6-qada-qadar.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan sikap beberapa anak menjelang ujian berikut!\n| Nama | Sikap |\n| Rina | Belajar sungguh-sungguh, berdoa, lalu menerima hasilnya |\n| Toni | Tidak belajar, tetapi berdoa agar nilainya bagus |\n| Mira | Belajar keras, tetapi marah ketika nilainya kurang |\n| Yusuf | Berlatih soal, berdoa, dan bersyukur atas hasilnya |\nAnak yang menunjukkan sikap ikhtiar, doa, dan tawakal dengan benar adalah ...",
+     "opsi": [
+      "Rina dan Toni",
+      "Toni dan Mira",
+      "Mira dan Yusuf",
+      "Rina dan Yusuf"
+     ],
+     "kunci": "D",
+     "level": "C4",
+     "indikator": "Disajikan tabel sikap, peserta didik dapat menganalisis sikap beriman kepada qada dan qadar.",
+     "pembahasan": "Rina dan Yusuf berikhtiar, berdoa, dan menerima hasil. Toni tidak berikhtiar, Mira tidak bertawakal.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",
@@ -3680,6 +3740,21 @@ window.BANK_SOAL["6"] = {
      "gambar": [
       "img/bank/k6-usman-ali.png"
      ]
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Perhatikan tabel berikut!\n| No | Jasa |\n| 1 | Membukukan Al-Qur'an dalam satu mushaf standar |\n| 2 | Menetapkan kalender Hijriah |\n| 3 | Membeli dan mewakafkan sumur Raumah |\n| 4 | Memerangi kaum yang menolak membayar zakat |\nJasa Usman bin Affan ditunjukkan oleh nomor ...",
+     "opsi": [
+      "1 dan 2",
+      "1 dan 3",
+      "2 dan 4",
+      "3 dan 4"
+     ],
+     "kunci": "B",
+     "level": "C4",
+     "indikator": "Disajikan tabel jasa khalifah, peserta didik dapat menganalisis jasa Usman bin Affan.",
+     "pembahasan": "Usman membukukan Mushaf Usmani dan mewakafkan sumur Raumah. Kalender Hijriah jasa Umar; memerangi penolak zakat jasa Abu Bakar.",
+     "perlu_cek": true
     },
     {
      "bentuk": "isian",
