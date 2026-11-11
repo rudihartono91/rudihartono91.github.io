@@ -199,7 +199,7 @@ let MODE=LS.get('bankMode','sas1');
 function renderPreset(){
   $$('#preset button').forEach(b=>b.classList.toggle('on',b.dataset.p===MODE));
   if(K){const t=SAS(K);const tx=`${t.pg} PG · ${t.isian} IS · ${t.uraian} UT`;$('#ps1').textContent=tx;$('#ps2').textContent=tx}
-  const info={sas1:'Materi semester 1 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',sas2:'Materi semester 2 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',bab:'Centang satu materi/bab yang diujikan.',bebas:'Isi jumlah soal sesuai kebutuhan.',sekolah:'Paket asli SAS Semester I SDN Slipi 15 lengkap dengan kunci, kisi-kisi, dan gambar. Urutan soal sama dengan dokumen sekolah.'}[MODE];
+  const info={sas1:'Materi semester 1 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',sas2:'Materi semester 2 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',bab:'Centang materi yang diujikan: 1 materi = Sumatif Harian, beberapa materi = Sumatif Tengah Semester.',bebas:'Isi jumlah soal sesuai kebutuhan.',sekolah:'Paket asli SAS Semester I SDN Slipi 15 lengkap dengan kunci, kisi-kisi, dan gambar. Urutan soal sama dengan dokumen sekolah.'}[MODE];
   $('#presetInfo').textContent=info||'';
 }
 function terapkanPreset(centang){
@@ -274,6 +274,7 @@ function renderJml(){
   const tampil=URUT.filter(b=>P[b].length||['pg','isian','uraian'].includes(b));
   const kurang=tampil.filter(b=>(saved[b]||0)>P[b].length);
   setTimeout(()=>{if(kurang.length&&MODE!=='bebas')$('#presetInfo').innerHTML='⚠ Soal tersedia belum cukup untuk '+kurang.map(b=>BENTUK[b]).join(', ')+'. Centang materi tambahan atau ubah jumlah.'},0);
+  setTimeout(()=>{const t=terpilih();if(t.length&&MODE!=='sekolah')$('#presetInfo').innerHTML+=`<br>Judul otomatis: <b>${jenisAsesmen(t)}</b> (${t.length} materi dicentang).`},0);
   setTimeout(()=>{const sm=new Set(terpilih().map(m=>m.semester));if(sm.size>1&&MODE!=='sekolah')$('#presetInfo').innerHTML+='<br><b style="color:#9a6b00">ⓘ Materi semester 1 dan 2 tercampur.</b> Untuk SAS, pilih tombol SAS Semester 1 atau 2.'},0);
   $('#jml').innerHTML='<small><b>Bentuk</b></small><small><b>Jumlah</b></small><small><b>Tersedia</b></small>'+tampil.map(b=>`<span>${BENTUK[b]}</span><input type="number" min="0" max="${P[b].length}" data-b="${b}" value="${Math.min(saved[b]||0,P[b].length)}" ${P[b].length?'':'disabled'}><small>${P[b].length}</small>`).join('');
 }
@@ -339,6 +340,13 @@ function tampilSekolah(){
   render();window.scrollTo({top:0,behavior:'smooth'});
 }
 
+function jenisAsesmen(ms){
+  const n=ms.length,sm=[...new Set(ms.map(m=>m.semester))],semua=dataK?dataK.materi:[];
+  if(n===1)return 'Sumatif Harian';
+  if(sm.length===1){const tot=semua.filter(m=>m.semester===sm[0]).length;return n>=tot?'Sumatif Akhir Semester':'Sumatif Tengah Semester'}
+  if(n>=semua.length)return 'Sumatif Akhir Tahun';
+  return 'Sumatif Tengah Semester';
+}
 /* ===== susun paket ===== */
 function ambilMerata(list,n){
   // ambil n soal secara acak, merata antar materi
@@ -367,8 +375,14 @@ function susun(){
   const judulM=ms.length<=3?ms.map(m=>m.judul).join(', '):ms.length+' materi';
   const n=(LS.get('bankHitung',0)%26);LS.set('bankHitung',n+1);
   const kode=String.fromCharCode(65+n);const sas=MODE==='sas1'||MODE==='sas2';
-  const jenis=sas?'Sumatif Akhir Semester':(MODE==='bab'?'Sumatif Lingkup Materi':'');
-  const judul=sas?`Sumatif Akhir Semester ${MODE==='sas1'?1:2} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`:(MODE==='bab'?`Sumatif ${judulM} – PAI Kelas ${K} (Paket ${kode})`:`Asesmen PAI Kelas ${K} – ${judulM} (Paket ${kode})`);
+  /* jenis asesmen ditentukan dari materi yang dicentang:
+     1 materi = Sumatif Harian; semua materi satu semester = Sumatif Akhir Semester;
+     selain itu (2 materi atau lebih, belum semua) = Sumatif Tengah Semester */
+  const jenis=jenisAsesmen(ms);const smSet=[...new Set(ms.map(m=>m.semester))];
+  const smTeks=smSet.length===1?' '+smSet[0]:'';
+  const judul=jenis==='Sumatif Harian'?`Sumatif Harian – ${ms[0].judul} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`
+    :jenis==='Sumatif Akhir Tahun'?`Sumatif Akhir Tahun – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`
+    :`${jenis}${smTeks} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`;
   paket={id:uid(),judul,jenis,kelas:K,fase:fase(K),
     semester:[...new Set(ms.map(m=>m.semester))].join(' & '),elemen:[...new Set(ms.map(m=>m.elemen))].join('; '),
     materi:ms.map(m=>m.judul).join('; '),tp:ms.map(m=>m.tp).join(' '),dibuat:new Date().toISOString(),soal};
