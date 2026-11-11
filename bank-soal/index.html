@@ -348,7 +348,11 @@ const NAMA_DOK={soal:'SOAL SAS',kunci:'KUNCI JAWABAN SAS',kisi:'PENYEBARAN SOAL 
 function htmlDok(kelas,varian){
   if(!dokMan||!dokMan.kelas[kelas])return '';const v=varian==='ABK'?'abk':'reg';const d=dokMan.kelas[kelas][v];if(!d)return '';
   return `<div class="dok"><h4>📂 Dokumen asli sekolah · Kelas ${kelas} · ${varian==='ABK'?'Soal ABK':'Soal Reguler'}</h4><p>Sama persis dengan dokumen SAS sekolah (kop, tabel, dan format asli). <b>Lihat</b> membuka PDF, <b>Word</b> mengunduh file .docx.</p>`
-   +JENIS_DOK.map(([j,l])=>d[j]?`<div class="dr"><b>${l}</b><button class="btn" data-dok="${kelas}|${v}|${j}|pdf">👁 Lihat</button><button class="btn" data-dok="${kelas}|${v}|${j}|docx">⬇ Word</button></div>`:'').join('')+'</div>';
+   +JENIS_DOK.map(([j,l])=>!d[j]?'':v==='abk'
+      ?`<div class="dr"><b>${l}</b><a class="btn" href="dokumen-sas/${d[j].pdf}" target="_blank" rel="noopener">👁 Lihat</a><a class="btn" href="dokumen-sas/${d[j].docx}" download="${NAMA_DOK[j]} ABK KELAS ${kelas} PAI TP ${dokMan.tahun.replace('/','-')}.docx">⬇ Word</a></div>`
+      :`<div class="dr"><b>${l}</b><button class="btn" data-dok="${kelas}|${v}|${j}|pdf">👁 Lihat</button><button class="btn" data-dok="${kelas}|${v}|${j}|docx">⬇ Word</button></div>`).join('')
+   +(/FBAN|FBAV|Instagram|WhatsApp|Line\/|; wv\)/.test(navigator.userAgent)?'<p style="color:#b3261e;margin-top:8px">⚠ Halaman ini dibuka dari dalam aplikasi (WhatsApp/Instagram/Facebook). Unduhan sering diblokir di sini — buka situs lewat <b>Chrome</b> atau browser biasa.</p>':'')
+   +(!(window.isSecureContext&&crypto.subtle)?'<p style="color:#b3261e;margin-top:8px">⚠ Buka situs dengan alamat <b>https://</b> agar dokumen reguler bisa dibuka.</p>':'')+'</div>';
 }
 async function ambilDok(kelas,v,j,ext){
   const name=dokMan.kelas[kelas][v][j][ext];const r=await fetch('dokumen-sas/'+name+'?v='+Date.now());if(!r.ok)throw new Error('berkas');let buf=await r.arrayBuffer();
@@ -367,7 +371,7 @@ document.addEventListener('click',async e=>{const b=e.target.closest('[data-dok]
     const nama=`${NAMA_DOK[j]}${v==='abk'?' ABK':''} KELAS ${kelas} PAI TP ${dokMan.tahun.replace('/','-')}.${ext}`;
     if(win){win.location.href=url}else{const a=document.createElement('a');a.href=url;a.download=nama;document.body.appendChild(a);a.click();a.remove();toast('Mengunduh '+nama)}
     setTimeout(()=>URL.revokeObjectURL(url),60000);
-  }catch(err){if(win)win.close();toast(err.message==='sandi'?'Masukkan kata sandi soal reguler terlebih dahulu.':'Dokumen tidak dapat dibuka. Periksa koneksi internet.')}
+  }catch(err){if(win)win.close();console.error(err);toast(err.message==='sandi'?'Masukkan kata sandi soal reguler terlebih dahulu.':!crypto.subtle?'Buka situs dengan alamat https:// lalu coba lagi.':'Dokumen tidak dapat dibuka ('+(err.message||err.name||'galat')+'). Coba muat ulang halaman.')}
 });
 function tampilSekolah(){
   const id=($('#sekolahBox input:checked')||{}).value;const src=(sekolahData||[]).find(p=>p.id===id);if(!src){toast('Pilih paket terlebih dahulu.');return}
