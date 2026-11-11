@@ -136,7 +136,7 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600}
         <button data-p="sas2">SAS Semester 2<small id="ps2"></small></button>
         <button data-p="bab">Sumatif per bab<small>10 PG · 10 IS · 5 UT</small></button>
         <button data-p="bebas">Atur sendiri<small>isi jumlah bebas</small></button>
-        <button data-p="sekolah" class="wide">📄 Paket SAS Sekolah<small>soal asli SDN Slipi 15 · TP 2026/2027</small></button>
+        <button data-p="sekolah" class="wide">📄 Paket SAS Sekolah<small>SDN Slipi 15 · TP 2026/2027</small></button>
       </div>
       <div class="jml nonsek" id="jml"></div>
       <div class="skl" id="sekolahBox" hidden></div>
@@ -205,7 +205,7 @@ let MODE=LS.get('bankMode','sas1');
 function renderPreset(){
   $$('#preset button').forEach(b=>b.classList.toggle('on',b.dataset.p===MODE));
   if(K){const t=SAS(K);const tx=`${t.pg} PG · ${t.isian} IS · ${t.uraian} UT`;$('#ps1').textContent=tx;$('#ps2').textContent=tx}
-  const info={sas1:'Materi semester 1 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',sas2:'Materi semester 2 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',bab:'Centang materi yang diujikan: 1 materi = Sumatif Harian, beberapa materi = Sumatif Tengah Semester.',bebas:'Isi jumlah soal sesuai kebutuhan.',sekolah:'Dokumen asli SAS Semester I SDN Slipi 15: Soal, Kunci & Penskoran, serta Penyebaran Soal & Kisi-kisi, sama persis dengan file sekolah. Tombol di bawah menampilkan soal di layar atau papan interaktif (Kuis).'}[MODE];
+  const info={sas1:'Materi semester 1 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',sas2:'Materi semester 2 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',bab:'Centang materi yang diujikan: 1 materi = Sumatif Harian, beberapa materi = Sumatif Tengah Semester.',bebas:'Isi jumlah soal sesuai kebutuhan.',sekolah:'Dokumen Sumatif Akhir Semester I SDN Slipi 15 Tahun Pelajaran 2026/2027: soal, kunci jawaban dan penskoran, serta penyebaran soal dan kisi-kisi. Tombol di bawah menampilkan soal di layar atau papan interaktif.'}[MODE];
   $('#presetInfo').textContent=info||'';
 }
 function terapkanPreset(centang){
@@ -347,7 +347,7 @@ const JENIS_DOK=[['soal','📝 Soal'],['kunci','🔑 Kunci Jawaban & Penskoran']
 const NAMA_DOK={soal:'SOAL SAS',kunci:'KUNCI JAWABAN SAS',kisi:'PENYEBARAN SOAL DAN KISI-KISI SAS'};
 function htmlDok(kelas,varian){
   if(!dokMan||!dokMan.kelas[kelas])return '';const v=varian==='ABK'?'abk':'reg';const d=dokMan.kelas[kelas][v];if(!d)return '';
-  return `<div class="dok"><h4>📂 Dokumen asli sekolah · Kelas ${kelas} · ${varian==='ABK'?'Soal ABK':'Soal Reguler'}</h4><p>Sama persis dengan dokumen SAS sekolah (kop, tabel, dan format asli). <b>Lihat</b> membuka PDF, <b>Word</b> mengunduh file .docx.</p>`
+  return `<div class="dok"><h4>📂 Dokumen SAS Kelas ${kelas} · ${varian==='ABK'?'Soal ABK':'Soal Reguler'}</h4><p>Pilih <b>Lihat</b> untuk membaca dokumen atau <b>Word</b> untuk mengunduhnya.</p>`
    +JENIS_DOK.map(([j,l])=>!d[j]?'':v==='abk'
       ?`<div class="dr"><b>${l}</b><a class="btn" href="dokumen-sas/${d[j].pdf}" target="_blank" rel="noopener">👁 Lihat</a><a class="btn" href="dokumen-sas/${d[j].docx}" download="${NAMA_DOK[j]} ABK KELAS ${kelas} PAI TP ${dokMan.tahun.replace('/','-')}.docx">⬇ Word</a></div>`
       :`<div class="dr"><b>${l}</b><button class="btn" data-dok="${kelas}|${v}|${j}|pdf">👁 Lihat</button><button class="btn" data-dok="${kelas}|${v}|${j}|docx">⬇ Word</button></div>`).join('')
