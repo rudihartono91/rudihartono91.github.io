@@ -342,7 +342,7 @@ function tampilSekolah(){
 
 function jenisAsesmen(ms){
   const n=ms.length,sm=[...new Set(ms.map(m=>m.semester))],semua=dataK?dataK.materi:[];
-  if(n===1)return 'Sumatif Harian';
+  if(n===1){const no=semua.filter(m=>m.semester===ms[0].semester).findIndex(m=>m.id===ms[0].id)+1;return 'Sumatif Harian'+(no>0?' '+no:'')}
   if(sm.length===1){const tot=semua.filter(m=>m.semester===sm[0]).length;return n>=tot?'Sumatif Akhir Semester':'Sumatif Tengah Semester'}
   if(n>=semua.length)return 'Sumatif Akhir Tahun';
   return 'Sumatif Tengah Semester';
@@ -380,7 +380,7 @@ function susun(){
      selain itu (2 materi atau lebih, belum semua) = Sumatif Tengah Semester */
   const jenis=jenisAsesmen(ms);const smSet=[...new Set(ms.map(m=>m.semester))];
   const smTeks=smSet.length===1?' '+smSet[0]:'';
-  const judul=jenis==='Sumatif Harian'?`Sumatif Harian – ${ms[0].judul} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`
+  const judul=jenis.startsWith('Sumatif Harian')?`${jenis} – ${ms[0].judul} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`
     :jenis==='Sumatif Akhir Tahun'?`Sumatif Akhir Tahun – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`
     :`${jenis}${smTeks} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`;
   paket={id:uid(),judul,jenis,kelas:K,fase:fase(K),
