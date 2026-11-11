@@ -8,12 +8,12 @@ window.BANK_SOAL["2"] = {
  "catatan": "Disusun sesuai ATP Fase A Revisi (CP BKPDM No. 020 Tahun 2026).",
  "materi": [
   {
-   "id": "k2-bersambung-3",
-   "kode": "1.1.5",
-   "judul": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)",
+   "id": "k2-bersambung-an-nas",
+   "kode": "1.1.5 & 1.1.6",
+   "judul": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih) dan Menghafal Surah An-Nās",
    "semester": 1,
    "elemen": "Al-Qur'an dan Hadis",
-   "tp": "Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+   "tp": "Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih). Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
    "soal": [
     {
      "bentuk": "pg",
@@ -27,7 +27,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "كَتَبَ dibaca dari kanan: ka-ta-ba.",
      "indikator": "Disajikan tiga huruf bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -41,7 +43,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "جَلَسَ dibaca ja-la-sa.",
      "indikator": "Disajikan tiga huruf bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -55,7 +59,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "ذَ adalah żal, dibaca żahaba.",
      "indikator": "Disajikan tiga huruf bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -69,7 +75,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "خَ dibaca kha, لَ la, قَ qa.",
      "indikator": "Disajikan tiga huruf bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -83,7 +91,9 @@ window.BANK_SOAL["2"] = {
      "level": "C3",
      "pembahasan": "Fa-ta-ḥa ditulis فَتَحَ, dimulai dari kanan.",
      "indikator": "Disajikan bacaan latin, peserta didik dapat menentukan tulisan Arabnya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -97,7 +107,9 @@ window.BANK_SOAL["2"] = {
      "level": "C3",
      "pembahasan": "Sa-ja-da ditulis سَجَدَ.",
      "indikator": "Disajikan bacaan latin, peserta didik dapat menentukan tulisan Arabnya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -111,7 +123,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Tulisan Arab dibaca dari kanan. Huruf pertama adalah nun.",
      "indikator": "Disajikan tulisan bersambung, peserta didik dapat menunjukkan huruf pertamanya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -125,7 +139,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "شَ كَ رَ: tiga huruf.",
      "indikator": "Disajikan tulisan bersambung, peserta didik dapat menghitung jumlah hurufnya.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -139,7 +155,9 @@ window.BANK_SOAL["2"] = {
      "level": "C4",
      "pembahasan": "Dibaca dari kanan: ra-za-qa.",
      "indikator": "Disajikan kesalahan membaca, peserta didik dapat menentukan bacaan yang benar.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -153,7 +171,9 @@ window.BANK_SOAL["2"] = {
      "level": "C4",
      "pembahasan": "Huruf di awal kata ditulis lebih pendek agar bisa disambung.",
      "indikator": "Peserta didik dapat menganalisis perubahan bentuk huruf ketika disambung.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "pg",
@@ -170,158 +190,10 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": true,
      "gambar": [
       "img/bank/k2-bersambung-3.png"
-     ]
+     ],
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Tulisan عَلِمَ dibaca ____",
-     "kunci": "'alima",
-     "level": "C2",
-     "pembahasan": "'A-li-ma.",
-     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Tulisan قَرَأَ dibaca ____",
-     "kunci": "qara'a",
-     "level": "C2",
-     "pembahasan": "Qa-ra-'a.",
-     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Tulisan سَمِعَ dibaca ____",
-     "kunci": "sami'a",
-     "level": "C2",
-     "pembahasan": "Sa-mi-'a.",
-     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Tulisan حَمَلَ dibaca ____",
-     "kunci": "ḥamala",
-     "level": "C2",
-     "pembahasan": "Ḥa-ma-la.",
-     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Tulisan بَلَغَ dibaca ____",
-     "kunci": "balagha",
-     "level": "C2",
-     "pembahasan": "Ba-la-gha.",
-     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Tulisan يَدُلُ dibaca ____",
-     "kunci": "yadulu",
-     "level": "C3",
-     "pembahasan": "Ya-du-lu. Perhatikan harakat dammah.",
-     "indikator": "Disajikan tulisan dengan harakat berbeda, peserta didik dapat membacanya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Tulisan هُوَ dibaca ____",
-     "kunci": "huwa",
-     "level": "C2",
-     "pembahasan": "Hu-wa.",
-     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Bacaan \"kataba\" ditulis ____",
-     "kunci": "كَتَبَ",
-     "level": "C3",
-     "pembahasan": "Ka-ta-ba.",
-     "indikator": "Disajikan bacaan latin, peserta didik dapat menuliskan huruf bersambungnya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Bacaan \"jama'a\" ditulis ____",
-     "kunci": "جَمَعَ",
-     "level": "C3",
-     "pembahasan": "Ja-ma-'a.",
-     "indikator": "Disajikan bacaan latin, peserta didik dapat menuliskan huruf bersambungnya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "isian",
-     "pertanyaan": "Huruf hijaiah bersambung dibaca dari arah ____",
-     "kunci": "kanan ke kiri",
-     "level": "C1",
-     "pembahasan": "Tulisan Arab dibaca dari kanan.",
-     "indikator": "Peserta didik dapat menyebutkan arah membaca.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "uraian",
-     "pertanyaan": "Tuliskan bacaan latin dari: كَتَبَ , جَلَسَ , خَلَقَ",
-     "kunci": "kataba, jalasa, khalaqa",
-     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
-     "level": "C2",
-     "pembahasan": "Tiga huruf bersambung berharakat fathah.",
-     "indikator": "Disajikan tiga tulisan, peserta didik dapat menuliskan bacaannya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "uraian",
-     "pertanyaan": "Sambungkan huruf berikut menjadi satu kata: فَ + تَ + حَ",
-     "kunci": "فَتَحَ (fataḥa)",
-     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
-     "level": "C3",
-     "pembahasan": "Huruf disambung dari kanan.",
-     "indikator": "Disajikan huruf terpisah, peserta didik dapat menyambungkannya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "uraian",
-     "pertanyaan": "Pisahkan huruf-huruf pada tulisan نَصَرَ!",
-     "kunci": "نَ + صَ + رَ",
-     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
-     "level": "C3",
-     "pembahasan": "Nun, shad, ra.",
-     "indikator": "Disajikan tulisan bersambung, peserta didik dapat memisahkan hurufnya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "uraian",
-     "pertanyaan": "Apa perbedaan bacaan سَمِعَ dan سَمَعَ ?",
-     "kunci": "سَمِعَ dibaca sami'a (mim berkasrah). سَمَعَ dibaca sama'a (mim berfathah).",
-     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
-     "level": "C4",
-     "pembahasan": "Harakat yang berbeda mengubah bacaan.",
-     "indikator": "Disajikan dua tulisan, peserta didik dapat membandingkan bacaannya.",
-     "perlu_cek": false
-    },
-    {
-     "bentuk": "uraian",
-     "pertanyaan": "Temanmu membaca جَلَسَ menjadi \"salaja\". Benarkah? Jelaskan!",
-     "kunci": "Tidak benar. Tulisan Arab dibaca dari kanan, jadi dibaca jalasa.",
-     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
-     "level": "C5",
-     "pembahasan": "Arah membaca dari kanan.",
-     "indikator": "Disajikan kesalahan membaca, peserta didik dapat menilai dan memberi alasan.",
-     "perlu_cek": false
-    }
-   ]
-  },
-  {
-   "id": "k2-an-nas",
-   "kode": "1.1.6",
-   "judul": "Menghafal Surah An-Nās",
-   "semester": 1,
-   "elemen": "Al-Qur'an dan Hadis",
-   "tp": "Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
-   "soal": [
     {
      "bentuk": "pg",
      "pertanyaan": "Surah An-Nās terdiri atas ... ayat.",
@@ -334,7 +206,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "An-Nās enam ayat.",
      "indikator": "Peserta didik dapat menyebutkan jumlah ayat Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -348,7 +222,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "An-Nās artinya manusia.",
      "indikator": "Peserta didik dapat menyebutkan arti An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -362,7 +238,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "An-Nās surah ke-114, surah terakhir.",
      "indikator": "Peserta didik dapat menyebutkan urutan Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -376,7 +254,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "Ayat pertama: Qul a'ūżu birabbin-nās.",
      "indikator": "Peserta didik dapat menyebutkan ayat pertama Surah An-Nās.",
-     "perlu_cek": true
+     "perlu_cek": true,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -390,7 +270,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Kita berlindung dari kejahatan bisikan setan.",
      "indikator": "Peserta didik dapat menjelaskan isi Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -404,7 +286,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Malik artinya Raja.",
      "indikator": "Disajikan lafal ayat, peserta didik dapat menyebutkan artinya.",
-     "perlu_cek": true
+     "perlu_cek": true,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -418,7 +302,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Al-Ikhlas, Al-Falaq, dan An-Nās dianjurkan dibaca sebelum tidur.",
      "indikator": "Peserta didik dapat menyebutkan waktu membaca Surah An-Nās.",
-     "perlu_cek": true
+     "perlu_cek": true,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -432,7 +318,9 @@ window.BANK_SOAL["2"] = {
      "level": "C3",
      "pembahasan": "Bisikan berbuat buruk dari setan; kita berlindung kepada Allah.",
      "indikator": "Disajikan situasi, peserta didik dapat menerapkan pesan Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -446,7 +334,9 @@ window.BANK_SOAL["2"] = {
      "level": "C4",
      "pembahasan": "Surah An-Nās berisi perlindungan bagi manusia.",
      "indikator": "Peserta didik dapat menganalisis isi Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -460,7 +350,9 @@ window.BANK_SOAL["2"] = {
      "level": "C3",
      "pembahasan": "Hafalan dijaga dengan sering mengulang.",
      "indikator": "Peserta didik dapat menentukan cara menjaga hafalan.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "pg",
@@ -477,7 +369,119 @@ window.BANK_SOAL["2"] = {
      "perlu_cek": false,
      "gambar": [
       "img/bank/k2-an-nas.png"
-     ]
+     ],
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tulisan عَلِمَ dibaca ____",
+     "kunci": "'alima",
+     "level": "C2",
+     "pembahasan": "'A-li-ma.",
+     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tulisan قَرَأَ dibaca ____",
+     "kunci": "qara'a",
+     "level": "C2",
+     "pembahasan": "Qa-ra-'a.",
+     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tulisan سَمِعَ dibaca ____",
+     "kunci": "sami'a",
+     "level": "C2",
+     "pembahasan": "Sa-mi-'a.",
+     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tulisan حَمَلَ dibaca ____",
+     "kunci": "ḥamala",
+     "level": "C2",
+     "pembahasan": "Ḥa-ma-la.",
+     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tulisan بَلَغَ dibaca ____",
+     "kunci": "balagha",
+     "level": "C2",
+     "pembahasan": "Ba-la-gha.",
+     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tulisan يَدُلُ dibaca ____",
+     "kunci": "yadulu",
+     "level": "C3",
+     "pembahasan": "Ya-du-lu. Perhatikan harakat dammah.",
+     "indikator": "Disajikan tulisan dengan harakat berbeda, peserta didik dapat membacanya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Tulisan هُوَ dibaca ____",
+     "kunci": "huwa",
+     "level": "C2",
+     "pembahasan": "Hu-wa.",
+     "indikator": "Disajikan tulisan bersambung, peserta didik dapat membacanya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Bacaan \"kataba\" ditulis ____",
+     "kunci": "كَتَبَ",
+     "level": "C3",
+     "pembahasan": "Ka-ta-ba.",
+     "indikator": "Disajikan bacaan latin, peserta didik dapat menuliskan huruf bersambungnya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Bacaan \"jama'a\" ditulis ____",
+     "kunci": "جَمَعَ",
+     "level": "C3",
+     "pembahasan": "Ja-ma-'a.",
+     "indikator": "Disajikan bacaan latin, peserta didik dapat menuliskan huruf bersambungnya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "isian",
+     "pertanyaan": "Huruf hijaiah bersambung dibaca dari arah ____",
+     "kunci": "kanan ke kiri",
+     "level": "C1",
+     "pembahasan": "Tulisan Arab dibaca dari kanan.",
+     "indikator": "Peserta didik dapat menyebutkan arah membaca.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "isian",
@@ -486,7 +490,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "Enam ayat.",
      "indikator": "Peserta didik dapat menyebutkan jumlah ayat.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -495,7 +501,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "Manusia.",
      "indikator": "Peserta didik dapat menyebutkan arti An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -504,7 +512,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "Surah ke-114.",
      "indikator": "Peserta didik dapat menyebutkan nomor surah.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -513,7 +523,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Al-Falaq surah ke-113.",
      "indikator": "Peserta didik dapat menyebutkan surah sebelum An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -522,7 +534,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Rabb artinya Tuhan.",
      "indikator": "Disajikan lafal, peserta didik dapat menyebutkan artinya.",
-     "perlu_cek": true
+     "perlu_cek": true,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -531,7 +545,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Ilāh artinya sembahan.",
      "indikator": "Disajikan lafal, peserta didik dapat menyebutkan artinya.",
-     "perlu_cek": true
+     "perlu_cek": true,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -540,7 +556,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Qul a'ūżu: aku berlindung.",
      "indikator": "Peserta didik dapat menjelaskan isi Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -549,7 +567,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Setan membisikkan kejahatan.",
      "indikator": "Peserta didik dapat menyebutkan isi ayat tentang pembisik.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -558,7 +578,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "Adab membaca Al-Qur'an.",
      "indikator": "Peserta didik dapat menyebutkan bacaan sebelum surah.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "isian",
@@ -567,7 +589,69 @@ window.BANK_SOAL["2"] = {
      "level": "C3",
      "pembahasan": "Berlindung dari bisikan setan.",
      "indikator": "Peserta didik dapat menerapkan pesan Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Tuliskan bacaan latin dari: كَتَبَ , جَلَسَ , خَلَقَ",
+     "kunci": "kataba, jalasa, khalaqa",
+     "rubrik": "Skor 3: 3 jawaban benar. Skor 2 sampai 1 sesuai jumlah jawaban benar. Skor 0: tidak ada yang benar.",
+     "level": "C2",
+     "pembahasan": "Tiga huruf bersambung berharakat fathah.",
+     "indikator": "Disajikan tiga tulisan, peserta didik dapat menuliskan bacaannya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Sambungkan huruf berikut menjadi satu kata: فَ + تَ + حَ",
+     "kunci": "فَتَحَ (fataḥa)",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Huruf disambung dari kanan.",
+     "indikator": "Disajikan huruf terpisah, peserta didik dapat menyambungkannya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Pisahkan huruf-huruf pada tulisan نَصَرَ!",
+     "kunci": "نَ + صَ + رَ",
+     "rubrik": "Skor 2: jawaban tepat. Skor 1: sebagian tepat. Skor 0: salah atau tidak menjawab.",
+     "level": "C3",
+     "pembahasan": "Nun, shad, ra.",
+     "indikator": "Disajikan tulisan bersambung, peserta didik dapat memisahkan hurufnya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Apa perbedaan bacaan سَمِعَ dan سَمَعَ ?",
+     "kunci": "سَمِعَ dibaca sami'a (mim berkasrah). سَمَعَ dibaca sama'a (mim berfathah).",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C4",
+     "pembahasan": "Harakat yang berbeda mengubah bacaan.",
+     "indikator": "Disajikan dua tulisan, peserta didik dapat membandingkan bacaannya.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
+    },
+    {
+     "bentuk": "uraian",
+     "pertanyaan": "Temanmu membaca جَلَسَ menjadi \"salaja\". Benarkah? Jelaskan!",
+     "kunci": "Tidak benar. Tulisan Arab dibaca dari kanan, jadi dibaca jalasa.",
+     "rubrik": "Skor 3: jawaban lengkap dan tepat. Skor 2: sebagian tepat. Skor 1: kurang tepat. Skor 0: tidak menjawab.",
+     "level": "C5",
+     "pembahasan": "Arah membaca dari kanan.",
+     "indikator": "Disajikan kesalahan membaca, peserta didik dapat menilai dan memberi alasan.",
+     "perlu_cek": false,
+     "tp": "1.1.5 Membaca dan membedakan huruf hijaiah bersambung (3 huruf atau lebih).",
+     "materi": "Huruf Hijaiah Bersambung (3 Huruf atau Lebih)"
     },
     {
      "bentuk": "uraian",
@@ -577,7 +661,9 @@ window.BANK_SOAL["2"] = {
      "level": "C1",
      "pembahasan": "Ayat pertama Surah An-Nās.",
      "indikator": "Peserta didik dapat menuliskan ayat pertama dan artinya.",
-     "perlu_cek": true
+     "perlu_cek": true,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "uraian",
@@ -587,7 +673,9 @@ window.BANK_SOAL["2"] = {
      "level": "C2",
      "pembahasan": "Tiga sebutan Allah.",
      "indikator": "Peserta didik dapat menyebutkan sebutan Allah dalam Surah An-Nās.",
-     "perlu_cek": true
+     "perlu_cek": true,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "uraian",
@@ -597,7 +685,9 @@ window.BANK_SOAL["2"] = {
      "level": "C3",
      "pembahasan": "Waktu membaca An-Nās.",
      "indikator": "Peserta didik dapat menerapkan bacaan Surah An-Nās.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "uraian",
@@ -607,7 +697,9 @@ window.BANK_SOAL["2"] = {
      "level": "C3",
      "pembahasan": "Cara menghafal.",
      "indikator": "Peserta didik dapat menjelaskan cara menghafal surah.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     },
     {
      "bentuk": "uraian",
@@ -617,7 +709,9 @@ window.BANK_SOAL["2"] = {
      "level": "C4",
      "pembahasan": "Alasan berlindung kepada Allah.",
      "indikator": "Peserta didik dapat menjelaskan alasan berlindung kepada Allah.",
-     "perlu_cek": false
+     "perlu_cek": false,
+     "tp": "1.1.6 Menghafal beberapa surah pendek Al-Qur'an (Surah An-Nās).",
+     "materi": "Menghafal Surah An-Nās"
     }
    ]
   },
