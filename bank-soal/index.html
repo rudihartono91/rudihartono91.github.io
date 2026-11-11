@@ -317,28 +317,37 @@ function htmlSandi(pesan){
     ${pesan?`<small style="color:#b3261e">${pesan}</small>`:''}
     <button class="btn pri" type="submit">Buka</button></form>`;
 }
+let sklPilih=null; // paket yang dipilih di panel kiri (belum ada pilihan saat pertama dibuka)
 async function renderSekolah(pesan){
   const box=$('#sekolahBox');if(!K){box.innerHTML='<p class="hint">Pilih kelas terlebih dahulu.</p>';$('#btnBuat').disabled=true;return}
-  abkData=abkData||await muatAbk();regData=regData||await muatReguler();if(MODE!=='sekolah')return;
+  abkData=abkData||await muatAbk();regData=regData||await muatReguler();dokMan=dokMan||await muatDok();if(MODE!=='sekolah')return;
   sekolahData=[...(regData||[]),...abkData];
-  const list=sekolahData.filter(p=>p.kelas===K);const pil=LS.get('bankSekolah_'+K,null);
-  let h=list.map(p=>{const c={};p.soal.forEach(x=>c[x.bentuk]=(c[x.bentuk]||0)+1);
-    return `<label><input type="radio" name="skl" value="${p.id}" ${p.id===pil?'checked':''}><span><b>SAS Semester ${p.semester} · ${p.varian==='ABK'?'Soal ABK':'Soal Reguler'}</b><small>TP ${esc(p.tahun)} · ${p.soal.length} soal (${c.pg||0} PG · ${c.isian||0} IS · ${c.uraian||0} UT)</small></span></label>`}).join('');
-  dokMan=dokMan||await muatDok();
-  const pilEl=list.find(p=>p.id===pil)||list[0];
-  if(pilEl&&(pilEl.varian==='ABK'||regData))h+=htmlDok(K,pilEl.varian);
-  if(!regData)h+=htmlSandi(pesan);
-  else if(K===3&&!list.some(p=>p.varian==='Reguler'))h+='<p class="hint">ⓘ Soal reguler Kelas 3 belum ada di berkas yang diunggah.</p>';
-  if(!list.length&&regData)h='<p class="hint">Belum ada paket SAS sekolah untuk Kelas '+K+'.</p>';
+  const abk=abkData.find(p=>p.kelas===K),reg=(regData||[]).find(p=>p.kelas===K);
+  const idReg='sas1-2026-'+K;if(sklPilih&&!sklPilih.endsWith('-'+K)&&!sklPilih.endsWith('abk-'+K))sklPilih=null;
+  const item=(id,judul,p,kunci)=>{const c={};if(p)p.soal.forEach(x=>c[x.bentuk]=(c[x.bentuk]||0)+1);
+    return `<label><input type="radio" name="skl" value="${id}" ${sklPilih===id?'checked':''}><span><b>${judul}${kunci?' 🔒':''}</b><small>${p?`TP ${esc(p.tahun)} · ${p.soal.length} soal (${c.pg||0} PG · ${c.isian||0} IS · ${c.uraian||0} UT)`:'Perlu kata sandi guru'}</small></span></label>`};
+  let h=item(idReg,'SAS Semester 1 · Soal Reguler',reg,!regData)+(abk?item(abk.id,'SAS Semester 1 · Soal ABK',abk,false):'');
+  if(sklPilih===idReg&&!regData)h+=htmlSandi(pesan);
+  if(!sklPilih)h+='<p class="hint" style="margin-top:6px">Pilih salah satu paket untuk membuka Dokumen Asli SAS.</p>';
   box.innerHTML=h;
-  if(list.length&&!box.querySelector('input:checked'))box.querySelector('input').checked=true;
-  $('#btnBuat').disabled=!list.length;
-  const f=$('#fSandi');if(f)f.onsubmit=async ev=>{ev.preventDefault();const pw=$('#iSandi').value;if(!pw)return;
+  const siap=sklPilih&&(sklPilih!==idReg||regData);
+  $('#btnBuat').disabled=!siap;
+  if(siap)tampilDokumen(K,sklPilih===idReg?'Reguler':'ABK');
+  else{paket=null;$('#toolbar').hidden=true;$('#hasil').innerHTML='<div class="card empty"><div class="big">📂</div><h3>Dokumen Asli SAS</h3><p>Pilih <b>Soal Reguler</b> atau <b>Soal ABK</b> di panel kiri.<br>Soal Reguler memerlukan kata sandi guru.</p></div>'}
+  const f=$('#fSandi');if(f){setTimeout(()=>{const i=$('#iSandi');if(i)i.focus()},50);f.onsubmit=async ev=>{ev.preventDefault();const pw=$('#iSandi').value;if(!pw)return;
     const btn=f.querySelector('button');btn.disabled=true;btn.textContent='Membuka…';
     try{regData=await bukaSekolah(pw);try{sessionStorage.setItem('sasPw',pw)}catch(_){}toast('Soal reguler terbuka.');renderSekolah()}
-    catch(err){renderSekolah(err.message==='data'?'Data paket tidak dapat dimuat. Periksa koneksi internet.':'Kata sandi salah.')}};
+    catch(err){renderSekolah(err.message==='data'?'Data paket tidak dapat dimuat. Periksa koneksi internet.':'Kata sandi salah.')}}}
 }
-$('#sekolahBox').addEventListener('change',e=>{if(e.target.name==='skl'){LS.set('bankSekolah_'+K,e.target.value);renderSekolah()}});
+/* area kanan: Dokumen Asli SAS untuk paket yang dipilih */
+function tampilDokumen(kelas,varian){
+  paket=null;$('#toolbar').hidden=true;
+  $('#hasil').innerHTML=`<div class="card" style="padding:18px 20px">${htmlDok(kelas,varian)}
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><button class="btn pri" id="btnLayar">🖥 Tampilkan Soal di Layar / Kuis</button></div></div>`;
+  $('#btnLayar').onclick=tampilSekolah;
+  if(innerWidth<900)setTimeout(()=>$('#hasil').scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+$('#sekolahBox').addEventListener('change',e=>{if(e.target.name==='skl'){sklPilih=e.target.value;renderSekolah()}});
 /* ===== dokumen asli sekolah (Word + PDF) ===== */
 let dokMan=null,dokKey=null;
 function muatDok(){return new Promise(res=>{if(window.SAS_DOKUMEN)return res(window.SAS_DOKUMEN);
@@ -347,7 +356,7 @@ const JENIS_DOK=[['soal','📝 Soal'],['kunci','🔑 Kunci Jawaban & Penskoran']
 const NAMA_DOK={soal:'SOAL SAS',kunci:'KUNCI JAWABAN SAS',kisi:'PENYEBARAN SOAL DAN KISI-KISI SAS'};
 function htmlDok(kelas,varian){
   if(!dokMan||!dokMan.kelas[kelas])return '';const v=varian==='ABK'?'abk':'reg';const d=dokMan.kelas[kelas][v];if(!d)return '';
-  return `<div class="dok"><h4>📂 Dokumen SAS Kelas ${kelas} · ${varian==='ABK'?'Soal ABK':'Soal Reguler'}</h4><p>Pilih <b>Lihat</b> untuk membaca dokumen atau <b>Word</b> untuk mengunduhnya.</p>`
+  return `<div class="dok"><h4>📂 Dokumen Asli SAS Kelas ${kelas} · ${varian==='ABK'?'Soal ABK':'Soal Reguler'}</h4><p>Pilih <b>Lihat</b> untuk membaca dokumen atau <b>Word</b> untuk mengunduhnya.</p>`
    +JENIS_DOK.map(([j,l])=>!d[j]?'':v==='abk'
       ?`<div class="dr"><b>${l}</b><a class="btn" href="dokumen-sas/${d[j].pdf}" target="_blank" rel="noopener">👁 Lihat</a><a class="btn" href="dokumen-sas/${d[j].docx}" download="${NAMA_DOK[j]} ABK KELAS ${kelas} PAI TP ${dokMan.tahun.replace('/','-')}.docx">⬇ Word</a></div>`
       :`<div class="dr"><b>${l}</b><button class="btn" data-dok="${kelas}|${v}|${j}|pdf">👁 Lihat</button><button class="btn" data-dok="${kelas}|${v}|${j}|docx">⬇ Word</button></div>`).join('')
@@ -374,7 +383,7 @@ document.addEventListener('click',async e=>{const b=e.target.closest('[data-dok]
   }catch(err){if(win)win.close();console.error(err);toast(err.message==='sandi'?'Masukkan kata sandi soal reguler terlebih dahulu.':!crypto.subtle?'Buka situs dengan alamat https:// lalu coba lagi.':'Dokumen tidak dapat dibuka ('+(err.message||err.name||'galat')+'). Coba muat ulang halaman.')}
 });
 function tampilSekolah(){
-  const id=($('#sekolahBox input:checked')||{}).value;const src=(sekolahData||[]).find(p=>p.id===id);if(!src){toast('Pilih paket terlebih dahulu.');return}
+  const id=sklPilih||($('#sekolahBox input:checked')||{}).value;const src=(sekolahData||[]).find(p=>p.id===id);if(!src){toast('Pilih paket terlebih dahulu.');return}
   const tpBy={};src.tp.forEach(t=>tpBy[t.no]=t);
   const soal=src.soal.map(x=>{const t=tpBy[x.tp_no]||{};const o=normSoal(x,{kode:'',tp:x.tp||t.teks||'',elemen:x.elemen||t.elemen||'',judul:x.materi||''});o.tp_no=x.tp_no;o.lv=x.lv;if(o.gambar)o.gambar=o.gambar.map(imgUrl);return o});
   paket={id:src.id+'-'+uid(),judul:src.judul,jenis:'Sumatif Akhir Semester',kelas:src.kelas,fase:src.fase,semester:String(src.semester),
