@@ -199,6 +199,51 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": true
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Lafal مِنَ الْجِنَّةِ وَالنَّاسِ mengandung bacaan gunnah sebanyak ...",
+     "opsi": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan lafal, peserta didik dapat menghitung bacaan gunnah.",
+     "pembahasan": "Gunnah pada الْجِنَّةِ dan النَّاسِ.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Suara gunnah keluar dari ...",
+     "opsi": [
+      "tenggorokan",
+      "bibir",
+      "rongga hidung",
+      "ujung lidah"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan tempat keluar suara gunnah.",
+     "pembahasan": "Dengung berasal dari rongga hidung.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Pada lafal ثُمَّ, huruf yang bertasydid adalah ...",
+     "opsi": [
+      "ت",
+      "ث",
+      "ا",
+      "م"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "indikator": "Disajikan lafal, peserta didik dapat menunjukkan huruf bertasydid.",
+     "pembahasan": "Huruf م pada ثُمَّ bertasydid.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Gunnah artinya ____",
      "kunci": "dengung",
@@ -532,6 +577,51 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Ayat pertama Surah al-Insyirāḥ menjelaskan bahwa Allah telah ... dada Nabi Muhammad saw.",
+     "opsi": [
+      "melapangkan",
+      "menyempitkan",
+      "menutup",
+      "melukai"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan isi ayat pertama.",
+     "pembahasan": "Alam nasyraḥ laka ṣadrak: bukankah Kami telah melapangkan dadamu.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Surah al-Insyirāḥ turun untuk ... Nabi Muhammad saw. saat menghadapi kesulitan berdakwah.",
+     "opsi": [
+      "menghukum",
+      "menghibur",
+      "menegur",
+      "menguji"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan latar turunnya surah.",
+     "pembahasan": "Surah ini menghibur dan menguatkan Nabi.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Kata \"fanṣab\" pada ayat 7 artinya ...",
+     "opsi": [
+      "tidurlah",
+      "bersantailah",
+      "tetaplah bekerja keras",
+      "pulanglah"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menyebutkan arti kata dalam ayat 7.",
+     "pembahasan": "Fanṣab: tetaplah bersungguh-sungguh.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Surah Al-Insyirāḥ berjumlah ____ ayat.",
      "kunci": "delapan",
@@ -862,6 +952,51 @@ window.BANK_SOAL["6"] = {
      "level": "C4",
      "indikator": "Disajikan tabel perilaku, peserta didik dapat menganalisis asmaulhusna yang diteladani.",
      "pembahasan": "Melindungi meneladani Al-Waliy dan sabar meneladani Aṣ-Ṣabūr. Membagi sama rata meneladani Al-'Adl; memuji kebaikan meneladani Al-Ḥamīd.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Al-Waliy artinya Allah Maha Melindungi, terutama kepada orang-orang yang ...",
+     "opsi": [
+      "zalim",
+      "sombong",
+      "kikir",
+      "beriman"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan makna Al-Waliy.",
+     "pembahasan": "Allah pelindung orang-orang yang beriman.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Contoh sikap meneladani Aṣ-Ṣabūr adalah ...",
+     "opsi": [
+      "tetap tekun belajar walaupun nilai belum memuaskan",
+      "marah ketika kalah",
+      "menyerah ketika menemui kesulitan",
+      "menyalahkan orang lain"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Peserta didik dapat memberi contoh sikap sabar.",
+     "pembahasan": "Sabar berarti tetap tekun dan tidak mudah menyerah.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Meneladani Al-'Adl dalam sebuah pertandingan berarti ...",
+     "opsi": [
+      "membela tim sendiri walaupun salah",
+      "menjadi wasit yang tidak memihak",
+      "berbuat curang",
+      "mengejek lawan"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Peserta didik dapat menerapkan sikap adil.",
+     "pembahasan": "Adil berarti tidak memihak.",
      "perlu_cek": false
     },
     {
@@ -1198,6 +1333,51 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Menurut hadis, tidak masuk surga orang yang tetangganya tidak aman dari ...",
+     "opsi": [
+      "hadiahnya",
+      "kebaikannya",
+      "gangguannya",
+      "salamnya"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan isi hadis tentang tetangga.",
+     "pembahasan": "Hadis riwayat Muslim tentang tidak mengganggu tetangga.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Bekerja sama dengan tetangga beda agama dalam kerja bakti hukumnya ...",
+     "opsi": [
+      "makruh",
+      "dilarang",
+      "haram",
+      "boleh"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menentukan hukum kerja sama sosial dengan nonmuslim.",
+     "pembahasan": "Kerja sama dalam urusan sosial dibolehkan.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Saat tetangga sedang berduka, sikap kita adalah ...",
+     "opsi": [
+      "bertakziah dan menghibur",
+      "mengadakan pesta",
+      "menyalakan musik keras",
+      "tidak peduli"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap kepada tetangga.",
+     "pembahasan": "Bertakziah menunjukkan kepedulian.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Sikap menghargai perbedaan disebut ____",
      "kunci": "toleransi",
@@ -1528,6 +1708,51 @@ window.BANK_SOAL["6"] = {
      "level": "C3",
      "indikator": "Disajikan cerita, peserta didik dapat menghitung zakat fitrah sebuah keluarga.",
      "pembahasan": "Anggota keluarga 5 orang × 2,5 kg = 12,5 kg beras.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Zakat fitrah dibagikan kepada fakir miskin agar mereka dapat ... pada hari raya.",
+     "opsi": [
+      "bersedih",
+      "bergembira",
+      "berpuasa",
+      "bekerja"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan tujuan zakat fitrah.",
+     "pembahasan": "Zakat fitrah agar fakir miskin ikut bergembira saat Idulfitri.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Nisab zakat emas adalah ... gram.",
+     "opsi": [
+      "20",
+      "50",
+      "85",
+      "100"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "indikator": "Peserta didik dapat menyebutkan nisab zakat emas.",
+     "pembahasan": "Nisab emas adalah 85 gram.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sedekah yang paling utama adalah sedekah yang diberikan dengan ...",
+     "opsi": [
+      "menyebut-nyebutnya",
+      "terpaksa",
+      "ikhlas tanpa mengharap pujian",
+      "riya"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan adab bersedekah.",
+     "pembahasan": "Sedekah harus ikhlas karena Allah.",
      "perlu_cek": false
     },
     {
@@ -1864,6 +2089,51 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": true
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Abu Bakar aṣ-Ṣiddīq dipilih menjadi khalifah melalui musyawarah di ...",
+     "opsi": [
+      "Thaif",
+      "Gua Hira",
+      "Masjidil Haram",
+      "Saqifah Bani Sa'idah"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "indikator": "Peserta didik dapat menyebutkan tempat pemilihan khalifah pertama.",
+     "pembahasan": "Musyawarah di Saqifah Bani Sa'idah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Umar bin Khattab masuk Islam setelah mendengar bacaan Surah ...",
+     "opsi": [
+      "Ṭāhā",
+      "Yāsīn",
+      "Al-Kahfi",
+      "Al-Mulk"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "indikator": "Peserta didik dapat menceritakan kisah masuk Islamnya Umar.",
+     "pembahasan": "Umar tersentuh mendengar Surah Ṭāhā.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sikap Umar bin Khattab yang memeriksa sendiri keadaan rakyatnya pada malam hari menunjukkan sifat ...",
+     "opsi": [
+      "sombong",
+      "peduli dan bertanggung jawab",
+      "penakut",
+      "kikir"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Peserta didik dapat menyimpulkan keteladanan Umar.",
+     "pembahasan": "Umar peduli dan bertanggung jawab kepada rakyat.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Empat khalifah pengganti Nabi disebut ____",
      "kunci": "Khulafaurasyidin",
@@ -2194,6 +2464,51 @@ window.BANK_SOAL["6"] = {
      "level": "C4",
      "indikator": "Disajikan tabel lafal, peserta didik dapat menganalisis bacaan lam jalalah yang tarqiq.",
      "pembahasan": "Lam jalalah dibaca tipis jika didahului kasrah: nomor 2 (بِسْمِ) dan 4 (لِ). Nomor 1 dan 3 didahului fathah/dammah sehingga tebal.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ra sukun yang didahului huruf berharakat fathah, seperti pada lafal أَرْسَلْنَا, dibaca ...",
+     "opsi": [
+      "dengung",
+      "tipis",
+      "tebal",
+      "samar"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan bacaan ra sukun.",
+     "pembahasan": "Ra sukun sesudah fathah dibaca tebal.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Pada lafal مِنَ اللّٰهِ, lam jalalah dibaca ...",
+     "opsi": [
+      "dengung",
+      "tipis",
+      "samar",
+      "tebal"
+     ],
+     "kunci": "D",
+     "level": "C3",
+     "indikator": "Disajikan lafal, peserta didik dapat menentukan bacaan lam jalalah.",
+     "pembahasan": "Didahului fathah (مِنَ) sehingga dibaca tebal.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ra yang dibaca tipis terdapat pada lafal ...",
+     "opsi": [
+      "رِجَالٌ",
+      "رَبِّ",
+      "رُسُلٌ",
+      "أَرْسَلْنَا"
+     ],
+     "kunci": "A",
+     "level": "C3",
+     "indikator": "Disajikan beberapa lafal, peserta didik dapat menentukan ra yang dibaca tipis.",
+     "pembahasan": "Ra berharakat kasrah dibaca tipis.",
      "perlu_cek": true
     },
     {
@@ -2530,6 +2845,51 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": true
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Teman yang baik akan mengajak kita untuk ...",
+     "opsi": [
+      "membolos",
+      "rajin belajar dan beribadah",
+      "mencontek",
+      "berbohong"
+     ],
+     "kunci": "B",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menyebutkan ciri teman yang baik.",
+     "pembahasan": "Teman baik mengajak kepada kebaikan.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Rani dinasihati temannya karena berkata kasar. Sikap Rani sebaiknya ...",
+     "opsi": [
+      "membalas dengan kata kasar",
+      "marah dan menjauhi temannya",
+      "menerima nasihat dan memperbaiki diri",
+      "pura-pura tidak mendengar"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap menerima nasihat.",
+     "pembahasan": "Nasihat teman yang baik harus diterima.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Berbuat baik kepada teman tidak membedakan ...",
+     "opsi": [
+      "kebaikannya",
+      "kejujurannya",
+      "kesopanannya",
+      "suku, agama, dan keadaan ekonominya"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan sikap berbuat baik kepada semua teman.",
+     "pembahasan": "Kebaikan diberikan kepada semua teman tanpa membedakan.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Teman yang baik diumpamakan seperti penjual ____",
      "kunci": "minyak wangi (parfum)",
@@ -2860,6 +3220,51 @@ window.BANK_SOAL["6"] = {
      "level": "C4",
      "indikator": "Disajikan tabel sikap, peserta didik dapat menganalisis sikap beriman kepada qada dan qadar.",
      "pembahasan": "Rina dan Yusuf berikhtiar, berdoa, dan menerima hasil. Toni tidak berikhtiar, Mira tidak bertawakal.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Takdir yang dapat berubah dengan doa dan usaha disebut takdir ...",
+     "opsi": [
+      "muallaq",
+      "mubram",
+      "azali",
+      "qadim"
+     ],
+     "kunci": "A",
+     "level": "C1",
+     "indikator": "Peserta didik dapat menyebutkan takdir yang dapat berubah.",
+     "pembahasan": "Takdir muallaq dapat berubah dengan ikhtiar dan doa.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Sikap yang tepat ketika menjadi juara kelas adalah ...",
+     "opsi": [
+      "membanggakan diri",
+      "bersyukur dan tidak sombong",
+      "mengejek teman",
+      "malas belajar"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Disajikan situasi, peserta didik dapat menentukan sikap terhadap takdir baik.",
+     "pembahasan": "Takdir baik disyukuri tanpa sombong.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Allah telah menetapkan segala sesuatu sejak zaman azali, artinya sejak ...",
+     "opsi": [
+      "zaman Nabi",
+      "zaman sekarang",
+      "sebelum alam diciptakan",
+      "hari kiamat"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menjelaskan arti zaman azali.",
+     "pembahasan": "Azali artinya sebelum segala sesuatu diciptakan.",
      "perlu_cek": false
     },
     {
@@ -3196,6 +3601,51 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Menyembelih hewan untuk dimakan harus diawali dengan membaca ...",
+     "opsi": [
+      "hamdalah",
+      "istigfar",
+      "tahlil",
+      "basmalah"
+     ],
+     "kunci": "D",
+     "level": "C1",
+     "indikator": "Peserta didik dapat menyebutkan bacaan saat menyembelih.",
+     "pembahasan": "Menyembelih diawali bismillāh.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Menanam pohon di lahan kosong termasuk kegiatan ...",
+     "opsi": [
+      "menjaga kelestarian alam",
+      "merusak alam",
+      "membuang waktu",
+      "menghabiskan uang"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menilai kegiatan menanam pohon.",
+     "pembahasan": "Menanam pohon menjaga kelestarian alam.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Hewan yang dilindungi karena hampir punah sebaiknya ...",
+     "opsi": [
+      "diburu",
+      "dijaga dan tidak diburu",
+      "dijual",
+      "dipelihara sembarangan"
+     ],
+     "kunci": "B",
+     "level": "C3",
+     "indikator": "Peserta didik dapat menentukan sikap terhadap hewan langka.",
+     "pembahasan": "Hewan langka harus dilindungi.",
+     "perlu_cek": false
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Tugas manusia sebagai pemelihara bumi disebut ____",
      "kunci": "khalifah",
@@ -3529,6 +3979,51 @@ window.BANK_SOAL["6"] = {
      "perlu_cek": false
     },
     {
+     "bentuk": "pg",
+     "pertanyaan": "Harta yang paling tepat untuk diwakafkan adalah harta yang ...",
+     "opsi": [
+      "sudah rusak",
+      "cepat habis",
+      "tahan lama dan bermanfaat",
+      "tidak berguna"
+     ],
+     "kunci": "C",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menentukan syarat harta wakaf.",
+     "pembahasan": "Harta wakaf harus tahan lama dan bermanfaat.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Contoh wakaf produktif adalah ...",
+     "opsi": [
+      "pakaian bekas",
+      "makanan untuk dimakan",
+      "uang jajan",
+      "kebun yang hasilnya untuk biaya madrasah"
+     ],
+     "kunci": "D",
+     "level": "C2",
+     "indikator": "Peserta didik dapat memberi contoh wakaf produktif.",
+     "pembahasan": "Wakaf produktif menghasilkan manfaat terus-menerus.",
+     "perlu_cek": false
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ikrar wakaf tanah sebaiknya dilakukan di hadapan ...",
+     "opsi": [
+      "Pejabat Pembuat Akta Ikrar Wakaf (KUA)",
+      "teman sekelas",
+      "pedagang",
+      "tetangga saja"
+     ],
+     "kunci": "A",
+     "level": "C2",
+     "indikator": "Peserta didik dapat menyebutkan pejabat ikrar wakaf.",
+     "pembahasan": "Ikrar wakaf dicatat oleh PPAIW di KUA.",
+     "perlu_cek": true
+    },
+    {
      "bentuk": "isian",
      "pertanyaan": "Orang yang berwakaf disebut ____",
      "kunci": "wakif",
@@ -3860,6 +4355,51 @@ window.BANK_SOAL["6"] = {
      "indikator": "Disajikan tabel jasa khalifah, peserta didik dapat menganalisis jasa Usman bin Affan.",
      "pembahasan": "Usman membukukan Mushaf Usmani dan mewakafkan sumur Raumah. Kalender Hijriah jasa Umar; memerangi penolak zakat jasa Abu Bakar.",
      "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Masa pemerintahan Usman bin Affan berlangsung sekitar ... tahun.",
+     "opsi": [
+      "2",
+      "10",
+      "12",
+      "20"
+     ],
+     "kunci": "C",
+     "level": "C1",
+     "indikator": "Peserta didik dapat menyebutkan lama pemerintahan Usman.",
+     "pembahasan": "Usman memerintah sekitar 12 tahun.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ali bin Abi Talib dijuluki Asadullāh yang artinya ...",
+     "opsi": [
+      "pintu ilmu",
+      "singa Allah",
+      "pedang Allah",
+      "pemilik dua cahaya"
+     ],
+     "kunci": "B",
+     "level": "C1",
+     "indikator": "Peserta didik dapat menyebutkan julukan Ali.",
+     "pembahasan": "Asadullāh artinya singa Allah.",
+     "perlu_cek": true
+    },
+    {
+     "bentuk": "pg",
+     "pertanyaan": "Ali bin Abi Talib dikenal hidup sederhana. Contoh meneladaninya adalah ...",
+     "opsi": [
+      "pamer kekayaan",
+      "membeli barang mahal",
+      "hidup hemat dan tidak berlebihan",
+      "boros"
+     ],
+     "kunci": "C",
+     "level": "C3",
+     "indikator": "Peserta didik dapat menerapkan teladan kesederhanaan Ali.",
+     "pembahasan": "Sederhana berarti tidak berlebihan.",
+     "perlu_cek": false
     },
     {
      "bentuk": "isian",

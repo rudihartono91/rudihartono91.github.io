@@ -134,7 +134,7 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600}
       <div class="preset" id="preset">
         <button data-p="sas1">SAS Semester 1<small id="ps1"></small></button>
         <button data-p="sas2">SAS Semester 2<small id="ps2"></small></button>
-        <button data-p="bab">Sumatif per bab<small>10 PG · 10 IS · 5 UT</small></button>
+        <button data-p="bab">Sumatif per bab<small id="psb">10 PG · 5 IS</small></button>
         <button data-p="bebas">Atur sendiri<small>isi jumlah bebas</small></button>
         <button data-p="sekolah" class="wide">📄 Sumatif Akhir Semester<small>SDN Slipi 15 · TP 2026/2027</small></button>
       </div>
@@ -200,11 +200,12 @@ const URUT=['pg','pgk','bs','jodoh','isian','uraian'];
 const DEF={pg:10,pgk:0,bs:0,jodoh:0,isian:10,uraian:5};
 /* Ketentuan jumlah soal SAS sekolah (mapel selain Matematika) */
 const SAS=k=>k<=2?{pg:15,isian:10,uraian:5}:k===3?{pg:15,isian:15,uraian:5}:{pg:20,isian:15,uraian:5};
-const PRESET={sas1:k=>SAS(k),sas2:k=>SAS(k),bab:()=>({pg:10,isian:10,uraian:5})};
+const PRESET={sas1:k=>SAS(k),sas2:k=>SAS(k),bab:k=>BAB(k)};
+const BAB=k=>k<=2?{pg:10,isian:5,uraian:0}:k===3?{pg:10,isian:5,uraian:5}:{pg:15,isian:10,uraian:5};
 let MODE=LS.get('bankMode','sas1');
 function renderPreset(){
   $$('#preset button').forEach(b=>b.classList.toggle('on',b.dataset.p===MODE));
-  if(K){const t=SAS(K);const tx=`${t.pg} PG · ${t.isian} IS · ${t.uraian} UT`;$('#ps1').textContent=tx;$('#ps2').textContent=tx}
+  if(K){const t=SAS(K);const tx=`${t.pg} PG · ${t.isian} IS · ${t.uraian} UT`;$('#ps1').textContent=tx;$('#ps2').textContent=tx;const b=BAB(K);$('#psb').textContent=`${b.pg} PG · ${b.isian} IS`+(b.uraian?` · ${b.uraian} UT`:'')}
   const info={sas1:'Materi semester 1 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',sas2:'Materi semester 2 dicentang otomatis. Jumlah soal sesuai ketentuan SAS sekolah.',bab:'Centang materi yang diujikan: 1 materi = Sumatif Harian, beberapa materi = Sumatif Tengah Semester.',bebas:'Isi jumlah soal sesuai kebutuhan.',sekolah:'Dokumen Sumatif Akhir Semester I SDN Slipi 15 Tahun Pelajaran 2026/2027: soal, kunci jawaban dan penskoran, serta penyebaran soal dan kisi-kisi. Tombol di bawah menampilkan soal di layar atau papan interaktif.'}[MODE];
   $('#presetInfo').textContent=info||'';
 }
