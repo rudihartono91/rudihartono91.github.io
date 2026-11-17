@@ -259,6 +259,20 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 .chs .chbig { font-size: 64px; }
 .chs .pill { font-size: 26px; padding: 10px 24px; }
 
+/* yang dinilai (rekap penilaian) */
+.pill b { color: var(--goldtext); margin-left: 6px; }
+.nilai { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; }
+.nilai .nl { font-size: 26px; font-weight: 800; color: var(--goldtext); margin-right: 6px; }
+.nilai .pill { font-size: 26px; padding: 10px 24px; border: 2px solid var(--line); background: #FFFFFF; }
+.salatp { padding: 24px 36px; gap: 14px; }
+.salatp .nilai .nl { color: var(--gold); }
+.salatp .nilai .pill { background: #E6EEF8; border-color: #E6EEF8; }
+.salats { gap: 28px; }
+.salats .steps5 .step { padding: 16px 20px; gap: 8px; }
+.salats .dot { width: 52px; height: 52px; line-height: 52px; font-size: 26px; border-radius: 26px; }
+.salatp .nilai .pill { font-size: 24px; padding: 6px 18px; }
+.salatp .nilai .nl { font-size: 24px; }
+
 
 .qov .sblk { direction: ltr; text-align: left; background: #FFFFFF; border: 2px solid #E7DFC8; border-radius: 22px; padding: 20px 28px; margin-bottom: 18px; }
 .qov .sh { font: 700 26px Poppins, sans-serif; color: #8A5D0B; margin-bottom: 4px; }
@@ -413,8 +427,8 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 </div>
 </div>
 <div class="card rise" style="--i:2">
-<h3>Yang dinilai</h3>
-<div class="pills"><p class="pill">Kelancaran</p><p class="pill">Tajwid</p><p class="pill">Makharijul huruf</p><p class="pill">Adab membaca</p></div>
+<h3>Yang dinilai (skor maksimal)</h3>
+<div class="pills"><p class="pill">Fasih <b>15</b></p><p class="pill">Tajwid <b>10</b></p><p class="pill">Kelancaran <b>10</b></p></div>
 </div>
 <div class="foot">
 <p class="tag">3 · Membaca Al-Qur’an</p>
@@ -459,8 +473,8 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 </div>
 </div>
 <div class="card rise" style="--i:2">
-<h3>Yang dinilai</h3>
-<div class="pills"><p class="pill">Bentuk huruf benar</p><p class="pill">Sambungan huruf tepat</p><p class="pill">Harakat lengkap</p><p class="pill">Rapi dan bersih</p></div>
+<h3>Yang dinilai (skor maksimal)</h3>
+<div class="pills"><p class="pill">Ketepatan huruf <b>10</b></p><p class="pill">Kerapian menulis <b>10</b></p></div>
 </div>
 <div class="foot">
 <p class="tag">4 · Menulis Al-Qur’an</p>
@@ -515,6 +529,7 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <div class="sr tap"><p class="sn">93</p><p class="sm">Ad-Dhuha</p></div>
 <div class="sr tap"><p class="sn">87</p><p class="sm">Al-’Ala</p></div>
 </div>
+<div class="nilai rise" style="--i:1"><p class="nl">Yang dinilai (skor maks.)</p><p class="pill">Fasih <b>15</b></p><p class="pill">Tajwid <b>15</b></p><p class="pill">Kelancaran <b>15</b></p></div>
 <p class="note">Sentuh nama surah untuk menampilkan bacaannya dari ayat pertama sampai selesai. Siswa mengundi surah dari 23 surah di atas, lalu melafalkan hafalannya dengan tartil di depan penguji.</p>
 <div class="foot">
 <p class="tag">5 · Menghafal Al-Qur’an</p>
@@ -561,6 +576,7 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <p class="start"><a href="#slide-8">Doa setelah wudu ›</a></p>
 </div>
 </div>
+<div class="nilai rise" style="--i:7"><p class="nl">Yang dinilai (skor maks.)</p><p class="pill">Gerakan <b>13</b></p><p class="pill">Tertib <b>10</b></p><p class="pill">Doa setelah wudu <b>7</b></p></div>
 <div class="foot">
 <p class="tag">6 · Berwudu</p>
 <div class="navrow"><p class="btn"><a href="#slide-5">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-7">Berikutnya ›</a></p></div>
@@ -642,7 +658,7 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <p class="rh">RH</p>
 </section>
 
-<section data-n="9" id="s-salat">
+<section data-n="9" id="s-salat" class="salats">
 <svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
 <defs>
 <pattern id="pl9" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
@@ -674,8 +690,10 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <div class="step rise sstep" data-set="salat" data-step="8" style="--i:8"><p class="dot">9</p><p class="st">Tasyahud akhir</p></div>
 <div class="step rise sstep" data-set="salat" data-step="9" style="--i:9"><p class="dot">10</p><p class="st">Salam</p></div>
 </div>
-<div class="panel rise" style="--i:10">
-<p class="arti">Praktik: salat [Subuh, 2 rakaat]. Sentuh setiap gerakan untuk menampilkan bacaannya. Bacaan dilafalkan jelas agar penguji dapat menilai gerakan dan bacaan sekaligus.</p>
+<div class="panel rise salatp" style="--i:10">
+<p class="arti">Praktik: salat [Subuh, 2 rakaat]. Bacaan dilafalkan jelas. Sentuh setiap gerakan untuk menampilkan bacaannya.</p>
+<div class="nilai" style="--i:11"><p class="nl">Yang dinilai (skor maks.)</p><p class="pill">Bacaan salat <b>12</b></p><p class="pill">Gerakan salat <b>12</b></p><p class="pill">Keserasian bacaan dan gerakan <b>10</b></p><p class="pill">Tumakninah <b>8</b></p><p class="pill">Tertib <b>8</b></p></div>
+
 </div>
 <div class="foot">
 <p class="tag">9 · Salat</p>
@@ -712,8 +730,8 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <div class="choose rise" data-lafaz="iqamah" style="--i:1"><p class="charab">إِقَامَة</p><p class="chbig"><a href="#slide-12">Iqamah ›</a></p><p class="chsub">Dikumandangkan oleh siswa perempuan · 9 baris</p></div>
 </div>
 <div class="card rise" style="--i:2">
-<h3>Yang dinilai</h3>
-<div class="pills"><p class="pill">Lafaz benar dan berurutan</p><p class="pill">Suara jelas dan lantang</p><p class="pill">Tidak tergesa-gesa</p><p class="pill">Menghadap kiblat</p></div>
+<h3>Yang dinilai (skor maksimal)</h3>
+<div class="pills"><p class="pill">Ketepatan lafaz <b>10</b></p><p class="pill">Lagu <b>10</b></p></div>
 </div>
 <div class="foot">
 <p class="tag">10 · Azan dan iqamah</p>
@@ -846,6 +864,7 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <div class="step rise sstep" data-set="doa" data-step="9" style="--i:9"><p class="dot">10</p><p class="st"><a href="#slide-23">Doa pembuka hati ›</a></p></div>
 <div class="step rise sstep" data-set="doa" data-step="10" style="--i:10"><p class="dot">11</p><p class="st"><a href="#slide-24">Doa setelah salat duha ›</a></p></div>
 </div>
+<div class="nilai rise" style="--i:11"><p class="nl">Yang dinilai (skor maks.)</p><p class="pill">Fasih <b>30</b></p><p class="pill">Tajwid <b>30</b></p><p class="pill">Kelancaran <b>40</b></p></div>
 <div class="foot">
 <p class="tag">13 · Doa Harian</p>
 <div class="navrow"><p class="btn"><a href="#slide-12">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-14">Berikutnya ›</a></p></div>
