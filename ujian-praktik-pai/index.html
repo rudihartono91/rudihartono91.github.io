@@ -21,7 +21,7 @@ th { font-weight: 700; }
 a { cursor: pointer; }
 .ar { direction: rtl; }
 .btn, .start, .card h3, .step .st { cursor: pointer; }
-#fs { position: fixed; left: 16px; bottom: 16px; z-index: 9; font: 600 16px Poppins, sans-serif; color: #fff;
+#fs { position: fixed; left: 50%; top: 10px; transform: translateX(-50%); z-index: 9; font: 600 16px Poppins, sans-serif; color: #fff;
   background: rgba(19,41,75,.85); border: 1px solid rgba(226,169,59,.7); border-radius: 20px; padding: 8px 16px; cursor: pointer; }
 
 :root {
@@ -260,6 +260,14 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 .chs .pill { font-size: 26px; padding: 10px 24px; }
 
 
+.qov .sblk { direction: ltr; text-align: left; background: #FFFFFF; border: 2px solid #E7DFC8; border-radius: 22px; padding: 20px 28px; margin-bottom: 18px; }
+.qov .sh { font: 700 26px Poppins, sans-serif; color: #8A5D0B; margin-bottom: 4px; }
+.qov .sar { font: 50px/1.9 'Amiri', serif; color: #13294B; direction: rtl; text-align: right; }
+.qov .sar.q { font-family: 'Amiri Quran Local', 'Amiri', serif; }
+.qov .slat { font: italic 400 28px/1.45 Poppins, sans-serif; color: #4A5A70; margin-top: 4px; }
+.qov .sarti { font: 400 28px/1.45 Poppins, sans-serif; color: #13294B; margin-top: 8px; }
+#stage .sstep { cursor: pointer; }
+#stage .sstep:active { background: #FFF3D6; }
 .qov .ltab { font: 800 28px Poppins, sans-serif; border-radius: 40px; padding: 14px 32px; border: 3px solid #E2A93B; background: transparent; color: #F8FAFD; cursor: pointer; }
 .qov .ltab.on { background: #E2A93B; color: #13294B; }
 .qov .lgrid { direction: ltr; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px 28px; text-align: left; }
@@ -272,8 +280,8 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 .qov .lk { font: 700 24px Poppins, sans-serif; color: #8A5D0B; }
 #stage .choose { cursor: pointer; }
 @font-face { font-family: 'Amiri Quran Local'; src: url(amiri-quran.woff2) format('woff2'); font-display: block; }
-#qv, #lv { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: rgba(8, 18, 36, 0.62); z-index: 50; display: none; }
-#qv.open, #lv.open { display: block; }
+#qv, #lv, #sv { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: rgba(8, 18, 36, 0.62); z-index: 50; display: none; }
+#qv.open, #lv.open, #sv.open { display: block; }
 .qov .qcard { position: absolute; left: 80px; top: 48px; width: 1760px; height: 984px; box-sizing: border-box; background: #FBF8EF;
   border: 4px solid #E2A93B; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;
   box-shadow: 0 30px 80px rgba(0,0,0,.45); animation: pop 450ms ease-out both; }
@@ -321,9 +329,9 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <rect x="0" y="996" width="1920" height="4" fill="#E2A93B"/>
 </svg>
 <img src="logo.png" class="logo" alt="Logo SDN Slipi 15" style="position:absolute;left:1220px;top:400px;width:480px;height:426px;object-fit:contain">
-<p class="tagpill rise" style="--i:0">KELAS 6 SD · TAHUN PELAJARAN 2026/2027</p>
 <p class="bigtitle2">UJIAN<br><span style="color:#E2A93B">PRAKTIK</span></p>
 <h1 class="subj">Pendidikan Agama Islam<br>dan Budi Pekerti</h1>
+<p class="tagpill rise" style="--i:2">KELAS 6 SD · TAHUN PELAJARAN 2026/2027</p>
 <svg class="orn" aria-label="Garis ornamen" width="360" height="24" viewBox="0 0 360 24" style="width:360px;height:24px"><g fill="#E2A93B"><rect x="0" y="11" width="150" height="2"/><rect x="210" y="11" width="150" height="2"/><path d="M180 0 L192 12 L180 24 L168 12 Z"/><circle cx="158" cy="12" r="4"/><circle cx="202" cy="12" r="4"/></g></svg>
 <p class="start"><a href="#slide-2">Mulai: Menu Utama ›</a></p>
 <div class="band"><p class="bandtxt">SDN SLIPI 15 · JAKARTA BARAT</p><p class="bandtxt">GURU PAI DAN BUDI PEKERTI</p></div>
@@ -391,15 +399,17 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <h2>Membaca Al-Qur’an</h2>
 </div>
 <div class="cols2">
-<div class="panel rise" style="--i:0">
+<div class="panel rise qopen" data-surah="107" data-list="107,95" style="--i:0;cursor:pointer">
 <p class="txt">Surah ke-107 · 7 ayat</p>
 <h3 style="font-size:56px">QS. Al-Ma’un</h3>
 <p class="arti">Tentang orang yang mendustakan agama: menghardik anak yatim dan tidak peduli pada orang miskin.</p>
+<p class="start">Sentuh untuk melihat surah ›</p>
 </div>
-<div class="panel rise" style="--i:1">
+<div class="panel rise qopen" data-surah="95" data-list="107,95" style="--i:1;cursor:pointer">
 <p class="txt">Surah ke-95 · 8 ayat</p>
 <h3 style="font-size:56px">QS. At-Tin</h3>
 <p class="arti">Allah menciptakan manusia dalam bentuk yang sebaik-baiknya.</p>
+<p class="start">Sentuh untuk melihat surah ›</p>
 </div>
 </div>
 <div class="card rise" style="--i:2">
@@ -653,19 +663,19 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 <h2>Urutan gerakan salat yang dipraktikkan</h2>
 </div>
 <div class="steps5">
-<div class="step rise" style="--i:0"><p class="dot">1</p><p class="st">Berdiri dan niat</p></div>
-<div class="step rise" style="--i:1"><p class="dot">2</p><p class="st">Takbiratul ihram</p></div>
-<div class="step rise" style="--i:2"><p class="dot">3</p><p class="st">Membaca Al-Fātiḥah</p></div>
-<div class="step rise" style="--i:3"><p class="dot">4</p><p class="st">Rukuk dengan tumakninah</p></div>
-<div class="step rise" style="--i:4"><p class="dot">5</p><p class="st">Iktidal</p></div>
-<div class="step rise" style="--i:5"><p class="dot">6</p><p class="st">Sujud pertama</p></div>
-<div class="step rise" style="--i:6"><p class="dot">7</p><p class="st">Duduk di antara dua sujud</p></div>
-<div class="step rise" style="--i:7"><p class="dot">8</p><p class="st">Sujud kedua</p></div>
-<div class="step rise" style="--i:8"><p class="dot">9</p><p class="st">Tasyahud akhir</p></div>
-<div class="step rise" style="--i:9"><p class="dot">10</p><p class="st">Salam</p></div>
+<div class="step rise sstep" data-step="0" style="--i:0"><p class="dot">1</p><p class="st">Berdiri dan niat</p></div>
+<div class="step rise sstep" data-step="1" style="--i:1"><p class="dot">2</p><p class="st">Takbiratul ihram</p></div>
+<div class="step rise sstep" data-step="2" style="--i:2"><p class="dot">3</p><p class="st">Membaca Al-Fātiḥah</p></div>
+<div class="step rise sstep" data-step="3" style="--i:3"><p class="dot">4</p><p class="st">Rukuk dengan tumakninah</p></div>
+<div class="step rise sstep" data-step="4" style="--i:4"><p class="dot">5</p><p class="st">Iktidal</p></div>
+<div class="step rise sstep" data-step="5" style="--i:5"><p class="dot">6</p><p class="st">Sujud pertama</p></div>
+<div class="step rise sstep" data-step="6" style="--i:6"><p class="dot">7</p><p class="st">Duduk di antara dua sujud</p></div>
+<div class="step rise sstep" data-step="7" style="--i:7"><p class="dot">8</p><p class="st">Sujud kedua</p></div>
+<div class="step rise sstep" data-step="8" style="--i:8"><p class="dot">9</p><p class="st">Tasyahud akhir</p></div>
+<div class="step rise sstep" data-step="9" style="--i:9"><p class="dot">10</p><p class="st">Salam</p></div>
 </div>
 <div class="panel rise" style="--i:10">
-<p class="arti">Praktik: salat [Subuh, 2 rakaat]. Bacaan dilafalkan jelas agar penguji dapat menilai gerakan dan bacaan sekaligus.</p>
+<p class="arti">Praktik: salat [Subuh, 2 rakaat]. Sentuh setiap gerakan untuk menampilkan bacaannya. Bacaan dilafalkan jelas agar penguji dapat menilai gerakan dan bacaan sekaligus.</p>
 </div>
 <div class="foot">
 <p class="tag">9 · Salat</p>
@@ -1328,6 +1338,21 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
 </section>
 
 
+<div id="sv" class="qov" aria-hidden="true">
+  <div class="qcard" role="dialog" aria-label="Bacaan gerakan salat">
+    <div class="qhead">
+      <div class="qnum" id="svNum">1</div>
+      <div class="qtitle"><div class="qlat" id="svTitle"></div><div class="qinfo" id="svNote"></div></div>
+      <button class="qbtn gold" id="svClose" type="button">✕ Tutup</button>
+    </div>
+    <div class="qbody" id="svBody"></div>
+    <div class="qfoot">
+      <button class="qbtn" id="svPrev" type="button">‹ Gerakan sebelumnya</button>
+      <div class="qhint">Geser layar ke atas/bawah untuk membaca</div>
+      <button class="qbtn" id="svNext" type="button">Gerakan berikutnya ›</button>
+    </div>
+  </div>
+</div>
 <div id="lv" class="qov" aria-hidden="true">
   <div class="qcard" role="dialog" aria-label="Lafaz azan dan iqamah">
     <div class="qhead">
@@ -1407,6 +1432,43 @@ h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19,
     fs.textContent = document.fullscreenElement ? 'Keluar layar penuh' : 'Layar penuh';
   });
 
+  // ===== Jendela bacaan gerakan salat =====
+  var SL = [{"t": "Berdiri dan niat", "note": "Berdiri tegak menghadap kiblat, niat di dalam hati.", "items": [{"h": "Niat salat Subuh", "q": false, "ar": "أُصَلِّيْ فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالٰى", "lat": "Uṣallī farḍaṣ-ṣubḥi rak‘ataini mustaqbilal-qiblati adā’an lillāhi ta‘ālā.", "arti": "Aku berniat salat fardu Subuh dua rakaat menghadap kiblat karena Allah Ta‘ala."}]}, {"t": "Takbiratul ihram", "note": "Mengangkat kedua tangan sejajar telinga, lalu bersedekap dan membaca doa iftitah.", "items": [{"h": "Takbiratul ihram", "q": false, "ar": "اَللّٰهُ أَكْبَرُ", "lat": "Allāhu akbar.", "arti": "Allah Mahabesar."}, {"h": "Doa iftitah", "q": false, "ar": "اَللّٰهُ أَكْبَرُ كَبِيْرًا وَالْحَمْدُ لِلّٰهِ كَثِيْرًا وَسُبْحَانَ اللّٰهِ بُكْرَةً وَأَصِيْلًا، إِنِّيْ وَجَّهْتُ وَجْهِيَ لِلَّذِيْ فَطَرَ السَّمٰوٰتِ وَالْأَرْضَ حَنِيْفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِيْنَ، إِنَّ صَلَاتِيْ وَنُسُكِيْ وَمَحْيَايَ وَمَمَاتِيْ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ، لَا شَرِيْكَ لَهُ وَبِذٰلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِيْنَ", "lat": "Allāhu akbar kabīrā, wal-ḥamdu lillāhi kaṡīrā, wa subḥānallāhi bukrataw wa aṣīlā. Innī wajjahtu wajhiya lillażī faṭaras-samāwāti wal-arḍa ḥanīfam muslimaw wa mā ana minal-musyrikīn. Inna ṣalātī wa nusukī wa maḥyāya wa mamātī lillāhi rabbil-‘ālamīn. Lā syarīka lahū wa bi żālika umirtu wa ana minal-muslimīn.", "arti": "Allah Mahabesar dengan sebesar-besarnya, segala puji bagi Allah sebanyak-banyaknya, Mahasuci Allah pada waktu pagi dan petang. Aku hadapkan wajahku kepada Zat yang menciptakan langit dan bumi dengan lurus dan berserah diri, dan aku bukan termasuk orang-orang musyrik. Sesungguhnya salatku, ibadahku, hidupku, dan matiku hanya untuk Allah, Tuhan semesta alam. Tiada sekutu bagi-Nya. Demikianlah aku diperintahkan, dan aku termasuk orang-orang muslim."}]}, {"t": "Membaca Al-Fātiḥah", "note": "Dibaca dengan tartil, lalu ditutup dengan “Āmīn”. Setelahnya membaca satu surah pendek.", "items": [{"h": "Surah Al-Fātiḥah", "q": true, "ar": "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ ﴿١﴾ ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ ﴿٢﴾ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ ﴿٣﴾ مَٰلِكِ يَوۡمِ ٱلدِّينِ ﴿٤﴾ إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ ﴿٥﴾ ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ ﴿٦﴾ صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ ﴿٧﴾", "lat": "Bismillāhir-raḥmānir-raḥīm (1) Al-ḥamdu lillāhi rabbil-‘ālamīn (2) Ar-raḥmānir-raḥīm (3) Māliki yaumid-dīn (4) Iyyāka na‘budu wa iyyāka nasta‘īn (5) Ihdinaṣ-ṣirāṭal-mustaqīm (6) Ṣirāṭal-lażīna an‘amta ‘alaihim gairil-magḍūbi ‘alaihim wa laḍ-ḍāllīn (7)", "arti": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang (1) Segala puji bagi Allah, Tuhan seluruh alam (2) Yang Maha Pengasih, Maha Penyayang (3) Pemilik hari pembalasan (4) Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan (5) Tunjukilah kami jalan yang lurus (6) (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat (7)"}, {"h": "Setelah Al-Fātiḥah", "q": false, "ar": "آمِيْن", "lat": "Āmīn.", "arti": "Kabulkanlah, ya Allah."}]}, {"t": "Rukuk dengan tumakninah", "note": "Membungkuk, punggung rata, kedua tangan memegang lutut. Dibaca 3 kali.", "items": [{"h": "Bacaan rukuk (3 kali)", "q": false, "ar": "سُبْحَانَ رَبِّيَ الْعَظِيْمِ وَبِحَمْدِهِ", "lat": "Subḥāna rabbiyal-‘aẓīmi wa biḥamdih.", "arti": "Mahasuci Tuhanku Yang Mahaagung dan dengan memuji-Nya."}]}, {"t": "Iktidal", "note": "Bangkit dari rukuk sambil mengangkat kedua tangan, lalu berdiri tegak.", "items": [{"h": "Saat bangkit dari rukuk", "q": false, "ar": "سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ", "lat": "Sami‘allāhu liman ḥamidah.", "arti": "Allah mendengar pujian orang yang memuji-Nya."}, {"h": "Saat berdiri tegak", "q": false, "ar": "رَبَّنَا لَكَ الْحَمْدُ مِلْءُ السَّمٰوٰتِ وَمِلْءُ الْأَرْضِ وَمِلْءُ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ", "lat": "Rabbanā lakal-ḥamdu mil’us-samāwāti wa mil’ul-arḍi wa mil’u mā syi’ta min syai’im ba‘d.", "arti": "Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan bumi, dan sepenuh apa yang Engkau kehendaki sesudah itu."}]}, {"t": "Sujud pertama", "note": "Dahi, hidung, kedua telapak tangan, kedua lutut, dan ujung jari kaki menempel di lantai. Dibaca 3 kali.", "items": [{"h": "Bacaan sujud (3 kali)", "q": false, "ar": "سُبْحَانَ رَبِّيَ الْأَعْلٰى وَبِحَمْدِهِ", "lat": "Subḥāna rabbiyal-a‘lā wa biḥamdih.", "arti": "Mahasuci Tuhanku Yang Mahatinggi dan dengan memuji-Nya."}]}, {"t": "Duduk di antara dua sujud", "note": "Duduk iftirasy dengan tenang.", "items": [{"h": "Bacaan duduk di antara dua sujud", "q": false, "ar": "رَبِّ اغْفِرْ لِيْ وَارْحَمْنِيْ وَاجْبُرْنِيْ وَارْفَعْنِيْ وَارْزُقْنِيْ وَاهْدِنِيْ وَعَافِنِيْ وَاعْفُ عَنِّيْ", "lat": "Rabbigfirlī warḥamnī wajburnī warfa‘nī warzuqnī wahdinī wa ‘āfinī wa‘fu ‘annī.", "arti": "Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, angkatlah derajatku, berilah aku rezeki, berilah aku petunjuk, sehatkanlah aku, dan maafkanlah aku."}]}, {"t": "Sujud kedua", "note": "Sama seperti sujud pertama. Dibaca 3 kali.", "items": [{"h": "Bacaan sujud (3 kali)", "q": false, "ar": "سُبْحَانَ رَبِّيَ الْأَعْلٰى وَبِحَمْدِهِ", "lat": "Subḥāna rabbiyal-a‘lā wa biḥamdih.", "arti": "Mahasuci Tuhanku Yang Mahatinggi dan dengan memuji-Nya."}]}, {"t": "Tasyahud akhir", "note": "Duduk tawarruk pada rakaat terakhir, jari telunjuk kanan diangkat saat membaca syahadat.", "items": [{"h": "Tasyahud", "q": false, "ar": "اَلتَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ، اَلسَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهُ، اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصَّالِحِيْنَ، أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ", "lat": "At-taḥiyyātul-mubārakātuṣ-ṣalawātuṭ-ṭayyibātu lillāh. As-salāmu ‘alaika ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu ‘alainā wa ‘alā ‘ibādillāhiṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna Muḥammadar rasūlullāh.", "arti": "Segala penghormatan, keberkahan, salawat, dan kebaikan hanya milik Allah. Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepadamu, wahai Nabi. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang saleh. Aku bersaksi tiada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah."}, {"h": "Salawat Ibrahimiyah", "q": false, "ar": "اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى آلِ سَيِّدِنَا مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا إِبْرَاهِيْمَ وَعَلٰى آلِ سَيِّدِنَا إِبْرَاهِيْمَ، وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى آلِ سَيِّدِنَا مُحَمَّدٍ، كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا إِبْرَاهِيْمَ وَعَلٰى آلِ سَيِّدِنَا إِبْرَاهِيْمَ، فِي الْعَالَمِيْنَ إِنَّكَ حَمِيْدٌ مَجِيْدٌ", "lat": "Allāhumma ṣalli ‘alā sayyidinā Muḥammad wa ‘alā āli sayyidinā Muḥammad, kamā ṣallaita ‘alā sayyidinā Ibrāhīm wa ‘alā āli sayyidinā Ibrāhīm, wa bārik ‘alā sayyidinā Muḥammad wa ‘alā āli sayyidinā Muḥammad, kamā bārakta ‘alā sayyidinā Ibrāhīm wa ‘alā āli sayyidinā Ibrāhīm, fil-‘ālamīna innaka ḥamīdum majīd.", "arti": "Ya Allah, limpahkanlah rahmat kepada junjungan kami Nabi Muhammad dan keluarganya, sebagaimana Engkau limpahkan rahmat kepada Nabi Ibrahim dan keluarganya. Limpahkanlah berkah kepada Nabi Muhammad dan keluarganya, sebagaimana Engkau limpahkan berkah kepada Nabi Ibrahim dan keluarganya. Di seluruh alam, sesungguhnya Engkau Maha Terpuji lagi Maha Mulia."}]}, {"t": "Salam", "note": "Menoleh ke kanan, lalu ke kiri, masing-masing sambil mengucapkan salam.", "items": [{"h": "Salam (ke kanan, lalu ke kiri)", "q": false, "ar": "اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ", "lat": "Assalāmu ‘alaikum wa raḥmatullāh.", "arti": "Semoga keselamatan dan rahmat Allah tercurah kepada kalian."}]}];
+  var sv = document.getElementById('sv'), svBody = document.getElementById('svBody'), sCur = 0;
+  function renderS() {
+    var d = SL[sCur];
+    document.getElementById('svNum').textContent = sCur + 1;
+    document.getElementById('svTitle').textContent = d.t;
+    document.getElementById('svNote').textContent = d.note;
+    svBody.innerHTML = d.items.map(function (it) {
+      return '<div class="sblk"><div class="sh">' + it.h + '</div><div class="sar' + (it.q ? ' q' : '') + '">' + it.ar + '</div>' +
+             '<div class="slat">' + it.lat + '</div><div class="sarti">“' + it.arti + '”</div></div>';
+    }).join('');
+    svBody.scrollTop = 0;
+    document.getElementById('svPrev').style.visibility = sCur > 0 ? 'visible' : 'hidden';
+    document.getElementById('svNext').style.visibility = sCur < SL.length - 1 ? 'visible' : 'hidden';
+  }
+  function openS(i) { sCur = i; renderS(); sv.classList.add('open'); sv.setAttribute('aria-hidden', 'false'); }
+  function closeS() { sv.classList.remove('open'); sv.setAttribute('aria-hidden', 'true'); }
+  stage.addEventListener('click', function (e) {
+    var c = e.target.closest('.sstep');
+    if (!c || sv.contains(c)) return;
+    e.preventDefault(); e.stopPropagation(); openS(+c.getAttribute('data-step'));
+  }, true);
+  sv.addEventListener('click', function (e) { e.stopPropagation(); if (e.target === sv) closeS(); });
+  document.getElementById('svClose').addEventListener('click', closeS);
+  document.getElementById('svPrev').addEventListener('click', function () { if (sCur > 0) { sCur--; renderS(); } });
+  document.getElementById('svNext').addEventListener('click', function () { if (sCur < SL.length - 1) { sCur++; renderS(); } });
+  window.addEventListener('keydown', function (e) {
+    if (!sv.classList.contains('open')) return;
+    e.stopImmediatePropagation();
+    if (e.key === 'Escape') closeS();
+    else if (e.key === 'ArrowDown' || e.key === 'PageDown') svBody.scrollTop += 300;
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp') svBody.scrollTop -= 300;
+    else if (e.key === 'ArrowRight' && sCur < SL.length - 1) { sCur++; renderS(); }
+    else if (e.key === 'ArrowLeft' && sCur > 0) { sCur--; renderS(); }
+  }, true);
+  window.addEventListener('hashchange', closeS);
   // ===== Jendela lafaz azan & iqamah =====
   var LZ = {"azan": {"title": "Lafaz azan lengkap", "info": "Dikumandangkan oleh siswa laki-laki · 12 baris", "rows": [["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ", "Asyhadu an lā ilāha illallāh"], ["أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ", "Asyhadu an lā ilāha illallāh"], ["أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ", "Asyhadu anna Muḥammadar rasūlullāh"], ["أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ", "Asyhadu anna Muḥammadar rasūlullāh"], ["حَيَّ عَلَى الصَّلَاةِ", "Ḥayya ‘alaṣ-ṣalāh"], ["حَيَّ عَلَى الصَّلَاةِ", "Ḥayya ‘alaṣ-ṣalāh"], ["حَيَّ عَلَى الْفَلَاحِ", "Ḥayya ‘alal-falāḥ"], ["حَيَّ عَلَى الْفَلَاحِ", "Ḥayya ‘alal-falāḥ"], ["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["لَا إِلٰهَ إِلَّا اللّٰهُ", "Lā ilāha illallāh"]], "sub": ["Khusus Subuh, sesudah baris 10:", "اَلصَّلَاةُ خَيْرٌ مِنَ النَّوْمِ", "Aṣ-ṣalātu khairum minan naum (2 kali)"]}, "iqamah": {"title": "Lafaz iqamah lengkap", "info": "Dikumandangkan oleh siswa perempuan · 9 baris", "rows": [["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ", "Asyhadu an lā ilāha illallāh"], ["أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ", "Asyhadu anna Muḥammadar rasūlullāh"], ["حَيَّ عَلَى الصَّلَاةِ", "Ḥayya ‘alaṣ-ṣalāh"], ["حَيَّ عَلَى الْفَلَاحِ", "Ḥayya ‘alal-falāḥ"], ["قَدْ قَامَتِ الصَّلَاةُ", "Qad qāmatiṣ-ṣalāh"], ["قَدْ قَامَتِ الصَّلَاةُ", "Qad qāmatiṣ-ṣalāh"], ["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["لَا إِلٰهَ إِلَّا اللّٰهُ", "Lā ilāha illallāh"]], "sub": null}};
   var lv = document.getElementById('lv'), lvBody = document.getElementById('lvBody');
