@@ -46,6 +46,12 @@ button,select,input,textarea{font:inherit;color:inherit}
 .paket .ic{font-size:26px}
 .paket b{display:block;font-size:18px}
 .paket small{color:var(--abu);font-size:15px}
+.tabs{display:flex;gap:6px;margin-bottom:10px;border-bottom:2px solid var(--garis)}
+.tabs button{border:0;background:none;padding:8px 14px;font-weight:700;font-size:17px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;color:var(--abu)}
+.tabs button.on{color:var(--hijau);border-color:var(--hijau)}
+.grp{font-weight:700;color:var(--abu);font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin:6px 2px 0}
+.paket .del{margin-left:auto;border:0;background:none;font-size:20px;cursor:pointer;opacity:.55;padding:4px 8px}
+.paket .del:hover{opacity:1}
 .src-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .src-btns .btn{font-size:16px;padding:8px 14px}
 .muted{color:var(--abu)}
@@ -160,12 +166,21 @@ table.qt th,table.qt td{border:1px solid currentColor;padding:4px 10px}
   </div>
   <div class="setup-body">
     <div class="card">
-      <h2>1. Pilih paket soal</h2>
+      <h2>1. Pilih soal</h2>
+      <div class="tabs" id="tabSumber"><button data-t="bank" class="on">📚 Bank Soal</button><button data-t="simpan">💾 Paket Tersimpan</button></div>
+      <div id="vBank">
+        <div class="set-row"><span>Kelas</span><div class="seg" id="segKelas"><button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="4">4</button><button data-v="5">5</button><button data-v="6">6</button></div></div>
+        <div class="set-row"><span>Semester</span><div class="seg" id="segSem"><button data-v="1">1</button><button data-v="2">2</button></div></div>
+        <div class="paket-list" id="bankList"><p class="muted">Memuat bank soal…</p></div>
+      </div>
+      <div id="vSimpan" hidden>
+      <p class="muted" style="margin:0 0 8px">Paket yang pernah dibuka dari Bank Soal atau Generator Soal di perangkat ini.</p>
       <div class="paket-list" id="paketList"></div>
       <div class="src-btns">
         <label class="btn">⬆ Buka file JSON<input type="file" id="fileJSON" accept=".json,application/json" hidden></label>
         <button class="btn" id="btnTempel">📋 Tempel JSON</button>
         <a class="btn" href="../generator-soal/">✨ Buat soal baru</a>
+      </div>
       </div>
     </div>
     <div class="card">
@@ -279,15 +294,54 @@ let pakets=[],pilih=null,game=null,timerId=null;
 function loadPakets(){
   const bank=LS.get('paiBank',[]).map(normPaket).filter(p=>p.soal.length);
   const extra=LS.get('kuisExtra',[]).map(normPaket);
-  pakets=[...bank,...extra.filter(e=>!bank.some(b=>b.id===e.id)),DEMO];
+  pakets=[...(bankPaket?[bankPaket]:[]),...bank,...extra.filter(e=>!bank.some(b=>b.id===e.id)),DEMO];
   const q=new URLSearchParams(location.search).get('paket');
-  if(!pilih)pilih=(q&&pakets.find(p=>p.id===q))?q:pakets[0].id;
+  if(!pilih&&q&&pakets.find(p=>p.id===q)){pilih=q;tabSumber('simpan')}
   renderPakets();
 }
 function renderPakets(){
-  $('#paketList').innerHTML=pakets.map(p=>`<button class="paket ${p.id===pilih?'on':''}" data-id="${esc(p.id)}"><span class="ic">${p.id==='demo'?'⭐':'📘'}</span><span><b>${esc(p.judul)}</b><small>${p.kelas?'Kelas '+esc(p.kelas)+' · ':''}${p.soal.length} soal${p.id==='demo'?' · contoh':''}</small></span></button>`).join('');
+  const sp=pakets.filter(p=>!p.bank);
+  $('#paketList').innerHTML=sp.map(p=>`<div class="paket ${p.id===pilih?'on':''}" data-id="${esc(p.id)}" role="button" tabindex="0"><span class="ic">${p.id==='demo'?'⭐':'📘'}</span><span><b>${esc(p.judul)}</b><small>${p.kelas?'Kelas '+esc(p.kelas)+' · ':''}${p.soal.length} soal${p.id==='demo'?' · contoh':''}</small></span>${p.id==='demo'?'':`<button class="del" data-del="${esc(p.id)}" title="Hapus dari daftar">🗑</button>`}</div>`).join('');
+  renderBank();
 }
-$('#paketList').onclick=e=>{const b=e.target.closest('.paket');if(!b)return;pilih=b.dataset.id;renderPakets()};
+$('#paketList').onclick=e=>{const d=e.target.closest('[data-del]');
+  if(d){const id=d.dataset.del;if(!confirm('Hapus paket ini dari daftar?'))return;LS.set('paiBank',LS.get('paiBank',[]).filter(x=>x.id!==id));LS.set('kuisExtra',LS.get('kuisExtra',[]).filter(x=>x.id!==id));if(pilih===id)pilih=null;loadPakets();return}
+  const b=e.target.closest('.paket');if(!b)return;pilih=b.dataset.id;renderPakets()};
+
+/* --- bank soal bawaan (langsung dari data Bank Soal) --- */
+let BK=LS.get('kuisBank',{kelas:1,sem:1}),bankPaket=null;
+const BAB=k=>k<=2?{pg:10,isian:5,uraian:0}:k===3?{pg:10,isian:5,uraian:5}:{pg:15,isian:10,uraian:5};
+const SASJ=k=>k<=2?{pg:15,isian:10,uraian:5}:k===3?{pg:15,isian:15,uraian:5}:{pg:20,isian:15,uraian:5};
+const URUTB=['pg','pgk','bs','jodoh','isian','uraian'];
+function muatKelas(k){return new Promise(res=>{window.BANK_SOAL=window.BANK_SOAL||{};if(window.BANK_SOAL[k])return res(window.BANK_SOAL[k]);
+  const sc=document.createElement('script');sc.src='../bank-soal/data/kelas-'+k+'.js';sc.onload=()=>res(window.BANK_SOAL[k]||null);sc.onerror=()=>res(null);document.head.appendChild(sc)})}
+function segPilih(id,v){$$(id+' button').forEach(b=>b.classList.toggle('on',+b.dataset.v===v))}
+async function renderBank(){
+  segPilih('#segKelas',BK.kelas);segPilih('#segSem',BK.sem);
+  const d=await muatKelas(BK.kelas);if(!d){$('#bankList').innerHTML='<p class="muted">Bank soal belum bisa dimuat. Periksa koneksi internet.</p>';return}
+  const ms=d.materi.filter(m=>m.semester===BK.sem);
+  if(!ms.length){$('#bankList').innerHTML='<p class="muted">Belum ada materi untuk semester ini.</p>';return}
+  const on=x=>bankPaket&&bankPaket.bankKey===x&&pilih===bankPaket.id?'on':'';
+  $('#bankList').innerHTML='<div class="grp">Sumatif Harian (per materi)</div>'+ms.map((m,i)=>`<button class="paket ${on(m.id)}" data-bk="${esc(m.id)}"><span class="ic">📗</span><span><b>Sumatif Harian ${i+1}</b><small>${esc(m.judul)}</small></span></button>`).join('')
+    +'<div class="grp">Semua materi</div>'+`<button class="paket ${on('sas')}" data-bk="sas"><span class="ic">🏅</span><span><b>Sumatif Akhir Semester ${BK.sem}</b><small>Gabungan ${ms.length} materi semester ${BK.sem}</small></span></button>`;
+}
+function ambilSoal(ms,jml){
+  const out=[];
+  for(const b of URUTB){const n=jml[b]||0;if(!n)continue;
+    const per=ms.map(m=>shuffle(m.soal.filter(s=>s.bentuk===b).map(s=>({s,m}))));let got=[],i=0;
+    while(got.length<n&&per.some(a=>a.length)){const a=per[i++%per.length];if(a.length)got.push(a.shift())}
+    out.push(...got)}
+  return out.map(({s,m})=>({...s,gambar:(s.gambar||[]).map(g=>new URL('../bank-soal/'+g,location.href).href)}))}
+$('#segKelas').onclick=e=>{const b=e.target.closest('button');if(!b)return;BK.kelas=+b.dataset.v;LS.set('kuisBank',BK);renderBank()};
+$('#segSem').onclick=e=>{const b=e.target.closest('button');if(!b)return;BK.sem=+b.dataset.v;LS.set('kuisBank',BK);renderBank()};
+$('#bankList').onclick=async e=>{const b=e.target.closest('[data-bk]');if(!b)return;const d=await muatKelas(BK.kelas);const ms=d.materi.filter(m=>m.semester===BK.sem);
+  const key=b.dataset.bk,sas=key==='sas',pilihM=sas?ms:ms.filter(m=>m.id===key),no=ms.findIndex(m=>m.id===key)+1;
+  const soal=ambilSoal(pilihM,sas?SASJ(BK.kelas):BAB(BK.kelas));
+  const judul=sas?`Sumatif Akhir Semester ${BK.sem}`:`Sumatif Harian ${no}: ${pilihM[0].judul}`;
+  bankPaket={...normPaket({id:'bank-'+BK.kelas+'-'+key,judul,kelas:BK.kelas,soal}),bank:true,bankKey:key};
+  pilih=bankPaket.id;loadPakets();toast(judul+' · '+bankPaket.soal.length+' soal siap dimainkan.')};
+function tabSumber(t){$$('#tabSumber button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));$('#vBank').hidden=t!=='bank';$('#vSimpan').hidden=t!=='simpan'}
+$('#tabSumber').onclick=e=>{const b=e.target.closest('button');if(b)tabSumber(b.dataset.t)};
 function tambahPaket(d){
   const arr=(Array.isArray(d)&&d.length&&d[0]&&d[0].soal)?d:[d];
   const ex=LS.get('kuisExtra',[]);let last;
