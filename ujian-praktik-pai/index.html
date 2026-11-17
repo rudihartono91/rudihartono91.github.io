@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ujian Praktik PAI dan Budi Pekerti Kelas 6</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500..800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap">
+<style>
+* { margin: 0; }
+html, body { height: 100%; background: #0B1A30; overflow: hidden; }
+body { font-size: 32px; line-height: 1.2; -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+#stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#stage > section { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; display: none !important; }
+#stage > section.active { display: flex !important; }
+#stage > section { isolation: isolate; }
+#stage > section > svg.bgart, #stage > section > svg.bgart2 { pointer-events: none; z-index: -1; }
+#stage .rh, #stage .logo-corner { pointer-events: none; }
+h1 { font-size: 96px; } h2 { font-size: 64px; } h3 { font-size: 44px; } p { font-size: 32px; }
+ul.list li { margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: .45em .6em; text-align: left; border-bottom: 2px solid #D5DEEA; }
+th { font-weight: 700; }
+a { cursor: pointer; }
+.ar { direction: rtl; }
+.btn, .start, .card h3, .step .st { cursor: pointer; }
+#fs { position: fixed; left: 16px; bottom: 16px; z-index: 9; font: 600 16px Poppins, sans-serif; color: #fff;
+  background: rgba(19,41,75,.85); border: 1px solid rgba(226,169,59,.7); border-radius: 20px; padding: 8px 16px; cursor: pointer; }
+
+:root {
+  --dark: #13294B;
+  --light: #F8FAFD;
+  --gold: #E2A93B;
+  --goldtext: #8A5D0B;
+  --ink: #142440;
+  --soft: #4A5A70;
+  --ondark: #C9D7EA;
+  --card: #FFFFFF;
+  --line: #D5DEEA;
+  --mint: #E6EEF8;
+}
+body { font-family: 'Poppins', 'Trebuchet MS', sans-serif; color: var(--ink); }
+section {
+  background: var(--light);
+  padding: 128px 128px 160px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+section.dark { background: var(--dark); color: var(--light); }
+h1, h2, h3 { font-family: 'Baloo 2', 'Trebuchet MS', sans-serif; }
+.head { display: flex; flex-direction: column; gap: 8px; }
+.eyebrow { font-size: 26px; font-weight: 800; letter-spacing: 3px; color: var(--goldtext); }
+.dark .eyebrow { color: var(--gold); }
+h2 { font-size: 68px; font-weight: 600; color: var(--dark); line-height: 1.1; }
+h3 { font-size: 36px; font-weight: 600; color: var(--dark); line-height: 1.2; }
+.body { font-size: 30px; color: var(--soft); line-height: 1.45; }
+
+/* footer navigation (touch friendly) */
+.foot {
+  position: absolute; left: 128px; bottom: 48px; width: 1664px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.foot .tag { font-size: 24px; color: var(--soft); }
+.dark .foot .tag { color: var(--ondark); }
+.navrow { display: flex; gap: 16px; align-items: center; }
+.btn {
+  font-size: 28px; font-weight: 800; background: var(--mint); color: var(--dark);
+  padding: 14px 32px; border-radius: 40px; border: 2px solid var(--line);
+}
+.btn a { color: var(--dark); text-decoration: none; }
+.btn.home { background: var(--dark); border-color: var(--dark); }
+.btn.home a { color: var(--light); }
+.dark .btn { background: #1F3C6B; border-color: #2E4F85; }
+.dark .btn a { color: var(--light); }
+.dark .btn.home { background: var(--gold); border-color: var(--gold); }
+.dark .btn.home a { color: var(--dark); }
+
+/* cards */
+.card {
+  background: var(--card); border: 2px solid var(--line); border-radius: 24px;
+  padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;
+}
+.card .num { font-size: 26px; font-weight: 800; color: var(--goldtext); }
+.card .go { font-size: 28px; font-weight: 800; color: var(--dark); }
+.card .go a { color: var(--dark); text-decoration: none; }
+.card h3 a { color: var(--dark); text-decoration: none; }
+.card .txt { font-size: 26px; color: var(--soft); line-height: 1.4; }
+
+.grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; }
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.split { display: flex; gap: 32px; align-items: stretch; }
+
+ul.list { font-size: 30px; color: var(--soft); line-height: 1.6; padding-left: 40px; }
+
+/* steps */
+.steps { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; }
+.steps5 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 20px; }
+.step {
+  background: var(--card); border: 2px solid var(--line); border-radius: 20px;
+  padding: 24px; display: flex; gap: 20px; align-items: center; box-sizing: border-box;
+}
+.steps5 .step { flex-direction: column; align-items: flex-start; gap: 12px; }
+.dot {
+  font-size: 30px; font-weight: 800; background: var(--gold); color: var(--dark);
+  width: 64px; height: 64px; border-radius: 32px; text-align: center; line-height: 64px;
+}
+.step .st { font-size: 28px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+
+/* green panel */
+.panel {
+  background: var(--dark); border-radius: 28px; padding: 40px; box-sizing: border-box;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.panel h3 { color: var(--gold); }
+.panel .lat { font-size: 26px; font-style: italic; color: var(--ondark); line-height: 1.45; }
+.panel .arti { font-size: 26px; color: var(--light); line-height: 1.45; }
+.panel .txt { font-size: 26px; color: var(--ondark); line-height: 1.45; }
+
+.ar { font-family: 'Amiri', 'Times New Roman', serif; font-size: 44px; line-height: 1.7; text-align: right; color: var(--light); }
+.card .ar { color: var(--dark); font-size: 38px; }
+
+.pills { display: flex; flex-wrap: wrap; gap: 16px; }
+.pill {
+  font-size: 28px; font-weight: 700; background: var(--mint); color: var(--dark);
+  padding: 12px 28px; border-radius: 36px;
+}
+
+table.tb { font-size: 26px; color: var(--ink); }
+.note { font-size: 24px; color: var(--soft); }
+
+/* cover */
+.cover { justify-content: center; gap: 28px; }
+.cover h1 { font-size: 100px; font-weight: 600; color: var(--light); line-height: 1.05; width: 1100px; }
+.cover .sub { font-size: 40px; color: var(--ondark); width: 1100px; }
+.cover .by { font-size: 28px; color: var(--ondark); line-height: 1.5; }
+.start {
+  font-size: 34px; font-weight: 800; background: var(--gold); color: var(--dark);
+  padding: 20px 44px; border-radius: 48px; align-self: flex-start;
+}
+.start a { color: var(--dark); text-decoration: none; }
+.star { position: absolute; left: 1290px; top: 250px; width: 560px; height: 560px; opacity: 0.5; }
+
+.arrow { width: 56px; height: 28px; background: var(--gold); align-self: center; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.rise { animation: rise 500ms ease-out both; animation-delay: calc(var(--i) * 60ms); }
+
+/* compact doa slide */
+.doa { gap: 24px; }
+.doa h2 { font-size: 56px; }
+.doa h3 { font-size: 30px; }
+.doa .card .ar { font-size: 34px; line-height: 1.6; }
+.doa .card .txt { font-size: 24px; line-height: 1.4; }
+.doa .card { padding: 20px 32px; gap: 6px; }
+
+.hf { gap: 24px; }
+.hafal { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; gap: 12px; }
+.sr { background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 16px 6px; display: flex; flex-direction: column; align-items: center; }
+.sn { font-size: 24px; font-weight: 800; color: var(--goldtext); line-height: 1.3; }
+.sm { font-size: 25px; font-weight: 700; color: var(--dark); line-height: 1.3; }
+
+/* doa detail slides */
+.doadet { gap: 32px; }
+.doadet .ar { font-size: 38px; line-height: 1.7; }
+.doadet .one .ar { font-size: 52px; }
+.doadet .one .lat, .doadet .one .arti { font-size: 30px; }
+.doacard .ar { color: var(--dark); }
+.doacard h3 { color: var(--goldtext); }
+.doacard .lat { font-size: 26px; font-style: italic; color: var(--soft); line-height: 1.45; }
+.doacard .arti { font-size: 26px; color: var(--ink); line-height: 1.45; }
+.one { display: flex; flex-direction: column; }
+.step .st a { color: var(--ink); text-decoration: none; }
+
+.cover .bigtitle { font-family: 'Baloo 2', 'Trebuchet MS', sans-serif; font-size: 140px; font-weight: 700; color: var(--gold); line-height: 1; letter-spacing: 2px; width: 1100px; }
+.cover h1.subj { font-size: 64px; line-height: 1.15; }
+
+h2 { font-weight: 800; }
+h3 { font-weight: 700; }
+.cover .bigtitle { font-weight: 800; }
+
+/* ===== motion: lively text ===== */
+@keyframes slidein { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes drop { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pop { 0% { opacity: 0; transform: scale(0.6); } 60% { opacity: 1; transform: scale(1.08); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes focusin { from { opacity: 0; filter: blur(12px); } to { opacity: 1; filter: blur(0px); } }
+@keyframes logoin { 0% { opacity: 0; transform: rotate(-12deg) scale(0.7); } 70% { opacity: 1; transform: rotate(3deg) scale(1.04); } 100% { opacity: 1; transform: rotate(0deg) scale(1); } }
+@keyframes glow { from { color: var(--light); } to { color: var(--gold); } }
+
+.eyebrow { animation: drop 500ms ease-out both; }
+h2 { animation: slidein 650ms ease-out 120ms both; text-shadow: 0 3px 0 rgba(19, 41, 75, 0.10); }
+.cover .bigtitle { animation: pop 900ms ease-out both, glow 900ms ease-out both; text-shadow: 0 6px 28px rgba(226, 169, 59, 0.45); }
+.cover h1.subj, .cover h1 { animation: slidein 700ms ease-out 350ms both; }
+.dot { animation: pop 500ms ease-out both; animation-delay: calc(var(--i) * 60ms + 250ms); }
+.ar { animation: focusin 900ms ease-out 350ms both; }
+.btn.home, .start { animation: pop 600ms ease-out 600ms both; }
+.logo { animation: logoin 1000ms ease-out 200ms both; }
+
+/* ===== cover v2 ===== */
+.cover2 { justify-content: center; gap: 26px; padding: 96px 128px 160px; }
+.cover2 .tagpill { font-size: 26px; font-weight: 700; letter-spacing: 3px; color: var(--gold); border: 2px solid var(--gold); border-radius: 40px; padding: 10px 28px; align-self: flex-start; }
+.cover2 .bigtitle2 { font-family: 'Baloo 2', 'Trebuchet MS', sans-serif; font-size: 150px; font-weight: 800; line-height: 0.95; color: var(--light); letter-spacing: 3px; width: 960px; text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35); animation: pop 900ms ease-out 150ms both; }
+.cover2 h1.subj { font-size: 54px; font-weight: 700; color: var(--light); line-height: 1.15; width: 960px; animation: slidein 700ms ease-out 450ms both; }
+.cover2 .orn { animation: focusin 700ms ease-out 650ms both; }
+.cover2 .start { animation: pop 600ms ease-out 800ms both; }
+.cover2 .band { position: absolute; left: 128px; top: 1018px; width: 1664px; display: flex; justify-content: space-between; }
+.cover2 .bandtxt { font-size: 26px; font-weight: 700; letter-spacing: 4px; color: var(--ondark); }
+.cover2 .bgart { animation: focusin 900ms ease-out both; }
+
+/* RH monogram, top-left corner */
+.rh { position: absolute; left: 40px; top: 32px; width: 72px; height: 72px; box-sizing: border-box;
+  border-radius: 36px; border: 3px solid var(--gold); background: var(--dark); color: var(--gold);
+  font-family: 'Baloo 2', 'Trebuchet MS', sans-serif; font-size: 30px; font-weight: 800; letter-spacing: 1px;
+  text-align: center; line-height: 66px; animation: pop 600ms ease-out 200ms both; }
+
+.bgart2 { animation: focusin 700ms ease-out both; }
+
+.logo-corner { animation: logoin 900ms ease-out 250ms both; }
+
+/* long doa (doa setelah wudu) */
+.tight .one .panel { padding: 32px 40px; gap: 14px; }
+.tight .one h3 { font-size: 30px; }
+.tight .one .ar { font-size: 52px; line-height: 1.6; }
+.tight .one .lat, .tight .one .arti { font-size: 26px; line-height: 1.4; }
+
+/* azan & iqamah */
+.lzs { gap: 28px; }
+.headrow { display: flex; justify-content: space-between; align-items: flex-end; }
+.tabs { display: flex; gap: 16px; }
+.tab { font-size: 32px; font-weight: 800; padding: 18px 44px; border-radius: 48px; background: var(--card); color: var(--dark); border: 3px solid var(--line); }
+.tab a { color: var(--dark); text-decoration: none; }
+.tab.on { background: var(--dark); color: var(--gold); border-color: var(--gold); }
+.lzgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+.lz { background: var(--card); border: 2px solid var(--line); border-radius: 20px; padding: 12px 24px; display: flex; align-items: center; gap: 20px; box-sizing: border-box; }
+.lz.sub { background: #FFF6E2; border-color: var(--gold); }
+.lzt { flex: 1; display: flex; flex-direction: column; }
+.lza { font-family: 'Amiri', 'Times New Roman', serif; font-size: 40px; line-height: 1.5; color: var(--dark); text-align: right; direction: rtl; }
+.lzl { font-size: 24px; font-style: italic; color: var(--soft); }
+.lzk { font-size: 24px; font-weight: 700; color: var(--goldtext); }
+.cnt { font-size: 28px; font-weight: 800; background: var(--dark); color: var(--gold); padding: 10px 22px; border-radius: 30px; white-space: nowrap; }
+
+.lzgrid.full { grid-template-columns: 1fr 1fr 1fr; gap: 14px 18px; }
+.lzgrid.full .lz { padding: 10px 20px; gap: 16px; }
+.lzgrid.full .lza { font-size: 36px; }
+
+/* azan/iqamah chooser */
+.chooser { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.choose { background: var(--dark); border: 4px solid var(--gold); border-radius: 32px; padding: 40px 48px; display: flex; flex-direction: column; align-items: center; gap: 8px; box-sizing: border-box; }
+.charab { font-family: 'Amiri', 'Times New Roman', serif; font-size: 96px; line-height: 1.3; color: var(--gold); }
+.chbig { font-family: 'Baloo 2', 'Trebuchet MS', sans-serif; font-size: 72px; font-weight: 800; line-height: 1.1; color: var(--light); }
+.chbig a { color: var(--light); text-decoration: none; }
+.chsub { font-size: 28px; color: var(--ondark); text-align: center; }
+
+.ket { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.ketl { font-size: 30px; font-weight: 700; color: var(--soft); }
+.ketp { font-size: 34px; color: var(--dark); background: #FFF6E2; border: 3px solid var(--gold); border-radius: 44px; padding: 14px 40px; }
+.ketp b { color: var(--dark); }
+.chs { gap: 32px; }
+.chs .choose { padding: 24px 48px; }
+.chs .charab { font-size: 76px; line-height: 1.25; }
+.chs .chbig { font-size: 64px; }
+.chs .pill { font-size: 26px; padding: 10px 24px; }
+
+
+.qov .ltab { font: 800 28px Poppins, sans-serif; border-radius: 40px; padding: 14px 32px; border: 3px solid #E2A93B; background: transparent; color: #F8FAFD; cursor: pointer; }
+.qov .ltab.on { background: #E2A93B; color: #13294B; }
+.qov .lgrid { direction: ltr; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px 28px; text-align: left; }
+.qov .lrow { display: flex; align-items: center; gap: 20px; background: #FFFFFF; border: 2px solid #E7DFC8; border-radius: 20px; padding: 10px 22px; }
+.qov .lrow.sub { background: #FFF6E2; border-color: #E2A93B; grid-column: 1 / -1; }
+.qov .lno { font: 800 28px 'Baloo 2', sans-serif; background: #E2A93B; color: #13294B; width: 56px; height: 56px; border-radius: 28px; display: flex; align-items: center; justify-content: center; flex: none; }
+.qov .ltx { flex: 1; }
+.qov .lar { font: 46px/1.6 'Amiri', 'Amiri Quran Local', serif; color: #13294B; direction: rtl; text-align: right; }
+.qov .llat { font: italic 400 26px/1.3 Poppins, sans-serif; color: #4A5A70; }
+.qov .lk { font: 700 24px Poppins, sans-serif; color: #8A5D0B; }
+#stage .choose { cursor: pointer; }
+@font-face { font-family: 'Amiri Quran Local'; src: url(amiri-quran.woff2) format('woff2'); font-display: block; }
+#qv, #lv { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: rgba(8, 18, 36, 0.62); z-index: 50; display: none; }
+#qv.open, #lv.open { display: block; }
+.qov .qcard { position: absolute; left: 80px; top: 48px; width: 1760px; height: 984px; box-sizing: border-box; background: #FBF8EF;
+  border: 4px solid #E2A93B; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: 0 30px 80px rgba(0,0,0,.45); animation: pop 450ms ease-out both; }
+.qov .qhead { background: #13294B; color: #F8FAFD; display: flex; align-items: center; gap: 24px; padding: 18px 28px; }
+.qov .qnum { font: 800 30px 'Baloo 2', sans-serif; color: #13294B; background: #E2A93B; width: 72px; height: 72px; border-radius: 36px;
+  display: flex; align-items: center; justify-content: center; flex: none; }
+.qov .qtitle { flex: 1; min-width: 0; }
+.qov .qlat { font: 800 44px/1.1 'Baloo 2', sans-serif; }
+.qov .qinfo { font: 500 24px/1.3 Poppins, sans-serif; color: #C9D7EA; }
+.qov .qar { font: 52px/1.2 'Amiri Quran Local', 'Amiri Quran', serif; color: #E2A93B; direction: rtl; flex: none; }
+.qov .qbtn { font: 700 26px Poppins, sans-serif; color: #13294B; background: #E6EEF8; border: 0; border-radius: 40px; padding: 14px 28px; cursor: pointer; flex: none; }
+.qov .qbtn.gold { background: #E2A93B; }
+.qov .qbody { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: 28px 80px 48px;
+  direction: rtl; text-align: center; color: #13294B; touch-action: pan-y; }
+.qov .qbas { font: 56px/2 'Amiri Quran Local', 'Amiri Quran', serif; color: #8A5D0B; margin-bottom: 8px; }
+.qov .qtext { font: 64px/2.25 'Amiri Quran Local', 'Amiri Quran', serif; text-align: center; }
+.qov .qmark { color: #B07A12; font-size: 0.85em; white-space: nowrap; padding: 0 6px; }
+.qov .qayah { text-align: right; padding: 22px 0; border-bottom: 2px solid #E7DFC8; }
+.qov .qayah .qa { font: 60px/2.1 'Amiri Quran Local', 'Amiri Quran', serif; }
+.qov .qayah .qt { direction: ltr; text-align: left; font: 400 28px/1.5 Poppins, sans-serif; color: #3D4C63; margin-top: 6px; }
+.qov .qayah .qt b { color: #8A5D0B; }
+.qov .qfoot { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 28px; background: #F1EAD6; border-top: 2px solid #E2A93B; }
+.qov .qhint { font: 500 24px/1.3 Poppins, sans-serif; color: #5A6478; text-align: center; }
+#stage .sr.tap { cursor: pointer; transition: background-color 150ms; }
+#stage .sr.tap:active { background: #FFF3D6; }
+</style></head>
+<body>
+<button id="fs" type="button">Layar penuh</button>
+<div id="stage">
+<section data-n="1" id="s-cover" class="dark cover cover2" data-transition="fade">
+<svg class="bgart" aria-label="Latar pola bintang segi delapan dengan lengkung mihrab" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pt1" width="120" height="120" patternUnits="userSpaceOnUse"><g fill="none" stroke="#E2A93B" stroke-opacity="0.13" stroke-width="2"><rect x="35" y="35" width="50" height="50"/><rect x="35" y="35" width="50" height="50" transform="rotate(45 60 60)"/><circle cx="60" cy="60" r="8"/></g></pattern>
+<radialGradient id="gl1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.42"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+<linearGradient id="fade1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#13294B" stop-opacity="0.92"/><stop offset="0.55" stop-color="#13294B" stop-opacity="0.55"/><stop offset="1" stop-color="#13294B" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="#13294B"/>
+<rect width="1920" height="1080" fill="url(#pt1)"/>
+<rect width="1300" height="1080" fill="url(#fade1)"/>
+<path d="M1150 1000 L1150 390 Q1150 240 1460 130 Q1770 240 1770 390 L1770 1000 Z" fill="#1A3566" stroke="#E2A93B" stroke-width="6"/>
+<path d="M1180 1000 L1180 398 Q1180 268 1460 162 Q1740 268 1740 398 L1740 1000" fill="none" stroke="#E2A93B" stroke-opacity="0.45" stroke-width="2"/>
+<circle cx="1460" cy="640" r="330" fill="url(#gl1)"/>
+<path d="M1460 70 l14 34 l36 0 l-29 22 l11 35 l-32 -21 l-32 21 l11 -35 l-29 -22 l36 0 Z" fill="#E2A93B"/>
+<rect x="0" y="1000" width="1920" height="80" fill="#0C1D38"/>
+<rect x="0" y="996" width="1920" height="4" fill="#E2A93B"/>
+</svg>
+<img src="logo.png" class="logo" alt="Logo SDN Slipi 15" style="position:absolute;left:1220px;top:400px;width:480px;height:426px;object-fit:contain">
+<p class="tagpill rise" style="--i:0">KELAS 6 SD · TAHUN PELAJARAN 2026/2027</p>
+<p class="bigtitle2">UJIAN<br><span style="color:#E2A93B">PRAKTIK</span></p>
+<h1 class="subj">Pendidikan Agama Islam<br>dan Budi Pekerti</h1>
+<svg class="orn" aria-label="Garis ornamen" width="360" height="24" viewBox="0 0 360 24" style="width:360px;height:24px"><g fill="#E2A93B"><rect x="0" y="11" width="150" height="2"/><rect x="210" y="11" width="150" height="2"/><path d="M180 0 L192 12 L180 24 L168 12 Z"/><circle cx="158" cy="12" r="4"/><circle cx="202" cy="12" r="4"/></g></svg>
+<p class="start"><a href="#slide-2">Mulai: Menu Utama ›</a></p>
+<div class="band"><p class="bandtxt">SDN SLIPI 15 · JAKARTA BARAT</p><p class="bandtxt">GURU PAI DAN BUDI PEKERTI</p></div>
+<p class="rh">RH</p>
+
+</section>
+
+<section data-n="2" id="s-menu">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl2" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg2)"/>
+<rect width="1920" height="1080" fill="url(#pl2)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg2)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">MENU UTAMA</p>
+<h2>Sentuh materi yang ingin dibuka</h2>
+</div>
+<div class="grid4">
+<div class="card rise" style="--i:0"><p class="num">AL-QUR’AN · 01</p><h3><a href="#slide-3">Membaca Al-Qur’an ›</a></h3><p class="txt">QS. Al-Ma’un dan QS. At-Tin</p></div>
+<div class="card rise" style="--i:1"><p class="num">AL-QUR’AN · 02</p><h3><a href="#slide-4">Menulis Al-Qur’an ›</a></h3><p class="txt">QS. Al-Fatihah dan QS. Al-Ikhlas</p></div>
+<div class="card rise" style="--i:2"><p class="num">AL-QUR’AN · 03</p><h3><a href="#slide-5">Menghafal Al-Qur’an ›</a></h3><p class="txt">23 surah pilihan Juz 30</p></div>
+<div class="card rise" style="--i:3"><p class="num">FIQIH · 04</p><h3><a href="#slide-6">Berwudu ›</a></h3><p class="txt">Niat dan enam fardu wudu</p></div>
+<div class="card rise" style="--i:4"><p class="num">FIQIH · 05</p><h3><a href="#slide-9">Salat ›</a></h3><p class="txt">Urutan gerakan dan bacaan</p></div>
+<div class="card rise" style="--i:5"><p class="num">FIQIH · 06</p><h3><a href="#slide-10">Azan dan Iqamah ›</a></h3><p class="txt">Azan laki-laki, iqamah perempuan</p></div>
+<div class="card rise" style="--i:6"><p class="num">AKHLAK · 07</p><h3><a href="#slide-13">Doa Harian ›</a></h3><p class="txt">Sebelas doa harian</p></div>
+<div class="card rise" style="--i:7"><p class="num">PENUTUP · 08</p><h3><a href="#slide-26">Terima Kasih ›</a></h3><p class="txt">Doa dan salam penutup</p></div>
+</div>
+<div class="foot">
+<p class="tag">Ujian Praktik PAI · Kelas 6</p>
+<div class="navrow"><p class="btn"><a href="#slide-1">‹ Sampul</a></p><p class="btn"><a href="#slide-3">Mulai materi ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+
+</section>
+
+<section data-n="3" id="s-membaca">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl3" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg3)"/>
+<rect width="1920" height="1080" fill="url(#pl3)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg3)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AL-QUR’AN · 01</p>
+<h2>Membaca Al-Qur’an</h2>
+</div>
+<div class="cols2">
+<div class="panel rise" style="--i:0">
+<p class="txt">Surah ke-107 · 7 ayat</p>
+<h3 style="font-size:56px">QS. Al-Ma’un</h3>
+<p class="arti">Tentang orang yang mendustakan agama: menghardik anak yatim dan tidak peduli pada orang miskin.</p>
+</div>
+<div class="panel rise" style="--i:1">
+<p class="txt">Surah ke-95 · 8 ayat</p>
+<h3 style="font-size:56px">QS. At-Tin</h3>
+<p class="arti">Allah menciptakan manusia dalam bentuk yang sebaik-baiknya.</p>
+</div>
+</div>
+<div class="card rise" style="--i:2">
+<h3>Yang dinilai</h3>
+<div class="pills"><p class="pill">Kelancaran</p><p class="pill">Tajwid</p><p class="pill">Makharijul huruf</p><p class="pill">Adab membaca</p></div>
+</div>
+<div class="foot">
+<p class="tag">3 · Membaca Al-Qur’an</p>
+<div class="navrow"><p class="btn"><a href="#slide-2">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-4">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="4" id="s-menulis">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl4" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg4)"/>
+<rect width="1920" height="1080" fill="url(#pl4)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg4)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AL-QUR’AN · 02</p>
+<h2>Menulis Al-Qur’an</h2>
+</div>
+<div class="cols2">
+<div class="panel rise qopen" data-surah="1" data-list="1,112" style="--i:0;cursor:pointer">
+<p class="txt">Surah ke-1 · 7 ayat</p>
+<h3 style="font-size:56px">QS. Al-Fatihah</h3>
+<p class="arti">Ummul Kitab, dibaca pada setiap rakaat salat.</p>
+<p class="start">Sentuh untuk melihat surah ›</p>
+</div>
+<div class="panel rise qopen" data-surah="112" data-list="1,112" style="--i:1;cursor:pointer">
+<p class="txt">Surah ke-112 · 4 ayat</p>
+<h3 style="font-size:56px">QS. Al-Ikhlas</h3>
+<p class="arti">Menegaskan keesaan Allah Swt.</p>
+<p class="start">Sentuh untuk melihat surah ›</p>
+</div>
+</div>
+<div class="card rise" style="--i:2">
+<h3>Yang dinilai</h3>
+<div class="pills"><p class="pill">Bentuk huruf benar</p><p class="pill">Sambungan huruf tepat</p><p class="pill">Harakat lengkap</p><p class="pill">Rapi dan bersih</p></div>
+</div>
+<div class="foot">
+<p class="tag">4 · Menulis Al-Qur’an</p>
+<div class="navrow"><p class="btn"><a href="#slide-3">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-5">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="5" id="s-menghafal" class="hf">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl5" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg5" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg5)"/>
+<rect width="1920" height="1080" fill="url(#pl5)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg5)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AL-QUR’AN · 03 · 23 SURAH</p>
+<h2>Hafalan surah pendek Juz 30</h2>
+</div>
+<div class="hafal rise" style="--i:0">
+<div class="sr tap"><p class="sn">114</p><p class="sm">An-Nas</p></div>
+<div class="sr tap"><p class="sn">113</p><p class="sm">Al-Falaq</p></div>
+<div class="sr tap"><p class="sn">112</p><p class="sm">Al-Ikhlas</p></div>
+<div class="sr tap"><p class="sn">111</p><p class="sm">Al-Lahab</p></div>
+<div class="sr tap"><p class="sn">110</p><p class="sm">An-Nasr</p></div>
+<div class="sr tap"><p class="sn">109</p><p class="sm">Al-Kafirun</p></div>
+<div class="sr tap"><p class="sn">108</p><p class="sm">Al-Kautsar</p></div>
+<div class="sr tap"><p class="sn">107</p><p class="sm">Al-Ma’un</p></div>
+<div class="sr tap"><p class="sn">106</p><p class="sm">Al-Qurays</p></div>
+<div class="sr tap"><p class="sn">105</p><p class="sm">Al-Fiil</p></div>
+<div class="sr tap"><p class="sn">104</p><p class="sm">Al-Humazah</p></div>
+<div class="sr tap"><p class="sn">103</p><p class="sm">Al-’Ashr</p></div>
+<div class="sr tap"><p class="sn">102</p><p class="sm">At-Takatsur</p></div>
+<div class="sr tap"><p class="sn">101</p><p class="sm">Al-Qori’ah</p></div>
+<div class="sr tap"><p class="sn">100</p><p class="sm">Al-’Adiyat</p></div>
+<div class="sr tap"><p class="sn">99</p><p class="sm">Al-Zalzalah</p></div>
+<div class="sr tap"><p class="sn">98</p><p class="sm">Al-Bayyinah</p></div>
+<div class="sr tap"><p class="sn">97</p><p class="sm">Al-Qadr</p></div>
+<div class="sr tap"><p class="sn">96</p><p class="sm">Al-Alaq</p></div>
+<div class="sr tap"><p class="sn">95</p><p class="sm">At-Tiin</p></div>
+<div class="sr tap"><p class="sn">94</p><p class="sm">Al-Insyiroh</p></div>
+<div class="sr tap"><p class="sn">93</p><p class="sm">Ad-Dhuha</p></div>
+<div class="sr tap"><p class="sn">87</p><p class="sm">Al-’Ala</p></div>
+</div>
+<p class="note">Sentuh nama surah untuk menampilkan bacaannya dari ayat pertama sampai selesai. Siswa mengundi surah dari 23 surah di atas, lalu melafalkan hafalannya dengan tartil di depan penguji.</p>
+<div class="foot">
+<p class="tag">5 · Menghafal Al-Qur’an</p>
+<div class="navrow"><p class="btn"><a href="#slide-4">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-6">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+
+</section>
+
+<section data-n="6" id="s-wudu">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl6" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg6" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg6)"/>
+<rect width="1920" height="1080" fill="url(#pl6)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg6)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK FIQIH · 04</p>
+<h2>Enam fardu wudu, berurutan</h2>
+</div>
+<div class="split">
+<div class="steps" style="flex:1.2">
+<div class="step rise" style="--i:0"><p class="dot">1</p><p class="st">Niat</p></div>
+<div class="step rise" style="--i:1"><p class="dot">2</p><p class="st">Membasuh muka</p></div>
+<div class="step rise" style="--i:2"><p class="dot">3</p><p class="st">Membasuh kedua tangan sampai siku</p></div>
+<div class="step rise" style="--i:3"><p class="dot">4</p><p class="st">Mengusap sebagian kepala</p></div>
+<div class="step rise" style="--i:4"><p class="dot">5</p><p class="st">Membasuh kedua kaki sampai mata kaki</p></div>
+<div class="step rise" style="--i:5"><p class="dot">6</p><p class="st">Tertib (berurutan)</p></div>
+</div>
+<div class="panel rise" style="flex:1;--i:6;justify-content:center;gap:28px">
+<h3>Bacaan wudu</h3>
+<p class="txt">Sentuh tombol untuk membuka bacaan lengkap.</p>
+<p class="start"><a href="#slide-7">Niat wudu ›</a></p>
+<p class="start"><a href="#slide-8">Doa setelah wudu ›</a></p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">6 · Berwudu</p>
+<div class="navrow"><p class="btn"><a href="#slide-5">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-7">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+
+</section>
+
+<section data-n="7" id="s-wudu-niat" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl7" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg7" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg7)"/>
+<rect width="1920" height="1080" fill="url(#pl7)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg7)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK FIQIH · 04 · SEBELUM BERWUDU</p>
+<h2>Niat wudu</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Diucapkan dalam hati saat mulai membasuh muka</h3>
+<p class="ar">نَوَيْتُ الْوُضُوْءَ لِرَفْعِ الْحَدَثِ الْأَصْغَرِ فَرْضًا لِلّٰهِ تَعَالَى</p>
+<p class="lat">Nawaitul wuḍū’a liraf‘il ḥadaṡil aṣgari farḍal lillāhi ta‘ālā.</p>
+<p class="arti">“Aku berniat wudu untuk menghilangkan hadas kecil, fardu karena Allah Ta‘ala.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">7 · Niat wudu</p>
+<div class="navrow"><p class="btn"><a href="#slide-6">‹ Kembali ke Wudu</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-8">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="8" id="s-wudu-doa" class="doadet tight">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl8" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg8" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg8)"/>
+<rect width="1920" height="1080" fill="url(#pl8)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg8)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK FIQIH · 04 · SETELAH BERWUDU</p>
+<h2>Doa setelah wudu</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Dibaca setelah selesai berwudu, menghadap kiblat</h3>
+<p class="ar">أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيْكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُ، اَللّٰهُمَّ اجْعَلْنِيْ مِنَ التَّوَّابِيْنَ وَاجْعَلْنِيْ مِنَ الْمُتَطَهِّرِيْنَ، وَاجْعَلْنِيْ مِنْ عِبَادِكَ الصَّالِحِيْنَ</p>
+<p class="lat">Asyhadu an lā ilāha illallāhu waḥdahū lā syarīka lah, wa asyhadu anna muḥammadan ‘abduhū wa rasūluh. Allāhummaj‘alnī minat-tawwābīna waj‘alnī minal-mutaṭahhirīn, waj‘alnī min ‘ibādikaṣ-ṣāliḥīn.</p>
+<p class="arti">“Aku bersaksi tiada Tuhan selain Allah Yang Maha Esa, tiada sekutu bagi-Nya, dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya. Ya Allah, jadikanlah aku termasuk orang-orang yang bertobat dan orang-orang yang menyucikan diri, serta jadikanlah aku termasuk hamba-hamba-Mu yang saleh.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">8 · Doa setelah wudu</p>
+<div class="navrow"><p class="btn"><a href="#slide-6">‹ Kembali ke Wudu</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-9">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="9" id="s-salat">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl9" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg9" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg9)"/>
+<rect width="1920" height="1080" fill="url(#pl9)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg9)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK FIQIH · 05</p>
+<h2>Urutan gerakan salat yang dipraktikkan</h2>
+</div>
+<div class="steps5">
+<div class="step rise" style="--i:0"><p class="dot">1</p><p class="st">Berdiri dan niat</p></div>
+<div class="step rise" style="--i:1"><p class="dot">2</p><p class="st">Takbiratul ihram</p></div>
+<div class="step rise" style="--i:2"><p class="dot">3</p><p class="st">Membaca Al-Fātiḥah</p></div>
+<div class="step rise" style="--i:3"><p class="dot">4</p><p class="st">Rukuk dengan tumakninah</p></div>
+<div class="step rise" style="--i:4"><p class="dot">5</p><p class="st">Iktidal</p></div>
+<div class="step rise" style="--i:5"><p class="dot">6</p><p class="st">Sujud pertama</p></div>
+<div class="step rise" style="--i:6"><p class="dot">7</p><p class="st">Duduk di antara dua sujud</p></div>
+<div class="step rise" style="--i:7"><p class="dot">8</p><p class="st">Sujud kedua</p></div>
+<div class="step rise" style="--i:8"><p class="dot">9</p><p class="st">Tasyahud akhir</p></div>
+<div class="step rise" style="--i:9"><p class="dot">10</p><p class="st">Salam</p></div>
+</div>
+<div class="panel rise" style="--i:10">
+<p class="arti">Praktik: salat [Subuh, 2 rakaat]. Bacaan dilafalkan jelas agar penguji dapat menilai gerakan dan bacaan sekaligus.</p>
+</div>
+<div class="foot">
+<p class="tag">9 · Salat</p>
+<div class="navrow"><p class="btn"><a href="#slide-8">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-10">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="10" id="s-azan-menu" class="chs">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl10" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg10" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg10" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg10)"/>
+<rect width="1920" height="1080" fill="url(#pl10)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg10)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+
+<div class="head">
+<p class="eyebrow">ASPEK FIQIH · 06</p>
+<h2>Azan dan iqamah</h2>
+</div>
+<p class="body">Sentuh salah satu tombol untuk menampilkan lafaznya secara lengkap.</p>
+<div class="chooser">
+<div class="choose rise" data-lafaz="azan" style="--i:0"><p class="charab">أَذَان</p><p class="chbig"><a href="#slide-11">Azan ›</a></p><p class="chsub">Dikumandangkan oleh siswa laki-laki · 12 baris</p></div>
+<div class="choose rise" data-lafaz="iqamah" style="--i:1"><p class="charab">إِقَامَة</p><p class="chbig"><a href="#slide-12">Iqamah ›</a></p><p class="chsub">Dikumandangkan oleh siswa perempuan · 9 baris</p></div>
+</div>
+<div class="card rise" style="--i:2">
+<h3>Yang dinilai</h3>
+<div class="pills"><p class="pill">Lafaz benar dan berurutan</p><p class="pill">Suara jelas dan lantang</p><p class="pill">Tidak tergesa-gesa</p><p class="pill">Menghadap kiblat</p></div>
+</div>
+<div class="foot">
+<p class="tag">10 · Azan dan iqamah</p>
+<div class="navrow"><p class="btn"><a href="#slide-9">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-11">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="11" id="s-azan" class="lzs">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl11" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg11" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg11" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg11)"/>
+<rect width="1920" height="1080" fill="url(#pl11)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg11)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+
+<div class="headrow">
+<div class="head">
+<p class="eyebrow">ASPEK FIQIH · 06 · DIKUMANDANGKAN OLEH SISWA LAKI-LAKI</p>
+<h2>Lafaz azan lengkap</h2>
+</div>
+<div class="tabs"><p class="tab on">Azan</p><p class="tab"><a href="#slide-12">Iqamah ›</a></p></div>
+</div>
+<div class="lzgrid full">
+<div class="lz rise" style="--i:0"><p class="dot">1</p><div class="lzt"><p class="lza">اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ</p><p class="lzl">Allāhu akbar, Allāhu akbar</p></div></div>
+<div class="lz rise" style="--i:1"><p class="dot">2</p><div class="lzt"><p class="lza">اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ</p><p class="lzl">Allāhu akbar, Allāhu akbar</p></div></div>
+<div class="lz rise" style="--i:2"><p class="dot">3</p><div class="lzt"><p class="lza">أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ</p><p class="lzl">Asyhadu an lā ilāha illallāh</p></div></div>
+<div class="lz rise" style="--i:3"><p class="dot">4</p><div class="lzt"><p class="lza">أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ</p><p class="lzl">Asyhadu an lā ilāha illallāh</p></div></div>
+<div class="lz rise" style="--i:4"><p class="dot">5</p><div class="lzt"><p class="lza">أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ</p><p class="lzl">Asyhadu anna Muḥammadar rasūlullāh</p></div></div>
+<div class="lz rise" style="--i:5"><p class="dot">6</p><div class="lzt"><p class="lza">أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ</p><p class="lzl">Asyhadu anna Muḥammadar rasūlullāh</p></div></div>
+<div class="lz rise" style="--i:6"><p class="dot">7</p><div class="lzt"><p class="lza">حَيَّ عَلَى الصَّلَاةِ</p><p class="lzl">Ḥayya ‘alaṣ-ṣalāh</p></div></div>
+<div class="lz rise" style="--i:7"><p class="dot">8</p><div class="lzt"><p class="lza">حَيَّ عَلَى الصَّلَاةِ</p><p class="lzl">Ḥayya ‘alaṣ-ṣalāh</p></div></div>
+<div class="lz rise" style="--i:8"><p class="dot">9</p><div class="lzt"><p class="lza">حَيَّ عَلَى الْفَلَاحِ</p><p class="lzl">Ḥayya ‘alal-falāḥ</p></div></div>
+<div class="lz rise" style="--i:9"><p class="dot">10</p><div class="lzt"><p class="lza">حَيَّ عَلَى الْفَلَاحِ</p><p class="lzl">Ḥayya ‘alal-falāḥ</p></div></div>
+<div class="lz rise" style="--i:10"><p class="dot">11</p><div class="lzt"><p class="lza">اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ</p><p class="lzl">Allāhu akbar, Allāhu akbar</p></div></div>
+<div class="lz rise" style="--i:11"><p class="dot">12</p><div class="lzt"><p class="lza">لَا إِلٰهَ إِلَّا اللّٰهُ</p><p class="lzl">Lā ilāha illallāh</p></div></div>
+<div class="lz sub rise" style="--i:12"><div class="lzt"><p class="lzk">Khusus Subuh, sesudah baris 10:</p><p class="lza">اَلصَّلَاةُ خَيْرٌ مِنَ النَّوْمِ</p><p class="lzl">Aṣ-ṣalātu khairum minan naum (2 kali)</p></div></div>
+</div>
+<div class="foot">
+<p class="tag">11 · Lafaz azan</p>
+<div class="navrow"><p class="btn"><a href="#slide-10">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-12">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="12" id="s-iqamah" class="lzs">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl12" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg12" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg12" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg12)"/>
+<rect width="1920" height="1080" fill="url(#pl12)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg12)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+
+<div class="headrow">
+<div class="head">
+<p class="eyebrow">ASPEK FIQIH · 06 · DIKUMANDANGKAN OLEH SISWA PEREMPUAN</p>
+<h2>Lafaz iqamah lengkap</h2>
+</div>
+<div class="tabs"><p class="tab"><a href="#slide-11">Azan ›</a></p><p class="tab on">Iqamah</p></div>
+</div>
+<div class="lzgrid full">
+<div class="lz rise" style="--i:0"><p class="dot">1</p><div class="lzt"><p class="lza">اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ</p><p class="lzl">Allāhu akbar, Allāhu akbar</p></div></div>
+<div class="lz rise" style="--i:1"><p class="dot">2</p><div class="lzt"><p class="lza">أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ</p><p class="lzl">Asyhadu an lā ilāha illallāh</p></div></div>
+<div class="lz rise" style="--i:2"><p class="dot">3</p><div class="lzt"><p class="lza">أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ</p><p class="lzl">Asyhadu anna Muḥammadar rasūlullāh</p></div></div>
+<div class="lz rise" style="--i:3"><p class="dot">4</p><div class="lzt"><p class="lza">حَيَّ عَلَى الصَّلَاةِ</p><p class="lzl">Ḥayya ‘alaṣ-ṣalāh</p></div></div>
+<div class="lz rise" style="--i:4"><p class="dot">5</p><div class="lzt"><p class="lza">حَيَّ عَلَى الْفَلَاحِ</p><p class="lzl">Ḥayya ‘alal-falāḥ</p></div></div>
+<div class="lz rise" style="--i:5"><p class="dot">6</p><div class="lzt"><p class="lza">قَدْ قَامَتِ الصَّلَاةُ</p><p class="lzl">Qad qāmatiṣ-ṣalāh</p></div></div>
+<div class="lz rise" style="--i:6"><p class="dot">7</p><div class="lzt"><p class="lza">قَدْ قَامَتِ الصَّلَاةُ</p><p class="lzl">Qad qāmatiṣ-ṣalāh</p></div></div>
+<div class="lz rise" style="--i:7"><p class="dot">8</p><div class="lzt"><p class="lza">اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ</p><p class="lzl">Allāhu akbar, Allāhu akbar</p></div></div>
+<div class="lz rise" style="--i:8"><p class="dot">9</p><div class="lzt"><p class="lza">لَا إِلٰهَ إِلَّا اللّٰهُ</p><p class="lzl">Lā ilāha illallāh</p></div></div>
+</div>
+<div class="foot">
+<p class="tag">12 · Lafaz iqamah</p>
+<div class="navrow"><p class="btn"><a href="#slide-11">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-13">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="13" id="s-doa">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl13" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg13" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg13" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg13)"/>
+<rect width="1920" height="1080" fill="url(#pl13)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg13)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · 07 · SEBELAS DOA HARIAN</p>
+<h2>Sentuh doa untuk membuka bacaannya</h2>
+</div>
+<div class="steps" style="grid-template-columns:1fr 1fr 1fr">
+<div class="step rise" style="--i:0"><p class="dot">1</p><p class="st"><a href="#slide-14">Doa sebelum dan sesudah makan ›</a></p></div>
+<div class="step rise" style="--i:1"><p class="dot">2</p><p class="st"><a href="#slide-15">Doa sebelum tidur dan bangun tidur ›</a></p></div>
+<div class="step rise" style="--i:2"><p class="dot">3</p><p class="st"><a href="#slide-16">Doa masuk dan keluar kamar mandi ›</a></p></div>
+<div class="step rise" style="--i:3"><p class="dot">4</p><p class="st"><a href="#slide-17">Doa masuk dan keluar masjid ›</a></p></div>
+<div class="step rise" style="--i:4"><p class="dot">5</p><p class="st"><a href="#slide-18">Doa masuk dan keluar rumah ›</a></p></div>
+<div class="step rise" style="--i:5"><p class="dot">6</p><p class="st"><a href="#slide-19">Doa belajar ›</a></p></div>
+<div class="step rise" style="--i:6"><p class="dot">7</p><p class="st"><a href="#slide-20">Doa naik kendaraan ›</a></p></div>
+<div class="step rise" style="--i:7"><p class="dot">8</p><p class="st"><a href="#slide-21">Doa turun hujan ›</a></p></div>
+<div class="step rise" style="--i:8"><p class="dot">9</p><p class="st"><a href="#slide-22">Doa bercermin ›</a></p></div>
+<div class="step rise" style="--i:9"><p class="dot">10</p><p class="st"><a href="#slide-23">Doa pembuka hati ›</a></p></div>
+<div class="step rise" style="--i:10"><p class="dot">11</p><p class="st"><a href="#slide-24">Doa setelah salat duha ›</a></p></div>
+</div>
+<div class="foot">
+<p class="tag">13 · Doa Harian</p>
+<div class="navrow"><p class="btn"><a href="#slide-12">‹ Sebelumnya</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-14">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="14" id="s-doa-makan" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl14" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg14" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg14" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg14)"/>
+<rect width="1920" height="1080" fill="url(#pl14)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg14)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 1 DARI 11</p>
+<h2>Doa sebelum dan sesudah makan</h2>
+</div>
+<div class="cols2">
+<div class="panel rise" style="--i:0">
+<h3>Sebelum makan</h3>
+<p class="ar">اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ</p>
+<p class="lat">Allāhumma bārik lanā fīmā razaqtanā wa qinā ‘ażāban-nār.</p>
+<p class="arti">“Ya Allah, berkahilah rezeki yang Engkau berikan kepada kami dan peliharalah kami dari siksa neraka.”</p>
+</div>
+<div class="card doacard rise" style="--i:1">
+<h3>Sesudah makan</h3>
+<p class="ar">اَلْحَمْدُ لِلّٰهِ الَّذِيْ أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِيْنَ</p>
+<p class="lat">Alḥamdu lillāhil-lażī aṭ‘amanā wa saqānā wa ja‘alanā muslimīn.</p>
+<p class="arti">“Segala puji bagi Allah yang telah memberi kami makan dan minum serta menjadikan kami orang-orang muslim.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">14 · Doa sebelum dan sesudah makan</p>
+<div class="navrow"><p class="btn"><a href="#slide-13">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-15">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="15" id="s-doa-tidur" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl15" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg15" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg15" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg15)"/>
+<rect width="1920" height="1080" fill="url(#pl15)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg15)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 2 DARI 11</p>
+<h2>Doa sebelum tidur dan bangun tidur</h2>
+</div>
+<div class="cols2">
+<div class="panel rise" style="--i:0">
+<h3>Sebelum tidur</h3>
+<p class="ar">بِاسْمِكَ اللّٰهُمَّ أَحْيَا وَبِاسْمِكَ أَمُوْتُ</p>
+<p class="lat">Bismikallāhumma aḥyā wa bismika amūt.</p>
+<p class="arti">“Dengan nama-Mu ya Allah aku hidup, dan dengan nama-Mu aku mati.”</p>
+</div>
+<div class="card doacard rise" style="--i:1">
+<h3>Bangun tidur</h3>
+<p class="ar">اَلْحَمْدُ لِلّٰهِ الَّذِيْ أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُوْرُ</p>
+<p class="lat">Alḥamdu lillāhil-lażī aḥyānā ba‘da mā amātanā wa ilaihin-nusyūr.</p>
+<p class="arti">“Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kami kembali.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">15 · Doa sebelum tidur dan bangun tidur</p>
+<div class="navrow"><p class="btn"><a href="#slide-14">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-16">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="16" id="s-doa-kamarmandi" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl16" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg16" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg16" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg16)"/>
+<rect width="1920" height="1080" fill="url(#pl16)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg16)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 3 DARI 11</p>
+<h2>Doa masuk dan keluar kamar mandi</h2>
+</div>
+<div class="cols2">
+<div class="panel rise" style="--i:0">
+<h3>Masuk kamar mandi</h3>
+<p class="ar">اَللّٰهُمَّ إِنِّيْ أَعُوْذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ</p>
+<p class="lat">Allāhumma innī a‘ūżu bika minal-khubuṡi wal-khabā’iṡ.</p>
+<p class="arti">“Ya Allah, aku berlindung kepada-Mu dari setan laki-laki dan setan perempuan.”</p>
+</div>
+<div class="card doacard rise" style="--i:1">
+<h3>Keluar kamar mandi</h3>
+<p class="ar">غُفْرَانَكَ، اَلْحَمْدُ لِلّٰهِ الَّذِيْ أَذْهَبَ عَنِّي الْأَذٰى وَعَافَانِيْ</p>
+<p class="lat">Gufrānaka, alḥamdu lillāhil-lażī ażhaba ‘annil-ażā wa ‘āfānī.</p>
+<p class="arti">“Aku mohon ampunan-Mu. Segala puji bagi Allah yang telah menghilangkan kotoran dariku dan menyehatkanku.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">16 · Doa masuk dan keluar kamar mandi</p>
+<div class="navrow"><p class="btn"><a href="#slide-15">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-17">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="17" id="s-doa-masjid" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl17" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg17" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg17" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg17)"/>
+<rect width="1920" height="1080" fill="url(#pl17)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg17)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 4 DARI 11</p>
+<h2>Doa masuk dan keluar masjid</h2>
+</div>
+<div class="cols2">
+<div class="panel rise" style="--i:0">
+<h3>Masuk masjid</h3>
+<p class="ar">اَللّٰهُمَّ افْتَحْ لِيْ أَبْوَابَ رَحْمَتِكَ</p>
+<p class="lat">Allāhummaftaḥ lī abwāba raḥmatik.</p>
+<p class="arti">“Ya Allah, bukakanlah untukku pintu-pintu rahmat-Mu.”</p>
+</div>
+<div class="card doacard rise" style="--i:1">
+<h3>Keluar masjid</h3>
+<p class="ar">اَللّٰهُمَّ إِنِّيْ أَسْأَلُكَ مِنْ فَضْلِكَ</p>
+<p class="lat">Allāhumma innī as’aluka min faḍlik.</p>
+<p class="arti">“Ya Allah, sesungguhnya aku memohon karunia-Mu.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">17 · Doa masuk dan keluar masjid</p>
+<div class="navrow"><p class="btn"><a href="#slide-16">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-18">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="18" id="s-doa-rumah" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl18" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg18" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg18" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg18)"/>
+<rect width="1920" height="1080" fill="url(#pl18)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg18)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 5 DARI 11</p>
+<h2>Doa masuk dan keluar rumah</h2>
+</div>
+<div class="cols2">
+<div class="panel rise" style="--i:0">
+<h3>Masuk rumah</h3>
+<p class="ar">اَللّٰهُمَّ إِنِّيْ أَسْأَلُكَ خَيْرَ الْمَوْلَجِ وَخَيْرَ الْمَخْرَجِ، بِسْمِ اللّٰهِ وَلَجْنَا وَبِسْمِ اللّٰهِ خَرَجْنَا وَعَلَى اللّٰهِ رَبِّنَا تَوَكَّلْنَا</p>
+<p class="lat">Allāhumma innī as’aluka khairal-maulaji wa khairal-makhraj, bismillāhi walajnā wa bismillāhi kharajnā wa ‘alallāhi rabbinā tawakkalnā.</p>
+<p class="arti">“Ya Allah, aku mohon kebaikan tempat masuk dan tempat keluar. Dengan nama Allah kami masuk dan keluar, dan kepada Allah kami bertawakal.”</p>
+</div>
+<div class="card doacard rise" style="--i:1">
+<h3>Keluar rumah</h3>
+<p class="ar">بِسْمِ اللّٰهِ تَوَكَّلْتُ عَلَى اللّٰهِ لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ</p>
+<p class="lat">Bismillāhi tawakkaltu ‘alallāh, lā ḥaula wa lā quwwata illā billāh.</p>
+<p class="arti">“Dengan nama Allah aku bertawakal kepada Allah. Tiada daya dan kekuatan kecuali dengan pertolongan Allah.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">18 · Doa masuk dan keluar rumah</p>
+<div class="navrow"><p class="btn"><a href="#slide-17">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-19">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="19" id="s-doa-belajar" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl19" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg19" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg19" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg19)"/>
+<rect width="1920" height="1080" fill="url(#pl19)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg19)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 6 DARI 11</p>
+<h2>Doa belajar</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Doa sebelum belajar</h3>
+<p class="ar">رَضِيْتُ بِاللّٰهِ رَبًّا وَبِالْإِسْلَامِ دِيْنًا وَبِمُحَمَّدٍ نَبِيًّا وَرَسُوْلًا، رَبِّ زِدْنِيْ عِلْمًا وَارْزُقْنِيْ فَهْمًا</p>
+<p class="lat">Raḍītu billāhi rabbā, wa bil-islāmi dīnā, wa bi muḥammadin nabiyyaw wa rasūlā. Rabbi zidnī ‘ilmā warzuqnī fahmā.</p>
+<p class="arti">“Aku rida Allah sebagai Tuhanku, Islam sebagai agamaku, dan Muhammad sebagai nabi dan rasul. Ya Tuhanku, tambahkanlah ilmuku dan berilah aku pemahaman.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">19 · Doa belajar</p>
+<div class="navrow"><p class="btn"><a href="#slide-18">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-20">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="20" id="s-doa-kendaraan" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl20" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg20" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg20" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg20)"/>
+<rect width="1920" height="1080" fill="url(#pl20)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg20)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 7 DARI 11</p>
+<h2>Doa naik kendaraan</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Doa naik kendaraan</h3>
+<p class="ar">سُبْحَانَ الَّذِيْ سَخَّرَ لَنَا هٰذَا وَمَا كُنَّا لَهُ مُقْرِنِيْنَ وَإِنَّا إِلٰى رَبِّنَا لَمُنْقَلِبُوْنَ</p>
+<p class="lat">Subḥānal-lażī sakhkhara lanā hāżā wa mā kunnā lahū muqrinīn, wa innā ilā rabbinā lamunqalibūn.</p>
+<p class="arti">“Mahasuci Allah yang telah menundukkan kendaraan ini untuk kami, padahal kami sebelumnya tidak mampu menguasainya. Sesungguhnya kami akan kembali kepada Tuhan kami.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">20 · Doa naik kendaraan</p>
+<div class="navrow"><p class="btn"><a href="#slide-19">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-21">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="21" id="s-doa-hujan" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl21" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg21" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg21" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg21)"/>
+<rect width="1920" height="1080" fill="url(#pl21)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg21)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 8 DARI 11</p>
+<h2>Doa turun hujan</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Doa ketika turun hujan</h3>
+<p class="ar">اَللّٰهُمَّ صَيِّبًا نَافِعًا</p>
+<p class="lat">Allāhumma ṣayyiban nāfi‘ā.</p>
+<p class="arti">“Ya Allah, turunkanlah hujan yang bermanfaat.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">21 · Doa turun hujan</p>
+<div class="navrow"><p class="btn"><a href="#slide-20">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-22">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="22" id="s-doa-cermin" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl22" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg22" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg22" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg22)"/>
+<rect width="1920" height="1080" fill="url(#pl22)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg22)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 9 DARI 11</p>
+<h2>Doa bercermin</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Doa bercermin</h3>
+<p class="ar">اَللّٰهُمَّ كَمَا حَسَّنْتَ خَلْقِيْ فَحَسِّنْ خُلُقِيْ</p>
+<p class="lat">Allāhumma kamā ḥassanta khalqī fa ḥassin khuluqī.</p>
+<p class="arti">“Ya Allah, sebagaimana Engkau telah memperindah rupaku, maka perindahlah akhlakku.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">22 · Doa bercermin</p>
+<div class="navrow"><p class="btn"><a href="#slide-21">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-23">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="23" id="s-doa-pembukahati" class="doadet">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl23" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg23" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg23" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg23)"/>
+<rect width="1920" height="1080" fill="url(#pl23)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg23)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 10 DARI 11</p>
+<h2>Doa pembuka hati</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Doa pembuka hati</h3>
+<p class="ar">اَللّٰهُمَّ افْتَحْ عَلَيْنَا حِكْمَتَكَ وَانْشُرْ عَلَيْنَا رَحْمَتَكَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ</p>
+<p class="lat">Allāhummaftaḥ ‘alainā ḥikmataka wansyur ‘alainā raḥmataka yā żal-jalāli wal-ikrām.</p>
+<p class="arti">“Ya Allah, bukakanlah hikmah-Mu kepada kami dan limpahkanlah rahmat-Mu kepada kami, wahai Zat yang memiliki keagungan dan kemuliaan.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">23 · Doa pembuka hati</p>
+<div class="navrow"><p class="btn"><a href="#slide-22">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-24">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="24" id="s-doa-dhuha-1" class="doadet tight">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl24" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg24" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg24" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg24)"/>
+<rect width="1920" height="1080" fill="url(#pl24)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg24)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 11 DARI 11</p>
+<h2>Doa setelah salat duha (bagian 1)</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Bagian 1 dari 2</h3>
+<p class="ar">اَللّٰهُمَّ إِنَّ الضُّحَاءَ ضُحَاؤُكَ، وَالْبَهَاءَ بَهَاؤُكَ، وَالْجَمَالَ جَمَالُكَ، وَالْقُوَّةَ قُوَّتُكَ، وَالْقُدْرَةَ قُدْرَتُكَ، وَالْعِصْمَةَ عِصْمَتُكَ</p>
+<p class="lat">Allāhumma innaḍ-ḍuḥā’a ḍuḥā’uka, wal-bahā’a bahā’uka, wal-jamāla jamāluka, wal-quwwata quwwatuka, wal-qudrata qudratuka, wal-‘iṣmata ‘iṣmatuk.</p>
+<p class="arti">“Ya Allah, sesungguhnya waktu duha adalah waktu duha-Mu, keagungan adalah keagungan-Mu, keindahan adalah keindahan-Mu, kekuatan adalah kekuatan-Mu, kekuasaan adalah kekuasaan-Mu, dan penjagaan adalah penjagaan-Mu.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">24 · Doa setelah salat duha (bagian 1)</p>
+<div class="navrow"><p class="btn"><a href="#slide-23">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-25">Lanjut bagian 2 ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="25" id="s-doa-dhuha-2" class="doadet tight">
+<svg class="bgart2" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pl25" width="96" height="96" patternUnits="userSpaceOnUse"><g fill="none" stroke="#13294B" stroke-opacity="0.06" stroke-width="2"><rect x="28" y="28" width="40" height="40"/><rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/></g></pattern>
+<linearGradient id="lg25" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#F3F7FC"/><stop offset="1" stop-color="#E3ECF7"/></linearGradient>
+<radialGradient id="rg25" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.16"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#lg25)"/>
+<rect width="1920" height="1080" fill="url(#pl25)"/>
+<circle cx="1830" cy="70" r="300" fill="url(#rg25)"/>
+<circle cx="1830" cy="70" r="210" fill="none" stroke="#13294B" stroke-opacity="0.08" stroke-width="40"/>
+<circle cx="1830" cy="70" r="250" fill="none" stroke="#E2A93B" stroke-opacity="0.55" stroke-width="3"/>
+<rect x="0" y="0" width="14" height="1080" fill="#13294B"/>
+<rect x="14" y="0" width="4" height="1080" fill="#E2A93B"/>
+<rect x="128" y="958" width="1664" height="2" fill="#E2A93B" fill-opacity="0.5"/>
+</svg>
+<div class="head">
+<p class="eyebrow">ASPEK AKHLAK · DOA 11 DARI 11</p>
+<h2>Doa setelah salat duha (bagian 2)</h2>
+</div>
+<div class="one">
+<div class="panel rise" style="--i:0">
+<h3>Bagian 2 dari 2</h3>
+<p class="ar">اَللّٰهُمَّ إِنْ كَانَ رِزْقِيْ فِي السَّمَاءِ فَأَنْزِلْهُ، وَإِنْ كَانَ فِي الْأَرْضِ فَأَخْرِجْهُ، وَإِنْ كَانَ مُعْسِرًا فَيَسِّرْهُ، وَإِنْ كَانَ حَرَامًا فَطَهِّرْهُ، وَإِنْ كَانَ بَعِيْدًا فَقَرِّبْهُ، بِحَقِّ ضُحَائِكَ وَبَهَائِكَ وَجَمَالِكَ وَقُوَّتِكَ وَقُدْرَتِكَ، آتِنِيْ مَا آتَيْتَ عِبَادَكَ الصَّالِحِيْنَ</p>
+<p class="lat">Allāhumma in kāna rizqī fis-samā’i fa anzilhu, wa in kāna fil-arḍi fa akhrijhu, wa in kāna mu‘siran fa yassirhu, wa in kāna ḥarāman fa ṭahhirhu, wa in kāna ba‘īdan fa qarribhu, biḥaqqi ḍuḥā’ika wa bahā’ika wa jamālika wa quwwatika wa qudratik, ātinī mā ātaita ‘ibādakaṣ-ṣāliḥīn.</p>
+<p class="arti">“Ya Allah, jika rezekiku di langit turunkanlah, jika di bumi keluarkanlah, jika sukar mudahkanlah, jika haram sucikanlah, jika jauh dekatkanlah. Berkat waktu duha, keagungan, keindahan, kekuatan, dan kekuasaan-Mu, berikanlah kepadaku apa yang Engkau berikan kepada hamba-hamba-Mu yang saleh.”</p>
+</div>
+</div>
+<div class="foot">
+<p class="tag">25 · Doa setelah salat duha (bagian 2)</p>
+<div class="navrow"><p class="btn"><a href="#slide-24">‹ Sebelumnya</a></p><p class="btn"><a href="#slide-13">Daftar Doa</a></p><p class="btn home"><a href="#slide-2">Menu</a></p><p class="btn"><a href="#slide-26">Berikutnya ›</a></p></div>
+</div>
+<img class="logo-corner" src="logo.png" alt="Logo SDN Slipi 15" style="position:absolute;left:1776px;top:22px;width:104px;height:92px;object-fit:contain">
+<p class="rh">RH</p>
+</section>
+
+<section data-n="26" id="s-penutup" class="dark cover">
+<svg class="bgart" aria-label="" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px">
+<defs>
+<pattern id="pt26" width="120" height="120" patternUnits="userSpaceOnUse"><g fill="none" stroke="#E2A93B" stroke-opacity="0.13" stroke-width="2"><rect x="35" y="35" width="50" height="50"/><rect x="35" y="35" width="50" height="50" transform="rotate(45 60 60)"/><circle cx="60" cy="60" r="8"/></g></pattern>
+<radialGradient id="gl26" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E2A93B" stop-opacity="0.38"/><stop offset="1" stop-color="#E2A93B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1920" height="1080" fill="#13294B"/>
+<rect width="1920" height="1080" fill="url(#pt26)"/>
+<circle cx="1530" cy="530" r="380" fill="url(#gl26)"/>
+<rect x="0" y="1000" width="1920" height="80" fill="#0C1D38"/>
+<rect x="0" y="996" width="1920" height="4" fill="#E2A93B"/>
+</svg>
+<img src="logo.png" class="logo" alt="Logo SDN Slipi 15" style="position:absolute;left:1250px;top:280px;width:560px;height:497px;object-fit:contain">
+<p class="eyebrow rise" style="--i:0">PENUTUP</p>
+<h1 class="rise" style="--i:1">Terima kasih</h1>
+<p class="sub rise" style="--i:2">Selamat menempuh Ujian Praktik. Semoga Allah memudahkan setiap langkah kalian. Āmīn.</p>
+<p class="start"><a href="#slide-2">‹ Kembali ke Menu</a></p>
+<p class="by rise" style="--i:4">SDN Slipi 15 Jakarta Barat</p>
+<p class="rh">RH</p>
+</section>
+
+
+<div id="lv" class="qov" aria-hidden="true">
+  <div class="qcard" role="dialog" aria-label="Lafaz azan dan iqamah">
+    <div class="qhead">
+      <div class="qtitle"><div class="qlat" id="lvTitle"></div><div class="qinfo" id="lvInfo"></div></div>
+      <button class="ltab" id="lvAzan" type="button">Azan</button>
+      <button class="ltab" id="lvIqamah" type="button">Iqamah</button>
+      <button class="qbtn gold" id="lvClose" type="button">✕ Tutup</button>
+    </div>
+    <div class="qbody" id="lvBody"></div>
+  </div>
+</div>
+<div id="qv" class="qov" aria-hidden="true">
+  <div class="qcard" role="dialog" aria-label="Bacaan surah">
+    <div class="qhead">
+      <div class="qnum" id="qvNum">1</div>
+      <div class="qtitle"><div class="qlat" id="qvLat"></div><div class="qinfo" id="qvInfo"></div></div>
+      <div class="qar" id="qvAr"></div>
+      <button class="qbtn" id="qvArti" type="button">Tampilkan arti</button>
+      <button class="qbtn gold" id="qvClose" type="button">✕ Tutup</button>
+    </div>
+    <div class="qbody" id="qvBody"></div>
+    <div class="qfoot">
+      <button class="qbtn" id="qvPrev" type="button">‹ Surah sebelumnya</button>
+      <div class="qhint">Geser layar ke atas/bawah untuk membaca<br><span style="font-size:20px">Teks: Rasm Utsmani (QuranEnc) · Terjemah: Kemenag RI</span></div>
+      <button class="qbtn" id="qvNext" type="button">Surah berikutnya ›</button>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var slides = Array.prototype.slice.call(stage.querySelectorAll(':scope > section'));
+  var total = slides.length, cur = 0;
+  function fit() {
+    var k = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = 'translate(' + (window.innerWidth - 1920 * k) / 2 + 'px,' + (window.innerHeight - 1080 * k) / 2 + 'px) scale(' + k + ')';
+  }
+  function show(n) {
+    n = Math.max(1, Math.min(total, n | 0));
+    slides.forEach(function (s) { s.classList.remove('active'); });
+    slides[n - 1].classList.add('active');
+    cur = n;
+    if (location.hash !== '#slide-' + n) {
+      try { history.replaceState(null, '', '#slide-' + n); } catch (e) {}
+    }
+  }
+  function fromHash() {
+    var m = /^#slide-(\d+)$/.exec(location.hash);
+    show(m ? +m[1] : 1);
+  }
+  // tombol & tautan navigasi: pindah slide di halaman yang sama
+  stage.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#slide-"]');
+    var box = a || e.target.closest('.btn, .start, .card, .step');
+    if (!a && box) a = box.querySelector('a[href^="#slide-"]');
+    if (!a) return;
+    e.preventDefault();
+    show(+a.getAttribute('href').replace('#slide-', ''));
+  });
+  window.addEventListener('hashchange', fromHash);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') show(cur + 1);
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') show(cur - 1);
+    else if (e.key === 'Home') show(2);
+  });
+  var fs = document.getElementById('fs');
+  fs.addEventListener('click', function () {
+    try {
+      var el = document.documentElement;
+      if (!document.fullscreenElement) (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+      else document.exitFullscreen();
+    } catch (e) {}
+  });
+  document.addEventListener('fullscreenchange', function () {
+    fs.textContent = document.fullscreenElement ? 'Keluar layar penuh' : 'Layar penuh';
+  });
+
+  // ===== Jendela lafaz azan & iqamah =====
+  var LZ = {"azan": {"title": "Lafaz azan lengkap", "info": "Dikumandangkan oleh siswa laki-laki · 12 baris", "rows": [["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ", "Asyhadu an lā ilāha illallāh"], ["أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ", "Asyhadu an lā ilāha illallāh"], ["أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ", "Asyhadu anna Muḥammadar rasūlullāh"], ["أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ", "Asyhadu anna Muḥammadar rasūlullāh"], ["حَيَّ عَلَى الصَّلَاةِ", "Ḥayya ‘alaṣ-ṣalāh"], ["حَيَّ عَلَى الصَّلَاةِ", "Ḥayya ‘alaṣ-ṣalāh"], ["حَيَّ عَلَى الْفَلَاحِ", "Ḥayya ‘alal-falāḥ"], ["حَيَّ عَلَى الْفَلَاحِ", "Ḥayya ‘alal-falāḥ"], ["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["لَا إِلٰهَ إِلَّا اللّٰهُ", "Lā ilāha illallāh"]], "sub": ["Khusus Subuh, sesudah baris 10:", "اَلصَّلَاةُ خَيْرٌ مِنَ النَّوْمِ", "Aṣ-ṣalātu khairum minan naum (2 kali)"]}, "iqamah": {"title": "Lafaz iqamah lengkap", "info": "Dikumandangkan oleh siswa perempuan · 9 baris", "rows": [["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ", "Asyhadu an lā ilāha illallāh"], ["أَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ", "Asyhadu anna Muḥammadar rasūlullāh"], ["حَيَّ عَلَى الصَّلَاةِ", "Ḥayya ‘alaṣ-ṣalāh"], ["حَيَّ عَلَى الْفَلَاحِ", "Ḥayya ‘alal-falāḥ"], ["قَدْ قَامَتِ الصَّلَاةُ", "Qad qāmatiṣ-ṣalāh"], ["قَدْ قَامَتِ الصَّلَاةُ", "Qad qāmatiṣ-ṣalāh"], ["اَللّٰهُ أَكْبَرُ، اَللّٰهُ أَكْبَرُ", "Allāhu akbar, Allāhu akbar"], ["لَا إِلٰهَ إِلَّا اللّٰهُ", "Lā ilāha illallāh"]], "sub": null}};
+  var lv = document.getElementById('lv'), lvBody = document.getElementById('lvBody');
+  function renderL(k) {
+    var d = LZ[k];
+    document.getElementById('lvTitle').textContent = d.title;
+    document.getElementById('lvInfo').textContent = d.info;
+    document.getElementById('lvAzan').classList.toggle('on', k === 'azan');
+    document.getElementById('lvIqamah').classList.toggle('on', k === 'iqamah');
+    var h = '<div class="lgrid">' + d.rows.map(function (r, i) {
+      return '<div class="lrow"><div class="lno">' + (i + 1) + '</div><div class="ltx"><div class="lar">' + r[0] + '</div><div class="llat">' + r[1] + '</div></div></div>';
+    }).join('');
+    if (d.sub) h += '<div class="lrow sub"><div class="ltx"><div class="lk">' + d.sub[0] + '</div><div class="lar">' + d.sub[1] + '</div><div class="llat">' + d.sub[2] + '</div></div></div>';
+    lvBody.innerHTML = h + '</div>';
+    lvBody.scrollTop = 0;
+  }
+  function openL(k) { renderL(k); lv.classList.add('open'); lv.setAttribute('aria-hidden', 'false'); }
+  function closeL() { lv.classList.remove('open'); lv.setAttribute('aria-hidden', 'true'); }
+  stage.addEventListener('click', function (e) {
+    var c = e.target.closest('.choose[data-lafaz]');
+    if (!c || lv.contains(c)) return;
+    e.preventDefault(); e.stopPropagation(); openL(c.getAttribute('data-lafaz'));
+  }, true);
+  lv.addEventListener('click', function (e) { e.stopPropagation(); if (e.target === lv) closeL(); });
+  document.getElementById('lvClose').addEventListener('click', closeL);
+  document.getElementById('lvAzan').addEventListener('click', function () { renderL('azan'); });
+  document.getElementById('lvIqamah').addEventListener('click', function () { renderL('iqamah'); });
+  window.addEventListener('keydown', function (e) {
+    if (!lv.classList.contains('open')) return;
+    e.stopImmediatePropagation();
+    if (e.key === 'Escape') closeL();
+    else if (e.key === 'ArrowDown' || e.key === 'PageDown') lvBody.scrollTop += 300;
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp') lvBody.scrollTop -= 300;
+  }, true);
+  window.addEventListener('hashchange', closeL);
+  // ===== Jendela bacaan surah (slide hafalan) =====
+  var Q = {"order": [114, 113, 112, 111, 110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100, 99, 98, 97, 96, 95, 94, 93, 87], "s": {"114": {"n": 114, "name": "An-Nas", "ar": "الناس", "arti": "Umat Manusia", "v": [["قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ", "Katakanlah, \"Aku berlindung kepada Tuhannya manusia"], ["مَلِكِ ٱلنَّاسِ", "Raja manusia"], ["إِلَٰهِ ٱلنَّاسِ", "sembahan manusia"], ["مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ", "dari kejahatan (bisikan) setan yang bersembunyi"], ["ٱلَّذِي يُوَسۡوِسُ فِي صُدُورِ ٱلنَّاسِ", "yang membisikkan (kejahatan) ke dalam dada manusia"], ["مِنَ ٱلۡجِنَّةِ وَٱلنَّاسِ", "dari (golongan) jin dan manusia"]]}, "113": {"n": 113, "name": "Al-Falaq", "ar": "الفلق", "arti": "Waktu Shubuh", "v": [["قُلۡ أَعُوذُ بِرَبِّ ٱلۡفَلَقِ", "Katakanlah, \"Aku berlindung kepada Tuhan yang menguasai subuh (fajar)"], ["مِن شَرِّ مَا خَلَقَ", "dari kejahatan (makhluk yang) Dia ciptakan"], ["وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ", "dan dari kejahatan malam apabila telah gelap gulita"], ["وَمِن شَرِّ ٱلنَّفَّـٰثَٰتِ فِي ٱلۡعُقَدِ", "dan dari kejahatan (perempuan-perempuan) penyihir yang meniup pada buhul-buhul (talinya)"], ["وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ", "dan dari kejahatan orang yang dengki apabila dia dengki"]]}, "112": {"n": 112, "name": "Al-Ikhlas", "ar": "الإخلاص", "arti": "Ikhlash", "v": [["قُلۡ هُوَ ٱللَّهُ أَحَدٌ", "Katakanlah (Muhammad), \"Dialah Allah, Yang Maha Esa"], ["ٱللَّهُ ٱلصَّمَدُ", "Allah tempat meminta segala sesuatu"], ["لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ", "(Allah) tidak beranak dan tidak pula diperanakkan"], ["وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ", "Dan tidak ada sesuatu yang setara dengan Dia"]]}, "111": {"n": 111, "name": "Al-Lahab", "ar": "المسد", "arti": "Gejolak Api (Sabut)", "v": [["تَبَّتۡ يَدَآ أَبِي لَهَبٖ وَتَبَّ", "Binasalah kedua tangan Abu Lahab dan benar-benar binasa dia"], ["مَآ أَغۡنَىٰ عَنۡهُ مَالُهُۥ وَمَا كَسَبَ", "Tidaklah berguna baginya hartanya dan apa yang dia usahakan"], ["سَيَصۡلَىٰ نَارٗا ذَاتَ لَهَبٖ", "Kelak dia akan masuk ke dalam api yang bergejolak (neraka)"], ["وَٱمۡرَأَتُهُۥ حَمَّالَةَ ٱلۡحَطَبِ", "Dan (begitu pula) istrinya, pembawa kayu bakar (penyebar fitnah)"], ["فِي جِيدِهَا حَبۡلࣱ مِّن مَّسَدِۭ", "Di lehernya ada tali dari sabut yang dipintal"]]}, "110": {"n": 110, "name": "An-Nasr", "ar": "النصر", "arti": "Pertolongan", "v": [["إِذَا جَآءَ نَصۡرُ ٱللَّهِ وَٱلۡفَتۡحُ", "Apabila telah datang pertolongan Allah dan kemenangan"], ["وَرَأَيۡتَ ٱلنَّاسَ يَدۡخُلُونَ فِي دِينِ ٱللَّهِ أَفۡوَاجٗا", "dan engkau melihat manusia berbondong-bondong masuk agama Allah"], ["فَسَبِّحۡ بِحَمۡدِ رَبِّكَ وَٱسۡتَغۡفِرۡهُۚ إِنَّهُۥ كَانَ تَوَّابَۢا", "maka bertasbihlah dengan memuji Tuhanmu dan mohonlah ampunan kepada-Nya. Sungguh, Dia Maha Penerima tobat"]]}, "109": {"n": 109, "name": "Al-Kafirun", "ar": "الكافرون", "arti": "Orang-orang Kafir", "v": [["قُلۡ يَـٰٓأَيُّهَا ٱلۡكَٰفِرُونَ", "Katakanlah (Muhammad), \"Wahai orang-orang kafir"], ["لَآ أَعۡبُدُ مَا تَعۡبُدُونَ", "aku tidak akan menyembah apa yang kamu sembah"], ["وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ", "dan kamu bukan penyembah apa yang aku sembah"], ["وَلَآ أَنَا۠ عَابِدࣱ مَّا عَبَدتُّمۡ", "dan aku tidak pernah menjadi penyembah apa yang kamu sembah"], ["وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ", "dan kamu tidak pernah (pula) menjadi penyembah apa yang aku sembah"], ["لَكُمۡ دِينُكُمۡ وَلِيَ دِينِ", "Untukmu agamamu, dan untukku agamaku"]]}, "108": {"n": 108, "name": "Al-Kautsar", "ar": "الكوثر", "arti": "Nikmat Berlimpah", "v": [["إِنَّآ أَعۡطَيۡنَٰكَ ٱلۡكَوۡثَرَ", "Sungguh, Kami telah memberimu (Muhammad) nikmat yang banyak"], ["فَصَلِّ لِرَبِّكَ وَٱنۡحَرۡ", "Maka laksanakanlah salat karena Tuhanmu, dan berkurbanlah (sebagai ibadah dan mendekatkan diri kepada Allah)"], ["إِنَّ شَانِئَكَ هُوَ ٱلۡأَبۡتَرُ", "Sungguh, orang-orang yang membencimu dialah yang terputus (dari rahmat Allah)"]]}, "107": {"n": 107, "name": "Al-Ma’un", "ar": "الماعون", "arti": "Barang yang Berguna", "v": [["أَرَءَيۡتَ ٱلَّذِي يُكَذِّبُ بِٱلدِّينِ", "Tahukah kamu (orang) yang mendustakan agama"], ["فَذَٰلِكَ ٱلَّذِي يَدُعُّ ٱلۡيَتِيمَ", "Maka itulah orang yang menghardik anak yatim"], ["وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلۡمِسۡكِينِ", "dan tidak mengajak memberi makan orang miskin"], ["فَوَيۡلࣱ لِّلۡمُصَلِّينَ", "Maka celakalah orang yang salat"], ["ٱلَّذِينَ هُمۡ عَن صَلَاتِهِمۡ سَاهُونَ", "(yaitu) orang-orang yang lalai terhadap salatnya"], ["ٱلَّذِينَ هُمۡ يُرَآءُونَ", "yang berbuat riya"], ["وَيَمۡنَعُونَ ٱلۡمَاعُونَ", "dan enggan (memberikan) bantuan"]]}, "106": {"n": 106, "name": "Al-Qurays", "ar": "قريش", "arti": "Suku Quraisy", "v": [["لِإِيلَٰفِ قُرَيۡشٍ", "Karena kebiasaan orang-orang Quraisy"], ["إِۦلَٰفِهِمۡ رِحۡلَةَ ٱلشِّتَآءِ وَٱلصَّيۡفِ", "(yaitu) kebiasaan mereka bepergian pada musim dingin dan musim panas"], ["فَلۡيَعۡبُدُواْ رَبَّ هَٰذَا ٱلۡبَيۡتِ", "Maka hendaklah mereka menyembah Tuhan (pemilik) rumah ini (Ka'bah)"], ["ٱلَّذِيٓ أَطۡعَمَهُم مِّن جُوعٖ وَءَامَنَهُم مِّنۡ خَوۡفِۭ", "yang telah memberi makanan kepada mereka untuk menghilangkan lapar dan mengamankan mereka dari rasa ketakutan"]]}, "105": {"n": 105, "name": "Al-Fiil", "ar": "الفيل", "arti": "Gajah", "v": [["أَلَمۡ تَرَ كَيۡفَ فَعَلَ رَبُّكَ بِأَصۡحَٰبِ ٱلۡفِيلِ", "Tidakkah engkau (Muhammad) perhatikan bagaimana Tuhanmu telah bertindak terhadap pasukan bergajah"], ["أَلَمۡ يَجۡعَلۡ كَيۡدَهُمۡ فِي تَضۡلِيلٖ", "Bukankah Dia telah menjadikan tipu daya mereka itu sia-sia"], ["وَأَرۡسَلَ عَلَيۡهِمۡ طَيۡرًا أَبَابِيلَ", "dan Dia mengirimkan kepada mereka burung yang berbondong-bondong"], ["تَرۡمِيهِم بِحِجَارَةٖ مِّن سِجِّيلٖ", "yang melempari mereka dengan batu dari tanah liat yang dibakar"], ["فَجَعَلَهُمۡ كَعَصۡفٖ مَّأۡكُولِۭ", "sehingga mereka dijadikan-Nya seperti daun-daun yang dimakan (ulat)"]]}, "104": {"n": 104, "name": "Al-Humazah", "ar": "الهمزة", "arti": "Pengumpat", "v": [["وَيۡلࣱ لِّكُلِّ هُمَزَةٖ لُّمَزَةٍ", "Celakalah bagi setiap pengumpat dan pencela"], ["ٱلَّذِي جَمَعَ مَالٗا وَعَدَّدَهُۥ", "yang mengumpulkan harta dan menghitung-hitungnya"], ["يَحۡسَبُ أَنَّ مَالَهُۥٓ أَخۡلَدَهُۥ", "dia (manusia) mengira bahwa hartanya itu dapat mengekalkannya"], ["كَلَّاۖ لَيُنۢبَذَنَّ فِي ٱلۡحُطَمَةِ", "Sekali-kali tidak! Pasti dia akan dilemparkan ke dalam (neraka) Ḥuṭamah"], ["وَمَآ أَدۡرَىٰكَ مَا ٱلۡحُطَمَةُ", "Dan tahukah kamu apakah (neraka) Ḥuṭamah itu"], ["نَارُ ٱللَّهِ ٱلۡمُوقَدَةُ", "(Yaitu) api (azab) Allah yang dinyalakan"], ["ٱلَّتِي تَطَّلِعُ عَلَى ٱلۡأَفۡـِٔدَةِ", "yang (membakar) sampai ke hati"], ["إِنَّهَا عَلَيۡهِم مُّؤۡصَدَةࣱ", "Sungguh, api itu ditutup rapat atas (diri) mereka"], ["فِي عَمَدٖ مُّمَدَّدَةِۭ", "(sedang mereka itu) diikat pada tiang-tiang yang panjang"]]}, "103": {"n": 103, "name": "Al-’Ashr", "ar": "العصر", "arti": "Waktu Sore", "v": [["وَٱلۡعَصۡرِ", "Demi masa"], ["إِنَّ ٱلۡإِنسَٰنَ لَفِي خُسۡرٍ", "Sungguh, manusia berada dalam kerugian"], ["إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ وَتَوَاصَوۡاْ بِٱلۡحَقِّ وَتَوَاصَوۡاْ بِٱلصَّبۡرِ", "kecuali orang-orang yang beriman dan mengerjakan kebajikan serta saling menasihati untuk kebenaran dan saling menasihati untuk kesabaran"]]}, "102": {"n": 102, "name": "At-Takatsur", "ar": "التكاثر", "arti": "Bermegah-megahan", "v": [["أَلۡهَىٰكُمُ ٱلتَّكَاثُرُ", "Bermegah-megahan telah melalaikan kamu"], ["حَتَّىٰ زُرۡتُمُ ٱلۡمَقَابِرَ", "sampai kamu masuk ke dalam kubur"], ["كَلَّا سَوۡفَ تَعۡلَمُونَ", "Sekali-kali tidak! Kelak kamu akan mengetahui (akibat perbuatanmu itu)"], ["ثُمَّ كَلَّا سَوۡفَ تَعۡلَمُونَ", "kemudian sekali-kali tidak! Kelak kamu akan mengetahui"], ["كَلَّا لَوۡ تَعۡلَمُونَ عِلۡمَ ٱلۡيَقِينِ", "Sekali-kali tidak! Sekiranya kamu mengetahui dengan pasti"], ["لَتَرَوُنَّ ٱلۡجَحِيمَ", "niscaya kamu benar-benar akan melihat neraka Jahim"], ["ثُمَّ لَتَرَوُنَّهَا عَيۡنَ ٱلۡيَقِينِ", "kemudian kamu benar-benar akan melihatnya dengan mata kepala sendiri"], ["ثُمَّ لَتُسۡـَٔلُنَّ يَوۡمَئِذٍ عَنِ ٱلنَّعِيمِ", "kemudian kamu benar-benar akan ditanya pada hari itu tentang kenikmatan (yang megah di dunia itu)"]]}, "101": {"n": 101, "name": "Al-Qori’ah", "ar": "القارعة", "arti": "Hari Kiamat", "v": [["ٱلۡقَارِعَةُ", "Hari Kiamat"], ["مَا ٱلۡقَارِعَةُ", "Apakah hari Kiamat itu"], ["وَمَآ أَدۡرَىٰكَ مَا ٱلۡقَارِعَةُ", "Dan tahukah kamu apakah hari Kiamat itu"], ["يَوۡمَ يَكُونُ ٱلنَّاسُ كَٱلۡفَرَاشِ ٱلۡمَبۡثُوثِ", "Pada hari itu manusia seperti laron yang beterbangan"], ["وَتَكُونُ ٱلۡجِبَالُ كَٱلۡعِهۡنِ ٱلۡمَنفُوشِ", "dan gunung-gunung seperti bulu yang dihambur-hamburkan"], ["فَأَمَّا مَن ثَقُلَتۡ مَوَٰزِينُهُۥ", "Maka adapun orang yang berat timbangan (kebaikan)nya"], ["فَهُوَ فِي عِيشَةٖ رَّاضِيَةٖ", "maka dia berada dalam kehidupan yang memuaskan (senang)"], ["وَأَمَّا مَنۡ خَفَّتۡ مَوَٰزِينُهُۥ", "Dan adapun orang yang ringan timbangan (kebaikan)nya"], ["فَأُمُّهُۥ هَاوِيَةࣱ", "maka tempat kembalinya adalah neraka Hāwiyah"], ["وَمَآ أَدۡرَىٰكَ مَا هِيَهۡ", "Dan tahukah kamu apakah neraka Hāwiyah itu"], ["نَارٌ حَامِيَةُۢ", "(Yaitu) api yang sangat panas"]]}, "100": {"n": 100, "name": "Al-’Adiyat", "ar": "العاديات", "arti": "Berlari Kencang", "v": [["وَٱلۡعَٰدِيَٰتِ ضَبۡحٗا", "Demi kuda perang yang berlari kencang terengah-engah"], ["فَٱلۡمُورِيَٰتِ قَدۡحٗا", "dan kuda yang memercikkan bunga api (dengan pukulan kuku kakinya)"], ["فَٱلۡمُغِيرَٰتِ صُبۡحٗا", "dan kuda yang menyerang (dengan tiba-tiba) pada waktu pagi"], ["فَأَثَرۡنَ بِهِۦ نَقۡعٗا", "sehingga menerbangkan debu"], ["فَوَسَطۡنَ بِهِۦ جَمۡعًا", "lalu menyerbu ke tengah-tengah kumpulan musuh"], ["إِنَّ ٱلۡإِنسَٰنَ لِرَبِّهِۦ لَكَنُودࣱ", "sungguh, manusia itu sangat ingkar, (tidak bersyukur) kepada Tuhannya"], ["وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدࣱ", "dan sesungguhnya dia (manusia) menyaksikan (mengakui) keingkarannya"], ["وَإِنَّهُۥ لِحُبِّ ٱلۡخَيۡرِ لَشَدِيدٌ", "dan sesungguhnya cintanya kepada harta benar-benar berlebihan"], ["۞أَفَلَا يَعۡلَمُ إِذَا بُعۡثِرَ مَا فِي ٱلۡقُبُورِ", "Maka tidakkah dia mengetahui apabila apa yang di dalam kubur dikeluarkan"], ["وَحُصِّلَ مَا فِي ٱلصُّدُورِ", "dan apa yang tersimpan di dalam dada dikeluarkan"], ["إِنَّ رَبَّهُم بِهِمۡ يَوۡمَئِذٖ لَّخَبِيرُۢ", "sungguh, Tuhan mereka pada hari itu Mahateliti terhadap keadaan mereka"]]}, "99": {"n": 99, "name": "Al-Zalzalah", "ar": "الزلزلة", "arti": "Kegoncangan", "v": [["إِذَا زُلۡزِلَتِ ٱلۡأَرۡضُ زِلۡزَالَهَا", "Apabila bumi diguncangkan dengan guncangan yang dahsyat"], ["وَأَخۡرَجَتِ ٱلۡأَرۡضُ أَثۡقَالَهَا", "dan bumi telah mengeluarkan beban-beban berat (yang dikandung)nya"], ["وَقَالَ ٱلۡإِنسَٰنُ مَا لَهَا", "dan manusia bertanya, \"Apa yang terjadi pada bumi ini"], ["يَوۡمَئِذٖ تُحَدِّثُ أَخۡبَارَهَا", "Pada hari itu bumi menyampaikan beritanya"], ["بِأَنَّ رَبَّكَ أَوۡحَىٰ لَهَا", "karena sesungguhnya Tuhanmu telah memerintahkan (yang sedemikian itu) padanya"], ["يَوۡمَئِذٖ يَصۡدُرُ ٱلنَّاسُ أَشۡتَاتٗا لِّيُرَوۡاْ أَعۡمَٰلَهُمۡ", "(Pada hari itu manusia keluar dari kuburnya dalam keadaan berkelompok-kelompok, untuk diperlihatkan kepada mereka (balasan) semua amal perbuatannya"], ["فَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٍ خَيۡرٗا يَرَهُۥ", "Maka barangsiapa mengerjakan kebaikan seberat zarah, niscaya dia akan melihat (balasan)nya"], ["وَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٖ شَرّٗا يَرَهُۥ", "Dan barangsiapa mengerjakan kejahatan seberat zarah, niscaya dia akan melihat (balasan)nya"]]}, "98": {"n": 98, "name": "Al-Bayyinah", "ar": "البينة", "arti": "Pembuktian", "v": [["لَمۡ يَكُنِ ٱلَّذِينَ كَفَرُواْ مِنۡ أَهۡلِ ٱلۡكِتَٰبِ وَٱلۡمُشۡرِكِينَ مُنفَكِّينَ حَتَّىٰ تَأۡتِيَهُمُ ٱلۡبَيِّنَةُ", "Orang-orang yang kafir dari golongan Ahli Kitab dan orang-orang musyrik tidak akan meninggalkan (agama mereka) sampai datang kepada mereka bukti yang nyata"], ["رَسُولࣱ مِّنَ ٱللَّهِ يَتۡلُواْ صُحُفٗا مُّطَهَّرَةٗ", "(yaitu) seorang Rasul dari Allah (Muhammad) yang membacakan lembaran-lembaran yang suci (Alquran)"], ["فِيهَا كُتُبࣱ قَيِّمَةࣱ", "di dalamnya terdapat (isi) kitab-kitab yang lurus (benar)"], ["وَمَا تَفَرَّقَ ٱلَّذِينَ أُوتُواْ ٱلۡكِتَٰبَ إِلَّا مِنۢ بَعۡدِ مَا جَآءَتۡهُمُ ٱلۡبَيِّنَةُ", "Dan tidaklah terpecah belah orang-orang Ahli Kitab melainkan setelah datang kepada mereka bukti yang nyata"], ["وَمَآ أُمِرُوٓاْ إِلَّا لِيَعۡبُدُواْ ٱللَّهَ مُخۡلِصِينَ لَهُ ٱلدِّينَ حُنَفَآءَ وَيُقِيمُواْ ٱلصَّلَوٰةَ وَيُؤۡتُواْ ٱلزَّكَوٰةَۚ وَذَٰلِكَ دِينُ ٱلۡقَيِّمَةِ", "Padahal mereka hanya diperintah menyembah Allah dengan ikhlas menaati-Nya semata-mata karena (menjalankan) agama, dan juga agar melaksanakan salat dan menunaikan zakat; dan yang demikian itulah agama yang lurus (benar)"], ["إِنَّ ٱلَّذِينَ كَفَرُواْ مِنۡ أَهۡلِ ٱلۡكِتَٰبِ وَٱلۡمُشۡرِكِينَ فِي نَارِ جَهَنَّمَ خَٰلِدِينَ فِيهَآۚ أُوْلَـٰٓئِكَ هُمۡ شَرُّ ٱلۡبَرِيَّةِ", "Sungguh, orang-orang yang kafir dari golongan Ahli Kitab dan orang-orang musyrik (akan masuk) ke neraka Jahanam; mereka kekal di dalamnya selama-lamanya. Mereka itu adalah sejahat-jahat makhluk"], ["إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ أُوْلَـٰٓئِكَ هُمۡ خَيۡرُ ٱلۡبَرِيَّةِ", "Sungguh, orang-orang yang beriman dan mengerjakan kebajikan, mereka itulah sebaik-baik makhluk"], ["جَزَآؤُهُمۡ عِندَ رَبِّهِمۡ جَنَّـٰتُ عَدۡنٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدٗاۖ رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُۚ ذَٰلِكَ لِمَنۡ خَشِيَ رَبَّهُۥ", "Balasan mereka di sisi Tuhan mereka ialah surga 'Ādn yang mengalir di bawahnya sungai-sungai; mereka kekal di dalamnya selama-lamanya. Allah rida terhadap mereka dan mereka pun rida kepada-Nya. Yang demikian itu adalah (balasan) bagi orang yang takut kepada Tuhannya"]]}, "97": {"n": 97, "name": "Al-Qadr", "ar": "القدر", "arti": "Kemuliaan", "v": [["إِنَّآ أَنزَلۡنَٰهُ فِي لَيۡلَةِ ٱلۡقَدۡرِ", "Sesungguhnya Kami telah menurunkannya (Alquran) pada malam qadar"], ["وَمَآ أَدۡرَىٰكَ مَا لَيۡلَةُ ٱلۡقَدۡرِ", "Dan tahukah kamu apakah malam kemuliaan itu"], ["لَيۡلَةُ ٱلۡقَدۡرِ خَيۡرࣱ مِّنۡ أَلۡفِ شَهۡرٖ", "Malam kemuliaan itu lebih baik daripada seribu bulan"], ["تَنَزَّلُ ٱلۡمَلَـٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذۡنِ رَبِّهِم مِّن كُلِّ أَمۡرٖ", "Pada malam itu turun para malaikat dan Ruh (Jibril) dengan izin Tuhannya untuk mengatur semua urusan"], ["سَلَٰمٌ هِيَ حَتَّىٰ مَطۡلَعِ ٱلۡفَجۡرِ", "Sejahteralah (malam itu) sampai terbit fajar"]]}, "96": {"n": 96, "name": "Al-Alaq", "ar": "العلق", "arti": "Segumpal Darah", "v": [["ٱقۡرَأۡ بِٱسۡمِ رَبِّكَ ٱلَّذِي خَلَقَ", "Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan"], ["خَلَقَ ٱلۡإِنسَٰنَ مِنۡ عَلَقٍ", "Dia telah menciptakan manusia dari segumpal darah"], ["ٱقۡرَأۡ وَرَبُّكَ ٱلۡأَكۡرَمُ", "Bacalah, dan Tuhanmulah Yang Mahamulia"], ["ٱلَّذِي عَلَّمَ بِٱلۡقَلَمِ", "Yang mengajar (manusia) dengan pena"], ["عَلَّمَ ٱلۡإِنسَٰنَ مَا لَمۡ يَعۡلَمۡ", "Dia mengajarkan manusia apa yang tidak diketahuinya"], ["كَلَّآ إِنَّ ٱلۡإِنسَٰنَ لَيَطۡغَىٰٓ", "Sekali-sekali tidak! Sungguh, manusia itu benar-benar melampaui batas"], ["أَن رَّءَاهُ ٱسۡتَغۡنَىٰٓ", "apabila melihat dirinya serba cukup"], ["إِنَّ إِلَىٰ رَبِّكَ ٱلرُّجۡعَىٰٓ", "Sungguh, hanya kepada Tuhanmulah tempat kembali(mu)"], ["أَرَءَيۡتَ ٱلَّذِي يَنۡهَىٰ", "Bagaimana pendapatmu tentang orang yang melarang"], ["عَبۡدًا إِذَا صَلَّىٰٓ", "seorang hamba ketika dia melaksanakan salat"], ["أَرَءَيۡتَ إِن كَانَ عَلَى ٱلۡهُدَىٰٓ", "bagaimana pendapatmu jika dia (yang dilarang salat itu) berada di atas kebenaran (petunjuk)"], ["أَوۡ أَمَرَ بِٱلتَّقۡوَىٰٓ", "atau dia menyuruh bertakwa (kepada Allah)"], ["أَرَءَيۡتَ إِن كَذَّبَ وَتَوَلَّىٰٓ", "Bagaimana pendapatmu jika dia (yang melarang) itu mendustakan dan berpaling"], ["أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ", "Tidakkah dia mengetahui bahwa sesungguhnya Allah melihat (segala perbuatannya)"], ["كَلَّا لَئِن لَّمۡ يَنتَهِ لَنَسۡفَعَۢا بِٱلنَّاصِيَةِ", "Sekali-kali tidak! Sungguh, jika dia tidak berhenti (berbuat demikian) niscaya Kami tarik ubun-ubunnya (ke dalam neraka)"], ["نَاصِيَةٖ كَٰذِبَةٍ خَاطِئَةٖ", "(yaitu) ubun-ubun orang yang mendustakan dan durhaka"], ["فَلۡيَدۡعُ نَادِيَهُۥ", "Maka biarlah dia memanggil golongannya (untuk menolongnya)"], ["سَنَدۡعُ ٱلزَّبَانِيَةَ", "kelak Kami akan memanggil Malaikat Zabaniyah (penyiksa orang-orang yang berdosa)"], ["كَلَّا لَا تُطِعۡهُ وَٱسۡجُدۡۤ وَٱقۡتَرِب۩", "sekali-kali tidak! Janganlah kamu patuh kepadanya; dan sujudlah serta dekatkanlah (dirimu kepada Allah)"]]}, "95": {"n": 95, "name": "At-Tiin", "ar": "التين", "arti": "Buah Tin", "v": [["وَٱلتِّينِ وَٱلزَّيۡتُونِ", "Demi (buah) Tin dan (buah) Zaitun"], ["وَطُورِ سِينِينَ", "demi gunung Sinai"], ["وَهَٰذَا ٱلۡبَلَدِ ٱلۡأَمِينِ", "dan demi negeri (Mekkah) yang aman ini"], ["لَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ فِيٓ أَحۡسَنِ تَقۡوِيمٖ", "Sungguh, Kami telah menciptakan manusia dalam bentuk yang sebaik-baiknya"], ["ثُمَّ رَدَدۡنَٰهُ أَسۡفَلَ سَٰفِلِينَ", "kemudian Kami kembalikan dia ke tempat yang serendah-rendahnya"], ["إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ فَلَهُمۡ أَجۡرٌ غَيۡرُ مَمۡنُونٖ", "kecuali orang-orang yang beriman dan mengerjakan kebajikan; maka mereka akan mendapat pahala yang tidak ada putus-putusnya"], ["فَمَا يُكَذِّبُكَ بَعۡدُ بِٱلدِّينِ", "Maka apa yang menyebabkan (mereka) mendustakanmu (tentang) hari pembalasan setelah (adanya keterangan-keterangan) itu"], ["أَلَيۡسَ ٱللَّهُ بِأَحۡكَمِ ٱلۡحَٰكِمِينَ", "Bukankah Allah Hakim yang paling adil"]]}, "94": {"n": 94, "name": "Al-Insyiroh", "ar": "الشرح", "arti": "Melapangkan", "v": [["أَلَمۡ نَشۡرَحۡ لَكَ صَدۡرَكَ", "Bukankah kami telah melapangkan dadamu (Muhammad)"], ["وَوَضَعۡنَا عَنكَ وِزۡرَكَ", "dan kami pun telah menurunkan beban darimu"], ["ٱلَّذِيٓ أَنقَضَ ظَهۡرَكَ", "yang memberatkan punggungmu"], ["وَرَفَعۡنَا لَكَ ذِكۡرَكَ", "dan kami tinggikan sebutan (nama)mu bagimu"], ["فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا", "Maka sesungguhnya bersama kesulitan ada kemudahan"], ["إِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرٗا", "sesungguhnya bersama kesulitan ada kemudahan"], ["فَإِذَا فَرَغۡتَ فَٱنصَبۡ", "Maka apabila engkau telah selesai (dari suatu urusan), tetaplah bekerja keras (untuk urusan yang lain)"], ["وَإِلَىٰ رَبِّكَ فَٱرۡغَب", "dan hanya kepada Tuhanmulah engkau berharap"]]}, "93": {"n": 93, "name": "Ad-Dhuha", "ar": "الضحى", "arti": "Waktu Dhuha", "v": [["وَٱلضُّحَىٰ", "Demi waktu duha (ketika matahari naik sepenggalan)"], ["وَٱلَّيۡلِ إِذَا سَجَىٰ", "dan demi malam apabila telah sunyi"], ["مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ", "Tuhanmu tidak meninggalkan engkau (Muhammad) dan tidak (pula) membencimu"], ["وَلَلۡأٓخِرَةُ خَيۡرࣱ لَّكَ مِنَ ٱلۡأُولَىٰ", "dan sungguh, yang kemudian itu lebih baik bagimu daripada yang permulaan"], ["وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ", "Dan sungguh, kelak Tuhanmu pasti memberikan karunia-Nya kepadamu, sehingga engkau menjadi puas"], ["أَلَمۡ يَجِدۡكَ يَتِيمٗا فَـَٔاوَىٰ", "Bukankah Dia mendapatimu sebagai seorang yatim, lalu Dia melindungi(mu)"], ["وَوَجَدَكَ ضَآلّٗا فَهَدَىٰ", "(Dan Dia mendapatimu sebagai seorang yang bingung, lalu Dia memberikan petunjuk"], ["وَوَجَدَكَ عَآئِلٗا فَأَغۡنَىٰ", "Dan Dia mendapatimu sebagai seorang yang kekurangan, lalu Dia memberikan kecukupan"], ["فَأَمَّا ٱلۡيَتِيمَ فَلَا تَقۡهَرۡ", "Maka terhadap anak yatim janganlah engkau berlaku sewenang-wenang"], ["وَأَمَّا ٱلسَّآئِلَ فَلَا تَنۡهَرۡ", "Dan terhadap orang yang meminta-minta, janganlah engkau menghardik(nya)"], ["وَأَمَّا بِنِعۡمَةِ رَبِّكَ فَحَدِّثۡ", "Dan terhadap nikmat Tuhanmu, hendaklah engkau nyatakan (dengan bersyukur)"]]}, "87": {"n": 87, "name": "Al-’Ala", "ar": "الأعلى", "arti": "Yang Paling Tinggi", "v": [["سَبِّحِ ٱسۡمَ رَبِّكَ ٱلۡأَعۡلَى", "Sucikanlah nama Tuhanmu Yang Mahatinggi"], ["ٱلَّذِي خَلَقَ فَسَوَّىٰ", "yang menciptakan, lalu menyempurnakan (penciptaan-Nya)"], ["وَٱلَّذِي قَدَّرَ فَهَدَىٰ", "yang menentukan kadar (masing-masing) dan memberi petunjuk"], ["وَٱلَّذِيٓ أَخۡرَجَ ٱلۡمَرۡعَىٰ", "dan Yang menumbuhkan rerumputan"], ["فَجَعَلَهُۥ غُثَآءً أَحۡوَىٰ", "lalu dijadikan-Nya (rumput-rumput) itu kering kehitam-hitaman"], ["سَنُقۡرِئُكَ فَلَا تَنسَىٰٓ", "Kami akan membacakan (Alquran) kepadamu (Muhammad) sehingga engkau tidak akan lupa"], ["إِلَّا مَا شَآءَ ٱللَّهُۚ إِنَّهُۥ يَعۡلَمُ ٱلۡجَهۡرَ وَمَا يَخۡفَىٰ", "kecuali jika Allah menghendaki. Sungguh, Dia mengetahui yang terang dan yang tersembunyi"], ["وَنُيَسِّرُكَ لِلۡيُسۡرَىٰ", "Dan Kami akan memudahkan bagimu ke jalan kemudahan (mencapai kebahagian dunia dan akhirat)"], ["فَذَكِّرۡ إِن نَّفَعَتِ ٱلذِّكۡرَىٰ", "oleh sebab itu berikanlah peringatan, karena peringatan itu bermanfaat"], ["سَيَذَّكَّرُ مَن يَخۡشَىٰ", "orang yang takut (kepada Allah) akan mendapat pelajaran"], ["وَيَتَجَنَّبُهَا ٱلۡأَشۡقَى", "dan orang yang celaka (kafir) akan menjauhinya"], ["ٱلَّذِي يَصۡلَى ٱلنَّارَ ٱلۡكُبۡرَىٰ", "(yaitu) orang yang akan memasuki api yang besar (neraka)"], ["ثُمَّ لَا يَمُوتُ فِيهَا وَلَا يَحۡيَىٰ", "selanjutnya dia di sana tidak mati dan tidak (pula) hidup"], ["قَدۡ أَفۡلَحَ مَن تَزَكَّىٰ", "Sungguh beruntung orang yang menyucikan diri (dengan beriman)"], ["وَذَكَرَ ٱسۡمَ رَبِّهِۦ فَصَلَّىٰ", "dan mengingat nama Tuhannya, lalu dia salat"], ["بَلۡ تُؤۡثِرُونَ ٱلۡحَيَوٰةَ ٱلدُّنۡيَا", "Sedangkan kamu (orang-orang kafir) memilih kehidupan dunia"], ["وَٱلۡأٓخِرَةُ خَيۡرࣱ وَأَبۡقَىٰٓ", "padahal kehidupan akhirat itu lebih baik dan lebih kekal"], ["إِنَّ هَٰذَا لَفِي ٱلصُّحُفِ ٱلۡأُولَىٰ", "Sesungguhnya ini terdapat dalam kitab-kitab yang dahulu"], ["صُحُفِ إِبۡرَٰهِيمَ وَمُوسَىٰ", "(yaitu) kitab-kitab Ibrahim dan Musa"]]}, "1": {"n": 1, "name": "Al-Fatihah", "ar": "الفاتحة", "arti": "Pembukaan", "v": [["بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ", "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"], ["ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ", "Segala puji bagi Allah, Tuhan seluruh alam"], ["ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ", "Yang Maha Pengasih, Maha Penyayang"], ["مَٰلِكِ يَوۡمِ ٱلدِّينِ", "Pemilik hari pembalasan"], ["إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ", "Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan"], ["ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ", "Tunjukilah kami jalan yang lurus"], ["صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ", "(yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat"]]}}, "bas": "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"};
+  var qv = document.getElementById('qv'), qBody = document.getElementById('qvBody');
+  var qCur = null, qArti = false, qList = Q.order;
+  function ar(n) { return String(n).replace(/[0-9]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'[d]; }); }
+  function esc(t) { return t.replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function renderQ() {
+    var s = Q.s[qCur];
+    document.getElementById('qvNum').textContent = s.n;
+    document.getElementById('qvLat').textContent = 'QS. ' + s.name;
+    document.getElementById('qvInfo').textContent = 'Surah ke-' + s.n + ' · ' + s.arti + ' · ' + s.v.length + ' ayat';
+    document.getElementById('qvAr').textContent = 'سُورَةُ ' + s.ar;
+    document.getElementById('qvArti').textContent = qArti ? 'Sembunyikan arti' : 'Tampilkan arti';
+    var h = s.n === 1 ? '' : '<div class="qbas">' + esc(Q.bas) + '</div>';
+    if (!qArti) {
+      h += '<div class="qtext">' + s.v.map(function (v, i) {
+        return esc(v[0]) + '\u00a0<span class="qmark">﴿' + ar(i + 1) + '﴾</span>';
+      }).join(' ') + '</div>';
+    } else {
+      h += s.v.map(function (v, i) {
+        return '<div class="qayah"><div class="qa">' + esc(v[0]) + '\u00a0<span class="qmark">﴿' + ar(i + 1) + '﴾</span></div>' +
+               '<div class="qt"><b>' + (i + 1) + '.</b> ' + esc(v[1]) + '</div></div>';
+      }).join('');
+    }
+    qBody.innerHTML = h;
+    qBody.scrollTop = 0;
+    var k = qList.indexOf(qCur);
+    document.getElementById('qvPrev').style.visibility = k > 0 ? 'visible' : 'hidden';
+    document.getElementById('qvNext').style.visibility = k < qList.length - 1 ? 'visible' : 'hidden';
+  }
+  function openQ(n, list) { qList = list || Q.order; qCur = n; renderQ(); qv.classList.add('open'); qv.setAttribute('aria-hidden', 'false'); }
+  function closeQ() { qv.classList.remove('open'); qv.setAttribute('aria-hidden', 'true'); }
+  function stepQ(d) { var k = qList.indexOf(qCur) + d; if (k >= 0 && k < qList.length) { qCur = qList[k]; renderQ(); } }
+  stage.addEventListener('click', function (e) {
+    var o = e.target.closest('.qopen');
+    if (o && !qv.contains(o)) { e.preventDefault(); openQ(+o.getAttribute('data-surah'), o.getAttribute('data-list').split(',').map(Number)); return; }
+    var c = e.target.closest('.sr.tap');
+    if (!c || qv.contains(c)) return;
+    var n = +c.querySelector('.sn').textContent;
+    if (Q.s[n]) { e.preventDefault(); openQ(n); }
+  });
+  qv.addEventListener('click', function (e) { e.stopPropagation(); if (e.target === qv) closeQ(); });
+  document.getElementById('qvClose').addEventListener('click', closeQ);
+  document.getElementById('qvArti').addEventListener('click', function () { qArti = !qArti; renderQ(); });
+  document.getElementById('qvPrev').addEventListener('click', function () { stepQ(-1); });
+  document.getElementById('qvNext').addEventListener('click', function () { stepQ(1); });
+  window.addEventListener('keydown', function (e) {
+    if (!qv.classList.contains('open')) return;
+    e.stopImmediatePropagation();
+    if (e.key === 'Escape') closeQ();
+    else if (e.key === 'ArrowDown' || e.key === 'PageDown') qBody.scrollTop += 300;
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp') qBody.scrollTop -= 300;
+    else if (e.key === 'ArrowRight') stepQ(1);
+    else if (e.key === 'ArrowLeft') stepQ(-1);
+  }, true);
+  window.addEventListener('hashchange', closeQ);
+
+  window.addEventListener('resize', fit);
+  fit(); fromHash();
+})();
+</script>
+</body></html>
