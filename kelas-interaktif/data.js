@@ -311,5 +311,212 @@ materi: [
  {t:'urut', judul:'Urutkan wilayah pemerintahan!', petunjuk:'Sentuh dari wilayah yang paling luas.', item:['Negara (presiden)','Provinsi (gubernur)','Kabupaten/kota (bupati/wali kota)','Kecamatan (camat)','Desa/kelurahan (kepala desa/lurah)']},
  {t:'kelompok', judul:'Legislatif, eksekutif, atau yudikatif?', petunjuk:'Sentuh lembaga, lalu pilih kekuasaannya.', wadah:['Legislatif','Eksekutif','Yudikatif'], item:[['DPR',0],['DPD',0],['Presiden',1],['Menteri',1],['Mahkamah Agung',2],['Mahkamah Konstitusi',2]]},
  {t:'kuis', tanya:'Warga ingin mengusulkan perbaikan jalan kampung. Ke mana sebaiknya pertama kali?', opsi:['Ketua RT/RW atau kelurahan','Mahkamah Agung','BPK'], benar:0, bahas:'Mulai dari tingkat pemerintahan terdekat.'}
+]},
+/* ================= KELAS 1 ================= */
+{mapel:'bindo', kelas:1, semester:1, id:'bindo1-huruf', judul:'Huruf Vokal dan Konsonan', slide:[
+ {t:'judul', judul:'Huruf Vokal dan Konsonan', sub:'Ayo mengenal huruf!'},
+ {t:'kartu', judul:'Lima huruf vokal', kartu:[['A a','a – apel 🍎'],['I i','i – ikan 🐟'],['U u','u – ular 🐍'],['E e','e – ember 🪣'],['O o','o – obor 🔥']]},
+ {t:'kelompok', judul:'Vokal atau konsonan?', petunjuk:'Sentuh huruf, lalu pilih kotaknya.', wadah:['Vokal','Konsonan'], item:[['a',0],['i',0],['u',0],['o',0],['b',1],['m',1],['s',1],['k',1]]},
+ {t:'kuis', tanya:'Kata "bola" diawali huruf ...', opsi:['b','o','l'], benar:0, bahas:'b – o – l – a.'},
+ {t:'kuis', tanya:'Huruf yang hilang: m _ ja (tempat menulis)', opsi:['e','a','u'], benar:0, bahas:'meja.'},
+ {t:'poin', judul:'Hebat!', poin:['Huruf vokal: a, i, u, e, o.','Huruf lainnya disebut konsonan.','Ayo membaca setiap hari! 📚']}
+]},
+{mapel:'bindo', kelas:1, semester:1, id:'bindo1-sukukata', judul:'Suku Kata dan Kata', slide:[
+ {t:'judul', judul:'Suku Kata dan Kata', sub:'Gabungkan suku kata menjadi kata!'},
+ {t:'kartu', judul:'Ayo membaca!', kartu:[['ma + ta','mata 👁️'],['bu + ku','buku 📘'],['sa + pu','sapu 🧹'],['ro + ti','roti 🍞'],['to + pi','topi 🧢']]},
+ {t:'urut', judul:'Susun kata "sepatu"', petunjuk:'Sentuh suku kata sesuai urutan.', item:['se','pa','tu']},
+ {t:'urut', judul:'Susun kata "kelinci"', petunjuk:'Sentuh suku kata sesuai urutan.', item:['ke','lin','ci']},
+ {t:'kelompok', judul:'Berapa suku katanya?', petunjuk:'Sentuh kata, lalu pilih kotaknya.', wadah:['2 suku kata','3 suku kata'], item:[['kaki',0],['meja',0],['bola',0],['sepeda',1],['kelapa',1],['sepatu',1]]},
+ {t:'kuis', tanya:'"pi" + "sang" dibaca ...', opsi:['pisang','sangpi','pising'], benar:0, bahas:'pi-sang.'}
+]},
+{mapel:'bindo', kelas:1, semester:1, id:'bindo1-tubuh', judul:'Mengenal Anggota Tubuh', slide:[
+ {t:'judul', judul:'Mengenal Anggota Tubuh', sub:'Tubuhku hebat!'},
+ {t:'kartu', judul:'Apa gunanya?', kartu:[['👁️ Mata','untuk melihat'],['👂 Telinga','untuk mendengar'],['👃 Hidung','untuk mencium bau'],['👅 Lidah','untuk mengecap rasa'],['✋ Tangan','untuk memegang dan menulis'],['🦶 Kaki','untuk berjalan']]},
+ {t:'kelompok', judul:'Pakai anggota tubuh apa?', petunjuk:'Sentuh kegiatan, lalu pilih anggota tubuhnya.', wadah:['Mata','Telinga','Kaki'], item:[['Membaca buku',0],['Melihat pelangi',0],['Mendengar lagu',1],['Mendengar bel',1],['Bermain bola',2],['Berjalan ke sekolah',2]]},
+ {t:'kuis', tanya:'Sebelum makan, kita mencuci ...', opsi:['tangan','rambut','telinga'], benar:0, bahas:'Cuci tangan agar bersih dari kuman.'},
+ {t:'poin', judul:'Merawat tubuh', poin:['🪥 Gosok gigi pagi dan malam.','🧼 Cuci tangan sebelum makan.','🛁 Mandi dua kali sehari.']}
+]},
+{mapel:'mtk', kelas:1, semester:1, id:'mtk1-bilangan', judul:'Bilangan 1 sampai 20', slide:[
+ {t:'judul', judul:'Bilangan 1 sampai 20', sub:'Ayo berhitung!'},
+ {t:'kartu', judul:'Hitung bendanya!', kartu:[['🍎🍎🍎','3 – tiga'],['⭐⭐⭐⭐⭐','5 – lima'],['🐟🐟🐟🐟🐟🐟🐟','7 – tujuh'],['🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈','10 – sepuluh']]},
+ {t:'urut', judul:'Urutkan dari yang terkecil', petunjuk:'Sentuh bilangan dari yang paling kecil.', item:['2','5','8','11','15','20']},
+ {t:'kuis', tanya:'Bilangan setelah 9 adalah ...', opsi:['10','8','11'], benar:0, bahas:'9, 10.'},
+ {t:'kuis', tanya:'Mana yang lebih banyak? Budi 10 kelereng, Andi 13 kelereng.', opsi:['Andi','Budi','Sama'], benar:0, bahas:'13 lebih besar dari 10.'},
+ {t:'kuis', tanya:'3, 4, ..., 6. Bilangan yang hilang adalah ...', opsi:['5','7','2'], benar:0, bahas:'3, 4, 5, 6.'}
+]},
+{mapel:'mtk', kelas:1, semester:1, id:'mtk1-tambahkurang', judul:'Penjumlahan dan Pengurangan sampai 20', slide:[
+ {t:'judul', judul:'Penjumlahan dan Pengurangan', sub:'Tambah dan kurang sampai 20.'},
+ {t:'kartu', judul:'Ayo menjumlah!', kartu:[['🍬🍬 + 🍬🍬🍬','2 + 3 = 5'],['🍎🍎🍎🍎 + 🍎🍎🍎','4 + 3 = 7'],['6 + 6','12'],['8 + 2','10']]},
+ {t:'garis', kurang:true, judul:'Melangkah di garis bilangan', soal:[[3,4],[5,3],[9,-5],[8,-3],[2,7]], ket:'Tambah: melangkah ke kanan. Kurang: melangkah ke kiri.'},
+ {t:'kuis', tanya:'Ani punya 4 balon. Ibu memberi 3 lagi. Balon Ani sekarang ...', opsi:['7','6','1'], benar:0, bahas:'4 + 3 = 7.'},
+ {t:'kuis', tanya:'Ada 8 burung. 3 burung terbang. Sisa burung ...', opsi:['5','6','11'], benar:0, bahas:'8 − 3 = 5.'},
+ {t:'kuis', tanya:'5 + ... = 9', opsi:['4','3','5'], benar:0, bahas:'5 + 4 = 9.'}
+]},
+{mapel:'mtk', kelas:1, semester:1, id:'mtk1-bangun', judul:'Mengenal Bangun Datar', slide:[
+ {t:'judul', judul:'Mengenal Bangun Datar', sub:'Segitiga, persegi, persegi panjang, dan lingkaran.'},
+ {t:'gambar', judul:'Bangun datar', svg:'bangun', ket:'Sentuh setiap bangun untuk mengenal cirinya.'},
+ {t:'kelompok', judul:'Bentuknya apa?', petunjuk:'Sentuh benda, lalu pilih bentuknya.', wadah:['Lingkaran','Segitiga','Persegi panjang'], item:[['Uang logam',0],['Roda sepeda',0],['Atap rumah',1],['Rambu awas',1],['Papan tulis',2],['Pintu kelas',2]]},
+ {t:'kuis', tanya:'Bangun yang tidak memiliki sudut adalah ...', opsi:['lingkaran','segitiga','persegi'], benar:0, bahas:'Lingkaran tidak bersudut.'},
+ {t:'kuis', tanya:'Segitiga memiliki ... sisi.', opsi:['3','4','5'], benar:0, bahas:'Segitiga bersisi tiga.'}
+]},
+{mapel:'ppkn', kelas:1, semester:1, id:'ppkn1-simbol', judul:'Simbol Sila-sila Pancasila', slide:[
+ {t:'judul', judul:'Simbol Sila-sila Pancasila', sub:'Mengenal lambang Garuda Pancasila.'},
+ {t:'kartu', judul:'Simbol dan silanya', kartu:[['⭐','Sila 1: Ketuhanan Yang Maha Esa'],['⛓️','Sila 2: Kemanusiaan yang adil dan beradab'],['🌳','Sila 3: Persatuan Indonesia'],['🐃','Sila 4: Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan'],['🌾','Sila 5: Keadilan sosial bagi seluruh rakyat Indonesia']]},
+ {t:'urut', judul:'Urutkan simbol sila!', petunjuk:'Sentuh dari sila pertama sampai kelima.', item:['⭐ Bintang','⛓️ Rantai','🌳 Pohon beringin','🐃 Kepala banteng','🌾 Padi dan kapas']},
+ {t:'kuis', tanya:'Simbol sila pertama adalah ...', opsi:['bintang','rantai','padi dan kapas'], benar:0, bahas:'Bintang.'},
+ {t:'kuis', tanya:'Lambang negara Indonesia adalah ...', opsi:['Garuda Pancasila','harimau','merpati'], benar:0, bahas:'Garuda Pancasila.'}
+]},
+{mapel:'ppkn', kelas:1, semester:1, id:'ppkn1-aturan', judul:'Aturan di Rumah', slide:[
+ {t:'judul', judul:'Aturan di Rumah', sub:'Rumah tertib, hati senang.'},
+ {t:'poin', judul:'Aturan di rumahku', poin:['🛏️ Bangun tidur, rapikan tempat tidur.','🧸 Selesai bermain, rapikan mainan.','🍽️ Cuci tangan dan berdoa sebelum makan.','👟 Letakkan sepatu di rak.']},
+ {t:'kelompok', judul:'Menaati atau melanggar?', petunjuk:'Sentuh perilaku, lalu pilih kotaknya.', wadah:['Menaati 😊','Melanggar 😟'], item:[['Merapikan mainan',0],['Membantu ibu menyapu',0],['Tidur tepat waktu',0],['Mainan berserakan',1],['Tidak mau tidur siang',1],['Sepatu di atas kasur',1]]},
+ {t:'kuis', tanya:'Jika dinasihati ibu, kita sebaiknya ...', opsi:['mendengarkan dan menurut','membantah','pergi bermain'], benar:0, bahas:'Patuh kepada orang tua.'}
+]},
+{mapel:'ppkn', kelas:1, semester:1, id:'ppkn1-diri', judul:'Aku dan Keluargaku', slide:[
+ {t:'judul', judul:'Aku dan Keluargaku', sub:'Setiap anak istimewa.'},
+ {t:'kartu', judul:'Anggota keluarga', kartu:[['👨 Ayah dari ayah','Kakek'],['👵 Ibu dari ibu','Nenek'],['🧔 Adik laki-laki ayah','Paman'],['👩 Kakak perempuan ibu','Bibi (tante)']]},
+ {t:'poin', judul:'Kita berbeda-beda', poin:['Ada yang berambut lurus, ada yang keriting.','Ada yang suka menggambar, ada yang suka bermain bola.','Semua teman harus dihargai. 🤝']},
+ {t:'kuis', tanya:'Sinta berambut keriting, Rina berambut lurus. Sikap kita ...', opsi:['menghargai perbedaan','mengejek','menjauhi'], benar:0, bahas:'Hargai perbedaan.'},
+ {t:'kuis', tanya:'Kakak membantu adik belajar. Kakak menunjukkan sikap ...', opsi:['sayang','sombong','malas'], benar:0, bahas:'Sayang kepada adik.'}
+]},
+/* ================= KELAS 2 ================= */
+{mapel:'bindo', kelas:2, semester:1, id:'bindo2-cerita', judul:'Membaca Cerita Pendek', slide:[
+ {t:'judul', judul:'Membaca Cerita Pendek', sub:'Siti di Taman 🌷'},
+ {t:'poin', judul:'Siti di Taman', poin:['Siti pergi ke taman bersama ibunya pada hari Minggu.','Di taman, Siti melihat banyak bunga berwarna-warni.','Siti tidak memetik bunga karena ia tahu bunga harus dijaga.','Siti senang sekali berada di taman.']},
+ {t:'kartu', judul:'Isi cerita', kartu:[['Siapa?','Siti dan ibunya'],['Di mana?','Di taman'],['Kapan?','Hari Minggu'],['Perasaan Siti?','Senang']]},
+ {t:'kuis', tanya:'Mengapa Siti tidak memetik bunga?', opsi:['Bunga harus dijaga','Bunganya jelek','Siti takut'], benar:0, bahas:'Kita harus menjaga tanaman.'},
+ {t:'kuis', tanya:'Judul yang cocok untuk cerita ini adalah ...', opsi:['Siti di Taman','Siti ke Pasar','Bermain Bola'], benar:0, bahas:'Judul sesuai isi cerita.'}
+]},
+{mapel:'bindo', kelas:2, semester:1, id:'bindo2-kalimat', judul:'Kalimat Sederhana dan Tanda Baca', slide:[
+ {t:'judul', judul:'Kalimat Sederhana dan Tanda Baca', sub:'Menulis kalimat dengan benar.'},
+ {t:'poin', judul:'Ingat ya!', poin:['Awal kalimat memakai huruf kapital: Ibu memasak nasi.','Kalimat berita diakhiri titik ( . )','Kalimat tanya diakhiri tanda tanya ( ? )']},
+ {t:'urut', judul:'Susun menjadi kalimat!', petunjuk:'Sentuh kata sesuai urutan kalimat yang benar.', item:['Adik','makan','roti.']},
+ {t:'urut', judul:'Susun menjadi kalimat!', petunjuk:'Sentuh kata sesuai urutan kalimat yang benar.', item:['Ibu','pergi','ke','pasar.']},
+ {t:'kelompok', judul:'Titik atau tanda tanya?', petunjuk:'Sentuh kalimat, lalu pilih tanda bacanya.', wadah:['.','?'], item:[['Ayah membaca koran',0],['Adik tidur siang',0],['Siapa namamu',1],['Di mana rumahmu',1]]}
+]},
+{mapel:'bindo', kelas:2, semester:1, id:'bindo2-santun', judul:'Kata Santun', slide:[
+ {t:'judul', judul:'Kata Santun', sub:'Tolong, maaf, terima kasih, permisi.'},
+ {t:'kartu', judul:'Kapan diucapkan?', kartu:[['🙏 Tolong','Saat meminta bantuan'],['😔 Maaf','Saat berbuat salah'],['😊 Terima kasih','Setelah dibantu atau diberi'],['🚶 Permisi','Saat lewat di depan orang']]},
+ {t:'kelompok', judul:'Kata santun apa yang tepat?', petunjuk:'Sentuh keadaan, lalu pilih kata santunnya.', wadah:['Tolong','Maaf','Terima kasih'], item:[['Minta diambilkan buku',0],['Minta dibukakan pintu',0],['Menjatuhkan pensil teman',1],['Datang terlambat',1],['Diberi hadiah',2],['Dipinjami penghapus',2]]},
+ {t:'kuis', tanya:'Jawaban yang tepat ketika seseorang berkata "terima kasih" adalah ...', opsi:['Sama-sama','Permisi','Tolong'], benar:0, bahas:'Sama-sama.'}
+]},
+{mapel:'mtk', kelas:2, semester:1, id:'mtk2-bilangan', judul:'Bilangan sampai 100', slide:[
+ {t:'judul', judul:'Bilangan sampai 100', sub:'Puluhan dan satuan.'},
+ {t:'kartu', judul:'Puluhan dan satuan', kartu:[['47','4 puluhan + 7 satuan = 40 + 7'],['63','6 puluhan + 3 satuan = 60 + 3'],['92','9 puluhan + 2 satuan = 90 + 2'],['100','seratus']]},
+ {t:'urut', judul:'Urutkan dari yang terkecil', petunjuk:'Sentuh bilangan dari yang paling kecil.', item:['15','51','56','65','90']},
+ {t:'kuis', tanya:'Tanda yang tepat: 45 ... 54', opsi:['<','>','='], benar:0, bahas:'45 kurang dari 54.'},
+ {t:'kuis', tanya:'10, 20, 30, ..., 50', opsi:['40','35','45'], benar:0, bahas:'Loncat 10.'}
+]},
+{mapel:'mtk', kelas:2, semester:1, id:'mtk2-tambahkurang', judul:'Penjumlahan dan Pengurangan sampai 100', slide:[
+ {t:'judul', judul:'Penjumlahan dan Pengurangan sampai 100', sub:'Bersusun ke bawah, mulai dari satuan.'},
+ {t:'poin', judul:'Contoh: 47 + 26', poin:['Satuan: 7 + 6 = 13 → tulis 3, simpan 1.','Puluhan: 4 + 2 + 1 = 7.','Jadi 47 + 26 = 73.']},
+ {t:'poin', judul:'Contoh: 70 − 34', poin:['Satuan: 0 − 4 tidak bisa → pinjam 1 puluhan.','10 − 4 = 6.','Puluhan: 6 − 3 = 3.','Jadi 70 − 34 = 36.']},
+ {t:'kuis', tanya:'Ibu membeli 35 telur lalu 24 telur lagi. Jumlahnya ...', opsi:['59','49','61'], benar:0, bahas:'35 + 24 = 59.'},
+ {t:'kuis', tanya:'Doni punya 50 kelereng, diberikan 15. Sisanya ...', opsi:['35','45','65'], benar:0, bahas:'50 − 15 = 35.'}
+]},
+{mapel:'mtk', kelas:2, semester:1, id:'mtk2-waktu', judul:'Mengenal Jam dan Waktu', slide:[
+ {t:'judul', judul:'Mengenal Jam dan Waktu', sub:'Pukul berapa sekarang?'},
+ {t:'jam', judul:'Ayo membaca jam!', ket:'Pilih waktu, lalu perhatikan jarum jamnya.'},
+ {t:'kartu', judul:'Satuan waktu', kartu:[['1 jam','60 menit'],['1 hari','24 jam'],['1 minggu','7 hari'],['1 tahun','12 bulan']]},
+ {t:'urut', judul:'Urutkan nama hari', petunjuk:'Mulai dari Senin.', item:['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu']},
+ {t:'kuis', tanya:'Masuk sekolah pukul 07.00, pulang pukul 12.00. Lama di sekolah ...', opsi:['5 jam','4 jam','7 jam'], benar:0, bahas:'Dari 7 ke 12 = 5 jam.'}
+]},
+{mapel:'ppkn', kelas:2, semester:1, id:'ppkn2-pancasila', judul:'Sila-sila Pancasila dalam Kehidupanku', slide:[
+ {t:'judul', judul:'Pancasila dalam Kehidupanku', sub:'Mengamalkan Pancasila setiap hari.'},
+ {t:'kelompok', judul:'Sila ke berapa?', petunjuk:'Sentuh perilaku, lalu pilih silanya.', wadah:['Sila 1','Sila 2','Sila 3','Sila 4','Sila 5'], item:[['Berdoa sebelum belajar',0],['Menjenguk teman sakit',1],['Bermain bersama semua teman',2],['Musyawarah memilih ketua kelas',3],['Membagi kue sama rata',4]]},
+ {t:'kuis', tanya:'Teman yang berbeda agama sedang berdoa. Sikap kita ...', opsi:['menghormati dan tidak mengganggu','mengejek','berteriak'], benar:0, bahas:'Saling menghormati.'},
+ {t:'poin', judul:'Ingat!', poin:['Pancasila adalah dasar negara Indonesia.','Pancasila terdiri atas lima sila.','Amalkan Pancasila di rumah dan sekolah. 🇮🇩']}
+]},
+{mapel:'ppkn', kelas:2, semester:1, id:'ppkn2-sekolah', judul:'Aturan di Sekolah', slide:[
+ {t:'judul', judul:'Aturan di Sekolah', sub:'Tertib di sekolah, belajar jadi nyaman.'},
+ {t:'poin', judul:'Tata tertib sekolah', poin:['⏰ Datang tepat waktu.','👕 Memakai seragam.','✋ Angkat tangan sebelum bertanya.','🗑️ Buang sampah pada tempatnya.']},
+ {t:'kelompok', judul:'Menaati atau melanggar?', petunjuk:'Sentuh perilaku, lalu pilih kotaknya.', wadah:['Menaati','Melanggar'], item:[['Ikut piket kelas',0],['Berbaris rapi',0],['Mendengarkan guru',0],['Datang terlambat',1],['Mencoret meja',1],['Mengobrol saat upacara',1]]},
+ {t:'kuis', tanya:'Barang temuan di sekolah sebaiknya diserahkan kepada ...', opsi:['guru','disimpan sendiri','dibuang'], benar:0, bahas:'Bersikap jujur.'}
+]},
+{mapel:'ppkn', kelas:2, semester:1, id:'ppkn2-beragam', judul:'Keberagaman Teman', slide:[
+ {t:'judul', judul:'Keberagaman Teman', sub:'Berbeda-beda tetapi tetap satu.'},
+ {t:'kartu', judul:'Kita berbeda dalam ...', kartu:[['👀 Ciri tubuh','Warna kulit, bentuk rambut, tinggi badan.'],['🎨 Kesukaan','Menari, menggambar, bermain bola.'],['🗣️ Bahasa daerah','Jawa, Sunda, Batak, Betawi, dan lainnya.'],['🙏 Agama','Islam, Kristen, Katolik, Hindu, Buddha, Konghucu.']]},
+ {t:'kuis', tanya:'Bhinneka Tunggal Ika artinya ...', opsi:['berbeda-beda tetapi tetap satu','bersatu kita teguh','satu nusa'], benar:0, bahas:'Berbeda-beda tetapi tetap satu.'},
+ {t:'kuis', tanya:'Teman baru berbicara dengan logat berbeda. Sikap kita ...', opsi:['menyambutnya dengan ramah','menertawakannya','menjauhinya'], benar:0, bahas:'Ramah kepada semua teman.'}
+]},
+/* ================= KELAS 3 ================= */
+{mapel:'bindo', kelas:3, semester:1, id:'bindo3-dongeng', judul:'Dongeng Binatang (Fabel)', slide:[
+ {t:'judul', judul:'Dongeng Binatang', sub:'Semut dan Merpati 🐜🕊️'},
+ {t:'poin', judul:'Semut dan Merpati', poin:['Seekor semut terjatuh ke sungai dan hampir tenggelam.','Merpati menjatuhkan sehelai daun; semut naik dan selamat.','Beberapa hari kemudian, pemburu hendak menembak merpati.','Semut menggigit kaki pemburu sehingga tembakannya meleset.','Merpati pun selamat.']},
+ {t:'kartu', judul:'Unsur dongeng', kartu:[['Tokoh','Semut, merpati, pemburu'],['Watak merpati','Suka menolong'],['Latar','Sungai dan hutan'],['Pesan moral','Kebaikan akan dibalas dengan kebaikan']]},
+ {t:'urut', judul:'Urutkan peristiwanya!', petunjuk:'Sentuh peristiwa sesuai urutan cerita.', item:['Semut jatuh ke sungai','Merpati menjatuhkan daun','Pemburu hendak menembak','Semut menggigit pemburu','Merpati selamat']},
+ {t:'kuis', tanya:'Cerita yang tokohnya binatang dan bisa berbicara disebut ...', opsi:['fabel','legenda','biografi','puisi'], benar:0, bahas:'Fabel.'}
+]},
+{mapel:'bindo', kelas:3, semester:1, id:'bindo3-katakerja', judul:'Kata Benda, Kata Kerja, dan Kata Sifat', slide:[
+ {t:'judul', judul:'Kata Benda, Kata Kerja, Kata Sifat', sub:'Mengenal jenis kata.'},
+ {t:'kartu', judul:'Jenis kata', kartu:[['📦 Kata benda','Nama benda: meja, buku, kucing.'],['🏃 Kata kerja','Perbuatan: menulis, berlari, makan.'],['🌈 Kata sifat','Keadaan: rajin, besar, harum.']]},
+ {t:'kelompok', judul:'Kelompokkan katanya!', petunjuk:'Sentuh kata, lalu pilih jenisnya.', wadah:['Benda','Kerja','Sifat'], item:[['kursi',0],['sepeda',0],['berenang',1],['tidur',1],['manis',2],['bersih',2]]},
+ {t:'kuis', tanya:'"Kucing hitam itu makan ikan." Kata sifatnya adalah ...', opsi:['hitam','kucing','makan','ikan'], benar:0, bahas:'Hitam menerangkan kucing.'},
+ {t:'kuis', tanya:'Lawan kata "rajin" adalah ...', opsi:['malas','pintar','cepat','besar'], benar:0, bahas:'Rajin >< malas.'}
+]},
+{mapel:'bindo', kelas:3, semester:1, id:'bindo3-deskripsi', judul:'Mendeskripsikan Benda dan Hewan', slide:[
+ {t:'judul', judul:'Mendeskripsikan Benda dan Hewan', sub:'Tebak-tebakan seru!'},
+ {t:'kartu', judul:'Siapakah aku?', kartu:[['Leherku panjang, tubuhku tinggi.','🦒 Jerapah'],['Belalaiku panjang, telingaku lebar.','🐘 Gajah'],['Kulitku kuning, bentukku panjang, dagingku lembut.','🍌 Pisang'],['Aku berduri, baunya harum menyengat.','Durian'],['Aku bisa terbang, berparuh, dan bertelur.','🐦 Burung']]},
+ {t:'kelompok', judul:'Ciri ini dirasakan dengan apa?', petunjuk:'Sentuh ciri, lalu pilih indranya.', wadah:['Mata','Lidah','Telinga'], item:[['Merah',0],['Bulat',0],['Manis',1],['Asam',1],['Nyaring',2],['Merdu',2]]},
+ {t:'kuis', tanya:'Deskripsi yang runtut tentang kelinci adalah ...', opsi:['Kelinci bertelinga panjang, berbulu lembut, dan suka wortel.','Kelinci makan, telinga, lembut.','Wortel suka kelinci panjang.','Bulu kelinci telinga.'], benar:0, bahas:'Kalimat runtut dan jelas.'}
+]},
+{mapel:'mtk', kelas:3, semester:1, id:'mtk3-bilangan', judul:'Bilangan sampai 1.000', slide:[
+ {t:'judul', judul:'Bilangan sampai 1.000', sub:'Ratusan, puluhan, dan satuan.'},
+ {t:'nilaitempat', judul:'Nilai tempat', angka:'0846', ket:'Ubah angka ratusan, puluhan, dan satuan dengan tombol + dan −.'},
+ {t:'urut', judul:'Urutkan dari yang terkecil', petunjuk:'Sentuh bilangan dari yang paling kecil.', item:['213','231','312','321']},
+ {t:'kuis', tanya:'Tanda yang tepat: 498 ... 489', opsi:['>','<','=','+'], benar:0, bahas:'Puluhan 9 lebih besar dari 8.'},
+ {t:'kuis', tanya:'Bilangan terbesar dari angka 2, 9, 5 adalah ...', opsi:['952','925','592','259'], benar:0, bahas:'Susun dari angka terbesar.'}
+]},
+{mapel:'mtk', kelas:3, semester:1, id:'mtk3-kalibagi', judul:'Perkalian dan Pembagian', slide:[
+ {t:'judul', judul:'Perkalian dan Pembagian', sub:'Penjumlahan dan pengurangan berulang.'},
+ {t:'kartu', judul:'Perkalian = penjumlahan berulang', kartu:[['3 × 4','4 + 4 + 4 = 12'],['5 × 2','2 + 2 + 2 + 2 + 2 = 10'],['🍪🍪🍪🍪🍪🍪 × 5 kotak','5 × 6 = 30 kue'],['7 × 0','0']]},
+ {t:'kartu', judul:'Pembagian = membagi sama banyak', kartu:[['20 : 4','5 (20 permen untuk 4 anak)'],['24 : 6','4'],['56 : 7','8'],['3 × 8 = 24','maka 24 : 3 = 8']]},
+ {t:'kuis', tanya:'5 kotak, setiap kotak 6 kue. Jumlah kue ...', opsi:['30','11','25','36'], benar:0, bahas:'5 × 6 = 30.'},
+ {t:'kuis', tanya:'32 buku dibagikan kepada 8 siswa. Setiap siswa mendapat ...', opsi:['4','5','24','40'], benar:0, bahas:'32 : 8 = 4.'}
+]},
+{mapel:'mtk', kelas:3, semester:1, id:'mtk3-pecahan', judul:'Pecahan Sederhana', slide:[
+ {t:'judul', judul:'Pecahan Sederhana', sub:'Setengah, sepertiga, seperempat.'},
+ {t:'pecahan', judul:'Ayo membuat pecahan!', n:2, ket:'Pilih banyak potongan, lalu sentuh potongan untuk mewarnainya.'},
+ {t:'kartu', judul:'Nama pecahan', kartu:[['1/2','setengah'],['1/3','sepertiga'],['1/4','seperempat'],['2/3','dua pertiga']]},
+ {t:'kuis', tanya:'Pecahan yang paling besar adalah ...', opsi:['1/2','1/3','1/4','1/5'], benar:0, bahas:'Kue dibagi 2 potongannya paling besar.'},
+ {t:'kuis', tanya:'Setengah dari 10 apel adalah ...', opsi:['5','2','10','20'], benar:0, bahas:'10 : 2 = 5.'}
+]},
+{mapel:'ipas', kelas:3, semester:1, id:'ipas3-makhluk', judul:'Ciri-ciri Makhluk Hidup', slide:[
+ {t:'judul', judul:'Ciri-ciri Makhluk Hidup', sub:'Apa bedanya kucing dan batu?'},
+ {t:'poin', judul:'Ciri makhluk hidup', poin:['🫁 Bernapas','🍽️ Memerlukan makanan','🌱 Tumbuh dan berkembang','🐣 Berkembang biak','🏃 Bergerak','🌿 Peka terhadap rangsang (putri malu menguncup)']},
+ {t:'kelompok', judul:'Hidup atau tak hidup?', petunjuk:'Sentuh benda, lalu pilih kotaknya.', wadah:['Makhluk hidup','Benda tak hidup'], item:[['Kucing',0],['Pohon',0],['Ikan',0],['Batu',1],['Meja',1],['Robot',1]]},
+ {t:'kelompok', judul:'Bertelur atau melahirkan?', petunjuk:'Sentuh hewan, lalu pilih kotaknya.', wadah:['Bertelur','Melahirkan'], item:[['Ayam',0],['Bebek',0],['Ikan',0],['Sapi',1],['Kucing',1],['Kambing',1]]},
+ {t:'kuis', tanya:'Robot bisa bergerak, tetapi bukan makhluk hidup karena ...', opsi:['tidak bernapas, tumbuh, dan berkembang biak','terbuat dari besi','berwarna','besar'], benar:0, bahas:'Robot tidak memenuhi ciri makhluk hidup.'}
+]},
+{mapel:'ipas', kelas:3, semester:1, id:'ipas3-energi', judul:'Energi di Sekitar Kita', slide:[
+ {t:'judul', judul:'Energi di Sekitar Kita', sub:'Energi membuat sesuatu bisa bekerja.'},
+ {t:'kartu', judul:'Sumber energi', kartu:[['☀️ Matahari','Panas dan cahaya; sumber energi terbesar.'],['💨 Angin','Menggerakkan kincir dan layangan.'],['💧 Air','Menggerakkan kincir air dan pembangkit listrik.'],['🍚 Makanan','Memberi energi bagi tubuh.']]},
+ {t:'kelompok', judul:'Berubah menjadi energi apa?', petunjuk:'Sentuh alat, lalu pilih energi yang dihasilkan.', wadah:['Cahaya','Panas','Gerak','Bunyi'], item:[['Lampu',0],['Setrika',1],['Kompor',1],['Kipas angin',2],['Radio',3],['Gitar dipetik',3]]},
+ {t:'poin', judul:'Hemat energi!', poin:['💡 Matikan lampu yang tidak dipakai.','📺 Matikan TV jika tidak ditonton.','🔌 Cabut charger jika sudah penuh.']}
+]},
+{mapel:'ipas', kelas:3, semester:1, id:'ipas3-lingkungan', judul:'Lingkungan Alam dan Buatan', slide:[
+ {t:'judul', judul:'Lingkungan Alam dan Buatan', sub:'Mengenal lingkungan sekitar kita.'},
+ {t:'kelompok', judul:'Alam atau buatan?', petunjuk:'Sentuh kenampakan, lalu pilih kotaknya.', wadah:['Alam','Buatan'], item:[['Gunung',0],['Sungai',0],['Laut',0],['Hutan',0],['Sawah',1],['Waduk',1],['Jalan raya',1],['Gedung',1]]},
+ {t:'kartu', judul:'Manfaatnya', kartu:[['⛰️ Gunung','Tanahnya subur untuk pertanian.'],['🌊 Sungai','Sumber air dan sarana transportasi.'],['🌳 Hutan','Menghasilkan oksigen, mencegah banjir.'],['🏞️ Waduk','Menampung air dan mengairi sawah.']]},
+ {t:'kuis', tanya:'Hutan gundul dapat menyebabkan ...', opsi:['banjir dan tanah longsor','udara sejuk','air bersih melimpah','hewan bertambah'], benar:0, bahas:'Tanpa pohon, air tidak terserap.'},
+ {t:'poin', judul:'Jaga lingkungan!', poin:['🗑️ Buang sampah pada tempatnya.','🌳 Tanam pohon.','🧹 Ikut kerja bakti.']}
+]},
+{mapel:'ppkn', kelas:3, semester:1, id:'ppkn3-pancasila', judul:'Lambang dan Makna Sila Pancasila', slide:[
+ {t:'judul', judul:'Lambang dan Makna Sila Pancasila', sub:'Apa arti setiap simbol?'},
+ {t:'kartu', judul:'Makna simbol', kartu:[['⭐ Bintang','Cahaya kerohanian dari Tuhan Yang Maha Esa.'],['⛓️ Rantai','Manusia saling membantu dan berhubungan.'],['🌳 Pohon beringin','Tempat berteduh; lambang persatuan.'],['🐃 Kepala banteng','Berkumpul untuk bermusyawarah.'],['🌾 Padi dan kapas','Pangan dan sandang; kemakmuran.']]},
+ {t:'kelompok', judul:'Sila ke berapa?', petunjuk:'Sentuh perilaku, lalu pilih silanya.', wadah:['Sila 1','Sila 2','Sila 3','Sila 4','Sila 5'], item:[['Rajin beribadah',0],['Berbagi bekal',1],['Ikut kerja bakti',2],['Menghargai pendapat',3],['Ikut piket bergiliran',4]]},
+ {t:'kuis', tanya:'Padi dan kapas melambangkan ...', opsi:['pangan dan sandang','persatuan','ketuhanan','musyawarah'], benar:0, bahas:'Kemakmuran.'}
+]},
+{mapel:'ppkn', kelas:3, semester:1, id:'ppkn3-kesepakatan', judul:'Kesepakatan di Rumah dan Sekolah', slide:[
+ {t:'judul', judul:'Kesepakatan di Rumah dan Sekolah', sub:'Aturan yang kita buat bersama.'},
+ {t:'kartu', judul:'Kenali istilahnya', kartu:[['Kesepakatan','Aturan yang dibuat dan disetujui bersama.'],['Hak','Sesuatu yang kita terima.'],['Kewajiban','Sesuatu yang harus kita lakukan.'],['Sanksi','Akibat jika melanggar.']]},
+ {t:'kelompok', judul:'Hak atau kewajiban?', petunjuk:'Sentuh contoh, lalu pilih kotaknya.', wadah:['Hak','Kewajiban'], item:[['Mendapat pelajaran',0],['Mendapat kasih sayang',0],['Mengerjakan PR',1],['Membantu orang tua',1],['Ikut piket',1]]},
+ {t:'kuis', tanya:'Kakak ingin menonton TV, adik ingin belajar. Cara terbaik ...', opsi:['membuat kesepakatan bersama','bertengkar','merebut remote','diam saja'], benar:0, bahas:'Musyawarah membuat kesepakatan.'}
+]},
+{mapel:'ppkn', kelas:3, semester:1, id:'ppkn3-gotongroyong', judul:'Gotong Royong di Lingkungan', slide:[
+ {t:'judul', judul:'Gotong Royong di Lingkungan', sub:'Berat sama dipikul, ringan sama dijinjing.'},
+ {t:'urut', judul:'Dari wilayah terkecil', petunjuk:'Sentuh dari wilayah yang paling kecil.', item:['RT (ketua RT)','RW (ketua RW)','Kelurahan (lurah)','Kecamatan (camat)']},
+ {t:'poin', judul:'Contoh gotong royong', poin:['🏠 Di rumah: membersihkan rumah bersama.','🏫 Di sekolah: piket kelas bersama.','🏘️ Di masyarakat: kerja bakti membersihkan selokan.']},
+ {t:'kuis', tanya:'Manfaat gotong royong adalah ...', opsi:['pekerjaan cepat selesai dan ringan','pekerjaan lama selesai','membuat lelah sendiri','menimbulkan pertengkaran'], benar:0, bahas:'Bersama-sama lebih ringan.'}
 ]}
 ]};
