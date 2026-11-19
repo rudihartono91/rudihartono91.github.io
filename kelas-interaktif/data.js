@@ -120,5 +120,103 @@ materi: [
  {t:'kartu', judul:'Bhinneka Tunggal Ika', kartu:[['Artinya?','Berbeda-beda tetapi tetap satu jua.'],['Dari mana?','Kitab Sutasoma karya Mpu Tantular.'],['Di mana tertulis?','Pada pita yang dicengkeram burung Garuda Pancasila.']]},
  {t:'kuis', tanya:'Saat kerja kelompok, Andi, Butet, dan Made berbeda pendapat. Sikap terbaik adalah ...', opsi:['Bermusyawarah dan menghargai pendapat','Memaksakan pendapat sendiri','Bubar kelompok'], benar:0, bahas:'Musyawarah menjaga persatuan.'},
  {t:'poin', judul:'Rangkuman', poin:['Keberagaman adalah kekayaan bangsa Indonesia.','Hargai teman yang berbeda suku, bahasa, dan agama (toleransi).','Lestarikan budaya daerah dengan mempelajari dan menampilkannya.']}
+]},
+/* ================= KELAS 5 ================= */
+{mapel:'ipas', kelas:5, semester:1, id:'ipas5-cahaya', judul:'Cahaya dan Sifat-sifatnya', slide:[
+ {t:'judul', judul:'Cahaya dan Sifat-sifatnya', sub:'Mengapa kita bisa melihat? Bagaimana pelangi terbentuk?'},
+ {t:'poin', judul:'Bagaimana kita melihat?', poin:['💡 Sumber cahaya memancarkan cahaya.','📕 Cahaya mengenai benda lalu dipantulkan.','👁️ Cahaya masuk ke mata melalui kornea dan pupil.','🔍 Lensa mata membentuk bayangan di retina.','🧠 Saraf mata mengirim pesan ke otak, kita pun melihat!']},
+ {t:'kartu', judul:'Sifat-sifat cahaya', kartu:[['➡️ Merambat lurus','Berkas sinar dari celah genting tampak lurus.'],['🪟 Menembus benda bening','Cahaya masuk melalui kaca jendela.'],['🪞 Dipantulkan','Bayangan wajah terlihat di cermin.'],['🥢 Dibiaskan','Pensil di dalam gelas air tampak patah.'],['🌈 Diuraikan','Pelangi muncul setelah hujan.']]},
+ {t:'kelompok', judul:'Benda apa ini?', petunjuk:'Sentuh benda, lalu pilih jenisnya.', wadah:['Benda bening','Benda gelap'], item:[['Kaca jendela',0],['Air jernih',0],['Plastik bening',0],['Kayu',1],['Karton',1],['Tembok',1]]},
+ {t:'kuis', tanya:'Dasar kolam jernih tampak lebih dangkal dari sebenarnya karena cahaya ...', opsi:['Dibiaskan','Dipantulkan','Merambat lurus'], benar:0, bahas:'Cahaya dibelokkan saat berpindah dari air ke udara.'},
+ {t:'kuis', tanya:'Kaca spion kendaraan memakai cermin cembung agar ...', opsi:['Daerah pandang lebih luas','Benda tampak lebih besar','Bayangan terbalik'], benar:0, bahas:'Cermin cembung memperluas pandangan ke belakang.'},
+ {t:'poin', judul:'Rangkuman', poin:['Kita melihat karena cahaya yang dipantulkan benda masuk ke mata.','Cahaya merambat lurus, menembus benda bening, dapat dipantulkan, dibiaskan, dan diuraikan.','Jaga mata: membaca di tempat terang dan batasi menatap layar.']}
+]},
+{mapel:'ipas', kelas:5, semester:1, id:'ipas5-ekosistem', judul:'Harmoni dalam Ekosistem', slide:[
+ {t:'judul', judul:'Harmoni dalam Ekosistem', sub:'Makhluk hidup saling bergantung satu sama lain.'},
+ {t:'kelompok', judul:'Biotik atau abiotik?', petunjuk:'Sentuh komponen, lalu pilih kelompoknya.', wadah:['Biotik (hidup)','Abiotik (tak hidup)'], item:[['Padi',0],['Belalang',0],['Jamur',0],['Air',1],['Tanah',1],['Cahaya matahari',1]]},
+ {t:'gambar', judul:'Rantai makanan di sawah', svg:'rantai', ket:'Sentuh setiap makhluk hidup untuk melihat perannya.'},
+ {t:'kartu', judul:'Peran dalam ekosistem', kartu:[['🌱 Produsen','Membuat makanan sendiri. Contoh: tumbuhan hijau.'],['🐄 Herbivora','Pemakan tumbuhan. Contoh: sapi, belalang.'],['🦁 Karnivora','Pemakan daging. Contoh: harimau, elang.'],['🐔 Omnivora','Pemakan segala. Contoh: ayam, tikus.'],['🍄 Pengurai','Menguraikan sisa makhluk hidup. Contoh: jamur, bakteri.']]},
+ {t:'kuis', tanya:'Jika ular di sawah diburu hingga habis, apa yang terjadi?', opsi:['Tikus bertambah banyak dan padi rusak','Tikus berkurang','Padi tumbuh lebih subur'], benar:0, bahas:'Tanpa pemangsa, populasi tikus meningkat.'},
+ {t:'poin', judul:'Menjaga keseimbangan ekosistem', poin:['🌳 Menanam pohon dan tidak menebang sembarangan.','🐦 Tidak memburu hewan liar.','🚯 Tidak membuang sampah ke sungai dan laut.','🧪 Menggunakan pestisida secukupnya.']}
+]},
+{mapel:'ipas', kelas:5, semester:1, id:'ipas5-magnet', judul:'Magnet, Listrik, dan Teknologi', slide:[
+ {t:'judul', judul:'Magnet, Listrik, dan Teknologi', sub:'Mengenal magnet, rangkaian listrik, dan cara menghemat energi.'},
+ {t:'kartu', judul:'Sifat magnet', kartu:[['🧲 Kutub magnet','Setiap magnet memiliki kutub utara (U) dan selatan (S).'],['U ↔ U','Kutub sejenis tolak-menolak.'],['U → ← S','Kutub berbeda tarik-menarik.'],['Membuat magnet','Digosok, induksi, atau elektromagnetik (dialiri listrik).']]},
+ {t:'kelompok', judul:'Konduktor atau isolator?', petunjuk:'Sentuh benda, lalu pilih kelompoknya.', wadah:['Konduktor','Isolator'], item:[['Kawat tembaga',0],['Paku besi',0],['Sendok aluminium',0],['Karet',1],['Plastik',1],['Kayu kering',1]]},
+ {t:'gambar', judul:'Rangkaian seri dan paralel', svg:'rangkaian', ket:'Sentuh setiap rangkaian untuk melihat penjelasannya.'},
+ {t:'kuis', tanya:'Lampu di rumah dipasang paralel karena ...', opsi:['Jika satu lampu mati, lampu lain tetap menyala','Lebih hemat kabel','Lampu menjadi redup'], benar:0, bahas:'Setiap cabang dialiri arus sendiri.'},
+ {t:'poin', judul:'Ayo hemat listrik!', poin:['💡 Matikan lampu saat tidak digunakan.','📺 Matikan TV jika tidak ditonton.','🔌 Cabut charger setelah baterai penuh.','❄️ Jangan membuka kulkas terlalu lama.']}
+]},
+{mapel:'mtk', kelas:5, semester:1, id:'mtk5-cacah', judul:'Bilangan Cacah sampai 1.000.000', slide:[
+ {t:'judul', judul:'Bilangan Cacah sampai 1.000.000', sub:'Membaca, menulis, nilai tempat, pembulatan, dan operasi hitung.'},
+ {t:'kartu', judul:'Nilai tempat 438.215', kartu:[['4','Ratus ribuan → 400.000'],['3','Puluh ribuan → 30.000'],['8','Ribuan → 8.000'],['2','Ratusan → 200'],['1','Puluhan → 10'],['5','Satuan → 5']]},
+ {t:'poin', judul:'Membulatkan ke ribuan terdekat', poin:['Lihat angka ratusan.','Ratusan 5 atau lebih → bulatkan ke atas.','Ratusan kurang dari 5 → bulatkan ke bawah.','486.512 → 487.000   •   486.312 → 486.000']},
+ {t:'kuis', tanya:'Nilai angka 6 pada 865.104 adalah ...', opsi:['60.000','6.000','600.000'], benar:0, bahas:'Angka 6 di tempat puluh ribuan.'},
+ {t:'kuis', tanya:'Pabrik membuat 12.500 botol setiap hari. Selama 30 hari dibuat ...', opsi:['375.000 botol','37.500 botol','360.000 botol'], benar:0, bahas:'12.500 × 30 = 375.000.'},
+ {t:'kuis', tanya:'Urutan terbesar: 745.000; 754.000; 745.500 adalah ...', opsi:['754.000; 745.500; 745.000','745.000; 745.500; 754.000','745.500; 754.000; 745.000'], benar:0, bahas:'Bandingkan dari puluh ribuan, lalu ratusan.'},
+ {t:'poin', judul:'Rangkuman', poin:['Bilangan enam angka: ratus ribuan, puluh ribuan, ribuan, ratusan, puluhan, satuan.','Bandingkan bilangan dari tempat paling kiri.','Taksir dengan pembulatan sebelum menghitung.']}
+]},
+{mapel:'mtk', kelas:5, semester:1, id:'mtk5-pecahan', judul:'Penjumlahan dan Pengurangan Pecahan', slide:[
+ {t:'judul', judul:'Penjumlahan dan Pengurangan Pecahan', sub:'Samakan penyebutnya dulu!'},
+ {t:'poin', judul:'Penyebut sama', poin:['Cukup jumlahkan atau kurangkan pembilangnya.','2/7 + 3/7 = 5/7','5/8 − 1/8 = 4/8 = 1/2']},
+ {t:'poin', judul:'Penyebut berbeda', poin:['Cari KPK penyebutnya.','1/2 + 1/3 → KPK 2 dan 3 = 6','3/6 + 2/6 = 5/6','3/4 − 1/6 → 9/12 − 2/12 = 7/12']},
+ {t:'kartu', judul:'Pecahan campuran', kartu:[['2 1/3 → ?','7/3  (2 × 3 + 1 = 7)'],['11/4 → ?','2 3/4  (11 : 4 = 2 sisa 3)'],['1 1/2 + 2 1/4','3 3/4'],['3 − 1 2/5','1 3/5']]},
+ {t:'kuis', tanya:'Rina berkata 1/2 + 1/3 = 2/5. Benarkah?', opsi:['Salah, seharusnya 5/6','Benar','Salah, seharusnya 2/6'], benar:0, bahas:'Penyebut harus disamakan: 3/6 + 2/6 = 5/6.'},
+ {t:'kuis', tanya:'Pita 2 1/2 m dipakai 1 3/4 m. Sisanya ...', opsi:['3/4 m','1 1/4 m','1/2 m'], benar:0, bahas:'10/4 − 7/4 = 3/4.'},
+ {t:'poin', judul:'Rangkuman', poin:['Penyebut sama → operasikan pembilang.','Penyebut berbeda → samakan dengan KPK.','Sederhanakan hasilnya dan ubah ke pecahan campuran jika perlu.']}
+]},
+{mapel:'mtk', kelas:5, semester:1, id:'mtk5-desimal', judul:'Pecahan Desimal dan Persen', slide:[
+ {t:'judul', judul:'Pecahan Desimal dan Persen', sub:'Satu nilai, tiga bentuk: pecahan, desimal, persen.'},
+ {t:'pecahan', judul:'Pecahan → desimal → persen', n:4, persen:true, ket:'Warnai potongan dan lihat bentuk desimal serta persennya.'},
+ {t:'kartu', judul:'Pasangan yang sama nilainya', kartu:[['1/2','0,5 = 50%'],['1/4','0,25 = 25%'],['3/4','0,75 = 75%'],['1/5','0,2 = 20%'],['1/10','0,1 = 10%']]},
+ {t:'kuis', tanya:'Urutan terkecil: 0,5; 1/4; 60%; 0,35 adalah ...', opsi:['1/4; 0,35; 0,5; 60%','0,35; 1/4; 0,5; 60%','60%; 0,5; 0,35; 1/4'], benar:0, bahas:'Ubah semua ke desimal: 0,25 < 0,35 < 0,5 < 0,6.'},
+ {t:'kuis', tanya:'Sepatu Rp200.000 diskon 10%. Potongan harganya ...', opsi:['Rp20.000','Rp10.000','Rp2.000'], benar:0, bahas:'10% × 200.000 = 20.000.'},
+ {t:'poin', judul:'Rangkuman', poin:['Persen artinya per seratus.','Ubah pecahan ke desimal dengan penyebut 10, 100, atau dengan pembagian.','Bandingkan bilangan dengan mengubahnya ke bentuk yang sama.']}
+]},
+{mapel:'bindo', kelas:5, semester:1, id:'bindo5-puisi', judul:'Puisi: Rima, Majas, dan Makna', slide:[
+ {t:'judul', judul:'Puisi: Rima, Majas, dan Makna', sub:'Menikmati dan membacakan puisi dengan penuh penghayatan.'},
+ {t:'poin', judul:'Guruku', poin:['Engkau bagai pelita di malam gelap','Menerangi jalanku yang senyap','Tanpa lelah engkau mengajar','Agar aku menjadi pintar']},
+ {t:'kartu', judul:'Unsur puisi "Guruku"', kartu:[['Tema','Jasa guru.'],['Rima','aabb: gelap–senyap, mengajar–pintar.'],['Majas','"bagai pelita": majas perumpamaan.'],['Amanat','Hormati guru yang telah berjasa.']]},
+ {t:'kelompok', judul:'Majas apa ini?', petunjuk:'Sentuh larik, lalu pilih majasnya.', wadah:['Perumpamaan','Personifikasi','Hiperbola'], item:[['Wajahnya bagai bulan purnama',0],['Matanya laksana bintang',0],['Angin berbisik di telingaku',1],['Daun melambai memanggilku',1],['Tangisnya membanjiri kota',2],['Suaranya membelah langit',2]]},
+ {t:'poin', judul:'Membacakan puisi', poin:['🗣️ Lafal: ucapkan kata dengan jelas.','🎵 Intonasi: atur tinggi rendah suara.','😊 Ekspresi: hayati isi puisi.','⏸️ Jeda: berhenti sejenak di tempat yang tepat.']},
+ {t:'kuis', tanya:'"Angin berbisik lembut di telingaku" menggunakan majas ...', opsi:['Personifikasi','Hiperbola','Perumpamaan'], benar:0, bahas:'Angin digambarkan berbisik seperti manusia.'}
+]},
+{mapel:'bindo', kelas:5, semester:1, id:'bindo5-eksplanasi', judul:'Teks Eksplanasi', slide:[
+ {t:'judul', judul:'Teks Eksplanasi', sub:'Menjelaskan bagaimana dan mengapa suatu peristiwa terjadi.'},
+ {t:'kartu', judul:'Struktur teks eksplanasi', kartu:[['1. Pernyataan umum','Gambaran umum fenomena.'],['2. Deretan penjelas','Urutan proses dan sebab-akibat.'],['3. Interpretasi','Kesimpulan atau pendapat penulis.']]},
+ {t:'poin', judul:'Bagaimana hujan terjadi?', poin:['☀️ Panas matahari menguapkan air laut dan sungai (penguapan).','☁️ Uap air naik, mendingin, dan membentuk awan (pengembunan).','🌧️ Awan semakin berat lalu turun sebagai hujan (presipitasi).','🔁 Air kembali ke laut dan prosesnya berulang.']},
+ {t:'kelompok', judul:'Sebab atau akibat banjir?', petunjuk:'Sentuh kalimat, lalu pilih kelompoknya.', wadah:['Sebab','Akibat'], item:[['Hujan deras terus-menerus',0],['Sampah menyumbat saluran',0],['Pohon ditebang',0],['Rumah warga terendam',1],['Muncul penyakit diare',1],['Sekolah diliburkan',1]]},
+ {t:'kuis', tanya:'Kata hubung yang menunjukkan sebab-akibat adalah ...', opsi:['karena, sehingga, akibatnya','dan, atau, serta','tetapi, namun'], benar:0, bahas:'Konjungsi kausalitas.'},
+ {t:'poin', judul:'Rangkuman', poin:['Teks eksplanasi menjelaskan proses fenomena alam atau sosial.','Strukturnya: pernyataan umum, deretan penjelas, interpretasi.','Banyak menggunakan kata hubung sebab-akibat dan urutan waktu.']}
+]},
+{mapel:'bindo', kelas:5, semester:1, id:'bindo5-baku', judul:'Kata Baku dan Kalimat Efektif', slide:[
+ {t:'judul', judul:'Kata Baku dan Kalimat Efektif', sub:'Menulis dengan tepat sesuai kaidah bahasa Indonesia.'},
+ {t:'kelompok', judul:'Baku atau tidak baku?', petunjuk:'Sentuh kata, lalu pilih kelompoknya.', wadah:['Baku','Tidak baku'], item:[['apotek',0],['nasihat',0],['risiko',0],['izin',0],['apotik',1],['nasehat',1],['resiko',1],['ijin',1]]},
+ {t:'kartu', judul:'Tebak bentuk bakunya!', kartu:[['praktek','praktik'],['silahkan','silakan'],['aktifitas','aktivitas'],['propinsi','provinsi'],['kwitansi','kuitansi']]},
+ {t:'poin', judul:'Ciri kalimat efektif', poin:['Memiliki subjek dan predikat yang jelas.','Tidak boros kata: "para siswa" bukan "para siswa-siswa".','Menggunakan kata baku dan ejaan yang benar.','Logis dan mudah dipahami.']},
+ {t:'kuis', tanya:'Kalimat yang efektif adalah ...', opsi:['Para siswa berbaris di lapangan.','Para siswa-siswa berbaris di lapangan.','Siswa-siswa para berbaris di lapangan.'], benar:0, bahas:'"Para" sudah bermakna jamak.'},
+ {t:'kuis', tanya:'Perbaikan "Agar supaya kamu pintar, maka rajinlah belajar" yang tepat adalah ...', opsi:['Agar pintar, rajinlah belajar.','Agar supaya pintar, rajinlah belajar.','Supaya agar pintar, maka rajinlah belajar.'], benar:0, bahas:'Agar dan supaya bermakna sama; "maka" tidak perlu.'}
+]},
+{mapel:'ppkn', kelas:5, semester:1, id:'ppkn5-pancasila', judul:'Pancasila sebagai Dasar Negara dan Pandangan Hidup', slide:[
+ {t:'judul', judul:'Pancasila sebagai Dasar Negara dan Pandangan Hidup', sub:'Pancasila menjadi pedoman bernegara dan bertingkah laku.'},
+ {t:'kartu', judul:'Kedudukan Pancasila', kartu:[['🏛️ Dasar negara','Landasan mengatur pemerintahan; sumber dari segala sumber hukum.'],['🧭 Pandangan hidup','Pedoman bersikap dan bertingkah laku sehari-hari.'],['🔓 Ideologi terbuka','Nilai dasarnya tetap, penerapannya menyesuaikan zaman.']]},
+ {t:'kelompok', judul:'Penerapan sila ke berapa?', petunjuk:'Sentuh perilaku, lalu pilih silanya.', wadah:['Sila 1','Sila 2','Sila 3','Sila 4','Sila 5'], item:[['Menghormati teman yang beribadah',0],['Menggalang dana korban bencana',1],['Menggunakan produk dalam negeri',2],['Menerima hasil musyawarah',3],['Hidup hemat dan bekerja keras',4]]},
+ {t:'kuis', tanya:'Hari Kesaktian Pancasila diperingati setiap tanggal ...', opsi:['1 Oktober','1 Juni','18 Agustus'], benar:0, bahas:'1 Oktober.'},
+ {t:'poin', judul:'Rangkuman', poin:['Pancasila adalah dasar negara dan pandangan hidup bangsa.','Nilai Pancasila digali dari budaya bangsa Indonesia sendiri.','Menerapkan Pancasila membuat kehidupan rukun, adil, dan damai.']}
+]},
+{mapel:'ppkn', kelas:5, semester:1, id:'ppkn5-norma', judul:'Norma dalam Kehidupan Bermasyarakat', slide:[
+ {t:'judul', judul:'Norma dalam Kehidupan Bermasyarakat', sub:'Aturan yang membuat hidup tertib dan damai.'},
+ {t:'kartu', judul:'Empat jenis norma', kartu:[['🕌 Norma agama','Sumber: Tuhan. Sanksi: dosa.'],['💗 Norma kesusilaan','Sumber: hati nurani. Sanksi: rasa bersalah.'],['🙏 Norma kesopanan','Sumber: kebiasaan masyarakat. Sanksi: dicemooh, dikucilkan.'],['⚖️ Norma hukum','Sumber: lembaga negara. Sanksi: denda, penjara.']]},
+ {t:'kelompok', judul:'Termasuk norma apa?', petunjuk:'Sentuh contoh, lalu pilih jenis normanya.', wadah:['Agama','Kesusilaan','Kesopanan','Hukum'], item:[['Salat lima waktu',0],['Tidak berbohong',1],['Berbicara sopan kepada orang tua',2],['Memakai helm saat berkendara',3],['Berdoa sebelum makan',0],['Mengucapkan salam saat bertamu',2]]},
+ {t:'kuis', tanya:'Perbedaan utama norma hukum dengan norma lain adalah ...', opsi:['Sanksinya tegas dan dapat dipaksakan negara','Tidak memiliki sanksi','Berasal dari hati nurani'], benar:0, bahas:'Norma hukum ditegakkan aparat negara.'},
+ {t:'poin', judul:'Rangkuman', poin:['Norma adalah aturan perilaku dalam masyarakat.','Ada norma agama, kesusilaan, kesopanan, dan hukum.','Menaati norma menciptakan ketertiban dan kedamaian.']}
+]},
+{mapel:'ppkn', kelas:5, semester:1, id:'ppkn5-nkri', judul:'Wilayah Negara Kesatuan Republik Indonesia', slide:[
+ {t:'judul', judul:'Wilayah NKRI', sub:'Indonesia, negara kepulauan yang luas dan strategis.'},
+ {t:'poin', judul:'Letak Indonesia', poin:['🌏 Di antara Benua Asia dan Benua Australia.','🌊 Di antara Samudra Hindia dan Samudra Pasifik.','☀️ Dilalui garis khatulistiwa sehingga beriklim tropis.','🏝️ Terdiri atas lebih dari 17.000 pulau.']},
+ {t:'kelompok', judul:'Berbatasan darat di pulau mana?', petunjuk:'Sentuh negara, lalu pilih pulaunya.', wadah:['Kalimantan','Papua','Timor'], item:[['Malaysia',0],['Papua Nugini',1],['Timor Leste',2]]},
+ {t:'kartu', judul:'Penting diketahui', kartu:[['Deklarasi Djuanda (1957)','Laut di antara pulau-pulau Indonesia adalah wilayah Indonesia.'],['Wawasan Nusantara','Cara pandang bangsa Indonesia sebagai satu kesatuan.'],['Wilayah NKRI','Meliputi darat, laut, dan udara.']]},
+ {t:'kuis', tanya:'Pulau-pulau terluar perlu dijaga karena ...', opsi:['Menjadi penentu batas wilayah negara','Tidak berpenghuni','Hanya untuk wisata'], benar:0, bahas:'Pulau terluar menentukan batas wilayah laut Indonesia.'},
+ {t:'poin', judul:'Cinta tanah air', poin:['Rajin belajar untuk memajukan bangsa.','Menggunakan produk dalam negeri.','Melestarikan budaya dan menjaga lingkungan. 🇮🇩']}
 ]}
 ]};
