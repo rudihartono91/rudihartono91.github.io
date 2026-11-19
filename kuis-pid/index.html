@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kuis Kelas PAI</title>
+<title>Kuis Kelas SD</title>
 <meta name="description" content="Kuis interaktif layar besar untuk papan interaktif kelas: tim, skor, timer, dan suara.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="apple-touch-icon" href="../favicon.svg">
@@ -160,7 +160,7 @@ table.qt th,table.qt td{border:1px solid currentColor;padding:4px 10px}
 <section class="screen on" id="setup">
   <div class="setup-head">
     <div style="font-size:46px">🎮</div>
-    <div><h1>Kuis Kelas PAI</h1><p>Untuk papan interaktif dan layar proyektor</p></div>
+    <div><h1>Kuis Kelas SD</h1><p>Untuk papan interaktif dan layar proyektor</p></div>
     <span class="sp"></span>
     <a href="../">← Beranda</a>
   </div>
@@ -169,6 +169,7 @@ table.qt th,table.qt td{border:1px solid currentColor;padding:4px 10px}
       <h2>1. Pilih soal</h2>
       <div class="tabs" id="tabSumber"><button data-t="bank" class="on">📚 Bank Soal</button><button data-t="simpan">💾 Paket Tersimpan</button></div>
       <div id="vBank">
+        <div class="set-row"><span>Mapel</span><div class="seg" id="segMapel"><button data-v="pai">PAI</button><button data-v="bindo">B. Indonesia</button><button data-v="mtk">Matematika</button><button data-v="ipas">IPAS</button><button data-v="ppkn">Pancasila</button></div></div>
         <div class="set-row"><span>Kelas</span><div class="seg" id="segKelas"><button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="4">4</button><button data-v="5">5</button><button data-v="6">6</button></div></div>
         <div class="set-row"><span>Semester</span><div class="seg" id="segSem"><button data-v="1">1</button><button data-v="2">2</button></div></div>
         <div class="paket-list" id="bankList"><p class="muted">Memuat bank soal…</p></div>
@@ -309,20 +310,22 @@ $('#paketList').onclick=e=>{const d=e.target.closest('[data-del]');
   const b=e.target.closest('.paket');if(!b)return;pilih=b.dataset.id;renderPakets()};
 
 /* --- bank soal bawaan (langsung dari data Bank Soal) --- */
-let BK=LS.get('kuisBank',{kelas:1,sem:1}),bankPaket=null;
+let BK=Object.assign({mapel:'pai',kelas:1,sem:1},LS.get('kuisBank',{})),bankPaket=null;
+const MPNAMA={pai:'PAI',bindo:'Bahasa Indonesia',mtk:'Matematika',ipas:'IPAS',ppkn:'Pendidikan Pancasila'};
+const keyB=k=>BK.mapel==='pai'?String(k):BK.mapel+'-'+k;
 const BAB=k=>k<=2?{pg:10,isian:5,uraian:0}:k===3?{pg:10,isian:5,uraian:5}:{pg:15,isian:10,uraian:5};
 const SASJ=k=>k<=2?{pg:15,isian:10,uraian:5}:k===3?{pg:15,isian:15,uraian:5}:{pg:20,isian:15,uraian:5};
 const URUTB=['pg','pgk','bs','jodoh','isian','uraian'];
-function muatKelas(k){return new Promise(res=>{window.BANK_SOAL=window.BANK_SOAL||{};if(window.BANK_SOAL[k])return res(window.BANK_SOAL[k]);
-  const sc=document.createElement('script');sc.src='../bank-soal/data/kelas-'+k+'.js';sc.onload=()=>res(window.BANK_SOAL[k]||null);sc.onerror=()=>res(null);document.head.appendChild(sc)})}
+function muatKelas(k){const key=keyB(k),f=BK.mapel==='pai'?'kelas-'+k+'.js':BK.mapel+'/kelas-'+k+'.js';return new Promise(res=>{window.BANK_SOAL=window.BANK_SOAL||{};if(window.BANK_SOAL[key])return res(window.BANK_SOAL[key]);
+  const sc=document.createElement('script');sc.src='../bank-soal/data/'+f;sc.onload=()=>res(window.BANK_SOAL[key]||null);sc.onerror=()=>res(null);document.head.appendChild(sc)})}
 function segPilih(id,v){$$(id+' button').forEach(b=>b.classList.toggle('on',+b.dataset.v===v))}
 async function renderBank(){
-  segPilih('#segKelas',BK.kelas);segPilih('#segSem',BK.sem);
-  const d=await muatKelas(BK.kelas);if(!d){$('#bankList').innerHTML='<p class="muted">Bank soal belum bisa dimuat. Periksa koneksi internet.</p>';return}
+  segPilih('#segKelas',BK.kelas);segPilih('#segSem',BK.sem);$$('#segMapel button').forEach(b=>b.classList.toggle('on',b.dataset.v===BK.mapel));
+  const d=await muatKelas(BK.kelas);if(!d){$('#bankList').innerHTML=BK.mapel==='pai'?'<p class="muted">Bank soal belum bisa dimuat. Periksa koneksi internet.</p>':`<p class="muted">Bank soal ${MPNAMA[BK.mapel]} Kelas ${BK.kelas} belum tersedia. Saat ini tersedia Kelas 4 Semester 1.</p>`;return}
   const ms=d.materi.filter(m=>m.semester===BK.sem);
   if(!ms.length){$('#bankList').innerHTML='<p class="muted">Belum ada materi untuk semester ini.</p>';return}
   const on=x=>bankPaket&&bankPaket.bankKey===x&&pilih===bankPaket.id?'on':'';
-  $('#bankList').innerHTML='<div class="grp">Sumatif Harian (per materi)</div>'+ms.map((m,i)=>`<button class="paket ${on(m.id)}" data-bk="${esc(m.id)}"><span class="ic">📗</span><span><b>Sumatif Harian ${i+1}</b><small>${esc(m.judul)}</small></span></button>`).join('')
+  $('#bankList').innerHTML=`<div class="grp">${MPNAMA[BK.mapel]} · Sumatif Harian (per materi)</div>`+ms.map((m,i)=>`<button class="paket ${on(m.id)}" data-bk="${esc(m.id)}"><span class="ic">📗</span><span><b>Sumatif Harian ${i+1}</b><small>${esc(m.judul)}</small></span></button>`).join('')
     +'<div class="grp">Semua materi</div>'+`<button class="paket ${on('sas')}" data-bk="sas"><span class="ic">🏅</span><span><b>Sumatif Akhir Semester ${BK.sem}</b><small>Gabungan ${ms.length} materi semester ${BK.sem}</small></span></button>`;
 }
 function ambilSoal(ms,jml){
@@ -332,13 +335,15 @@ function ambilSoal(ms,jml){
     while(got.length<n&&per.some(a=>a.length)){const a=per[i++%per.length];if(a.length)got.push(a.shift())}
     out.push(...got)}
   return out.map(({s,m})=>({...s,gambar:(s.gambar||[]).map(g=>new URL('../bank-soal/'+g,location.href).href)}))}
+$('#segMapel').onclick=e=>{const b=e.target.closest('button');if(!b)return;BK.mapel=b.dataset.v;if(BK.mapel!=='pai'){BK.kelas=4;BK.sem=1}LS.set('kuisBank',BK);renderBank()};
 $('#segKelas').onclick=e=>{const b=e.target.closest('button');if(!b)return;BK.kelas=+b.dataset.v;LS.set('kuisBank',BK);renderBank()};
 $('#segSem').onclick=e=>{const b=e.target.closest('button');if(!b)return;BK.sem=+b.dataset.v;LS.set('kuisBank',BK);renderBank()};
-$('#bankList').onclick=async e=>{const b=e.target.closest('[data-bk]');if(!b)return;const d=await muatKelas(BK.kelas);const ms=d.materi.filter(m=>m.semester===BK.sem);
-  const key=b.dataset.bk,sas=key==='sas',pilihM=sas?ms:ms.filter(m=>m.id===key),no=ms.findIndex(m=>m.id===key)+1;
+$('#bankList').onclick=e=>{const b=e.target.closest('[data-bk]');if(b)buatBank(b.dataset.bk)};
+async function buatBank(key){const d=await muatKelas(BK.kelas);if(!d)return;const ms=d.materi.filter(m=>m.semester===BK.sem);
+  const sas=key==='sas',pilihM=sas?ms:ms.filter(m=>m.id===key),no=ms.findIndex(m=>m.id===key)+1;
   const soal=ambilSoal(pilihM,sas?SASJ(BK.kelas):BAB(BK.kelas));
-  const judul=sas?`Sumatif Akhir Semester ${BK.sem}`:`Sumatif Harian ${no}: ${pilihM[0].judul}`;
-  bankPaket={...normPaket({id:'bank-'+BK.kelas+'-'+key,judul,kelas:BK.kelas,soal}),bank:true,bankKey:key};
+  const judul=(sas?`Sumatif Akhir Semester ${BK.sem}`:`Sumatif Harian ${no}: ${pilihM[0].judul}`)+(BK.mapel==='pai'?'':' · '+MPNAMA[BK.mapel]);
+  bankPaket={...normPaket({id:'bank-'+keyB(BK.kelas)+'-'+key,judul,kelas:BK.kelas,soal}),bank:true,bankKey:key};
   pilih=bankPaket.id;loadPakets();toast(judul+' · '+bankPaket.soal.length+' soal siap dimainkan.')};
 function tabSumber(t){$$('#tabSumber button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));$('#vBank').hidden=t!=='bank';$('#vSimpan').hidden=t!=='simpan'}
 $('#tabSumber').onclick=e=>{const b=e.target.closest('button');if(b)tabSumber(b.dataset.t)};
@@ -514,6 +519,7 @@ document.addEventListener('keydown',e=>{
 });
 
 muatSetelan();renderNama();loadPakets();
+{const qb=new URLSearchParams(location.search).get('bank');if(qb){const [mp,k,sm,id]=qb.split('|');if(mp&&k){BK={mapel:mp,kelas:+k,sem:+sm||1};LS.set('kuisBank',BK);tabSumber('bank');buatBank(id||'sas')}}}
 if('speechSynthesis' in window)speechSynthesis.getVoices();
 </script>
 </body>

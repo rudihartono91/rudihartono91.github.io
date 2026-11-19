@@ -37,6 +37,10 @@ main{max-width:1280px;margin:0 auto;padding:20px}
 .kelas button{border:1px solid var(--garis);background:#fff;border-radius:10px;padding:9px 0;font-weight:800;cursor:pointer;font-size:16px}
 .kelas button.on{background:var(--hijau);color:#fff;border-color:var(--hijau)}
 .kelas button.kosong{color:#a9b4b0}
+.mapel{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.mapel button{border:1px solid var(--garis);background:#fff;border-radius:10px;padding:8px 6px;font-weight:700;cursor:pointer;font-size:13.5px;line-height:1.2}
+.mapel button.on{background:var(--hijau);color:#fff;border-color:var(--hijau)}
+.mapel button:first-child{grid-column:1/-1}
 .mlist{display:flex;flex-direction:column;gap:4px}
 .mgrp{font-size:12.5px;font-weight:700;color:var(--abu);margin:8px 0 2px;display:flex;justify-content:space-between;align-items:center}
 .mgrp button{border:0;background:none;color:var(--hijau);font-weight:700;font-size:12.5px;cursor:pointer}
@@ -113,7 +117,7 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600}
 <body>
 <header class="top">
   <div class="logo">BS</div>
-  <div><h1>Bank Soal PAI Siap Pakai</h1><small>Pilih kelas dan materi, paket soal tersusun otomatis</small></div>
+  <div><h1 id="hJudul">Bank Soal PAI Siap Pakai</h1><small>Pilih kelas dan materi, paket soal tersusun otomatis</small></div>
   <span class="sp"></span>
   <a href="../">← Beranda</a>
 </header>
@@ -124,19 +128,22 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600}
       <h2>Susun paket soal</h2>
       <p class="hint" style="margin:0">Tanpa mengetik, tanpa API key.</p>
 
-      <div class="step">1 · Kelas</div>
+      <div class="step">1 · Mata pelajaran</div>
+      <div class="mapel" id="mapel"></div>
+
+      <div class="step">2 · Kelas</div>
       <div class="kelas" id="kelas"></div>
 
-      <div class="step nonsek">2 · Materi</div>
+      <div class="step nonsek">3 · Materi</div>
       <div id="materiBox" class="nonsek"><p class="hint">Pilih kelas terlebih dahulu.</p></div>
 
-      <div class="step" id="step3">3 · Jenis asesmen & jumlah soal</div>
+      <div class="step" id="step3">4 · Jenis asesmen & jumlah soal</div>
       <div class="preset" id="preset">
         <button data-p="sas1">SAS Semester 1<small id="ps1"></small></button>
         <button data-p="sas2">SAS Semester 2<small id="ps2"></small></button>
         <button data-p="bab">Sumatif per bab<small id="psb">10 PG · 5 IS</small></button>
         <button data-p="bebas">Atur sendiri<small>isi jumlah bebas</small></button>
-        <button data-p="sekolah" class="wide">📄 Sumatif Akhir Semester<small>SDN Slipi 15 · TP 2026/2027</small></button>
+        <button data-p="sekolah" class="wide" id="btnSekolah">📄 Sumatif Akhir Semester<small>SDN Slipi 15 · TP 2026/2027</small></button>
       </div>
       <div class="jml nonsek" id="jml"></div>
       <div class="skl" id="sekolahBox" hidden></div>
@@ -149,7 +156,7 @@ summary{cursor:pointer;color:var(--hijau);font-weight:600}
     </aside>
 
     <section>
-      <div class="notice">Soal dalam bank ini sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>. Soal bertanda <b>⚠ cek</b> memuat lafal Arab atau bacaan yang perlu dicocokkan dengan buku pegangan.</div>
+      <div class="notice" id="notice">Soal dalam bank ini sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>. Soal bertanda <b>⚠ cek</b> memuat lafal Arab atau bacaan yang perlu dicocokkan dengan buku pegangan.</div>
       <div id="toolbar" hidden>
         <div class="toolbar">
           <input type="text" id="judul" aria-label="Judul paket">
@@ -234,21 +241,43 @@ function normSoal(s,m){
   return o;
 }
 
+/* ===== mata pelajaran ===== */
+const MAPEL={pai:{nama:'Pendidikan Agama Islam dan Budi Pekerti',singkat:'PAI dan Budi Pekerti',label:'PAI dan Budi Pekerti',judul:'PAI'},
+  bindo:{nama:'Bahasa Indonesia',singkat:'Bahasa Indonesia',label:'Bahasa Indonesia',judul:'Bahasa Indonesia'},
+  mtk:{nama:'Matematika',singkat:'Matematika',label:'Matematika',judul:'Matematika'},
+  ipas:{nama:'Ilmu Pengetahuan Alam dan Sosial (IPAS)',singkat:'IPAS',label:'IPAS',judul:'IPAS'},
+  ppkn:{nama:'Pendidikan Pancasila',singkat:'Pendidikan Pancasila',label:'Pend. Pancasila',judul:'Pendidikan Pancasila'}};
+let MP=(q=>MAPEL[q]?q:null)(new URLSearchParams(location.search).get('mapel'))||LS.get('bankMapel','pai');if(!MAPEL[MP])MP='pai';
+const keyK=k=>MP==='pai'?String(k):MP+'-'+k;
+function renderMapel(){
+  $('#mapel').innerHTML=Object.entries(MAPEL).map(([id,m])=>`<button data-mp="${id}" class="${id===MP?'on':''}">${m.label}</button>`).join('');
+  const M=MAPEL[MP];$('#hJudul').textContent='Bank Soal '+M.judul+' Siap Pakai';document.title='Bank Soal '+M.judul;
+  $('#btnSekolah').hidden=MP!=='pai';
+  $('#notice').innerHTML=MP==='pai'?'Soal dalam bank ini sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>. Soal bertanda <b>⚠ cek</b> memuat lafal Arab atau bacaan yang perlu dicocokkan dengan buku pegangan.'
+    :`Bank soal <b>${M.nama}</b> masih tahap awal: saat ini tersedia <b>Kelas 4 Semester 1</b> (3 materi, masing-masing 15 PG, 10 isian, 5 uraian). Soal sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>.`;
+}
+$('#mapel').onclick=e=>{const b=e.target.closest('button[data-mp]');if(!b||b.dataset.mp===MP)return;MP=b.dataset.mp;LS.set('bankMapel',MP);
+  if(MP!=='pai'&&MODE==='sekolah'){MODE='sas1';LS.set('bankMode',MODE);terapkanPreset(false)}
+  renderMapel();K=null;dataK=null;$('#materiBox').innerHTML='<p class="hint">Pilih kelas terlebih dahulu.</p>';renderKelas();
+  Promise.all([1,2,3,4,5,6].map(k=>muatKelas(k))).then(()=>{renderKelas();const pk=LS.get('bankKelas',1);
+    const k=[pk,1,2,3,4,5,6].find(x=>(window.BANK_SOAL||{})[keyK(x)]);if(k)$(`#kelas button[data-k="${k}"]`).click()})};
+
 /* ===== data per kelas ===== */
 const kelasMuat={};
 function muatKelas(k){
+  const key=keyK(k),file=MP==='pai'?'data/kelas-'+k+'.js':'data/'+MP+'/kelas-'+k+'.js';
   return new Promise(res=>{
-    if(window.BANK_SOAL&&window.BANK_SOAL[k])return res(window.BANK_SOAL[k]);
-    if(kelasMuat[k]==='gagal')return res(null);
-    const sc=document.createElement('script');sc.src='data/kelas-'+k+'.js?v='+Date.now();
-    sc.onload=()=>res((window.BANK_SOAL||{})[k]||null);
-    sc.onerror=()=>{kelasMuat[k]='gagal';res(null)};
+    if(window.BANK_SOAL&&window.BANK_SOAL[key])return res(window.BANK_SOAL[key]);
+    if(kelasMuat[key]==='gagal')return res(null);
+    const sc=document.createElement('script');sc.src=file+'?v='+Date.now();
+    sc.onload=()=>res((window.BANK_SOAL||{})[key]||null);
+    sc.onerror=()=>{kelasMuat[key]='gagal';res(null)};
     document.head.appendChild(sc);
   });
 }
 let K=null,dataK=null,paket=null;
 function renderKelas(){
-  $('#kelas').innerHTML=[1,2,3,4,5,6].map(k=>`<button data-k="${k}" class="${K===k?'on':''} ${kelasMuat[k]==='gagal'?'kosong':''}">${k}</button>`).join('');
+  $('#kelas').innerHTML=[1,2,3,4,5,6].map(k=>`<button data-k="${k}" class="${K===k?'on':''} ${kelasMuat[keyK(k)]==='gagal'?'kosong':''}">${k}</button>`).join('');
 }
 $('#kelas').onclick=async e=>{
   const b=e.target.closest('button');if(!b)return;
@@ -258,7 +287,7 @@ $('#kelas').onclick=async e=>{
   renderMateri();terapkanPreset(MODE==='sas1'||MODE==='sas2');
 };
 function renderMateri(){
-  const pilihan=LS.get('bankMateri_'+K,null);
+  const pilihan=LS.get('bankMateri_'+keyK(K),null);
   let h='';
   for(const sm of [1,2]){
     const ms=dataK.materi.filter(m=>m.semester===sm);if(!ms.length)continue;
@@ -273,7 +302,7 @@ $('#materiBox').addEventListener('click',e=>{const b=e.target.closest('button[da
   const ids=dataK.materi.filter(m=>m.semester===sm).map(m=>m.id);const boxes=$$('#materiBox input').filter(i=>ids.includes(i.value));
   const semua=boxes.every(i=>i.checked);boxes.forEach(i=>i.checked=!semua);simpanPilihan();renderJml()});
 $('#materiBox').addEventListener('change',()=>{simpanPilihan();renderJml();renderPreset()});
-function simpanPilihan(){if(K)LS.set('bankMateri_'+K,terpilih().map(m=>m.id))}
+function simpanPilihan(){if(K)LS.set('bankMateri_'+keyK(K),terpilih().map(m=>m.id))}
 function terpilih(){if(!dataK)return[];const ids=$$('#materiBox input:checked').map(i=>i.value);return dataK.materi.filter(m=>ids.includes(m.id))}
 function pool(){const p={};URUT.forEach(b=>p[b]=[]);terpilih().forEach(m=>m.soal.forEach(s=>p[s.bentuk]&&p[s.bentuk].push({s,m})));return p}
 function renderJml(){
@@ -433,10 +462,10 @@ function susun(){
      selain itu (2 materi atau lebih, belum semua) = Sumatif Tengah Semester */
   const jenis=jenisAsesmen(ms);const smSet=[...new Set(ms.map(m=>m.semester))];
   const smTeks=smSet.length===1?' '+smSet[0]:'';
-  const judul=jenis.startsWith('Sumatif Harian')?`${jenis} – ${ms[0].judul} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`
-    :jenis==='Sumatif Akhir Tahun'?`Sumatif Akhir Tahun – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`
-    :`${jenis}${smTeks} – PAI dan Budi Pekerti Kelas ${K} (Paket ${kode})`;
-  paket={id:uid(),judul,jenis,kelas:K,fase:fase(K),
+  const judul=jenis.startsWith('Sumatif Harian')?`${jenis} – ${ms[0].judul} – ${MAPEL[MP].singkat} Kelas ${K} (Paket ${kode})`
+    :jenis==='Sumatif Akhir Tahun'?`Sumatif Akhir Tahun – ${MAPEL[MP].singkat} Kelas ${K} (Paket ${kode})`
+    :`${jenis}${smTeks} – ${MAPEL[MP].singkat} Kelas ${K} (Paket ${kode})`;
+  paket={id:uid(),judul,jenis,mapel:MAPEL[MP].nama,kelas:K,fase:fase(K),
     semester:[...new Set(ms.map(m=>m.semester))].join(' & '),elemen:[...new Set(ms.map(m=>m.elemen))].join('; '),
     materi:ms.map(m=>m.judul).join('; '),tp:ms.map(m=>m.tp).join(' '),dibuat:new Date().toISOString(),soal};
   render();window.scrollTo({top:0,behavior:'smooth'});
@@ -512,7 +541,7 @@ function petunjuk(b,p){const n=p.soal.find(s=>s.bentuk==='pg');const L=HURUF.sli
   return {pg:`Berilah tanda silang (X) pada huruf ${L.slice(0,-1).join(', ')}, atau ${L.slice(-1)} di depan jawaban yang paling tepat!`,pgk:'Berilah tanda centang (✓) pada semua jawaban yang benar!',bs:'Lingkarilah B jika pernyataan benar dan S jika salah!',jodoh:'Jodohkan lajur kiri dengan jawaban yang tepat di lajur kanan!',isian:'Isilah titik-titik di bawah ini dengan jawaban yang tepat!',uraian:'Jawablah pertanyaan-pertanyaan di bawah ini dengan benar!'}[b]}
 function buildDoc(p,withKey){
   const st=LS.get('paiSettings',{});const R=['I','II','III','IV','V','VI'];let no=0,sec=0,h='',rows=[];
-  h+=`<div class="dh">${st.sekolah?`<div class="dh1">${esc(st.sekolah)}</div>`:''}<div class="dh2">${esc(p.judul)}</div><div>Pendidikan Agama Islam dan Budi Pekerti · Kelas ${p.kelas} (Fase ${p.fase}) · Semester ${esc(p.semester)}</div></div>
+  h+=`<div class="dh">${st.sekolah?`<div class="dh1">${esc(st.sekolah)}</div>`:''}<div class="dh2">${esc(p.judul)}</div><div>${esc(p.mapel||'Pendidikan Agama Islam dan Budi Pekerti')} · Kelas ${p.kelas} (Fase ${p.fase}) · Semester ${esc(p.semester)}</div></div>
 <table class="idt"><tr><td style="width:18%">Nama</td><td>: ...............................................</td><td style="width:12%">Kelas</td><td>: ...............</td></tr><tr><td>Hari/Tanggal</td><td>: ...............................................</td><td>Nilai</td><td>: ...............</td></tr></table>`;
   const item=(s,b)=>{let x=qhtml(s,true);
       if(b==='pg'||b==='pgk')x+='<ol class="op" type="A">'+s.opsi.map(o=>'<li>'+fmt(o)+'</li>').join('')+'</ol>';
@@ -555,7 +584,7 @@ function buildKisi(p){
   const tot=p.soal.length,pct=v=>Math.round(v/tot*100)+'%',idr=(a,b)=>`<td>${a}</td><td>: ${esc(b||'-')}</td>`;
   return `<h2 class="kh">KISI-KISI ${esc((p.jenis||'Asesmen').toUpperCase())}</h2><div class="ksub">${esc(p.judul)}${ID.tahun?'<br>TAHUN PELAJARAN '+esc(ID.tahun):''}</div>
 <table class="kid"><tr>${idr('Satuan Pendidikan',ID.sekolah||st.sekolah)}<td style="width:40pt"></td>${idr('Kelas / Fase',p.kelas+' / '+p.fase)}</tr>
-<tr>${idr('Mata Pelajaran','Pendidikan Agama Islam dan Budi Pekerti')}<td></td>${idr('Semester',p.semester)}</tr>
+<tr>${idr('Mata Pelajaran',p.mapel||'Pendidikan Agama Islam dan Budi Pekerti')}<td></td>${idr('Semester',p.semester)}</tr>
 <tr>${idr('Alokasi Waktu',ID.waktu)}<td></td>${idr('Jumlah Soal',tot+' soal')}</tr></table>
 <table class="ki"><tr><th style="width:4%">No</th><th style="width:11%">Elemen</th><th style="width:23%">Tujuan Pembelajaran</th><th style="width:12%">Materi</th><th style="width:27%">Indikator Soal</th><th style="width:6%">Level</th><th style="width:9%">Bentuk Soal</th><th style="width:8%">Nomor Soal</th></tr>
 ${rows.map((r,i)=>`<tr><td class="c">${i+1}</td><td>${br(r.elemen)}</td><td>${br(r.tp)}</td><td>${br(r.materi)}</td><td>${br(r.indikator)}</td><td class="c">${esc(r.level)}</td><td>${esc(r.bentuk)}</td><td class="c">${esc(r.nomor)}</td></tr>`).join('')}</table>
@@ -583,9 +612,11 @@ $$('[data-out]').forEach(btn=>btn.onclick=()=>{
 /* ===== mulai ===== */
 (async()=>{
   const pre=+new URLSearchParams(location.search).get('kelas')||LS.get('bankKelas',1);
-  renderKelas();
-  for(const k of [1,2,3,4,5,6])if(!(window.BANK_SOAL&&window.BANK_SOAL[k])){/* cek ketersediaan tanpa menunggu */muatKelas(k).then(renderKelas)}
-  if(new URLSearchParams(location.search).get('mode')==='sekolah'){MODE='sekolah';LS.set('bankMode',MODE)}
+  renderMapel();renderKelas();
+  for(const k of [1,2,3,4,5,6])if(!(window.BANK_SOAL&&window.BANK_SOAL[keyK(k)])){/* cek ketersediaan tanpa menunggu */muatKelas(k).then(renderKelas)}
+  if(new URLSearchParams(location.search).get('mode')==='sekolah'&&MP==='pai'){MODE='sekolah';LS.set('bankMode',MODE)}
+  if(MP!=='pai'&&MODE==='sekolah'){MODE='sas1';LS.set('bankMode',MODE)}
+  if(MP!=='pai'){await Promise.all([1,2,3,4,5,6].map(k=>muatKelas(k)));renderKelas();const k=[pre,1,2,3,4,5,6].find(x=>(window.BANK_SOAL||{})[keyK(x)]);if(k){$(`#kelas button[data-k="${k}"]`).click();return}}
   const b=$(`#kelas button[data-k="${pre}"]`);if(b)b.click();
 })();
 </script>

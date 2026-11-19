@@ -285,6 +285,7 @@ function urutCetak(p){
 function pakaiPaket(p){
   if(rows.length&&!confirm('Ganti isi tabel dengan kisi-kisi dari "'+(p.judul||'paket')+'"?'))return;
   rows=dariPaket(urutCetak(p));save();render();
+  if(p.mapel){ID.mapel=p.mapel;const em=$('#ident [data-k="mapel"]');if(em)em.value=p.mapel;LS.set('kisiIdent',ID)}
   if(p.kelas){ID.kelas=String(p.kelas);const el=$('#ident [data-k="kelas"]');el.value=ID.kelas;LS.set('kisiIdent',ID)}
   if(p.jenis){ID.jenis=p.jenis;$('#ident [data-k="jenis"]').value=p.jenis;LS.set('kisiIdent',ID)}
   if(p.semester==1||p.semester==2||p.semester==='1'||p.semester==='2'){ID.semester=p.semester==1?'1 (Ganjil)':'2 (Genap)';$('#ident [data-k="semester"]').value=ID.semester;LS.set('kisiIdent',ID)}
@@ -405,7 +406,7 @@ ${rows.map((r,i)=>`<tr><td class="c">${i+1}</td><td>${br(r.elemen)}</td><td>${br
 <tr><td>HOTS (C4–C6)</td><td class="c">${lv.HOTS}</td><td class="c">${pct(lv.HOTS)}</td></tr>
 ${Object.entries(bt).filter(([,v])=>v).map(([b,v])=>`<tr><td>${esc(b)}</td><td class="c">${v}</td><td class="c">${pct(v)}</td></tr>`).join('')}</table>
 <table class="ttd"><tr><td>Mengetahui,<br>Kepala Sekolah<br><br><br><br><b><u>${esc(ID.kepsek||'..................................')}</u></b><br>NIP. ${esc(ID.nipKepsek||'..................................')}</td>
-<td>${esc(ID.tanggal||'..................., ....................')}<br>Guru Pendidikan Agama Islam dan Budi Pekerti<br><br><br><br><b><u>${esc(ID.guru||'..................................')}</u></b><br>NIP. ${esc(ID.nipGuru||'..................................')}</td></tr></table></div>`;
+<td>${esc(ID.tanggal||'..................., ....................')}<br>Guru ${esc(ID.mapel||'Pendidikan Agama Islam dan Budi Pekerti')}<br><br><br><br><b><u>${esc(ID.guru||'..................................')}</u></b><br>NIP. ${esc(ID.nipGuru||'..................................')}</td></tr></table></div>`;
 }
 $('#btnCetak').onclick=()=>{if(!rows.length)return toast('Tabel masih kosong.');$('#printArea').innerHTML=buildDoc();setTimeout(()=>window.print(),100)};
 $('#btnWord').onclick=()=>{

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kelas Interaktif SD</title>
+<meta name="description" content="Media pembelajaran interaktif SD untuk papan interaktif digital: Bahasa Indonesia, Matematika, IPAS, dan Pendidikan Pancasila.">
+<link rel="icon" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14261f;--abu:#5d6f68;--garis:#dfe8e4;--bg:#f4f8f6;--hijau:#0d5c45;--a:#13795b;--t:#e3f3ec;--ok:#16a34a;--no:#dc2626}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit}
+.screen{display:none;min-height:100vh}
+.screen.on{display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.1;margin:0}
+
+/* beranda */
+.top{background:linear-gradient(135deg,#083b2d,#13795b);color:#fff;padding:22px clamp(16px,4vw,48px) 70px}
+.top .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;max-width:1300px;margin:0 auto}
+.top h1{font-size:clamp(30px,4vw,48px)}
+.top p{margin:4px 0 0;opacity:.85}
+.top .sp{flex:1}
+.top a{color:#fff;opacity:.85;text-decoration:none;font-weight:600}
+.wrap{max-width:1300px;width:100%;margin:-48px auto 40px;padding:0 clamp(16px,4vw,48px)}
+.panel{background:#fff;border-radius:24px;padding:clamp(16px,2.4vw,28px);box-shadow:0 10px 30px rgba(10,40,30,.1)}
+.lbl{font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--abu);margin:0 0 10px}
+.mapels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:820px){.mapels{grid-template-columns:1fr 1fr}}
+.mp{border:3px solid transparent;background:var(--t);border-radius:20px;padding:18px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:6px;transition:transform .15s}
+.mp:hover{transform:translateY(-3px)}
+.mp .i{font-size:44px;line-height:1}
+.mp b{font-family:'Baloo 2',system-ui,sans-serif;font-size:clamp(20px,2vw,26px);color:var(--a)}
+.mp small{color:var(--abu);font-weight:600}
+.mp.on{border-color:var(--a);background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.kls{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px;align-items:center}
+.kls button{min-width:58px;height:52px;border-radius:14px;border:2px solid var(--garis);background:#fff;font-weight:800;font-size:20px;cursor:pointer}
+.kls button.on{background:var(--a);border-color:var(--a);color:#fff}
+.kls button:disabled{opacity:.35;cursor:not-allowed}
+.kls span{color:var(--abu);font-size:14px;margin-left:6px}
+.daftar{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:14px}
+.mtr{border:2px solid var(--garis);background:#fff;border-radius:20px;padding:18px 20px;cursor:pointer;text-align:left;display:flex;gap:14px;align-items:flex-start;transition:.15s;position:relative;overflow:hidden}
+.mtr::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--a)}
+.mtr:hover{border-color:var(--a);transform:translateY(-2px)}
+.mtr .no{flex:none;width:46px;height:46px;border-radius:14px;background:var(--t);color:var(--a);display:grid;place-items:center;font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:24px}
+.mtr b{display:block;font-size:19px;line-height:1.25}
+.mtr small{color:var(--abu);font-weight:600}
+.kosong{color:var(--abu);padding:20px 4px}
+.sem{grid-column:1/-1;font-weight:800;color:var(--abu);margin:6px 0 -4px}
+
+/* pemutar */
+#main{background:var(--bg);height:100vh;height:100dvh}
+.bar{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--a);color:#fff}
+.bar .ttl{font-weight:800;font-size:clamp(16px,1.8vw,22px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .sp{flex:1}
+.tb{border:0;background:rgba(255,255,255,.18);color:#fff;border-radius:12px;min-width:48px;height:48px;font-size:22px;cursor:pointer;font-weight:800;padding:0 12px}
+.tb:hover{background:rgba(255,255,255,.3)}
+.prog{font-weight:700;background:rgba(255,255,255,.18);padding:6px 12px;border-radius:20px;font-size:15px}
+.line{height:6px;background:rgba(0,0,0,.08)}.line i{display:block;height:100%;background:var(--a);transition:width .3s;opacity:.6}
+.stage{flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column;justify-content:safe center;padding:clamp(16px,3vw,48px);max-width:1400px;width:100%;margin:0 auto;animation:masuk .35s}
+@keyframes masuk{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+.foot{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border-top:1px solid var(--garis)}
+.foot .sp{flex:1}
+.nav{border:0;border-radius:16px;height:60px;padding:0 26px;font-size:22px;font-weight:800;cursor:pointer;background:var(--t);color:var(--a)}
+.nav.pri{background:var(--a);color:#fff}
+.nav:disabled{opacity:.35;cursor:not-allowed}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.dots i{width:12px;height:12px;border-radius:50%;background:var(--garis);cursor:pointer}
+.dots i.on{background:var(--a);transform:scale(1.25)}
+.dots i.done{background:var(--a);opacity:.4}
+
+.sj{font-size:clamp(30px,4vw,58px);color:var(--a);margin-bottom:16px}
+.hint{color:var(--abu);font-size:clamp(16px,1.6vw,22px);margin:-10px 0 18px;font-weight:600}
+/* judul */
+.cover{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.cover .badge{background:var(--t);color:var(--a);font-weight:800;padding:8px 18px;border-radius:30px;font-size:clamp(16px,1.6vw,22px)}
+.cover h1{font-size:clamp(44px,7vw,104px);color:var(--a)}
+.cover p{font-size:clamp(20px,2.4vw,34px);color:var(--abu);max-width:1000px;margin:0}
+.cover .big{font-size:clamp(70px,10vw,140px);line-height:1}
+/* poin */
+.poin{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.poin li{background:#fff;border-radius:18px;padding:16px 22px;font-size:clamp(20px,2.4vw,34px);font-weight:600;border-left:8px solid var(--a);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:opacity .3s,transform .3s}
+.poin li.hide{opacity:0;transform:translateY(10px);pointer-events:none}
+/* kartu */
+.kartu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.kt{perspective:900px;min-height:clamp(150px,20vh,220px);cursor:pointer;border:0;background:none;padding:0}
+.kt .in{position:relative;width:100%;height:100%;min-height:inherit;transition:transform .5s;transform-style:preserve-3d}
+.kt.on .in{transform:rotateY(180deg)}
+.kt .f,.kt .b{position:absolute;inset:0;border-radius:22px;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.kt .f{background:var(--a);color:#fff;font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,2.8vw,40px)}
+.kt .f::after{content:"sentuh";position:absolute;bottom:10px;font:600 13px 'Plus Jakarta Sans',sans-serif;opacity:.7}
+.kt .b{background:#fff;border:3px solid var(--a);transform:rotateY(180deg);font-size:clamp(17px,1.8vw,26px);font-weight:600}
+/* kelompok */
+.items{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:20px;min-height:60px}
+.it{border:3px solid var(--garis);background:#fff;border-radius:16px;padding:12px 20px;font-size:clamp(18px,2vw,28px);font-weight:700;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.06)}
+.it.sel{border-color:var(--a);background:var(--t);transform:scale(1.06)}
+.it.salah{animation:goyang .4s;border-color:var(--no)}
+@keyframes goyang{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.wadah{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.wd{border:3px dashed var(--a);background:var(--t);border-radius:20px;min-height:170px;padding:12px;cursor:pointer;display:flex;flex-direction:column;gap:8px}
+.wd h3{text-align:center;color:var(--a);font-size:clamp(20px,2.2vw,32px)}
+.wd .ok{background:#fff;border-radius:12px;padding:8px 12px;font-weight:700;font-size:clamp(15px,1.6vw,22px);border-left:5px solid var(--ok);animation:masuk .3s}
+.selesai{text-align:center;font-weight:800;font-size:clamp(20px,2.4vw,32px);color:var(--ok);margin-top:14px}
+/* kuis */
+.tanya{font-size:clamp(26px,3.4vw,50px);font-weight:800;margin-bottom:26px;line-height:1.25}
+.opsi{display:grid;gap:14px}
+.op{border:3px solid var(--garis);background:#fff;border-radius:20px;padding:18px 22px;font-size:clamp(20px,2.4vw,34px);font-weight:700;cursor:pointer;text-align:left;display:flex;gap:16px;align-items:center}
+.op .h{flex:none;width:52px;height:52px;border-radius:14px;background:var(--t);color:var(--a);display:grid;place-items:center;font-family:'Baloo 2',system-ui,sans-serif;font-size:28px}
+.op.benar{border-color:var(--ok);background:#e8f8ee}.op.benar .h{background:var(--ok);color:#fff}
+.op.salah{border-color:var(--no);background:#fdecec}.op.salah .h{background:var(--no);color:#fff}
+.bahas{margin-top:18px;padding:16px 20px;border-radius:16px;background:#fff8e6;border:2px solid #f0c64a;font-size:clamp(18px,2vw,28px);font-weight:600}
+/* gambar */
+.svgbox{background:#fff;border-radius:24px;padding:10px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.svgbox svg{width:100%;height:auto;max-height:52vh;display:block}
+.lab{cursor:pointer}.lab rect{transition:.2s}.lab:hover rect,.lab.on rect{fill:var(--a)}.lab.on text,.lab:hover text{fill:#fff}
+.info{min-height:64px;margin-top:14px;padding:14px 20px;border-radius:16px;background:var(--t);font-size:clamp(18px,2.2vw,30px);font-weight:700;color:var(--a)}
+/* pecahan */
+.pec{display:grid;grid-template-columns:minmax(260px,1fr) 1fr;gap:30px;align-items:center}
+@media(max-width:760px){.pec{grid-template-columns:1fr}}
+.pec svg{width:100%;max-height:46vh}
+.pec .sl{cursor:pointer;transition:fill .2s}
+.frac{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;color:var(--a);text-align:center;font-size:clamp(70px,10vw,150px);line-height:.95}
+.frac hr{border:0;border-top:8px solid var(--a);width:1.4em;margin:6px auto;border-radius:4px}
+.nbtn{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.nbtn button{width:54px;height:54px;border-radius:14px;border:2px solid var(--garis);background:#fff;font-weight:800;font-size:22px;cursor:pointer}
+.nbtn button.on{background:var(--a);color:#fff;border-color:var(--a)}
+.ket2{text-align:center;color:var(--abu);font-weight:700;font-size:clamp(16px,1.8vw,24px);margin-top:8px}
+/* nilai tempat */
+.nt{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}
+.nt .k{background:#fff;border-radius:20px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.nt .k small{display:block;font-weight:800;color:var(--abu);font-size:clamp(14px,1.6vw,22px);text-transform:uppercase}
+.nt .k .d{font-family:'Baloo 2',system-ui,sans-serif;font-size:clamp(64px,9vw,130px);font-weight:800;color:var(--a);line-height:1}
+.nt .k .v{font-weight:700;font-size:clamp(16px,2vw,28px)}
+.nt .k .pm{display:flex;gap:8px;justify-content:center;margin-top:8px}
+.nt .k .pm button{width:52px;height:52px;border-radius:14px;border:0;background:var(--t);color:var(--a);font-size:28px;font-weight:800;cursor:pointer}
+.ntb{margin-top:18px;background:#fff;border-radius:18px;padding:16px 22px;font-size:clamp(18px,2.2vw,30px);font-weight:700;text-align:center}
+.ntb span{color:var(--a)}
+/* selesai */
+.akhir{text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.akhir .big{font-size:clamp(80px,10vw,140px)}
+.akhir .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.akhir a,.akhir button{text-decoration:none;border:0;border-radius:18px;padding:18px 28px;font-weight:800;font-size:clamp(18px,2vw,26px);cursor:pointer;background:var(--t);color:var(--a)}
+.akhir a.pri{background:#f2b632;color:#3b2a00}
+.prog{white-space:nowrap}
+@media(max-width:640px){.nav{height:50px;padding:0 16px;font-size:17px}.dots{display:none}.wd{min-height:120px}}
+.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:#14261f;color:#fff;padding:12px 20px;border-radius:14px;font-weight:700;opacity:0;transition:.3s;pointer-events:none;z-index:9}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+
+<section class="screen on" id="home">
+  <div class="top"><div class="row">
+    <div style="font-size:46px">🏫</div>
+    <div><h1>Kelas Interaktif SD</h1><p>Materi sentuh untuk papan interaktif digital dan proyektor</p></div>
+    <span class="sp"></span><a href="../">← Beranda</a>
+  </div></div>
+  <div class="wrap">
+    <div class="panel">
+      <p class="lbl">1. Pilih mata pelajaran</p>
+      <div class="mapels" id="mapels"></div>
+      <div class="kls" id="kls"></div>
+      <p class="lbl" style="margin-top:18px">2. Pilih materi</p>
+      <div class="daftar" id="daftar"></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="main">
+  <div class="bar">
+    <button class="tb" id="bKembali" title="Kembali ke daftar materi">✕</button>
+    <div class="ttl" id="pJudul"></div>
+    <span class="prog" id="pProg"></span>
+    <span class="sp"></span>
+    <button class="tb" id="bFull" title="Layar penuh">⛶</button>
+  </div>
+  <div class="line"><i id="pLine"></i></div>
+  <div class="stage" id="stage"></div>
+  <div class="foot">
+    <button class="nav" id="bPrev">◀ Kembali</button>
+    <span class="sp"></span>
+    <div class="dots" id="dots"></div>
+    <span class="sp"></span>
+    <button class="nav pri" id="bNext">Lanjut ▶</button>
+  </div>
+</section>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2200)}
+let actx;function beep(f,d=.13,type='triangle',v=.2){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();let t=actx.currentTime;f.forEach(x=>{const o=actx.createOscillator(),g=actx.createGain();o.type=type;o.frequency.value=x;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(actx.destination);o.start(t);o.stop(t+d);t+=d*.8})}catch(e){}}
+const sOk=()=>beep([523,659,784]),sNo=()=>beep([220,165],.22,'sawtooth',.12);
+
+const D=window.KELAS_INTERAKTIF;
+let ST=Object.assign({mapel:'ipas',kelas:4},LS.get('kiPilih',{}));
+function warna(mp){const m=D.mapel[mp];document.documentElement.style.setProperty('--a',m.warna);document.documentElement.style.setProperty('--t',m.muda)}
+
+/* ===== beranda ===== */
+function renderHome(){
+  warna(ST.mapel);
+  $('#mapels').innerHTML=Object.entries(D.mapel).map(([id,m])=>{const n=D.materi.filter(x=>x.mapel===id).length;
+    return `<button class="mp ${id===ST.mapel?'on':''}" data-mp="${id}" style="--a:${m.warna};--t:${m.muda}"><span class="i">${m.ikon}</span><b>${m.nama}</b><small>${n} materi</small></button>`}).join('');
+  const ada=new Set(D.materi.filter(x=>x.mapel===ST.mapel).map(x=>x.kelas));
+  if(!ada.has(ST.kelas)&&ada.size)ST.kelas=[...ada][0];
+  $('#kls').innerHTML='<b style="margin-right:6px">Kelas</b>'+[1,2,3,4,5,6].map(k=>`<button data-k="${k}" class="${k===ST.kelas?'on':''}" ${ada.has(k)?'':'disabled title="Segera hadir"'}>${k}</button>`).join('')+'<span>Kelas lain segera hadir</span>';
+  const ms=D.materi.filter(x=>x.mapel===ST.mapel&&x.kelas===ST.kelas);
+  if(!ms.length){$('#daftar').innerHTML='<p class="kosong">Materi untuk kelas ini sedang disiapkan.</p>';return}
+  let h='',sm=0,no=0;
+  ms.forEach(m=>{if(m.semester!==sm){sm=m.semester;no=0;h+=`<div class="sem">Semester ${sm}</div>`}no++;
+    h+=`<button class="mtr" data-id="${m.id}"><span class="no">${no}</span><span><b>${esc(m.judul)}</b><small>${m.slide.length} slide · kuis tersedia</small></span></button>`});
+  $('#daftar').innerHTML=h;
+}
+$('#mapels').onclick=e=>{const b=e.target.closest('[data-mp]');if(!b)return;ST.mapel=b.dataset.mp;LS.set('kiPilih',ST);renderHome()};
+$('#kls').onclick=e=>{const b=e.target.closest('[data-k]');if(!b||b.disabled)return;ST.kelas=+b.dataset.k;LS.set('kiPilih',ST);renderHome()};
+$('#daftar').onclick=e=>{const b=e.target.closest('[data-id]');if(b)buka(b.dataset.id)};
+
+/* ===== pemutar ===== */
+let M=null,i=0,langkah=0;
+function buka(id,ke=0){M=D.materi.find(x=>x.id===id);if(!M)return;warna(M.mapel);i=ke;
+  $('#home').classList.remove('on');$('#main').classList.add('on');$('#pJudul').textContent=D.mapel[M.mapel].nama+' · '+M.judul;
+  history.replaceState(null,'','?materi='+id);tampil()}
+function tutup(){$('#main').classList.remove('on');$('#home').classList.add('on');history.replaceState(null,'',location.pathname);renderHome()}
+const total=()=>M.slide.length+1;
+function tampil(){
+  const n=total();langkah=0;
+  $('#pProg').textContent=(i+1)+' / '+n;$('#pLine').style.width=((i+1)/n*100)+'%';
+  $('#dots').innerHTML=Array.from({length:n},(_,k)=>`<i class="${k===i?'on':k<i?'done':''}" data-k="${k}"></i>`).join('');
+  $('#bPrev').disabled=i===0;$('#bNext').textContent=i===n-1?'Selesai ✓':'Lanjut ▶';
+  const st=$('#stage');st.style.animation='none';st.offsetHeight;st.style.animation='';
+  const s=M.slide[i];st.innerHTML=s?(R[s.t]||R.poin)(s):akhir();
+  if(s&&INIT[s.t])INIT[s.t](s,st);
+}
+function maju(){const s=M.slide[i];
+  if(s&&s.t==='poin'){const h=$$('#stage .poin li.hide');if(h.length){h[0].classList.remove('hide');return}}
+  if(i<total()-1){i++;tampil()}else tutup()}
+function mundur(){if(i>0){i--;tampil()}}
+$('#bNext').onclick=maju;$('#bPrev').onclick=mundur;$('#bKembali').onclick=tutup;
+$('#dots').onclick=e=>{const d=e.target.closest('[data-k]');if(d){i=+d.dataset.k;tampil()}};
+$('#bFull').onclick=()=>{const d=document;if(!d.fullscreenElement)(d.documentElement.requestFullscreen||d.documentElement.webkitRequestFullscreen).call(d.documentElement);else d.exitFullscreen()};
+document.addEventListener('keydown',e=>{if(!$('#main').classList.contains('on'))return;
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();maju()}
+  if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();mundur()}
+  if(e.key==='Escape'&&!document.fullscreenElement)tutup();if(e.key==='f'||e.key==='F')$('#bFull').click()});
+
+/* ----- penyaji slide ----- */
+const R={
+ judul:s=>`<div class="cover"><div class="big">${D.mapel[M.mapel].ikon}</div><span class="badge">${D.mapel[M.mapel].nama} · Kelas ${M.kelas} · Semester ${M.semester}</span><h1>${esc(s.judul)}</h1><p>${esc(s.sub||'')}</p></div>`,
+ poin:s=>`<h2 class="sj">${esc(s.judul)}</h2><ul class="poin">${s.poin.map((p,k)=>`<li class="${k?'hide':''}">${esc(p)}</li>`).join('')}</ul><p class="hint" style="margin:16px 0 0">Sentuh <b>Lanjut</b> atau layar untuk menampilkan poin berikutnya.</p>`,
+ kartu:s=>`<h2 class="sj">${esc(s.judul)}</h2><p class="hint">Sentuh kartu untuk membaliknya.</p><div class="kartu">${s.kartu.map(([f,b])=>`<button class="kt"><div class="in"><div class="f">${esc(f)}</div><div class="b">${esc(b)}</div></div></button>`).join('')}</div>`,
+ kelompok:s=>`<h2 class="sj">${esc(s.judul)}</h2><p class="hint">${esc(s.petunjuk||'Sentuh kartu, lalu sentuh kotak yang tepat.')}</p><div class="items">${shuffle(s.item.map((x,k)=>k)).map(k=>`<button class="it" data-k="${k}">${esc(s.item[k][0])}</button>`).join('')}</div><div class="wadah">${s.wadah.map((w,k)=>`<div class="wd" data-w="${k}"><h3>${esc(w)}</h3></div>`).join('')}</div><div class="selesai" id="selesai"></div>`,
+ kuis:s=>{const ord=shuffle(s.opsi.map((_,k)=>k));return `<div class="tanya">❓ ${esc(s.tanya)}</div><div class="opsi">${ord.map((k,j)=>`<button class="op" data-k="${k}"><span class="h">${'ABCD'[j]}</span>${esc(s.opsi[k])}</button>`).join('')}</div><div id="bahas"></div>`},
+ gambar:s=>`<h2 class="sj">${esc(s.judul)}</h2><div class="svgbox">${SVG[s.svg]||''}</div><div class="info" id="info">${esc(s.ket||'')}</div>`,
+ pecahan:s=>`<h2 class="sj">${esc(s.judul)}</h2><p class="hint">${esc(s.ket||'')}</p><div class="pec"><div><svg viewBox="-110 -110 220 220" id="pie"></svg><div class="nbtn" id="nbtn">${[2,3,4,5,6,8].map(n=>`<button data-n="${n}">${n}</button>`).join('')}</div><div class="ket2">Banyak potongan</div></div><div><div class="frac" id="frac"></div><div class="ket2" id="fket"></div></div></div>`,
+ nilaitempat:s=>`<h2 class="sj">${esc(s.judul)}</h2><p class="hint">${esc(s.ket||'')}</p><div class="nt" id="nt"></div><div class="ntb" id="ntb"></div>`
+};
+function akhir(){const mp=M.mapel,idx=D.materi.filter(x=>x.mapel===mp&&x.kelas===M.kelas);const nx=idx[idx.indexOf(M)+1];
+  return `<div class="akhir"><div class="big">🎉</div><h1 class="sj" style="margin:0">Hebat! Materi selesai.</h1><p class="hint" style="margin:0">Uji pemahaman dengan kuis berkelompok di papan interaktif.</p>
+  <div class="btns"><a class="pri" href="../kuis-pid/?bank=${encodeURIComponent(mp+'|'+M.kelas+'|'+M.semester+'|'+M.id)}">🎮 Main kuis materi ini</a>${nx?`<button data-nx="${nx.id}">Materi berikutnya ▶</button>`:''}<button data-ul>↻ Ulangi dari awal</button></div></div>`}
+$('#stage').addEventListener('click',e=>{
+  const nx=e.target.closest('[data-nx]');if(nx){buka(nx.dataset.nx);return}
+  if(e.target.closest('[data-ul]')){i=0;tampil();return}
+  const s=M.slide[i];if(!s)return;
+  if(s.t==='poin'&&!e.target.closest('button')){const h=$$('#stage .poin li.hide');if(h.length)h[0].classList.remove('hide')}
+  if(s.t==='kartu'){const k=e.target.closest('.kt');if(k)k.classList.toggle('on')}
+  if(s.t==='kuis'){const b=e.target.closest('.op');if(!b||$('#stage .op.benar'))return;const k=+b.dataset.k;
+    if(k===s.benar){b.classList.add('benar');sOk();$('#bahas').innerHTML=`<div class="bahas">✅ Benar! ${esc(s.bahas||'')}</div>`}
+    else{b.classList.add('salah');sNo();toast('Belum tepat, coba lagi!')}}
+  if(s.t==='kelompok'){
+    const it=e.target.closest('.it');if(it){$$('#stage .it').forEach(x=>x.classList.toggle('sel',x===it&&!x.classList.contains('sel')));return}
+    const wd=e.target.closest('.wd');const sel=$('#stage .it.sel');if(!wd||!sel)return;const k=+sel.dataset.k;
+    if(s.item[k][1]===+wd.dataset.w){sel.remove();wd.insertAdjacentHTML('beforeend',`<div class="ok">✓ ${esc(s.item[k][0])}</div>`);sOk();
+      if(!$('#stage .it'))$('#selesai').textContent='🎉 Semua tepat! Kalian hebat!'}
+    else{sel.classList.remove('sel');sel.classList.add('salah');sNo();setTimeout(()=>sel.classList.remove('salah'),450)}}
+  if(s.t==='gambar'){const l=e.target.closest('.lab');if(l){$$('#stage .lab').forEach(x=>x.classList.toggle('on',x===l));$('#info').textContent=l.dataset.info}}
+});
+
+/* ----- slide interaktif ----- */
+const INIT={
+ pecahan:(s,st)=>{let n=s.n||4,on=new Set();
+  const gambar=()=>{const r=100;let h='';
+    for(let k=0;k<n;k++){const a0=-Math.PI/2+2*Math.PI*k/n,a1=a0+2*Math.PI/n,x0=r*Math.cos(a0),y0=r*Math.sin(a0),x1=r*Math.cos(a1),y1=r*Math.sin(a1);
+      h+=`<path class="sl" data-s="${k}" d="M0 0L${x0.toFixed(2)} ${y0.toFixed(2)}A${r} ${r} 0 0 1 ${x1.toFixed(2)} ${y1.toFixed(2)}Z" fill="${on.has(k)?'var(--a)':'#fff'}" stroke="#14261f" stroke-width="2.5"/>`}
+    $('#pie').innerHTML=h;$$('#nbtn button').forEach(b=>b.classList.toggle('on',+b.dataset.n===n));
+    const p=on.size;$('#frac').innerHTML=`${p}<hr>${n}`;
+    const g=(a,b)=>b?g(b,a%b):a,d=g(p,n);
+    $('#fket').innerHTML=p===0?'Sentuh potongan untuk mewarnai':p===n?`${p}/${n} = 1 utuh`:`${p} dari ${n} bagian diwarnai`+(d>1?`<br>Senilai dengan <b>${p/d}/${n/d}</b>`:'')+(n<=4?`<br>Senilai dengan <b>${p*2}/${n*2}</b>`:'')};
+  $('#pie').onclick=e=>{const sl=e.target.closest('.sl');if(!sl)return;const k=+sl.dataset.s;on.has(k)?on.delete(k):on.add(k);gambar()};
+  $('#nbtn').onclick=e=>{const b=e.target.closest('[data-n]');if(!b)return;n=+b.dataset.n;on=new Set();gambar()};gambar()},
+ nilaitempat:(s,st)=>{let d=String(s.angka||'4623').padStart(4,'0').split('').map(Number);const T=['Ribuan','Ratusan','Puluhan','Satuan'],V=[1000,100,10,1];
+  const gambar=()=>{$('#nt').innerHTML=d.map((x,k)=>`<div class="k"><small>${T[k]}</small><div class="d">${x}</div><div class="v">${(x*V[k]).toLocaleString('id-ID')}</div><div class="pm"><button data-k="${k}" data-d="-1">−</button><button data-k="${k}" data-d="1">+</button></div></div>`).join('');
+    const nn=d.reduce((a,x,k)=>a+x*V[k],0);
+    $('#ntb').innerHTML=`<span>${nn.toLocaleString('id-ID')}</span> = ${d.map((x,k)=>(x*V[k]).toLocaleString('id-ID')).join(' + ')}<br>Dibaca: <span>${terbilang(nn)}</span>`};
+  $('#nt').onclick=e=>{const b=e.target.closest('[data-d]');if(!b)return;const k=+b.dataset.k;d[k]=(d[k]+ +b.dataset.d+10)%10;gambar()};gambar()}
+};
+function terbilang(n){const s=['','satu','dua','tiga','empat','lima','enam','tujuh','delapan','sembilan','sepuluh','sebelas'];
+  if(n<12)return n?s[n]:'nol';if(n<20)return terbilang(n-10)+' belas';if(n<100)return terbilang(Math.floor(n/10))+' puluh'+(n%10?' '+terbilang(n%10):'');
+  if(n<200)return 'seratus'+(n-100?' '+terbilang(n-100):'');if(n<1000)return terbilang(Math.floor(n/100))+' ratus'+(n%100?' '+terbilang(n%100):'');
+  if(n<2000)return 'seribu'+(n-1000?' '+terbilang(n-1000):'');return terbilang(Math.floor(n/1000))+' ribu'+(n%1000?' '+terbilang(n%1000):'')}
+
+/* ----- ilustrasi ----- */
+const lab=(x,y,w,t,info)=>`<g class="lab" data-info="${esc(info)}"><rect x="${x}" y="${y}" width="${w}" height="46" rx="14" fill="#fff" stroke="var(--a)" stroke-width="3"/><text x="${x+w/2}" y="${y+31}" text-anchor="middle" font-size="24" font-weight="800" fill="var(--a)" font-family="Plus Jakarta Sans, system-ui, sans-serif">${t}</text></g>`;
+const SVG={
+ tumbuhan:`<svg viewBox="0 0 900 520" role="img" aria-label="Bagian tumbuhan">
+  <rect x="0" y="360" width="900" height="160" fill="#c89b6d"/><rect x="0" y="352" width="900" height="14" fill="#7cb342"/>
+  <g stroke="#8d5a2b" stroke-width="7" fill="none" stroke-linecap="round"><path d="M450 360v70"/><path d="M450 380q-40 30-80 40"/><path d="M450 395q45 25 85 30"/><path d="M450 420q-25 30-55 55"/><path d="M450 430q30 30 50 55"/><path d="M450 430v60"/></g>
+  <path d="M450 360V150" stroke="#4e8a2e" stroke-width="16" stroke-linecap="round"/>
+  <g fill="#43a047"><path d="M450 300q-90-60-150-10q70 40 150 10z"/><path d="M450 250q90-60 150-10q-70 40-150 10z"/><path d="M450 200q-70-50-120-15q55 35 120 15z"/></g>
+  <g stroke="#2e7d32" stroke-width="3" fill="none"><path d="M450 300q-75-15-140-10"/><path d="M450 250q75-15 140-10"/></g>
+  <g transform="translate(450 120)"><g fill="#f06292">${[0,72,144,216,288].map(a=>`<ellipse rx="26" ry="44" transform="rotate(${a}) translate(0 -40)"/>`).join('')}</g><circle r="26" fill="#fdd835"/></g>
+  <g stroke="#14261f" stroke-width="2" stroke-dasharray="6 5"><path d="M480 112H640"/><path d="M590 250H680"/><path d="M458 330H660"/><path d="M500 420H660"/></g>
+  ${lab(640,90,170,'Bunga','Bunga: alat perkembangbiakan, tempat penyerbukan antara serbuk sari dan putik.')}
+  ${lab(680,227,150,'Daun','Daun: tempat fotosintesis (membuat makanan) dan penguapan. Mengandung klorofil.')}
+  ${lab(660,307,170,'Batang','Batang: menopang tumbuhan serta mengangkut air dan makanan.')}
+  ${lab(660,397,150,'Akar','Akar: menyerap air dan mineral dari tanah serta menopang tumbuhan.')}
+  <g transform="translate(120 70)"><circle r="44" fill="#fbc02d"/>${Array.from({length:8},(_,k)=>`<path d="M0 -58V-76" stroke="#fbc02d" stroke-width="7" stroke-linecap="round" transform="rotate(${k*45})"/>`).join('')}</g>
+  ${lab(55,140,130,'Matahari','Cahaya matahari memberi energi untuk fotosintesis di daun.')}
+ </svg>`,
+ zat:`<svg viewBox="0 0 900 520" role="img" aria-label="Diagram perubahan wujud zat">
+  <defs><marker id="mr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e2563f"/></marker><marker id="mb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f7de1"/></marker></defs>
+  <g font-family="Baloo 2, system-ui, sans-serif" font-weight="800" text-anchor="middle">
+   <rect x="40" y="40" width="200" height="120" rx="24" fill="#e6effc" stroke="#2f6fd6" stroke-width="4"/><text x="140" y="95" font-size="44">🧊</text><text x="140" y="140" font-size="32" fill="#2f6fd6">Padat</text>
+   <rect x="660" y="40" width="200" height="120" rx="24" fill="#e3f3ec" stroke="#13795b" stroke-width="4"/><text x="760" y="95" font-size="44">💧</text><text x="760" y="140" font-size="32" fill="#13795b">Cair</text>
+   <rect x="350" y="370" width="200" height="120" rx="24" fill="#f3eefb" stroke="#7c4dcc" stroke-width="4"/><text x="450" y="425" font-size="44">💨</text><text x="450" y="470" font-size="32" fill="#7c4dcc">Gas</text>
+  </g>
+  <g stroke-width="6" fill="none">
+   <path d="M250 80H650" stroke="#e2563f" marker-end="url(#mr)"/><path d="M650 125H250" stroke="#2f7de1" marker-end="url(#mb)"/>
+   <path d="M790 170L560 400" stroke="#e2563f" marker-end="url(#mr)"/><path d="M530 375L740 170" stroke="#2f7de1" marker-end="url(#mb)"/>
+   <path d="M110 170L340 410" stroke="#e2563f" marker-end="url(#mr)"/><path d="M360 375L160 170" stroke="#2f7de1" marker-end="url(#mb)"/>
+  </g>
+  <g font-family="Plus Jakarta Sans, system-ui, sans-serif" font-weight="800" font-size="24" text-anchor="middle">
+   <text x="450" y="68" fill="#e2563f">Mencair</text><text x="450" y="160" fill="#2f7de1">Membeku</text>
+   <text x="745" y="320" fill="#e2563f">Menguap</text><text x="560" y="255" fill="#2f7de1">Mengembun</text>
+   <text x="150" y="320" fill="#e2563f">Menyublim</text><text x="335" y="255" fill="#2f7de1">Mengkristal</text>
+  </g></svg>`
+};
+
+/* ===== mulai ===== */
+renderHome();
+const q=new URLSearchParams(location.search).get('materi');if(q&&D.materi.some(x=>x.id===q))buka(q);
+</script>
+</body>
+</html>
