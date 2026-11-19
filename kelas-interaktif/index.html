@@ -163,6 +163,40 @@ h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.1;margin:0}
 .lk .rumus{background:#fff;border-radius:18px;padding:16px 22px;font-size:clamp(18px,2.2vw,30px);font-weight:700;line-height:1.6}
 .lk .rumus b{color:var(--a)}
 @media(max-width:640px){.nav{height:50px;padding:0 16px;font-size:17px}.dots{display:none}.wd{min-height:120px}}
+.amati{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.am{background:#fff;border-radius:22px;padding:18px 12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.06);border-top:6px solid var(--a)}
+.am .e{font-size:clamp(56px,7vw,96px);line-height:1.1}
+.am b{display:block;font-size:clamp(18px,2vw,28px);margin-top:6px}
+.am small{display:block;color:var(--abu);font-weight:600;font-size:clamp(14px,1.5vw,20px)}
+.mtr{cursor:default;flex-direction:column;gap:12px}.mtr .hd{display:flex;gap:14px;align-items:flex-start;cursor:pointer}
+.acts{display:flex;gap:6px;flex-wrap:wrap;padding-left:60px}
+.acts button{border:1.5px solid var(--garis);background:#fff;border-radius:10px;padding:6px 10px;font-weight:700;font-size:13.5px;cursor:pointer}
+.acts button:first-child{background:var(--a);color:#fff;border-color:var(--a)}
+.acts button:hover{border-color:var(--a)}
+.modal{position:fixed;inset:0;background:rgba(10,30,20,.55);display:none;align-items:flex-start;justify-content:center;z-index:20;padding:3vh 12px;overflow:auto}
+.modal.on{display:flex}
+.mbox{background:#fff;border-radius:20px;max-width:1000px;width:100%;padding:22px clamp(14px,3vw,30px);position:relative}
+.mbox h2{color:var(--a);font-size:clamp(24px,3vw,34px);margin-bottom:4px}
+.mbox .x{position:absolute;right:14px;top:12px;border:0;background:var(--t);color:var(--a);width:40px;height:40px;border-radius:12px;font-size:20px;font-weight:800;cursor:pointer}
+.mbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.mbar button,.mbar a{border:0;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer;background:var(--t);color:var(--a);text-decoration:none;font-size:15px}
+.mbar .pri{background:var(--a);color:#fff}
+.mbar label{display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px}
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th,.tbl td{border:1px solid #cfdcd6;padding:8px 10px;text-align:left;vertical-align:top}
+.tbl th{background:var(--t);color:var(--a)}
+.jen{display:inline-block;padding:2px 8px;border-radius:20px;font-size:12px;font-weight:800;background:var(--t);color:var(--a);white-space:nowrap}
+.cat{background:#fff8e6;border:1.5px solid #f0c64a;border-radius:12px;padding:10px 14px;margin-top:12px;font-size:14px}
+#lkpdBox{border:1px solid var(--garis);border-radius:12px;padding:20px;background:#fff;max-height:62vh;overflow:auto}
+.lk-doc{font-family:'Plus Jakarta Sans',Arial,sans-serif;color:#000;font-size:14px;line-height:1.5}
+.lk-doc h1{font-size:20px;text-align:center;margin:0}.lk-doc .sub{text-align:center;margin:2px 0 10px;font-weight:700}
+.lk-doc h3{font-size:15px;margin:14px 0 6px;background:#eef4f1;padding:4px 8px;border-left:5px solid #0d5c45}
+.lk-doc table{width:100%;border-collapse:collapse;margin:4px 0}.lk-doc td,.lk-doc th{border:1px solid #444;padding:6px 8px;vertical-align:top;text-align:left}
+.lk-doc .id td{border:0;padding:2px 4px}.lk-doc .em{font-size:26px;text-align:center;width:60px}
+.lk-doc ol{margin:4px 0;padding-left:22px}.lk-doc .ln{border-bottom:1px dotted #555;height:22px}
+.lk-doc .kunci{color:#b00020}
+@media print{body>*:not(#cetak){display:none!important}#cetak{display:block!important}}
+#cetak{display:none}
 .toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:#14261f;color:#fff;padding:12px 20px;border-radius:14px;font-weight:700;opacity:0;transition:.3s;pointer-events:none;z-index:9}
 .toast.on{opacity:1}
 </style>
@@ -192,7 +226,7 @@ h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.1;margin:0}
     <div class="ttl" id="pJudul"></div>
     <span class="prog" id="pProg"></span>
     <span class="sp"></span>
-    <button class="tb" id="bFull" title="Layar penuh">⛶</button>
+    <button class="tb" id="bPanduan" title="Panduan media">📋</button><button class="tb" id="bVideo" title="Cari video pembelajaran">🎬</button><button class="tb" id="bLkpd" title="LKPD">📝</button><button class="tb" id="bFull" title="Layar penuh">⛶</button>
   </div>
   <div class="line"><i id="pLine"></i></div>
   <div class="stage" id="stage"></div>
@@ -205,8 +239,16 @@ h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.1;margin:0}
   </div>
 </section>
 <div class="toast" id="toast"></div>
+<div class="modal" id="mPanduan"><div class="mbox"><button class="x" data-tutup>✕</button><div id="panduanIsi"></div></div></div>
+<div class="modal" id="mLkpd"><div class="mbox"><button class="x" data-tutup>✕</button>
+  <h2>📝 Lembar Kerja Peserta Didik</h2><div class="hint" style="margin:0" id="lkpdJudul"></div>
+  <div class="mbar"><button class="pri" id="lkCetak">🖨 Cetak</button><button id="lkWord">📄 Unduh Word</button><button id="lkAcak">🎲 Ganti soal latihan</button><label><input type="checkbox" id="lkKunci"> Sertakan kunci jawaban (guru)</label></div>
+  <div id="lkpdBox"></div></div></div>
+<div id="cetak"></div>
 
 <script src="data.js"></script>
+<script src="media.js"></script>
+<script src="../assets/docx-ku.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -216,7 +258,8 @@ let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add
 let actx;function beep(f,d=.13,type='triangle',v=.2){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();let t=actx.currentTime;f.forEach(x=>{const o=actx.createOscillator(),g=actx.createGain();o.type=type;o.frequency.value=x;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(actx.destination);o.start(t);o.stop(t+d);t+=d*.8})}catch(e){}}
 const sOk=()=>beep([523,659,784]),sNo=()=>beep([220,165],.22,'sawtooth',.12);
 
-const D=window.KELAS_INTERAKTIF;
+const D=window.KELAS_INTERAKTIF,MED=window.KI_MEDIA||{};
+D.materi.forEach(m=>{const md=MED[m.id];if(md&&md.a&&!m.slide.some(x=>x.t==='amati'))m.slide.splice(1,0,{t:'amati',judul:'Ayo Amati!',item:md.a})});
 let ST=Object.assign({mapel:'ipas',kelas:4},LS.get('kiPilih',{}));
 function warna(mp){const m=D.mapel[mp];document.documentElement.style.setProperty('--a',m.warna);document.documentElement.style.setProperty('--t',m.muda)}
 
@@ -227,17 +270,18 @@ function renderHome(){
     return `<button class="mp ${id===ST.mapel?'on':''}" data-mp="${id}" style="--a:${m.warna};--t:${m.muda}"><span class="i">${m.ikon}</span><b>${m.nama}</b><small>${n} materi</small></button>`}).join('');
   const ada=new Set(D.materi.filter(x=>x.mapel===ST.mapel).map(x=>x.kelas));
   if(!ada.has(ST.kelas)&&ada.size)ST.kelas=[...ada][0];
-  $('#kls').innerHTML='<b style="margin-right:6px">Kelas</b>'+[1,2,3,4,5,6].map(k=>`<button data-k="${k}" class="${k===ST.kelas?'on':''}" ${ada.has(k)?'':'disabled title="Segera hadir"'}>${k}</button>`).join('')+'<span>Kelas lain segera hadir</span>';
+  $('#kls').innerHTML='<b style="margin-right:6px">Kelas</b>'+[1,2,3,4,5,6].map(k=>`<button data-k="${k}" class="${k===ST.kelas?'on':''}" ${ada.has(k)?'':'disabled title="Segera hadir"'}>${k}</button>`).join('')+(ST.mapel==='ipas'?'<span>IPAS dimulai di Kelas 3</span>':'');
   const ms=D.materi.filter(x=>x.mapel===ST.mapel&&x.kelas===ST.kelas);
   if(!ms.length){$('#daftar').innerHTML='<p class="kosong">Materi untuk kelas ini sedang disiapkan.</p>';return}
   let h='',sm=0,no=0;
   ms.forEach(m=>{if(m.semester!==sm){sm=m.semester;no=0;h+=`<div class="sem">Semester ${sm}</div>`}no++;
-    h+=`<button class="mtr" data-id="${m.id}"><span class="no">${no}</span><span><b>${esc(m.judul)}</b><small>${m.slide.length} slide · kuis tersedia</small></span></button>`});
+    h+=`<div class="mtr"><div class="hd" data-id="${m.id}"><span class="no">${no}</span><span><b>${esc(m.judul)}</b><small>${m.slide.length} slide · media, video, LKPD, kuis</small></span></div><div class="acts"><button data-id="${m.id}">▶ Mulai</button><button data-pd="${m.id}">📋 Panduan Media</button><button data-vd="${m.id}">🎬 Video</button><button data-lk="${m.id}">📝 LKPD</button></div></div>`});
   $('#daftar').innerHTML=h;
 }
 $('#mapels').onclick=e=>{const b=e.target.closest('[data-mp]');if(!b)return;ST.mapel=b.dataset.mp;LS.set('kiPilih',ST);renderHome()};
 $('#kls').onclick=e=>{const b=e.target.closest('[data-k]');if(!b||b.disabled)return;ST.kelas=+b.dataset.k;LS.set('kiPilih',ST);renderHome()};
-$('#daftar').onclick=e=>{const b=e.target.closest('[data-id]');if(b)buka(b.dataset.id)};
+$('#daftar').onclick=e=>{const b=e.target.closest('[data-id],[data-pd],[data-vd],[data-lk]');if(!b)return;const d=b.dataset;
+  if(d.id)buka(d.id);else if(d.pd)panduan(d.pd);else if(d.vd)video(d.vd);else if(d.lk)lkpd(d.lk)};
 
 /* ===== pemutar ===== */
 let M=null,i=0,langkah=0;
@@ -269,6 +313,7 @@ document.addEventListener('keydown',e=>{if(!$('#main').classList.contains('on'))
 
 /* ----- penyaji slide ----- */
 const R={
+ amati:s=>`<h2 class="sj">👀 ${esc(s.judul||'Ayo Amati!')}</h2><p class="hint">Amati gambar berikut. Apa yang kamu ketahui?</p><div class="amati">${s.item.map(([e,n,k])=>`<div class="am"><div class="e">${e}</div><b>${esc(n)}</b><small>${esc(k)}</small></div>`).join('')}</div>`,
  judul:s=>`<div class="cover"><div class="big">${D.mapel[M.mapel].ikon}</div><span class="badge">${D.mapel[M.mapel].nama} · Kelas ${M.kelas} · Semester ${M.semester}</span><h1>${esc(s.judul)}</h1><p>${esc(s.sub||'')}</p></div>`,
  poin:s=>`<h2 class="sj">${esc(s.judul)}</h2><ul class="poin">${s.poin.map((p,k)=>`<li class="${k?'hide':''}">${esc(p)}</li>`).join('')}</ul><p class="hint" style="margin:16px 0 0">Sentuh <b>Lanjut</b> atau layar untuk menampilkan poin berikutnya.</p>`,
  kartu:s=>`<h2 class="sj">${esc(s.judul)}</h2><p class="hint">Sentuh kartu untuk membaliknya.</p><div class="kartu">${s.kartu.map(([f,b])=>`<button class="kt"><div class="in"><div class="f">${esc(f)}</div><div class="b">${esc(b)}</div></div></button>`).join('')}</div>`,
@@ -415,6 +460,59 @@ SVG.bangun=`<svg viewBox="0 0 900 330" role="img" aria-label="Bangun datar">
   <g class="lab" data-info="Persegi panjang: memiliki 4 sisi, sisi yang berhadapan sama panjang, dan 4 sudut. Contoh: papan tulis, pintu."><rect x="490" y="260" width="170" height="46" rx="14" fill="#fff" stroke="var(--a)" stroke-width="3"/><text x="575" y="291" text-anchor="middle" font-size="20" font-weight="800" fill="var(--a)" font-family="Plus Jakarta Sans, system-ui, sans-serif">Persegi panjang</text><rect x="480" y="100" width="190" height="110" fill="#bbf7d0" stroke="#14261f" stroke-width="5"/></g>
   <g class="lab" data-info="Lingkaran: tidak memiliki sudut. Contoh: uang logam, roda, jam dinding."><circle cx="790" cy="150" r="85" fill="#fbcfe8" stroke="#14261f" stroke-width="5"/><rect x="715" y="260" width="150" height="46" rx="14" fill="#fff" stroke="var(--a)" stroke-width="3"/><text x="790" y="291" text-anchor="middle" font-size="22" font-weight="800" fill="var(--a)" font-family="Plus Jakarta Sans, system-ui, sans-serif">Lingkaran</text></g>
  </svg>`;
+/* ===== panduan media, video, LKPD ===== */
+const JENIS={Konkret:'🧸',Visual:'🖼️','Audio-visual':'🎬',Digital:'💻',Lingkungan:'🌳'};
+const bankMuat={};
+function muatBank(m){const key=m.mapel+'-'+m.kelas;if(window.BANK_SOAL&&window.BANK_SOAL[key])return Promise.resolve(window.BANK_SOAL[key]);
+  return bankMuat[key]||(bankMuat[key]=new Promise(res=>{const sc=document.createElement('script');sc.src='../bank-soal/data/'+m.mapel+'/kelas-'+m.kelas+'.js';sc.onload=()=>res((window.BANK_SOAL||{})[key]||null);sc.onerror=()=>res(null);document.head.appendChild(sc)}))}
+const cariM=id=>D.materi.find(x=>x.id===id);
+function buka2(id){const el=$('#'+id);el.classList.add('on')}
+$$('.modal').forEach(m=>m.onclick=e=>{if(e.target===m||e.target.closest('[data-tutup]'))m.classList.remove('on')});
+function urlVideo(id){const md=MED[id];return 'https://www.youtube.com/results?search_query='+encodeURIComponent(md&&md.v||cariM(id).judul)}
+function video(id){window.open(urlVideo(id),'_blank','noopener');toast('Pencarian video dibuka di tab baru. Tinjau videonya sebelum ditayangkan.')}
+async function panduan(id){const m=cariM(id),md=MED[id]||{m:[]},mp=D.mapel[m.mapel];warna(m.mapel);
+  const b=await muatBank(m);const bm=b&&b.materi.find(x=>x.id===id);
+  $('#panduanIsi').innerHTML=`<h2>📋 Panduan Media Pembelajaran</h2><div class="hint" style="margin:0 0 6px">${mp.nama} · Kelas ${m.kelas} · Semester ${m.semester}</div>
+   <table class="tbl" style="margin:8px 0 12px"><tr><th style="width:24%">Materi</th><td>${esc(m.judul)}</td></tr>${bm?`<tr><th>Elemen</th><td>${esc(bm.elemen)}</td></tr><tr><th>Tujuan Pembelajaran</th><td>${esc(bm.tp)}</td></tr>`:''}</table>
+   <div class="mbar"><button class="pri" data-mulai="${id}">▶ Mulai slide</button><a href="${urlVideo(id)}" target="_blank" rel="noopener">🎬 Cari video</a><button data-lk2="${id}">📝 LKPD</button><a href="../kuis-pid/?bank=${encodeURIComponent(m.mapel+'|'+m.kelas+'|'+m.semester+'|'+id)}">🎮 Kuis</a><button data-cetakpd="${id}">🖨 Cetak panduan</button></div>
+   <div id="pdTabel"><table class="tbl"><tr><th style="width:5%">No</th><th style="width:15%">Jenis</th><th style="width:20%">Media / alat peraga</th><th>Kaitan dengan materi</th><th>Cara menggunakan</th></tr>
+   ${md.m.map(([j,n,k,c],x)=>`<tr><td>${x+1}</td><td><span class="jen">${JENIS[j]||''} ${esc(j)}</span></td><td><b>${esc(n)}</b></td><td>${esc(k)}</td><td>${esc(c)}</td></tr>`).join('')}
+   <tr><td>${md.m.length+1}</td><td><span class="jen">💻 Digital</span></td><td><b>Media Pembelajaran di SD (slide ini)</b></td><td>Menampilkan ${m.slide.length} slide interaktif: ${[...new Set(m.slide.map(x=>({judul:'sampul',amati:'Ayo Amati',poin:'penjelasan',kartu:'kartu balik',kelompok:'mengelompokkan',urut:'mengurutkan',kuis:'kuis cepat',gambar:'gambar interaktif',pecahan:'pecahan interaktif',nilaitempat:'nilai tempat',garis:'garis bilangan',lingkaran:'kalkulator lingkaran',jam:'jam interaktif'}[x.t])))].filter(Boolean).join(', ')}.</td><td>Tayangkan di papan interaktif; siswa bergiliran maju menyentuh layar.</td></tr>
+   <tr><td>${md.m.length+2}</td><td><span class="jen">🎬 Audio-visual</span></td><td><b>Video pembelajaran</b></td><td>Memperkuat pemahaman dengan tayangan.</td><td>Tekan "Cari video", pilih dan tinjau video yang sesuai sebelum ditayangkan.</td></tr>
+   <tr><td>${md.m.length+3}</td><td><span class="jen">📝 Cetak</span></td><td><b>LKPD</b></td><td>Latihan mandiri/kelompok sesuai materi.</td><td>Cetak atau unduh Word, kerjakan setelah slide.</td></tr></table></div>
+   <div class="cat"><b>Alur saran:</b> 1) Apersepsi dengan media konkret → 2) Tayangkan slide "Ayo Amati" dan penjelasan → 3) Siswa mencoba aktivitas di papan interaktif → 4) Kerjakan LKPD → 5) Tutup dengan Kuis Kelas Interaktif.</div>`;
+  buka2('mPanduan')}
+$('#panduanIsi').onclick=e=>{const b=e.target.closest('[data-mulai],[data-lk2],[data-cetakpd]');if(!b)return;
+  if(b.dataset.mulai){$('#mPanduan').classList.remove('on');buka(b.dataset.mulai)}
+  if(b.dataset.lk2){$('#mPanduan').classList.remove('on');lkpd(b.dataset.lk2)}
+  if(b.dataset.cetakpd){$('#cetak').innerHTML='<div class="lk-doc">'+$('#panduanIsi').innerHTML.replace(/<div class="mbar">[\s\S]*?<\/div>/,'')+'</div>';window.print()}};
+let LK={id:null,seed:0};
+function pilih(arr,n,seed){const a=[...arr];let x=seed*9301+49297;for(let k=a.length-1;k>0;k--){x=(x*9301+49297)%233280;const j=Math.floor(x/233280*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a.slice(0,n)}
+async function lkpd(id,seed){const m=cariM(id);warna(m.mapel);LK={id,seed:seed??LK.seed};$('#lkpdJudul').textContent=D.mapel[m.mapel].nama+' · Kelas '+m.kelas+' · '+m.judul;
+  $('#lkpdBox').innerHTML='Menyiapkan LKPD…';buka2('mLkpd');const b=await muatBank(m);$('#lkpdBox').innerHTML=htmlLkpd(m,b&&b.materi.find(x=>x.id===id),$('#lkKunci').checked)}
+function htmlLkpd(m,bm,kunci){const md=MED[m.id]||{},mp=D.mapel[m.mapel],H='ABCD',K=t=>kunci?`<span class="kunci"> ${t}</span>`:'';
+  const kel=m.slide.find(x=>x.t==='kelompok'),urut=m.slide.find(x=>x.t==='urut');let no=0,h='';
+  h+=`<h1>LEMBAR KERJA PESERTA DIDIK (LKPD)</h1><div class="sub">${esc(mp.nama)} · Kelas ${m.kelas} · Semester ${m.semester}</div>
+  <table class="id"><tr><td style="width:22%">Materi</td><td>: <b>${esc(m.judul)}</b></td></tr><tr><td>Nama</td><td>: ........................................................</td></tr><tr><td>Kelas / Kelompok</td><td>: ........................................................</td></tr><tr><td>Hari, tanggal</td><td>: ........................................................</td></tr></table>`;
+  if(bm)h+=`<h3>Tujuan Pembelajaran</h3><p style="margin:0">${esc(bm.tp)}</p>`;
+  h+=`<h3>Petunjuk</h3><ol><li>Berdoalah sebelum mengerjakan.</li><li>Bacalah setiap perintah dengan teliti.</li><li>Kerjakan secara ${m.kelas<=2?'mandiri dengan bimbingan guru':'mandiri atau berkelompok'}.</li><li>Tanyakan kepada guru jika ada yang belum jelas.</li></ol>`;
+  if(md.a){no++;h+=`<h3>Kegiatan ${no}: Ayo Amati!</h3><p style="margin:0 0 4px">Amati gambar berikut, lalu tuliskan nama dan keterangannya.</p><table><tr><th>Gambar</th><th style="width:30%">Nama</th><th>Keterangan</th></tr>${md.a.map(([e,n,k])=>`<tr><td class="em">${e}</td><td>${kunci?`<span class="kunci">${esc(n)}</span>`:'<div class="ln"></div>'}</td><td>${kunci?`<span class="kunci">${esc(k)}</span>`:'<div class="ln"></div>'}</td></tr>`).join('')}</table>`}
+  if(kel){no++;const it=pilih(kel.item,kel.item.length,LK.seed+3);h+=`<h3>Kegiatan ${no}: ${esc(kel.judul)}</h3><p style="margin:0 0 4px">Kelompokkan kata/benda berikut ke dalam tabel: <b>${it.map(x=>esc(x[0])).join(' · ')}</b></p><table><tr>${kel.wadah.map(w=>`<th>${esc(w)}</th>`).join('')}</tr><tr>${kel.wadah.map((w,j)=>`<td style="height:90px">${kunci?`<span class="kunci">${kel.item.filter(x=>x[1]===j).map(x=>esc(x[0])).join(', ')}</span>`:''}</td>`).join('')}</tr></table>`}
+  if(urut){no++;const it=pilih(urut.item,urut.item.length,LK.seed+5);h+=`<h3>Kegiatan ${no}: ${esc(urut.judul)}</h3><p style="margin:0 0 4px">Urutkan dengan benar: <b>${it.map(esc).join(' · ')}</b></p><ol>${urut.item.map(x=>`<li>${kunci?`<span class="kunci">${esc(x)}</span>`:'<div class="ln"></div>'}</li>`).join('')}</ol>`}
+  if(bm){no++;const pg=pilih(bm.soal.filter(x=>x.bentuk==='pg'),m.kelas<=2?3:4,LK.seed+7),is=pilih(bm.soal.filter(x=>x.bentuk==='isian'),2,LK.seed+11),ur=pilih(bm.soal.filter(x=>x.bentuk==='uraian'),1,LK.seed+13);
+    const q=t=>esc(t).replace(/\n\|[\s\S]*$/,'').replace(/\n/g,'<br>');let k=0;
+    h+=`<h3>Kegiatan ${no}: Ayo Berlatih!</h3><p style="margin:0 0 4px">A. Berilah tanda silang (X) pada jawaban yang paling tepat!</p><ol>${pg.map(s=>`<li>${q(s.pertanyaan)}<br>${s.opsi.map((o,j)=>`${H[j]}. ${esc(o)}`).join(' &nbsp; ')}${K('Jawaban: '+s.kunci)}</li>`).join('')}</ol>
+    <p style="margin:6px 0 4px">B. Isilah titik-titik dengan jawaban yang tepat!</p><ol>${is.map(s=>`<li>${q(s.pertanyaan).replace(/_{2,}/,'..........')}${K('Jawaban: '+esc(s.kunci))}</li>`).join('')}</ol>
+    <p style="margin:6px 0 4px">C. Jawablah pertanyaan berikut!</p><ol>${ur.map(s=>`<li>${q(s.pertanyaan)}<div class="ln"></div><div class="ln"></div>${K('Jawaban: '+esc(s.kunci))}</li>`).join('')}</ol>`}
+  h+=`<h3>Refleksi</h3><p style="margin:0">Bagaimana perasaanmu setelah belajar hari ini? Lingkari! &nbsp; 😄 Senang &nbsp; 🙂 Biasa &nbsp; 😕 Masih bingung</p><p style="margin:4px 0 0">Hal baru yang aku pelajari: ...........................................................................</p>
+  <table class="id" style="margin-top:14px"><tr><td style="width:50%">Nilai: ..........</td><td style="text-align:center">Paraf guru<br><br><br>..........................</td></tr></table>`;
+  return '<div class="lk-doc">'+h+'</div>'}
+$('#lkKunci').onchange=()=>LK.id&&lkpd(LK.id);
+$('#lkAcak').onclick=()=>LK.id&&lkpd(LK.id,LK.seed+1);
+$('#lkCetak').onclick=()=>{$('#cetak').innerHTML=$('#lkpdBox').innerHTML;window.print()};
+$('#lkWord').onclick=()=>{const m=cariM(LK.id);toast('Menyiapkan file Word…');
+  DocxKu.unduh('LKPD-'+m.id+($('#lkKunci').checked?'-kunci':''),[{html:$('#lkpdBox').innerHTML}]).then(()=>toast('LKPD (.docx) diunduh.')).catch(e=>toast('Gagal membuat Word: '+e.message))};
+$('#bPanduan').onclick=()=>M&&panduan(M.id);$('#bVideo').onclick=()=>M&&video(M.id);$('#bLkpd').onclick=()=>M&&lkpd(M.id);
 /* ===== mulai ===== */
 renderHome();
 const q=new URLSearchParams(location.search).get('materi');if(q&&D.materi.some(x=>x.id===q))buka(q);
