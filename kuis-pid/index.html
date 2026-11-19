@@ -23,6 +23,37 @@ body{font-family:'Baloo 2','Amiri',system-ui,sans-serif;background:var(--bg);col
 button,select,input,textarea{font:inherit;color:inherit}
 .screen{display:none;min-height:100vh}
 .screen.on{display:flex;flex-direction:column}
+#tt{height:100vh;height:100dvh;background:#eaf3ee}
+.arena{position:relative;height:30vh;min-height:170px;background:linear-gradient(#bfe3ff 0 45%,#7cc46a 45% 100%);overflow:hidden;flex:none}
+.garisTengah{position:absolute;left:50%;top:40%;bottom:0;border-left:4px dashed #fff;transform:translateX(-2px)}
+.batas{position:absolute;top:40%;bottom:0;width:10px;opacity:.9}
+.batas.kiri{left:18%;background:var(--c0)}.batas.kanan{right:18%;background:var(--c1)}
+.tali{position:absolute;left:50%;top:58%;display:flex;align-items:center;transform:translate(-50%,-50%);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.tambang{width:clamp(110px,16vw,240px);height:12px;background:repeating-linear-gradient(45deg,#a0662b 0 8px,#c98a45 8px 16px);border-radius:6px}
+.bendera{font-size:clamp(34px,4vw,54px);margin:0 -6px;transform:translateY(-18px)}
+.regu{font-size:clamp(34px,4.5vw,64px);white-space:nowrap}
+.regu.rB{transform:scaleX(-1)}
+.tali.tarikA .regu.rA,.tali.tarikB .regu.rB{animation:tarik .4s}
+@keyframes tarik{50%{letter-spacing:4px}}
+.ttSkor{position:absolute;left:0;right:0;top:8px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-weight:800;font-size:clamp(18px,2.2vw,28px)}
+.ttSkor span:first-child{color:var(--c0)}.ttSkor span:last-child{color:var(--c1)}
+.ttSkor b{background:#fff;border-radius:20px;padding:4px 16px;font-size:.8em;color:var(--teks)}
+.ttPanel{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+.tps{border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px;overflow:auto;background:#fff;border:5px solid}
+#tpA{border-color:var(--c0)}#tpB{border-color:var(--c1)}
+.tps .tq{font-size:clamp(18px,2.1vw,30px);font-weight:700;line-height:1.35;flex:1;display:flex;flex-direction:column;justify-content:center}
+.tps .tq img{max-height:18vh;max-width:100%;object-fit:contain;margin:6px auto 0;border-radius:8px}
+.tps .tops{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tps .to{border:0;border-radius:14px;padding:12px;min-height:64px;font-size:clamp(16px,1.8vw,26px);font-weight:800;color:#fff;cursor:pointer;text-align:left;display:flex;gap:8px;align-items:center}
+.tps .to i{font-style:normal;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px}
+.tps .to.ok{outline:6px solid var(--benar);filter:brightness(1.1)}.tps .to.no{opacity:.45}
+.tps.kunci{pointer-events:none}.tps.salah{animation:goyang .4s;background:#fdecec}.tps.benar{background:#e8f8ee}
+.tps .tno{font-size:14px;font-weight:800;color:var(--abu)}
+@keyframes goyang{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.ttMenang{position:fixed;inset:0;background:rgba(9,61,46,.75);display:none;align-items:center;justify-content:center;z-index:30}
+.ttMenang.on{display:flex}.ttMenang .box{background:#fff;border-radius:28px;padding:30px 40px;text-align:center;max-width:90vw}
+.ttMenang h1{font-size:clamp(30px,4vw,54px);margin:6px 0}
+@media(max-width:700px){.ttPanel{grid-template-columns:1fr}}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--garis);background:#fff;padding:10px 18px;border-radius:14px;cursor:pointer;font-weight:700;font-size:18px;text-decoration:none;color:var(--teks);touch-action:manipulation}
 .btn:hover{border-color:var(--hijau)}
 .btn.pri{background:var(--hijau);border-color:var(--hijau);color:#fff}
@@ -187,6 +218,14 @@ table.qt th,table.qt td{border:1px solid currentColor;padding:4px 10px}
     </div>
     <div class="card">
       <h2>2. Atur permainan</h2>
+      <div class="set-row"><span>Mode permainan</span><div class="seg" id="segMode"><button data-m="kuis" class="on">🎯 Kuis Tim</button><button data-m="tt">🪢 Tarik Tambang</button></div></div>
+      <div id="ttSet" hidden>
+        <div class="set-row"><span>Langkah untuk menang</span><div class="seg" id="segLangkah"><button data-v="5">5</button><button data-v="7" class="on">7</button><button data-v="10">10</button></div></div>
+        <div class="set-row"><span>Waktu permainan</span><div class="seg" id="segDurasi"><button data-v="0" class="on">Tanpa</button><button data-v="180">3 mnt</button><button data-v="300">5 mnt</button><button data-v="600">10 mnt</button></div></div>
+        <div class="tim-names"><input id="ttA" value="Tim Merah" style="border-color:var(--c0)" aria-label="Nama tim kiri"><input id="ttB" value="Tim Biru" style="border-color:var(--c1)" aria-label="Nama tim kanan"></div>
+        <p class="muted" style="margin:8px 0 0;font-size:15px">Layar dibagi dua. Setiap tim menjawab soal pilihan ganda/benar-salah di sisinya masing-masing. Jawaban benar menarik tali ke arah timnya.</p>
+      </div>
+      <div id="kuisSet">
       <div class="set-row"><span>Peserta</span><div class="seg" id="segTim">
         <button data-v="0">Klasikal</button><button data-v="2" class="on">2 tim</button><button data-v="3">3 tim</button><button data-v="4">4 tim</button></div></div>
       <div class="tim-names" id="timNames"></div>
@@ -197,6 +236,7 @@ table.qt th,table.qt td{border:1px solid currentColor;padding:4px 10px}
       <div class="set-row"><span>Acak urutan soal</span><label class="switch"><input type="checkbox" id="acakSoal"><span></span></label></div>
       <div class="set-row"><span>Acak urutan pilihan</span><label class="switch"><input type="checkbox" id="acakOpsi"><span></span></label></div>
       <div class="set-row"><span>Bacakan soal otomatis 🔊</span><label class="switch"><input type="checkbox" id="bacaOto"><span></span></label></div>
+      </div>
       <div class="set-row"><span>Efek suara</span><label class="switch"><input type="checkbox" id="suara" checked><span></span></label></div>
       <div class="start-wrap"><button class="btn emas big" id="btnMulai">▶ Mulai Kuis</button></div>
       <div class="kb">Papan ketik: ← → pindah soal · 1–5 pilih jawaban · Spasi tampilkan jawaban · F layar penuh</div>
@@ -227,6 +267,23 @@ table.qt th,table.qt td{border:1px solid currentColor;padding:4px 10px}
 </section>
 
 <!-- ===== END ===== -->
+<section class="screen" id="tt">
+  <div class="bar">
+    <button class="tb" id="ttKeluar" title="Keluar">✕</button>
+    <div class="ttl" id="ttJudul">Tarik Tambang</div>
+    <span class="sp"></span>
+    <div class="prog" id="ttWaktu"></div>
+    <button class="tb" id="ttFull" title="Layar penuh">⛶</button>
+  </div>
+  <div class="arena" id="arena">
+    <div class="garisTengah"></div><div class="batas kiri"></div><div class="batas kanan"></div>
+    <div class="tali" id="tali"><div class="regu rA">🧒🧒🧒</div><div class="tambang"></div><div class="bendera">🚩</div><div class="tambang"></div><div class="regu rB">🧒🧒🧒</div></div>
+    <div class="ttSkor"><span id="ttNA"></span><b id="ttPos"></b><span id="ttNB"></span></div>
+  </div>
+  <div class="ttPanel"><div class="tps" id="tpA"></div><div class="tps" id="tpB"></div></div>
+  <div class="ttMenang" id="ttMenang"><div class="box"><div style="font-size:80px">🏆</div><h1 id="ttPemenang"></h1><p id="ttInfo"></p><div class="end-btns"><button class="btn emas big" id="ttUlang">↻ Main lagi</button><button class="btn big" id="ttBalik">Kembali</button></div></div></div>
+</section>
+
 <section class="screen" id="end">
   <div style="font-size:90px">🏆</div>
   <h1 id="eJudul">Selesai!</h1>
@@ -399,7 +456,42 @@ function mulai(){
   $('#pJudul').textContent=p.judul;
   show('play');tampil();
 }
-$('#btnMulai').onclick=mulai;
+$('#btnMulai').onclick=()=>MODE_GAME==='tt'?mulaiTT():mulai();
+/* ===== mode Tarik Tambang ===== */
+let MODE_GAME=LS.get('kuisModeGame','kuis'),TT=null,ttTimer=null;
+const TTS=Object.assign({langkah:7,durasi:0},LS.get('kuisTT',{}));
+function setMode(m){MODE_GAME=m;LS.set('kuisModeGame',m);$$('#segMode button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));$('#ttSet').hidden=m!=='tt';$('#kuisSet').hidden=m==='tt';$('#btnMulai').textContent=m==='tt'?'🪢 Mulai Tarik Tambang':'▶ Mulai Kuis'}
+$('#segMode').onclick=e=>{const b=e.target.closest('[data-m]');if(b)setMode(b.dataset.m)};
+[['#segLangkah','langkah'],['#segDurasi','durasi']].forEach(([id,k])=>{$$(id+' button').forEach(b=>b.classList.toggle('on',+b.dataset.v===TTS[k]));$(id).onclick=e=>{const b=e.target.closest('button');if(!b)return;TTS[k]=+b.dataset.v;LS.set('kuisTT',TTS);$$(id+' button').forEach(x=>x.classList.toggle('on',x===b))}});
+setMode(MODE_GAME);
+function mulaiTT(){
+  const p=pakets.find(x=>x.id===pilih);if(!p)return toast('Pilih paket soal dulu.');
+  const pool=p.soal.filter(s=>(s.bentuk==='pg'||s.bentuk==='bs')&&s.opsi.length>=2);
+  if(pool.length<4)return toast('Paket ini kurang soal pilihan ganda/benar-salah untuk Tarik Tambang (minimal 4).');
+  TT={paket:p,pool,pos:0,N:TTS.langkah,sisa:TTS.durasi,selesai:false,t:[{nama:$('#ttA').value||'Tim Merah',q:[],i:0,benar:0,salah:0},{nama:$('#ttB').value||'Tim Biru',q:[],i:0,benar:0,salah:0}]};
+  TT.t.forEach(t=>t.q=shuffle(pool));
+  $('#ttJudul').textContent='🪢 Tarik Tambang · '+p.judul;$('#ttNA').textContent=TT.t[0].nama;$('#ttNB').textContent=TT.t[1].nama;
+  $('#ttMenang').classList.remove('on');show('tt');ttGeser();[0,1].forEach(ttSoal);
+  clearInterval(ttTimer);ttWaktu();if(TT.sisa)ttTimer=setInterval(()=>{if(TT.selesai)return;TT.sisa--;ttWaktu();if(TT.sisa<=10&&TT.sisa>0)sndTick();if(TT.sisa<=0)ttAkhir(TT.pos<0?0:TT.pos>0?1:-1)},1000)}
+function ttWaktu(){$('#ttWaktu').textContent=TT.sisa?('⏱ '+Math.floor(TT.sisa/60)+':'+String(TT.sisa%60).padStart(2,'0')):'Tanpa batas waktu'}
+function ttGeser(){const w=$('#arena').clientWidth,step=(w*0.32)/TT.N;$('#tali').style.transform=`translate(calc(-50% + ${TT.pos*step}px),-50%)`;
+  const d=Math.abs(TT.pos);$('#ttPos').textContent=TT.pos===0?'Seimbang':`${TT.t[TT.pos<0?0:1].nama} unggul ${d} langkah`}
+function ttSoal(k){const t=TT.t[k];if(t.i>=t.q.length){t.q=shuffle(TT.pool);t.i=0}
+  const q=t.q[t.i],ord=q.bentuk==='bs'?[0,1]:shuffle([...q.opsi.keys()]);t.ord=ord;const W=k?['var(--c1)','#1f5fb8','var(--c3)','#1fa38a']:['var(--c0)','#b8432f','var(--c2)','#8a4fd8'];
+  const g=(q.gambar||[])[0];const teks=fmt(String(q.pertanyaan).replace(/\n?\[\[gambar\]\]\n?/g,'\n'));
+  const el=$(k?'#tpB':'#tpA');el.className='tps';
+  el.innerHTML=`<div class="tno">${esc(t.nama)} · benar ${t.benar} · soal ${t.benar+t.salah+1}</div><div class="tq">${teks}${g?`<img src="${esc(g)}" alt="">`:''}</div><div class="tops">${ord.map((o,j)=>`<button class="to" data-k="${k}" data-o="${o}" style="background:${q.bentuk==='bs'?(o===0?'var(--c4)':'var(--c0)'):W[j%4]}"><i>${q.bentuk==='bs'?(o===0?'B':'S'):HURUF[j]}</i>${fmt(q.opsi[o])}</button>`).join('')}</div>`}
+$('#tt').addEventListener('click',e=>{const b=e.target.closest('.to');if(!b||!TT||TT.selesai)return;const k=+b.dataset.k,t=TT.t[k],q=t.q[t.i],el=$(k?'#tpB':'#tpA');if(el.classList.contains('kunci'))return;
+  el.classList.add('kunci');const benar=+b.dataset.o===q.kunci;
+  if(benar){t.benar++;sndOk();el.classList.add('benar');b.classList.add('ok');TT.pos+=k?1:-1;const tl=$('#tali');tl.classList.remove('tarikA','tarikB');void tl.offsetWidth;tl.classList.add(k?'tarikB':'tarikA');ttGeser();
+    if(Math.abs(TT.pos)>=TT.N)return setTimeout(()=>ttAkhir(k),500);setTimeout(()=>{t.i++;ttSoal(k)},600)}
+  else{t.salah++;sndNo();el.classList.add('salah');b.classList.add('no');el.querySelectorAll('.to').forEach(x=>{if(+x.dataset.o===q.kunci)x.classList.add('ok')});setTimeout(()=>{t.i++;ttSoal(k)},1500)}});
+function ttAkhir(w){if(TT.selesai)return;TT.selesai=true;clearInterval(ttTimer);sndEnd();if(w>=0)confetti();
+  $('#ttPemenang').textContent=w<0?'Seri! 🤝':`${TT.t[w].nama} menang!`;
+  $('#ttInfo').textContent=TT.t.map(t=>`${t.nama}: ${t.benar} benar, ${t.salah} salah`).join(' · ');$('#ttMenang').classList.add('on')}
+$('#ttUlang').onclick=mulaiTT;$('#ttBalik').onclick=$('#ttKeluar').onclick=()=>{if(TT)TT.selesai=true;clearInterval(ttTimer);$('#ttMenang').classList.remove('on');show('setup')};
+$('#ttFull').onclick=()=>{const d=document;if(!d.fullscreenElement)(d.documentElement.requestFullscreen||d.documentElement.webkitRequestFullscreen).call(d.documentElement);else d.exitFullscreen()};
+window.addEventListener('resize',()=>{if(TT&&$('#tt').classList.contains('on'))ttGeser()});
 function show(id){$$('.screen').forEach(s=>s.classList.toggle('on',s.id===id))}
 
 function stopTimer(){clearInterval(timerId);timerId=null}
