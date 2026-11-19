@@ -254,7 +254,7 @@ function renderMapel(){
   const M=MAPEL[MP];$('#hJudul').textContent='Bank Soal '+M.judul+' Siap Pakai';document.title='Bank Soal '+M.judul;
   $('#btnSekolah').hidden=MP!=='pai';
   $('#notice').innerHTML=MP==='pai'?'Soal dalam bank ini sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>. Soal bertanda <b>⚠ cek</b> memuat lafal Arab atau bacaan yang perlu dicocokkan dengan buku pegangan.'
-    :`Bank soal <b>${M.nama}</b> masih tahap awal: saat ini tersedia <b>Kelas 4 dan Kelas 5 Semester 1</b> (masing-masing 3 materi; setiap materi 15 PG, 10 isian, 5 uraian). Soal sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>.`;
+    :`Bank soal <b>${M.nama}</b> masih tahap awal: saat ini tersedia <b>Kelas 4, 5, dan 6 Semester 1</b> (masing-masing 3 materi; setiap materi 15 PG, 10 isian, 5 uraian). Soal sudah disusun dan diperiksa, tetapi <b>tetap telaah sebelum dipakai</b>.`;
 }
 $('#mapel').onclick=e=>{const b=e.target.closest('button[data-mp]');if(!b||b.dataset.mp===MP)return;MP=b.dataset.mp;LS.set('bankMapel',MP);
   if(MP!=='pai'&&MODE==='sekolah'){MODE='sas1';LS.set('bankMode',MODE);terapkanPreset(false)}

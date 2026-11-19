@@ -218,5 +218,98 @@ materi: [
  {t:'kartu', judul:'Penting diketahui', kartu:[['Deklarasi Djuanda (1957)','Laut di antara pulau-pulau Indonesia adalah wilayah Indonesia.'],['Wawasan Nusantara','Cara pandang bangsa Indonesia sebagai satu kesatuan.'],['Wilayah NKRI','Meliputi darat, laut, dan udara.']]},
  {t:'kuis', tanya:'Pulau-pulau terluar perlu dijaga karena ...', opsi:['Menjadi penentu batas wilayah negara','Tidak berpenghuni','Hanya untuk wisata'], benar:0, bahas:'Pulau terluar menentukan batas wilayah laut Indonesia.'},
  {t:'poin', judul:'Cinta tanah air', poin:['Rajin belajar untuk memajukan bangsa.','Menggunakan produk dalam negeri.','Melestarikan budaya dan menjaga lingkungan. 🇮🇩']}
+]},
+/* ================= KELAS 6 ================= */
+{mapel:'ipas', kelas:6, semester:1, id:'ipas6-pencernaan', judul:'Sistem Pencernaan Manusia', slide:[
+ {t:'judul', judul:'Sistem Pencernaan Manusia', sub:'Perjalanan makanan dari mulut sampai menjadi energi.'},
+ {t:'urut', judul:'Urutkan perjalanan makanan!', petunjuk:'Sentuh organ sesuai urutan yang dilalui makanan.', item:['Mulut','Kerongkongan','Lambung','Usus halus','Usus besar','Anus']},
+ {t:'kartu', judul:'Apa tugasnya?', kartu:[['👄 Mulut','Gigi mengunyah, air liur (ptialin) mencerna zat tepung.'],['🔻 Kerongkongan','Mendorong makanan ke lambung dengan gerak peristaltik.'],['🫃 Lambung','Mengaduk makanan; asam lambung membunuh kuman.'],['🌀 Usus halus','Mencerna dan menyerap sari-sari makanan.'],['💧 Usus besar','Menyerap air dan membentuk feses.']]},
+ {t:'kelompok', judul:'Pencernaan mekanik atau kimiawi?', petunjuk:'Sentuh kegiatan, lalu pilih jenisnya.', wadah:['Mekanik','Kimiawi'], item:[['Gigi mengunyah',0],['Lambung meremas makanan',0],['Ptialin mengubah tepung jadi gula',1],['Pepsin mencerna protein',1],['Empedu mengemulsi lemak',1]]},
+ {t:'kuis', tanya:'Doni jarang makan sayur dan sulit buang air besar. Ia mengalami ...', opsi:['Sembelit','Diare','Maag'], benar:0, bahas:'Kurang serat menyebabkan sembelit.'},
+ {t:'poin', judul:'Menjaga pencernaan', poin:['🧼 Cuci tangan sebelum makan.','🥦 Makan sayur dan buah berserat.','⏰ Makan teratur, jangan terlambat.','💧 Minum air matang yang cukup.']}
+]},
+{mapel:'ipas', kelas:6, semester:1, id:'ipas6-pernapasan', judul:'Sistem Pernapasan dan Peredaran Darah', slide:[
+ {t:'judul', judul:'Sistem Pernapasan dan Peredaran Darah', sub:'Bagaimana oksigen sampai ke seluruh tubuh?'},
+ {t:'urut', judul:'Jalannya udara pernapasan', petunjuk:'Sentuh sesuai urutan masuknya udara.', item:['Hidung','Tenggorokan (trakea)','Bronkus','Bronkiolus','Alveolus di paru-paru']},
+ {t:'kartu', judul:'Komponen darah', kartu:[['🔴 Sel darah merah','Mengangkut oksigen (mengandung hemoglobin).'],['⚪ Sel darah putih','Melawan kuman penyakit.'],['🩹 Keping darah','Membantu pembekuan darah saat luka.'],['💛 Plasma darah','Cairan yang mengangkut sari makanan dan zat sisa.']]},
+ {t:'kelompok', judul:'Arteri atau vena?', petunjuk:'Sentuh ciri, lalu pilih pembuluhnya.', wadah:['Arteri (nadi)','Vena (balik)'], item:[['Membawa darah keluar dari jantung',0],['Denyutnya terasa',0],['Dindingnya tebal dan elastis',0],['Membawa darah kembali ke jantung',1],['Memiliki banyak katup',1],['Dindingnya tipis',1]]},
+ {t:'kuis', tanya:'Setelah berlari, napas dan denyut jantung lebih cepat karena ...', opsi:['Tubuh membutuhkan lebih banyak oksigen','Paru-paru mengecil','Darah berhenti mengalir'], benar:0, bahas:'Otot yang bekerja memerlukan lebih banyak oksigen.'},
+ {t:'poin', judul:'Rangkuman', poin:['Pertukaran oksigen dan karbon dioksida terjadi di alveolus.','Jantung memompa darah melalui arteri dan menerimanya kembali melalui vena.','Olahraga teratur dan tidak merokok menjaga paru-paru dan jantung.']}
+]},
+{mapel:'ipas', kelas:6, semester:1, id:'ipas6-tatasurya', judul:'Tata Surya', slide:[
+ {t:'judul', judul:'Tata Surya', sub:'Mengenal matahari, planet, dan gerak bumi.'},
+ {t:'gambar', judul:'Keluarga matahari', svg:'tatasurya', ket:'Sentuh matahari atau planet untuk melihat cirinya.'},
+ {t:'urut', judul:'Urutkan planet dari yang terdekat!', petunjuk:'Sentuh planet dari yang paling dekat dengan matahari.', item:['Merkurius','Venus','Bumi','Mars','Jupiter','Saturnus','Uranus','Neptunus']},
+ {t:'kartu', judul:'Rotasi dan revolusi', kartu:[['🔄 Rotasi','Bumi berputar pada porosnya ±24 jam → siang dan malam, perbedaan waktu.'],['🔁 Revolusi','Bumi mengelilingi matahari ±365 hari → pergantian musim.'],['🌑 Gerhana matahari','Bulan berada di antara matahari dan bumi.'],['🌕 Gerhana bulan','Bumi berada di antara matahari dan bulan.']]},
+ {t:'kuis', tanya:'Waktu di Jayapura lebih cepat daripada di Jakarta karena ...', opsi:['Bumi berotasi dari barat ke timur','Revolusi bumi','Gerak bulan'], benar:0, bahas:'Wilayah timur lebih dulu terkena sinar matahari.'},
+ {t:'poin', judul:'Rangkuman', poin:['Tata surya berpusat pada matahari dengan delapan planet.','Jupiter planet terbesar; Merkurius terdekat; Neptunus terjauh.','Rotasi menyebabkan siang-malam; revolusi menyebabkan pergantian musim.']}
+]},
+{mapel:'mtk', kelas:6, semester:1, id:'mtk6-bulat', judul:'Bilangan Bulat', slide:[
+ {t:'judul', judul:'Bilangan Bulat', sub:'Mengenal bilangan negatif, nol, dan positif.'},
+ {t:'poin', judul:'Bilangan negatif di sekitar kita', poin:['🌡️ Suhu 5 derajat di bawah nol → −5 °C','🐟 Ikan 15 m di bawah permukaan laut → −15 m','🏢 Lantai basement 2 → −2','Di garis bilangan, negatif di kiri nol, positif di kanan nol.']},
+ {t:'garis', judul:'Melangkah di garis bilangan', soal:[[3,4],[-6,10],[3,-8],[-4,-5],[2,-7]], ket:'Pilih soal: tambah bilangan positif ke kanan, tambah bilangan negatif ke kiri.'},
+ {t:'kartu', judul:'Aturan praktis', kartu:[['a − b','= a + (−b)'],['a − (−b)','= a + b'],['−a + (−b)','= −(a + b)'],['−7 ... −3','−7 < −3 (lebih kiri lebih kecil)']]},
+ {t:'kuis', tanya:'Suhu −2 °C naik 9 °C menjadi ...', opsi:['7 °C','11 °C','−11 °C'], benar:0, bahas:'−2 + 9 = 7.'},
+ {t:'kuis', tanya:'Benar skor 4, salah −2. Tim A: 6 benar, 3 salah. Skornya ...', opsi:['18','30','24'], benar:0, bahas:'24 + (−6) = 18.'},
+ {t:'poin', judul:'Rangkuman', poin:['Bilangan bulat terdiri atas bilangan negatif, nol, dan positif.','Makin ke kiri pada garis bilangan, makin kecil nilainya.','Mengurangi bilangan sama dengan menambah lawannya.']}
+]},
+{mapel:'mtk', kelas:6, semester:1, id:'mtk6-lingkaran', judul:'Lingkaran', slide:[
+ {t:'judul', judul:'Lingkaran', sub:'Unsur, keliling, dan luas lingkaran.'},
+ {t:'kartu', judul:'Unsur-unsur lingkaran', kartu:[['Titik pusat','Titik tengah lingkaran.'],['Jari-jari (r)','Garis dari pusat ke tepi lingkaran.'],['Diameter (d)','Garis melalui pusat; d = 2 × r.'],['Busur','Garis lengkung bagian keliling.'],['Juring','Daerah antara dua jari-jari dan busur.']]},
+ {t:'lingkaran', judul:'Hitung keliling dan luas'},
+ {t:'kuis', tanya:'Keliling lingkaran berdiameter 14 cm adalah ... (π = 22/7)', opsi:['44 cm','154 cm','88 cm'], benar:0, bahas:'22/7 × 14 = 44.'},
+ {t:'kuis', tanya:'Roda berdiameter 70 cm berputar 100 kali. Jaraknya ...', opsi:['220 m','22 m','2.200 m'], benar:0, bahas:'Keliling 220 cm × 100 = 22.000 cm = 220 m.'},
+ {t:'poin', judul:'Rangkuman', poin:['Keliling = π × d = 2 × π × r','Luas = π × r × r','Gunakan π = 22/7 jika r kelipatan 7, π = 3,14 untuk lainnya.']}
+]},
+{mapel:'mtk', kelas:6, semester:1, id:'mtk6-volume', judul:'Volume Kubus dan Balok', slide:[
+ {t:'judul', judul:'Volume Kubus dan Balok', sub:'Berapa banyak isi sebuah kotak?'},
+ {t:'kartu', judul:'Rumus volume', kartu:[['🎲 Kubus','V = s × s × s'],['📦 Balok','V = p × l × t'],['1 liter','= 1 dm³ = 1.000 cm³'],['1 m³','= 1.000 liter']]},
+ {t:'poin', judul:'Contoh: akuarium', poin:['Panjang 60 cm, lebar 30 cm, tinggi 40 cm.','V = 60 × 30 × 40 = 72.000 cm³','72.000 cm³ = 72 liter air.']},
+ {t:'kuis', tanya:'Volume kubus 216 cm³. Panjang rusuknya ...', opsi:['6 cm','8 cm','36 cm'], benar:0, bahas:'6 × 6 × 6 = 216.'},
+ {t:'kuis', tanya:'Kardus kubus rusuk 50 cm diisi kubus kecil rusuk 10 cm. Muat berapa?', opsi:['125','50','25'], benar:0, bahas:'5 × 5 × 5 = 125.'},
+ {t:'kuis', tanya:'Jika rusuk kubus dijadikan 2 kali, volumenya menjadi ...', opsi:['8 kali','2 kali','4 kali'], benar:0, bahas:'2 × 2 × 2 = 8.'},
+ {t:'poin', judul:'Rangkuman', poin:['Volume kubus = s × s × s; volume balok = p × l × t.','Satuan volume: cm³, dm³ (liter), m³.','Volume dipakai untuk menghitung isi bak, kolam, dan kardus.']}
+]},
+{mapel:'bindo', kelas:6, semester:1, id:'bindo6-berita', judul:'Teks Berita', slide:[
+ {t:'judul', judul:'Teks Berita', sub:'Menemukan informasi penting dengan 5W + 1H.'},
+ {t:'poin', judul:'Siswa SD Tunas Bangsa Juarai Lomba Sains', poin:['Jakarta, Senin (14/10) – Tim SD Tunas Bangsa meraih juara pertama Lomba Sains Tingkat Kota di Gedung Serbaguna Jakarta Barat.','Tim yang terdiri atas tiga siswa kelas VI itu menampilkan alat penjernih air sederhana dari pasir dan arang.','Menurut kepala sekolah, keberhasilan ini berkat latihan rutin setiap Sabtu selama dua bulan.']},
+ {t:'kartu', judul:'5W + 1H', kartu:[['What (apa)?','Juara pertama Lomba Sains Tingkat Kota.'],['Who (siapa)?','Tim SD Tunas Bangsa, tiga siswa kelas VI.'],['When (kapan)?','Senin, 14 Oktober.'],['Where (di mana)?','Gedung Serbaguna Jakarta Barat.'],['Why (mengapa)?','Berkat latihan rutin setiap Sabtu.'],['How (bagaimana)?','Menampilkan alat penjernih air dari pasir dan arang.']]},
+ {t:'kelompok', judul:'Fakta atau opini?', petunjuk:'Sentuh kalimat, lalu pilih kelompoknya.', wadah:['Fakta','Opini'], item:[['Lomba diikuti 25 sekolah.',0],['Lomba diadakan hari Senin.',0],['Tim terdiri atas tiga siswa.',0],['Penampilan tim sangat memukau.',1],['Menurut saya, lombanya seru.',1],['Sepertinya tahun depan lebih ramai.',1]]},
+ {t:'kuis', tanya:'Cara memastikan berita di internet bukan hoaks adalah ...', opsi:['Memeriksa sumber resmi dan membandingkan berita lain','Langsung membagikannya','Percaya karena banyak yang membagikan'], benar:0, bahas:'Periksa sumber sebelum percaya dan membagikan.'}
+]},
+{mapel:'bindo', kelas:6, semester:1, id:'bindo6-persuasi', judul:'Teks Persuasi: Iklan dan Poster', slide:[
+ {t:'judul', judul:'Teks Persuasi: Iklan dan Poster', sub:'Mengajak orang lain dengan kalimat yang menarik dan santun.'},
+ {t:'poin', judul:'Ayo, Hemat Air!', poin:['Air bersih semakin sulit didapat.','Jika kita boros, anak cucu kita bisa kekurangan air.','Matikan keran setelah digunakan dan gunakan air secukupnya.','Mulai hari ini, mari kita hemat air demi masa depan!']},
+ {t:'kartu', judul:'Ciri teks persuasi', kartu:[['Ajakan','Menggunakan kata ayo, mari, yuk.'],['Alasan','Ada alasan atau bukti yang meyakinkan.'],['Bahasa','Menarik, singkat, jujur, dan santun.']]},
+ {t:'kelompok', judul:'Iklan penawaran atau layanan masyarakat?', petunjuk:'Sentuh iklan, lalu pilih jenisnya.', wadah:['Penawaran','Layanan masyarakat'], item:[['Sepatu Kuat, Diskon 20%!',0],['Es Krim Segar Rasa Baru!',0],['Les Bahasa Inggris Murah',0],['Ayo, Imunisasi Lengkap!',1],['Buang Sampah pada Tempatnya',1],['Hemat Listrik, Hemat Biaya',1]]},
+ {t:'kuis', tanya:'Kalimat iklan yang TIDAK jujur adalah ...', opsi:['Minum jamu ini, langsung tinggi 10 cm dalam sehari!','Jamu ini terbuat dari bahan alami.','Jamu ini tersedia di toko terdekat.'], benar:0, bahas:'Klaim berlebihan dan tidak masuk akal.'}
+]},
+{mapel:'bindo', kelas:6, semester:1, id:'bindo6-surat', judul:'Surat Resmi dan Surat Pribadi', slide:[
+ {t:'judul', judul:'Surat Resmi dan Surat Pribadi', sub:'Menulis surat sesuai tujuan dan penerimanya.'},
+ {t:'urut', judul:'Urutkan bagian surat resmi!', petunjuk:'Sentuh bagian surat dari atas ke bawah.', item:['Kop surat','Nomor, lampiran, perihal','Alamat tujuan','Salam pembuka','Isi surat','Salam penutup','Tanda tangan dan nama terang']},
+ {t:'kelompok', judul:'Resmi atau pribadi?', petunjuk:'Sentuh kalimat, lalu pilih jenis suratnya.', wadah:['Surat resmi','Surat pribadi'], item:[['Dengan hormat,',0],['Demikian surat ini kami sampaikan.',0],['Hormat kami,',0],['Hai, apa kabar, Sob?',1],['Salam kangen dari Jakarta!',1],['Sampai jumpa liburan nanti ya!',1]]},
+ {t:'kuis', tanya:'Surat izin tidak masuk sekolah ditujukan kepada ...', opsi:['Wali kelas','Teman sebangku','Penjaga kantin'], benar:0, bahas:'Surat izin ditujukan kepada wali kelas.'},
+ {t:'poin', judul:'Rangkuman', poin:['Surat resmi memakai kop, nomor, perihal, dan bahasa baku.','Surat pribadi memakai bahasa santai dan akrab.','Pilih jenis surat sesuai tujuan dan penerimanya.']}
+]},
+{mapel:'ppkn', kelas:6, semester:1, id:'ppkn6-pancasila', judul:'Penerapan Nilai Pancasila di Era Globalisasi', slide:[
+ {t:'judul', judul:'Nilai Pancasila di Era Globalisasi', sub:'Pancasila sebagai penyaring budaya asing.'},
+ {t:'kelompok', judul:'Dampak positif atau negatif?', petunjuk:'Sentuh contoh, lalu pilih kelompoknya.', wadah:['Positif','Negatif'], item:[['Informasi mudah didapat',0],['Komunikasi semakin cepat',0],['Belajar daring dari mana saja',0],['Budaya lokal mulai dilupakan',1],['Gaya hidup konsumtif',1],['Hoaks mudah menyebar',1]]},
+ {t:'poin', judul:'Pancasila sebagai filter', poin:['✅ Terima budaya asing yang sesuai nilai Pancasila: disiplin, kerja keras, menghargai waktu.','❌ Tolak yang bertentangan: individualisme, hidup berlebihan, perundungan.','🇮🇩 Tetap bangga pada budaya dan produk Indonesia.']},
+ {t:'kuis', tanya:'Menyebarkan hoaks di media sosial bertentangan dengan sila ...', opsi:['Kedua','Pertama','Kelima'], benar:0, bahas:'Hoaks merugikan dan merendahkan martabat orang lain.'},
+ {t:'poin', judul:'Bijak bermedia sosial', poin:['💬 Berkomentar dengan sopan.','🔍 Periksa kebenaran berita sebelum membagikan.','🤝 Hargai perbedaan suku dan agama.','🚫 Jangan merundung orang lain.']}
+]},
+{mapel:'ppkn', kelas:6, semester:1, id:'ppkn6-hak', judul:'Hak dan Kewajiban Warga Negara', slide:[
+ {t:'judul', judul:'Hak dan Kewajiban Warga Negara', sub:'Dijamin dan diatur dalam UUD 1945.'},
+ {t:'kartu', judul:'Pasal-pasal penting UUD 1945', kartu:[['Pasal 27 ayat 3','Hak dan kewajiban ikut serta dalam pembelaan negara.'],['Pasal 29 ayat 2','Kebebasan memeluk agama dan beribadah.'],['Pasal 31 ayat 1','Setiap warga negara berhak mendapat pendidikan.'],['Pasal 31 ayat 2','Wajib mengikuti pendidikan dasar, pemerintah wajib membiayai.']]},
+ {t:'kelompok', judul:'Hak atau kewajiban?', petunjuk:'Sentuh contoh, lalu pilih kelompoknya.', wadah:['Hak','Kewajiban'], item:[['Mendapat pendidikan',0],['Memeluk agama',0],['Mendapat pekerjaan layak',0],['Membayar pajak',1],['Menaati hukum',1],['Membela negara',1]]},
+ {t:'kuis', tanya:'Wujud bela negara yang paling tepat bagi pelajar adalah ...', opsi:['Belajar dengan sungguh-sungguh','Ikut berperang','Membuat senjata'], benar:0, bahas:'Pelajar membela negara dengan belajar dan berprestasi.'},
+ {t:'poin', judul:'Rangkuman', poin:['Hak dan kewajiban warga negara diatur dalam UUD 1945.','Laksanakan kewajiban sebelum menuntut hak.','Hormati hak orang lain agar tercipta keadilan.']}
+]},
+{mapel:'ppkn', kelas:6, semester:1, id:'ppkn6-pemerintahan', judul:'Lembaga Negara dan Pemerintahan', slide:[
+ {t:'judul', judul:'Lembaga Negara dan Pemerintahan', sub:'Siapa membuat, menjalankan, dan mengawasi aturan negara?'},
+ {t:'kartu', judul:'Lembaga negara', kartu:[['MPR','Mengubah dan menetapkan UUD.'],['DPR','Membuat undang-undang bersama presiden, mengawasi pemerintah.'],['Presiden','Kepala negara dan kepala pemerintahan.'],['MA','Lembaga peradilan tertinggi.'],['MK','Menguji undang-undang terhadap UUD.'],['BPK','Memeriksa keuangan negara.']]},
+ {t:'urut', judul:'Urutkan wilayah pemerintahan!', petunjuk:'Sentuh dari wilayah yang paling luas.', item:['Negara (presiden)','Provinsi (gubernur)','Kabupaten/kota (bupati/wali kota)','Kecamatan (camat)','Desa/kelurahan (kepala desa/lurah)']},
+ {t:'kelompok', judul:'Legislatif, eksekutif, atau yudikatif?', petunjuk:'Sentuh lembaga, lalu pilih kekuasaannya.', wadah:['Legislatif','Eksekutif','Yudikatif'], item:[['DPR',0],['DPD',0],['Presiden',1],['Menteri',1],['Mahkamah Agung',2],['Mahkamah Konstitusi',2]]},
+ {t:'kuis', tanya:'Warga ingin mengusulkan perbaikan jalan kampung. Ke mana sebaiknya pertama kali?', opsi:['Ketua RT/RW atau kelurahan','Mahkamah Agung','BPK'], benar:0, bahas:'Mulai dari tingkat pemerintahan terdekat.'}
 ]}
 ]};
