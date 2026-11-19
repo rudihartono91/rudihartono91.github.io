@@ -53,6 +53,8 @@ nav.top .sp{flex:1}
 .hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:88px}
 @media(max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-top:44px;padding-bottom:56px}}
 .pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--garis);border-radius:40px;padding:8px 18px;font-weight:700;color:var(--hijau);font-size:15px}
+@media(max-width:520px){.pill{flex-wrap:wrap;font-size:12px;gap:5px;padding:6px 12px;max-width:100%}.pill i{width:7px;height:7px}}
+.pill .sep{display:inline-block;width:2px;height:1.05em;background:currentColor;opacity:.45;border-radius:2px;margin:0 2px;vertical-align:-.15em}
 .pill i{width:9px;height:9px;border-radius:50%;background:var(--hijau-2);box-shadow:0 0 0 4px rgba(19,121,91,.15)}
 .hero h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(46px,7.2vw,92px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px;color:var(--hijau-tua);font-weight:800}
 .hero h1 span{color:var(--emas)}
@@ -156,7 +158,7 @@ footer{text-align:center;color:var(--abu);font-size:14px;padding:34px 20px 44px}
 <header class="hero" id="beranda">
   <div class="wrap">
     <div>
-      <span class="pill"><i></i>Pendidikan. Pembelajaran. Teknologi. Inovasi</span>
+      <span class="pill"><i></i>Pendidikan<b class="sep" aria-hidden="true"></b>Pembelajaran<b class="sep" aria-hidden="true"></b>Teknologi<b class="sep" aria-hidden="true"></b>Inovasi</span>
       <h1><span class="pre">Dr. (Cand.)</span>Rudi Hartono<span>,</span><br>M.Pd.</h1>
       <p class="lead">Praktisi pendidikan, peneliti, pengembang media pembelajaran PGSD dan Pendidikan Agama Islam, serta konsultan akademik skripsi, tesis, dan disertasi. Kandidat Doktor Pendidikan Dasar Universitas Pendidikan Ganesha yang mengembangkan media dan aplikasi pembelajaran praktis untuk guru dan siswa sekolah dasar.</p>
       <div class="cta">
